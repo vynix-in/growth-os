@@ -310,8 +310,24 @@ export async function run(payload = {}) {
   for (const topic of targets) {
     built.push(await buildPost(topic));
   }
-  log.info(`built ${built.length} blog posts`);
-  return { built: built.length, posts: built.map((b) => b.url) };
+
+  // On a full run, remove any blog page that is no longer in the topic set, so
+  // renamed or dropped posts never linger as orphans.
+  let removed = 0;
+  if (!payload.only) {
+    const valid = new Set(built.map((b) => b.slug));
+    for (const rec of store.find({ kind: 'blog' })) {
+      if (!valid.has(rec.slug)) {
+        const dir = path.join(paths.content, 'site', 'blog', rec.slug);
+        if (fs.existsSync(dir)) fs.rmSync(dir, { recursive: true, force: true });
+        store.remove({ id: rec.id });
+        removed += 1;
+      }
+    }
+  }
+
+  log.info(`built ${built.length} blog posts`, { removed_orphans: removed });
+  return { built: built.length, removed_orphans: removed, posts: built.map((b) => b.url) };
 }
 
 export default { meta, run };

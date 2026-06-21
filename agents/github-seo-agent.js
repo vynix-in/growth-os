@@ -395,6 +395,11 @@ async function buildRepo(component) {
   // Write the repository metadata the publisher uses for homepage + topics.
   fs.writeFileSync(path.join(dir, 'repo-meta.json'), JSON.stringify(repoMeta(component), null, 2));
 
+  // Keep a repository that is already published marked as published, so a
+  // regeneration refreshes its content without resetting its live status.
+  const existing = repos.findOne({ key: component.repo });
+  const alreadyPublished = existing && existing.status === 'published';
+
   const record = repos.upsert(
     {
       key: component.repo,
@@ -407,18 +412,22 @@ async function buildRepo(component) {
       topics: keywordsFor(component).slice(0, 18),
       keywords: keywordsFor(component),
       path: path.relative(paths.github, dir),
-      status: violations.length ? 'blocked' : 'proposed',
+      status: violations.length ? 'blocked' : alreadyPublished ? 'published' : 'proposed',
+      published_to: alreadyPublished ? existing.published_to : undefined,
       gate_violations: violations,
       ai_source: source,
     },
     'key',
   );
 
-  queue.add(
-    'github-publish',
-    { repo: component.repo, title: component.name, path: record.path },
-    { agent: 'github-seo', approval: violations.length ? APPROVAL.REJECTED : APPROVAL.PENDING, priority: 2 },
-  );
+  // Only queue an approval to publish if it is not already live.
+  if (!alreadyPublished) {
+    queue.add(
+      'github-publish',
+      { repo: component.repo, title: component.name, path: record.path },
+      { agent: 'github-seo', approval: violations.length ? APPROVAL.REJECTED : APPROVAL.PENDING, priority: 2 },
+    );
+  }
 
   log.info(`prepared repo proposal "${component.repo}"`, { status: record.status, source });
   return record;
