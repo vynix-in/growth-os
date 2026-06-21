@@ -47,15 +47,45 @@ node bin/vynix-growth.js orchestrate
 | Dashboard | Builds the metrics snapshot the web dashboard reads. |
 | GitHub SEO | Proposes public repositories and writes their README, docs, examples and release notes. |
 | Changelog | Turns releases and notable commits into blog, release and social drafts. |
+| Blog | Writes in-depth, original articles and renders them as full SEO HTML pages with real images, clips, structured data and internal links. |
 | Directory Discovery | Maintains the master list of directories to submit to. |
 | Submission Preparation | Builds copy-paste ready submission packets for each directory. |
 | Open Source Funnel | Decides which components are safe to open source. |
-| Comparison | Generates and updates "X vs Vynix" comparison pages. |
-| Knowledge Base | Turns issues and fixes into sanitized help articles. |
+| Comparison | Generates and updates "X vs Vynix" comparison pages as full SEO HTML. |
+| Knowledge Base | Turns issues and fixes into sanitized HTML help articles. |
 | Internal Linking | Suggests links, clusters and hub pages across the content. |
+| Site Builder | Assembles index pages, sitemap.xml and robots.txt into a deployable static site. |
 
 The orchestrator runs the agents in priority order, refreshes the dashboard, and
 writes a progress report.
+
+## The generated site
+
+The blog, comparison and knowledge base agents render complete, search-optimised
+HTML pages into `content/site`. The site builder adds index pages, a sitemap and
+a robots file. The result is a self-contained static site you can deploy under
+vynix.in so the pages live at `/blog`, `/compare` and `/kb`.
+
+Each page is built for real-world SEO, not thin auto-generated filler:
+
+- Unique, substantial content written with gpt-5.5 (Azure AI Foundry).
+- Real Vynix product images and clips, not stock or placeholders.
+- Correct title, meta description, canonical, Open Graph and Twitter tags.
+- Structured data: Article, FAQ, Breadcrumb, Organization, SoftwareApplication
+  and Video, so pages are eligible for rich results.
+- A generated Open Graph card per page.
+- Internal links between related posts and comparisons.
+- Fast, mobile-first HTML with inline critical CSS and no external fonts.
+
+Preview the whole site from the dashboard with the "View site" link, or open
+`http://127.0.0.1:4310/site/` directly.
+
+## Turning on AI
+
+The agents write with Azure AI Foundry (gpt-5.5) when the `AZURE_OPENAI_*` keys
+are present, and fall back to templates when they are not. The config loads keys
+from `growth/.env` first, then from the Vynix `backend/.env`, so the same keys
+power both. The dashboard shows whether AI is connected.
 
 ## What it will not do
 

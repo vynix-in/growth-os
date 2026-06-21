@@ -28,6 +28,15 @@
       "enabled": true
     },
     {
+      "id": "blog",
+      "name": "Blog Agent",
+      "module": "agents/blog-agent.js",
+      "phase": 4,
+      "description": "Writes in-depth, original blog articles and renders them as full SEO HTML pages with images, clips, structured data and internal links.",
+      "schedule": "daily",
+      "enabled": true
+    },
+    {
       "id": "directory-discovery",
       "name": "Directory Discovery Agent",
       "module": "agents/directory-discovery-agent.js",
@@ -79,6 +88,15 @@
       "phase": 10,
       "description": "Audits all generated content and suggests internal links, topic clusters and hub pages.",
       "schedule": "weekly",
+      "enabled": true
+    },
+    {
+      "id": "site-builder",
+      "name": "Site Builder Agent",
+      "module": "agents/site-builder-agent.js",
+      "phase": 10,
+      "description": "Assembles index pages, sitemap.xml and robots.txt into a deployable static site under content/site.",
+      "schedule": "daily",
       "enabled": true
     }
   ]

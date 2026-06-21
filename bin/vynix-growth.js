@@ -46,11 +46,13 @@ async function main() {
         'directory-discovery',
         'github-seo',
         'comparison',
+        'blog',
         'changelog',
         'knowledgebase',
         'submission',
         'opensource-funnel',
         'internal-linking',
+        'site-builder',
         'dashboard',
       ];
       for (const id of order) {

@@ -47,11 +47,11 @@ async function load() {
   const t = s.totals;
   $('stats').innerHTML = [
     statCard(t.repositories, 'Repositories'),
+    statCard(t.blog_posts || 0, 'Blog posts'),
     statCard(t.comparison_pages, 'Comparison pages'),
     statCard(t.directories, 'Directories'),
     statCard(t.submissions, 'Submission packets'),
     statCard(t.knowledge_base_articles, 'KB articles'),
-    statCard(t.content_assets, 'Content assets'),
     statCard(t.open_source_candidates, 'Open-source'),
     statCard(s.queue.awaiting_approval, 'Awaiting approval'),
   ].join('');

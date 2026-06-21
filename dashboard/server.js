@@ -13,12 +13,18 @@ import { logger } from '../lib/logger.js';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const log = logger('dashboard-server');
 const PUBLIC = path.join(__dirname, 'public');
+const SITE = path.join(__dirname, '..', 'content', 'site');
 
 const MIME = {
   '.html': 'text/html; charset=utf-8',
   '.css': 'text/css; charset=utf-8',
   '.js': 'text/javascript; charset=utf-8',
   '.json': 'application/json; charset=utf-8',
+  '.png': 'image/png',
+  '.svg': 'image/svg+xml',
+  '.xml': 'application/xml; charset=utf-8',
+  '.txt': 'text/plain; charset=utf-8',
+  '.mp4': 'video/mp4',
 };
 
 function sendJson(res, status, data) {
@@ -80,6 +86,22 @@ export function startDashboard(opts = {}) {
       queue.reject(body.id, body.reason || '');
       log.info('task rejected', { id: body.id });
       return sendJson(res, 200, { ok: true });
+    }
+
+    // Live preview of the generated static site (blog, compare, kb).
+    if (route === '/site' || route === '/site/') {
+      return serveStatic(res, path.join(SITE, 'index.html'));
+    }
+    if (route.startsWith('/site/')) {
+      let rel = route.slice('/site/'.length);
+      let target = path.join(SITE, rel);
+      // Directory URLs resolve to their index.html.
+      if (fs.existsSync(target) && fs.statSync(target).isDirectory()) {
+        target = path.join(target, 'index.html');
+      } else if (!path.extname(target)) {
+        target = path.join(SITE, rel.replace(/\/$/, ''), 'index.html');
+      }
+      return serveStatic(res, target);
     }
 
     // Static

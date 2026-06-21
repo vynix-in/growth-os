@@ -45,6 +45,7 @@ export function buildSnapshot() {
     totals: {
       repositories: repos.length,
       comparison_pages: comparisons.length,
+      blog_posts: content.filter((c) => c.kind === 'blog').length,
       directories: directories.length,
       submissions: submissions.length,
       knowledge_base_articles: knowledgebase.length,
