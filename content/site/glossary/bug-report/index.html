@@ -170,7 +170,49 @@ td.yes{color:var(--green);font-weight:600}
   <span class="tag">Glossary</span>
   <h1>Bug report</h1>
   <p class="lead">A bug report is a structured description of a software defect, including what went wrong, where it happened, and how to reproduce it. Its purpose is to give developers enough context to diagnose, prioritize, and fix the issue without unnecessary back-and-forth.</p>
-  <figure class="hero"><img src="https://vynix.in/marketing/p-point.png" alt="Pointing at an element on a live page with Vynix" loading="lazy" width="1080" height="1350" /><figcaption>Pointing at an element on a live page with Vynix</figcaption></figure>
+  <figure class="ill-hero"><svg class="vx-ill" viewBox="0 0 640 360" role="img" aria-label="Clicking an element and leaving a note with Vynix" preserveAspectRatio="xMidYMid meet" style="width:100%;height:auto;aspect-ratio:16 / 9;display:block">
+  <defs>
+    <linearGradient id="vxcap-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6fdfa"/><stop offset="1" stop-color="#ecfdf5"/>
+    </linearGradient>
+    <linearGradient id="vxcap-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#008448"/><stop offset="1" stop-color="#15c47d"/>
+    </linearGradient>
+    <filter id="vxcap-s" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+  <rect x="1" y="1" width="638" height="358" rx="22" fill="url(#vxcap-bg)" stroke="#d1fae5"/>
+  <style>
+    .vxcap-pulse{transform-box:fill-box;transform-origin:center;animation:vxcap-pulse 2.6s ease-in-out infinite}
+    @keyframes vxcap-pulse{0%,100%{opacity:.55;transform:scale(.92)}50%{opacity:1;transform:scale(1.06)}}
+    .vxcap-dash{stroke-dasharray:8 10;animation:vxcap-dash 1.4s linear infinite}
+    @keyframes vxcap-dash{to{stroke-dashoffset:-36}}
+    .vxcap-float{animation:vxcap-float 4s ease-in-out infinite}
+    @keyframes vxcap-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    .vxcap-in{opacity:0;animation:vxcap-in 6s ease-in-out infinite}
+    @keyframes vxcap-in{0%,8%{opacity:0;transform:translateY(8px)}18%,72%{opacity:1;transform:translateY(0)}88%,100%{opacity:0}}
+  </style>
+  <rect x="48" y="56" width="544" height="248" rx="14" fill="#ffffff" stroke="#e2e8f0" filter="url(#vxcap-s)"/>
+     <rect x="48" y="56" width="544" height="34" rx="14" fill="#f1f5f9"/>
+     <circle cx="70" cy="73" r="5" fill="#f87171"/><circle cx="88" cy="73" r="5" fill="#fbbf24"/><circle cx="106" cy="73" r="5" fill="#34d399"/>
+     <rect x="78" y="120" width="220" height="14" rx="7" fill="#e2e8f0"/>
+     <rect x="78" y="148" width="320" height="14" rx="7" fill="#eef2f7"/>
+     <rect x="78" y="200" width="150" height="40" rx="10" fill="url(#vxcap-g)"/>
+     <text x="153" y="225" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#fff">Buy now</text>
+     <rect x="76" y="198" width="154" height="44" rx="12" fill="none" stroke="#008448" stroke-width="2.5" class="vxcap-pulse"/>
+     <g class="vxcap-in">
+       <rect x="300" y="190" width="252" height="86" rx="12" fill="#052e1b" filter="url(#vxcap-s)"/>
+       <circle cx="320" cy="210" r="7" fill="#15c47d"/>
+       <rect x="336" y="204" width="120" height="9" rx="4" fill="#34d399"/>
+       <rect x="312" y="228" width="220" height="8" rx="4" fill="#1e5b43"/>
+       <rect x="312" y="246" width="180" height="8" rx="4" fill="#1e5b43"/>
+     </g>
+     <g>
+       <path d="M150 210 q -2 -34 22 -40" fill="none" stroke="#008448" stroke-width="2" stroke-dasharray="4 6"/>
+       <path class="vxcap-float" d="M470 120 l 14 26 -10 -2 -2 12 z" fill="#0f172a"/>
+     </g>
+</svg></figure><figure class="hero"><img src="https://vynix.in/marketing/p-point.png" alt="Pointing at an element on a live page with Vynix" loading="lazy" width="1080" height="1350" /><figcaption>Pointing at an element on a live page with Vynix</figcaption></figure>
   <section><h2>What a bug report means</h2><p>A bug report turns an observed problem into actionable engineering work. Instead of saying "the page is broken," a useful report explains the affected feature, the exact behavior seen, the behavior expected, the environment, and any evidence such as screenshots, logs, network errors, or console output.</p><p>In developer workflows, a bug report often becomes an issue in a tracker such as GitHub, Jira, Linear, or a support system. The report should identify the scope of the problem: who is affected, which browser or device was used, whether the issue is repeatable, and whether it blocks a critical path such as signup, checkout, authentication, or deployment.</p></section>
 <section><h2>Why bug reports matter</h2><p>A clear bug report saves engineering time. Developers usually need to reproduce a problem before they can confidently fix it. If the report includes steps to reproduce, observed and expected results, relevant data, and technical context, the team can move directly into debugging instead of interviewing the reporter.</p><p>Good reports also improve prioritization. A bug that affects all users in production is different from a visual glitch in an internal admin screen. Severity, frequency, user impact, and business impact help product managers and engineers decide whether to patch immediately, schedule the fix, or group it with related work.</p><p>Bug reports are also historical records. When a similar issue appears later, prior reports can reveal patterns, regressions, fragile components, or recurring integration failures. This makes them useful beyond the single fix.</p></section>
 <section><h2>Common mistakes and better examples</h2><p>A common mistake is reporting only the symptom: "Login does not work." That leaves too many unanswered questions. A stronger report says: "On Chrome 125 on macOS, clicking Log in with Google redirects back to /login with no error message. Expected: user reaches the dashboard. Reproduces in production for user@example.com. Console shows a 401 from /api/auth/callback."</p><p>Another mistake is mixing several unrelated problems into one report. If a modal is misaligned, an API request fails, and copy is outdated, those should usually be separate reports unless they share the same root cause. Separate reports make ownership, triage, testing, and release tracking easier.</p><p>Reporters should avoid guessing too strongly unless they label it as a hypothesis. "The auth token refresh might be failing because /api/session returns 401" is helpful. "OAuth is broken" may be misleading if the actual issue is a cookie configuration, redirect URI mismatch, or frontend state bug.</p></section>

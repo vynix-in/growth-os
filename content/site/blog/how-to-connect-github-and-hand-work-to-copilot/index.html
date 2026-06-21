@@ -209,7 +209,49 @@ td.yes{color:var(--green);font-weight:600}
     <span>6 min read</span>
   </div>
   <p class="lead">GitHub issues are only useful when they contain enough context for someone to act. Vynix helps you capture that context from the live website, then turn it into a GitHub issue or a ready-to-build prompt for Copilot and other coding agents.</p>
-  <figure class="hero"><img src="https://vynix.in/marketing/p-github.png" alt="Creating a GitHub issue from a Vynix note" width="1080" height="1350" /><figcaption>Creating a GitHub issue from a Vynix note</figcaption></figure>
+  <figure class="ill-hero"><svg class="vx-ill" viewBox="0 0 640 360" role="img" aria-label="Clicking an element and leaving a note with Vynix" preserveAspectRatio="xMidYMid meet" style="width:100%;height:auto;aspect-ratio:16 / 9;display:block">
+  <defs>
+    <linearGradient id="vxcap-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6fdfa"/><stop offset="1" stop-color="#ecfdf5"/>
+    </linearGradient>
+    <linearGradient id="vxcap-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#008448"/><stop offset="1" stop-color="#15c47d"/>
+    </linearGradient>
+    <filter id="vxcap-s" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+  <rect x="1" y="1" width="638" height="358" rx="22" fill="url(#vxcap-bg)" stroke="#d1fae5"/>
+  <style>
+    .vxcap-pulse{transform-box:fill-box;transform-origin:center;animation:vxcap-pulse 2.6s ease-in-out infinite}
+    @keyframes vxcap-pulse{0%,100%{opacity:.55;transform:scale(.92)}50%{opacity:1;transform:scale(1.06)}}
+    .vxcap-dash{stroke-dasharray:8 10;animation:vxcap-dash 1.4s linear infinite}
+    @keyframes vxcap-dash{to{stroke-dashoffset:-36}}
+    .vxcap-float{animation:vxcap-float 4s ease-in-out infinite}
+    @keyframes vxcap-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    .vxcap-in{opacity:0;animation:vxcap-in 6s ease-in-out infinite}
+    @keyframes vxcap-in{0%,8%{opacity:0;transform:translateY(8px)}18%,72%{opacity:1;transform:translateY(0)}88%,100%{opacity:0}}
+  </style>
+  <rect x="48" y="56" width="544" height="248" rx="14" fill="#ffffff" stroke="#e2e8f0" filter="url(#vxcap-s)"/>
+     <rect x="48" y="56" width="544" height="34" rx="14" fill="#f1f5f9"/>
+     <circle cx="70" cy="73" r="5" fill="#f87171"/><circle cx="88" cy="73" r="5" fill="#fbbf24"/><circle cx="106" cy="73" r="5" fill="#34d399"/>
+     <rect x="78" y="120" width="220" height="14" rx="7" fill="#e2e8f0"/>
+     <rect x="78" y="148" width="320" height="14" rx="7" fill="#eef2f7"/>
+     <rect x="78" y="200" width="150" height="40" rx="10" fill="url(#vxcap-g)"/>
+     <text x="153" y="225" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#fff">Buy now</text>
+     <rect x="76" y="198" width="154" height="44" rx="12" fill="none" stroke="#008448" stroke-width="2.5" class="vxcap-pulse"/>
+     <g class="vxcap-in">
+       <rect x="300" y="190" width="252" height="86" rx="12" fill="#052e1b" filter="url(#vxcap-s)"/>
+       <circle cx="320" cy="210" r="7" fill="#15c47d"/>
+       <rect x="336" y="204" width="120" height="9" rx="4" fill="#34d399"/>
+       <rect x="312" y="228" width="220" height="8" rx="4" fill="#1e5b43"/>
+       <rect x="312" y="246" width="180" height="8" rx="4" fill="#1e5b43"/>
+     </g>
+     <g>
+       <path d="M150 210 q -2 -34 22 -40" fill="none" stroke="#008448" stroke-width="2" stroke-dasharray="4 6"/>
+       <path class="vxcap-float" d="M470 120 l 14 26 -10 -2 -2 12 z" fill="#0f172a"/>
+     </g>
+</svg></figure><figure class="hero"><img src="https://vynix.in/marketing/p-github.png" alt="Creating a GitHub issue from a Vynix note" width="1080" height="1350" /><figcaption>Creating a GitHub issue from a Vynix note</figcaption></figure>
   <div class="toc"><strong>On this page</strong><ol><li><a href="#s1-why-github-context-matters-bef">Why GitHub context matters before Copilot starts</a></li><li><a href="#s2-connect-vynix-to-the-right-git">Connect Vynix to the right GitHub repository</a></li><li><a href="#s3-capture-the-bug-from-the-page-">Capture the bug from the page, not from memory</a></li><li><a href="#s4-turn-the-annotation-into-a-git">Turn the annotation into a GitHub issue Copilot can use</a></li><li><a href="#s5-assign-the-issue-to-copilot-or">Assign the issue to Copilot or copy a build prompt</a></li><li><a href="#s6-review-the-result-and-close-th">Review the result and close the loop</a></li></ol></div>
   <section id="s1-why-github-context-matters-bef"><h2>Why GitHub context matters before Copilot starts</h2><p>Copilot can work from a GitHub issue, but the quality of the result depends on the quality of the issue. A vague report like "checkout button is broken" forces the agent, and the human reviewer, to guess which page, which button, which browser state, and which code path are involved.</p><p>A better issue starts from the actual website state. If the problem is a misaligned form label, a failed API call, or a React error after a click, that context should travel with the task. Vynix is built for that handoff. You click on the broken part of the site, and Vynix captures the selected element, a screenshot, console details, network context, and an AI diagnosis of the likely root cause.</p><p>That does not replace review or engineering judgment. It gives Copilot and your team a cleaner starting point, so the first attempt is less likely to chase the wrong file or fix a symptom instead of the cause.</p></section>
 <section id="s2-connect-vynix-to-the-right-git"><h2>Connect Vynix to the right GitHub repository</h2><p>Start by connecting Vynix to GitHub and choosing the repository where the fix should happen. The exact repository matters. If your marketing site, app frontend, and API live in separate repos, sending every issue to one default project will create extra triage work.</p><p>Use the same rule you would use when assigning a human developer. If the bug appears in the browser but the network trace shows a 500 response from an API endpoint, the issue may belong in the backend repo. If the API response is correct but the page renders it incorrectly, send it to the frontend repo.</p><p>Before you hand work to Copilot, check a few setup details:</p><ul><li>Confirm the GitHub account or organization has access to the target repository.</li><li>Choose the repository that contains the code most likely to need the change.</li><li>Make sure issue creation is enabled for that repository.</li><li>If you plan to assign work to Copilot, confirm that your GitHub plan and repository settings support Copilot coding agent assignment.</li><li>Agree on labels such as bug, frontend, backend, design, regression, or needs-review, so generated issues fit your normal workflow.</li></ul><figure><img src="https://vynix.in/marketing/p-github.png" alt="Creating a GitHub issue from a Vynix note" loading="lazy" width="1080" height="1350" /><figcaption>Creating a GitHub issue from a Vynix note</figcaption></figure></section>

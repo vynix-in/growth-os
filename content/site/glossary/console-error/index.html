@@ -170,7 +170,49 @@ td.yes{color:var(--green);font-weight:600}
   <span class="tag">Glossary</span>
   <h1>Console error</h1>
   <p class="lead">A console error is a message printed in the browser developer console when JavaScript, resource loading, security rules, or browser APIs fail in a way the browser can detect. It usually includes an error type, message, source file, line number, stack trace, or related context that helps identify the cause of a bug.</p>
-  <figure class="hero"><img src="https://vynix.in/marketing/p-context.png" alt="Developer context captured with a Vynix report" loading="lazy" width="1080" height="1350" /><figcaption>Developer context captured with a Vynix report</figcaption></figure>
+  <figure class="ill-hero"><svg class="vx-ill" viewBox="0 0 640 360" role="img" aria-label="Clicking an element and leaving a note with Vynix" preserveAspectRatio="xMidYMid meet" style="width:100%;height:auto;aspect-ratio:16 / 9;display:block">
+  <defs>
+    <linearGradient id="vxcap-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6fdfa"/><stop offset="1" stop-color="#ecfdf5"/>
+    </linearGradient>
+    <linearGradient id="vxcap-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#008448"/><stop offset="1" stop-color="#15c47d"/>
+    </linearGradient>
+    <filter id="vxcap-s" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+  <rect x="1" y="1" width="638" height="358" rx="22" fill="url(#vxcap-bg)" stroke="#d1fae5"/>
+  <style>
+    .vxcap-pulse{transform-box:fill-box;transform-origin:center;animation:vxcap-pulse 2.6s ease-in-out infinite}
+    @keyframes vxcap-pulse{0%,100%{opacity:.55;transform:scale(.92)}50%{opacity:1;transform:scale(1.06)}}
+    .vxcap-dash{stroke-dasharray:8 10;animation:vxcap-dash 1.4s linear infinite}
+    @keyframes vxcap-dash{to{stroke-dashoffset:-36}}
+    .vxcap-float{animation:vxcap-float 4s ease-in-out infinite}
+    @keyframes vxcap-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    .vxcap-in{opacity:0;animation:vxcap-in 6s ease-in-out infinite}
+    @keyframes vxcap-in{0%,8%{opacity:0;transform:translateY(8px)}18%,72%{opacity:1;transform:translateY(0)}88%,100%{opacity:0}}
+  </style>
+  <rect x="48" y="56" width="544" height="248" rx="14" fill="#ffffff" stroke="#e2e8f0" filter="url(#vxcap-s)"/>
+     <rect x="48" y="56" width="544" height="34" rx="14" fill="#f1f5f9"/>
+     <circle cx="70" cy="73" r="5" fill="#f87171"/><circle cx="88" cy="73" r="5" fill="#fbbf24"/><circle cx="106" cy="73" r="5" fill="#34d399"/>
+     <rect x="78" y="120" width="220" height="14" rx="7" fill="#e2e8f0"/>
+     <rect x="78" y="148" width="320" height="14" rx="7" fill="#eef2f7"/>
+     <rect x="78" y="200" width="150" height="40" rx="10" fill="url(#vxcap-g)"/>
+     <text x="153" y="225" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#fff">Buy now</text>
+     <rect x="76" y="198" width="154" height="44" rx="12" fill="none" stroke="#008448" stroke-width="2.5" class="vxcap-pulse"/>
+     <g class="vxcap-in">
+       <rect x="300" y="190" width="252" height="86" rx="12" fill="#052e1b" filter="url(#vxcap-s)"/>
+       <circle cx="320" cy="210" r="7" fill="#15c47d"/>
+       <rect x="336" y="204" width="120" height="9" rx="4" fill="#34d399"/>
+       <rect x="312" y="228" width="220" height="8" rx="4" fill="#1e5b43"/>
+       <rect x="312" y="246" width="180" height="8" rx="4" fill="#1e5b43"/>
+     </g>
+     <g>
+       <path d="M150 210 q -2 -34 22 -40" fill="none" stroke="#008448" stroke-width="2" stroke-dasharray="4 6"/>
+       <path class="vxcap-float" d="M470 120 l 14 26 -10 -2 -2 12 z" fill="#0f172a"/>
+     </g>
+</svg></figure><figure class="hero"><img src="https://vynix.in/marketing/p-context.png" alt="Developer context captured with a Vynix report" loading="lazy" width="1080" height="1350" /><figcaption>Developer context captured with a Vynix report</figcaption></figure>
   <section><h2>What it means</h2><p>A console error is the browser saying that something went wrong while loading or running a page. Common examples include JavaScript exceptions, failed network requests, missing files, CORS violations, CSP blocks, syntax errors, unhandled promise rejections, and attempts to use an API incorrectly. These messages appear in the DevTools Console, and many can also be captured by monitoring tools or in-browser debugging workflows.</p><p>Not every console message is an error. Browsers also show logs, warnings, info messages, deprecation notices, and verbose debugging output. A true console error usually indicates that an operation failed, code stopped executing, a resource could not be used, or a browser-enforced policy blocked something. The most useful errors include a stack trace or a clickable source location that points to the code path involved.</p></section>
 <section><h2>Why it matters</h2><p>Console errors are often the fastest clue that a visible bug has a technical cause. If a button does nothing, a modal never opens, a checkout step hangs, or a dashboard renders blank, the console may show the exception that interrupted the code. Without checking the console, teams can waste time describing symptoms while missing the exact failure that caused them.</p><p>Console errors also reveal issues that users may not report clearly. A user might say, "the page is broken," while the console shows "TypeError: Cannot read properties of undefined" in a specific component after a specific API response. That difference matters because developers need reproducible, implementation-level evidence, not just a screenshot of the result.</p></section>
 <section><h2>Common examples and mistakes</h2><p>Typical console errors include "ReferenceError: x is not defined," which means code tried to use a variable that does not exist, and "TypeError: Cannot read properties of null," which often means code expected an element or object but received nothing. Network-related errors may show 404 or 500 responses, blocked scripts, mixed content, failed source maps, or CORS messages such as "Access to fetch has been blocked by CORS policy."</p><p>A common mistake is treating every console error as equally urgent. Some errors break critical user flows, while others come from extensions, third-party widgets, ad blockers, or harmless missing source maps. Another mistake is copying only the final error line and omitting the stack trace, page state, user action, browser, and network context. The error message alone may not be enough to diagnose the root cause.</p></section>

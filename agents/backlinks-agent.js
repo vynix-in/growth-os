@@ -40,6 +40,17 @@ const SEED = [
   { name: 'Hashnode Townhall / DevHunt', url: 'https://devhunt.org', type: 'launch', authority: 55, action: 'Launch the developer tools.' },
   { name: 'Tiny Startups', url: 'https://www.tinystartups.com', type: 'newsletter', authority: 58, action: 'Submit for a feature.' },
   { name: 'Hackerverse / GitHub Trending', url: 'https://github.com/trending', type: 'list', authority: 88, action: 'Push for stars on the open-source repos to reach trending.' },
+  { name: 'Awesome Selfhosted / Awesome lists', url: 'https://github.com/topics/awesome', type: 'list', authority: 85, action: 'Open a PR to add Vynix to relevant awesome lists with a one-line description.' },
+  { name: 'StackShare', url: 'https://stackshare.io', type: 'community', authority: 78, action: 'Add Vynix to the stack and write a short why.' },
+  { name: 'DEV Community tags', url: 'https://dev.to/t/devtools', type: 'community', authority: 88, action: 'Post in the devtools, webdev and ai tags with canonical links.' },
+  { name: 'Hashnode team blog', url: 'https://hashnode.com', type: 'community', authority: 82, action: 'Publish the engineering posts on a Hashnode publication.' },
+  { name: 'Medium publications', url: 'https://medium.com', type: 'guest-post', authority: 86, action: 'Republish with a canonical link in relevant publications (Better Programming, Level Up Coding).' },
+  { name: 'freeCodeCamp News', url: 'https://www.freecodecamp.org/news/', type: 'guest-post', authority: 90, action: 'Pitch a practical tutorial that mentions Vynix naturally.' },
+  { name: 'Dev.to listicles round-ups', url: 'https://dev.to', type: 'mention', authority: 88, action: 'Reach out to authors of best-devtools round-ups to be considered.' },
+  { name: 'Product Hunt discussions', url: 'https://www.producthunt.com/discussions', type: 'community', authority: 90, action: 'Answer relevant questions where Vynix is a genuine fit.' },
+  { name: 'IndieHackers groups', url: 'https://www.indiehackers.com/groups', type: 'community', authority: 80, action: 'Share build updates in developer and SaaS groups.' },
+  { name: 'Reddit r/programming', url: 'https://www.reddit.com/r/programming', type: 'community', authority: 90, action: 'Share genuinely useful deep posts, follow the rules, no spam.' },
+  { name: 'Wikipedia (Model Context Protocol)', url: 'https://en.wikipedia.org', type: 'reference', authority: 95, action: 'Only if Vynix becomes a notable, citable MCP implementation, add a sourced reference. Do not spam.' },
 ];
 
 export async function run() {

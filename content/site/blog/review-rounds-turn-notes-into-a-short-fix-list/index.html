@@ -196,7 +196,49 @@ td.yes{color:var(--green);font-weight:600}
     <span>6 min read</span>
   </div>
   <p class="lead">Website review rounds often start with good intent and end with a messy document full of screenshots, vague comments, and duplicate notes. A short fix list is better: each item points to the exact problem, carries the context a developer needs, and is ready to build.</p>
-  <figure class="hero"><img src="https://vynix.in/marketing/v2-p-loop.png" alt="Closing the feedback-to-fix loop with Vynix" width="1080" height="1350" /><figcaption>Closing the feedback-to-fix loop with Vynix</figcaption></figure>
+  <figure class="ill-hero"><svg class="vx-ill" viewBox="0 0 640 360" role="img" aria-label="Clicking an element and leaving a note with Vynix" preserveAspectRatio="xMidYMid meet" style="width:100%;height:auto;aspect-ratio:16 / 9;display:block">
+  <defs>
+    <linearGradient id="vxcap-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6fdfa"/><stop offset="1" stop-color="#ecfdf5"/>
+    </linearGradient>
+    <linearGradient id="vxcap-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#008448"/><stop offset="1" stop-color="#15c47d"/>
+    </linearGradient>
+    <filter id="vxcap-s" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+  <rect x="1" y="1" width="638" height="358" rx="22" fill="url(#vxcap-bg)" stroke="#d1fae5"/>
+  <style>
+    .vxcap-pulse{transform-box:fill-box;transform-origin:center;animation:vxcap-pulse 2.6s ease-in-out infinite}
+    @keyframes vxcap-pulse{0%,100%{opacity:.55;transform:scale(.92)}50%{opacity:1;transform:scale(1.06)}}
+    .vxcap-dash{stroke-dasharray:8 10;animation:vxcap-dash 1.4s linear infinite}
+    @keyframes vxcap-dash{to{stroke-dashoffset:-36}}
+    .vxcap-float{animation:vxcap-float 4s ease-in-out infinite}
+    @keyframes vxcap-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    .vxcap-in{opacity:0;animation:vxcap-in 6s ease-in-out infinite}
+    @keyframes vxcap-in{0%,8%{opacity:0;transform:translateY(8px)}18%,72%{opacity:1;transform:translateY(0)}88%,100%{opacity:0}}
+  </style>
+  <rect x="48" y="56" width="544" height="248" rx="14" fill="#ffffff" stroke="#e2e8f0" filter="url(#vxcap-s)"/>
+     <rect x="48" y="56" width="544" height="34" rx="14" fill="#f1f5f9"/>
+     <circle cx="70" cy="73" r="5" fill="#f87171"/><circle cx="88" cy="73" r="5" fill="#fbbf24"/><circle cx="106" cy="73" r="5" fill="#34d399"/>
+     <rect x="78" y="120" width="220" height="14" rx="7" fill="#e2e8f0"/>
+     <rect x="78" y="148" width="320" height="14" rx="7" fill="#eef2f7"/>
+     <rect x="78" y="200" width="150" height="40" rx="10" fill="url(#vxcap-g)"/>
+     <text x="153" y="225" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#fff">Buy now</text>
+     <rect x="76" y="198" width="154" height="44" rx="12" fill="none" stroke="#008448" stroke-width="2.5" class="vxcap-pulse"/>
+     <g class="vxcap-in">
+       <rect x="300" y="190" width="252" height="86" rx="12" fill="#052e1b" filter="url(#vxcap-s)"/>
+       <circle cx="320" cy="210" r="7" fill="#15c47d"/>
+       <rect x="336" y="204" width="120" height="9" rx="4" fill="#34d399"/>
+       <rect x="312" y="228" width="220" height="8" rx="4" fill="#1e5b43"/>
+       <rect x="312" y="246" width="180" height="8" rx="4" fill="#1e5b43"/>
+     </g>
+     <g>
+       <path d="M150 210 q -2 -34 22 -40" fill="none" stroke="#008448" stroke-width="2" stroke-dasharray="4 6"/>
+       <path class="vxcap-float" d="M470 120 l 14 26 -10 -2 -2 12 z" fill="#0f172a"/>
+     </g>
+</svg></figure><figure class="hero"><img src="https://vynix.in/marketing/v2-p-loop.png" alt="Closing the feedback-to-fix loop with Vynix" width="1080" height="1350" /><figcaption>Closing the feedback-to-fix loop with Vynix</figcaption></figure>
   <div class="toc"><strong>On this page</strong><ol><li><a href="#s1-why-review-notes-get-hard-to-u">Why review notes get hard to use</a></li><li><a href="#s2-start-every-note-at-the-broken">Start every note at the broken element</a></li><li><a href="#s3-separate-observations-from-fix">Separate observations from fixes</a></li><li><a href="#s4-use-context-to-cut-reproductio">Use context to cut reproduction time</a></li><li><a href="#s5-turn-annotations-into-buildabl">Turn annotations into buildable tasks</a></li><li><a href="#s6-run-the-next-round-against-the">Run the next round against the fix list</a></li></ol></div>
   <section id="s1-why-review-notes-get-hard-to-u"><h2>Why review notes get hard to use</h2><p>Most review notes are written far away from the thing being reviewed. Someone sees a broken menu, takes a screenshot, pastes it into a document, and writes something like "nav looks weird on mobile". By the time a developer opens the note, they have to guess the page, viewport, state, browser, account type, and the exact element that looked wrong.</p><p>That guesswork adds friction to every round. A designer may report the same spacing issue in three places. A product manager may flag copy that has already changed. A developer may spend ten minutes trying to reproduce a bug before they can even decide whether it is a CSS issue, a data issue, or expected behavior.</p><p>The goal is not to collect more notes. The goal is to collect better notes, then reduce them into a small set of fixable items. A good fix list removes duplicates, groups related problems, and preserves the evidence needed to act.</p><ul><li>Vague note: "This card looks off."</li><li>Useful note: "On /pricing at 390px wide, the third plan card title wraps behind the badge."</li><li>Best note: the same description plus the selected element, screenshot, console logs, network context, and likely root cause.</li></ul></section>
 <section id="s2-start-every-note-at-the-broken"><h2>Start every note at the broken element</h2><p>A review comment should begin where the problem is visible. If the issue is a button label, the note should attach to the button. If the issue is a layout shift, it should attach to the container that moves. If the issue is a blank state, it should be captured while the blank state is on screen.</p><p>This is where Vynix changes the review flow. You drop a lightweight widget on the site, open the page you want to review, and click on what is wrong. Vynix captures the element, a screenshot, console and network context, and an AI diagnosis of the likely root cause. That means the report starts with the page itself, not a separate spreadsheet or chat thread.</p><p>Element-level capture is especially useful for visual bugs that are hard to describe. A reviewer does not need to know whether a problem comes from flexbox, a missing class, or a failed API request. They can point at the issue and leave enough context for someone else to investigate.</p><ul><li>Click the exact element, not the general page area.</li><li>Capture the state before refreshing, navigating, or dismissing a modal.</li><li>Add a short human note that says what you expected to happen.</li><li>Avoid long theories unless you have already confirmed them.</li></ul><figure><img src="https://vynix.in/marketing/v2-p-loop.png" alt="Closing the feedback-to-fix loop with Vynix" loading="lazy" width="1080" height="1350" /><figcaption>Closing the feedback-to-fix loop with Vynix</figcaption></figure></section>

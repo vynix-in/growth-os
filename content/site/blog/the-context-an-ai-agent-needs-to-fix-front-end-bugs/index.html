@@ -209,7 +209,49 @@ td.yes{color:var(--green);font-weight:600}
     <span>7 min read</span>
   </div>
   <p class="lead">AI coding agents can fix many front-end bugs, but only when the task gives them enough context to make the right change. A vague ticket like "button broken on checkout" forces the agent to guess at the DOM, state, data, and user path. Good context turns a bug report into a buildable task.</p>
-  <figure class="hero"><img src="https://vynix.in/marketing/p-context.png" alt="Developer context captured with a Vynix report" width="1080" height="1350" /><figcaption>Developer context captured with a Vynix report</figcaption></figure>
+  <figure class="ill-hero"><svg class="vx-ill" viewBox="0 0 640 360" role="img" aria-label="Clicking an element and leaving a note with Vynix" preserveAspectRatio="xMidYMid meet" style="width:100%;height:auto;aspect-ratio:16 / 9;display:block">
+  <defs>
+    <linearGradient id="vxcap-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6fdfa"/><stop offset="1" stop-color="#ecfdf5"/>
+    </linearGradient>
+    <linearGradient id="vxcap-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#008448"/><stop offset="1" stop-color="#15c47d"/>
+    </linearGradient>
+    <filter id="vxcap-s" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+  <rect x="1" y="1" width="638" height="358" rx="22" fill="url(#vxcap-bg)" stroke="#d1fae5"/>
+  <style>
+    .vxcap-pulse{transform-box:fill-box;transform-origin:center;animation:vxcap-pulse 2.6s ease-in-out infinite}
+    @keyframes vxcap-pulse{0%,100%{opacity:.55;transform:scale(.92)}50%{opacity:1;transform:scale(1.06)}}
+    .vxcap-dash{stroke-dasharray:8 10;animation:vxcap-dash 1.4s linear infinite}
+    @keyframes vxcap-dash{to{stroke-dashoffset:-36}}
+    .vxcap-float{animation:vxcap-float 4s ease-in-out infinite}
+    @keyframes vxcap-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    .vxcap-in{opacity:0;animation:vxcap-in 6s ease-in-out infinite}
+    @keyframes vxcap-in{0%,8%{opacity:0;transform:translateY(8px)}18%,72%{opacity:1;transform:translateY(0)}88%,100%{opacity:0}}
+  </style>
+  <rect x="48" y="56" width="544" height="248" rx="14" fill="#ffffff" stroke="#e2e8f0" filter="url(#vxcap-s)"/>
+     <rect x="48" y="56" width="544" height="34" rx="14" fill="#f1f5f9"/>
+     <circle cx="70" cy="73" r="5" fill="#f87171"/><circle cx="88" cy="73" r="5" fill="#fbbf24"/><circle cx="106" cy="73" r="5" fill="#34d399"/>
+     <rect x="78" y="120" width="220" height="14" rx="7" fill="#e2e8f0"/>
+     <rect x="78" y="148" width="320" height="14" rx="7" fill="#eef2f7"/>
+     <rect x="78" y="200" width="150" height="40" rx="10" fill="url(#vxcap-g)"/>
+     <text x="153" y="225" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#fff">Buy now</text>
+     <rect x="76" y="198" width="154" height="44" rx="12" fill="none" stroke="#008448" stroke-width="2.5" class="vxcap-pulse"/>
+     <g class="vxcap-in">
+       <rect x="300" y="190" width="252" height="86" rx="12" fill="#052e1b" filter="url(#vxcap-s)"/>
+       <circle cx="320" cy="210" r="7" fill="#15c47d"/>
+       <rect x="336" y="204" width="120" height="9" rx="4" fill="#34d399"/>
+       <rect x="312" y="228" width="220" height="8" rx="4" fill="#1e5b43"/>
+       <rect x="312" y="246" width="180" height="8" rx="4" fill="#1e5b43"/>
+     </g>
+     <g>
+       <path d="M150 210 q -2 -34 22 -40" fill="none" stroke="#008448" stroke-width="2" stroke-dasharray="4 6"/>
+       <path class="vxcap-float" d="M470 120 l 14 26 -10 -2 -2 12 z" fill="#0f172a"/>
+     </g>
+</svg></figure><figure class="hero"><img src="https://vynix.in/marketing/p-context.png" alt="Developer context captured with a Vynix report" width="1080" height="1350" /><figcaption>Developer context captured with a Vynix report</figcaption></figure>
   <div class="toc"><strong>On this page</strong><ol><li><a href="#s1-why-vague-front-end-tickets-fa">Why vague front-end tickets fail</a></li><li><a href="#s2-start-with-the-exact-element-t">Start with the exact element that is wrong</a></li><li><a href="#s3-add-the-screenshot-but-do-not-">Add the screenshot, but do not stop there</a></li><li><a href="#s4-console-and-network-data-often">Console and network data often reveal the cause</a></li><li><a href="#s5-an-ai-diagnosis-should-guide-n">An AI diagnosis should guide, not replace, the task</a></li><li><a href="#s6-turn-the-report-into-an-agent-">Turn the report into an agent-ready prompt</a></li><li><a href="#s7-use-context-to-reduce-wrong-fi">Use context to reduce wrong fixes</a></li></ol></div>
   <section id="s1-why-vague-front-end-tickets-fa"><h2>Why vague front-end tickets fail</h2><p>Front-end bugs are often visible before they are understandable. A designer sees text wrapping badly. A support teammate sees a modal that will not close. A product manager sees a price field that shows the wrong value after a coupon is applied. Each report is true, but none of them tells a developer or an AI agent where to look.</p><p>An AI agent needs more than a sentence because a browser screen is the result of many layers working at once. The rendered element may come from a React component, a CSS rule, a feature flag, a CMS field, a failed API response, or browser state left over from a previous interaction. If the agent only receives the symptom, it may edit the wrong file, patch the wrong component, or add defensive code that hides the real issue.</p><p>The goal is not to write longer bug reports. The goal is to capture the right evidence at the moment the bug is visible. That means anchoring the report to the element on the page, the visual state, the console output, the network activity, and the steps that produced the issue. Vynix is built around that workflow: drop a lightweight widget on a site, click what is wrong, and capture the browser context that makes the task usable.</p></section>
 <section id="s2-start-with-the-exact-element-t"><h2>Start with the exact element that is wrong</h2><p>The most useful front-end bug report points to a specific element, not just a page. "The submit button on /billing is disabled after entering a valid card" is much better than "billing is broken". Even better is a report tied to the actual button element in the DOM, because the agent can reason from the element back to the component, props, class names, and nearby state.</p><p>This matters because many pages repeat similar UI patterns. A settings page may have five save buttons. A product card may render dozens of price labels. A header may have desktop and mobile versions in the DOM at the same time. When the agent knows which element was clicked during reporting, it can avoid fixing a similar-looking component that is not the one users are complaining about.</p><p>Vynix uses the clicked element as the starting point for the annotation. That element capture gives the report a concrete anchor instead of a loose description.</p><ul><li>Useful: "The disabled button in the invite-user modal does not enable after entering a valid email."</li><li>Less useful: "Invites are broken."</li><li>Useful: "The price text inside the second plan card overlaps the billing-period label at 375px width."</li><li>Less useful: "Pricing page looks bad on mobile."</li></ul><figure><img src="https://vynix.in/marketing/p-context.png" alt="Developer context captured with a Vynix report" loading="lazy" width="1080" height="1350" /><figcaption>Developer context captured with a Vynix report</figcaption></figure></section>

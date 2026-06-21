@@ -196,7 +196,49 @@ td.yes{color:var(--green);font-weight:600}
     <span>7 min read</span>
   </div>
   <p class="lead">AI coding agents are only as useful as the context you give them. Vynix helps teams capture the exact browser evidence behind a website issue, then turn that context into a prompt or GitHub issue an agent can act on.</p>
-  <figure class="hero"><img src="https://vynix.in/marketing/p-context.png" alt="Developer context captured with a Vynix report" width="1080" height="1350" /><figcaption>Developer context captured with a Vynix report</figcaption></figure>
+  <figure class="ill-hero"><svg class="vx-ill" viewBox="0 0 640 360" role="img" aria-label="Clicking an element and leaving a note with Vynix" preserveAspectRatio="xMidYMid meet" style="width:100%;height:auto;aspect-ratio:16 / 9;display:block">
+  <defs>
+    <linearGradient id="vxcap-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6fdfa"/><stop offset="1" stop-color="#ecfdf5"/>
+    </linearGradient>
+    <linearGradient id="vxcap-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#008448"/><stop offset="1" stop-color="#15c47d"/>
+    </linearGradient>
+    <filter id="vxcap-s" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+  <rect x="1" y="1" width="638" height="358" rx="22" fill="url(#vxcap-bg)" stroke="#d1fae5"/>
+  <style>
+    .vxcap-pulse{transform-box:fill-box;transform-origin:center;animation:vxcap-pulse 2.6s ease-in-out infinite}
+    @keyframes vxcap-pulse{0%,100%{opacity:.55;transform:scale(.92)}50%{opacity:1;transform:scale(1.06)}}
+    .vxcap-dash{stroke-dasharray:8 10;animation:vxcap-dash 1.4s linear infinite}
+    @keyframes vxcap-dash{to{stroke-dashoffset:-36}}
+    .vxcap-float{animation:vxcap-float 4s ease-in-out infinite}
+    @keyframes vxcap-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    .vxcap-in{opacity:0;animation:vxcap-in 6s ease-in-out infinite}
+    @keyframes vxcap-in{0%,8%{opacity:0;transform:translateY(8px)}18%,72%{opacity:1;transform:translateY(0)}88%,100%{opacity:0}}
+  </style>
+  <rect x="48" y="56" width="544" height="248" rx="14" fill="#ffffff" stroke="#e2e8f0" filter="url(#vxcap-s)"/>
+     <rect x="48" y="56" width="544" height="34" rx="14" fill="#f1f5f9"/>
+     <circle cx="70" cy="73" r="5" fill="#f87171"/><circle cx="88" cy="73" r="5" fill="#fbbf24"/><circle cx="106" cy="73" r="5" fill="#34d399"/>
+     <rect x="78" y="120" width="220" height="14" rx="7" fill="#e2e8f0"/>
+     <rect x="78" y="148" width="320" height="14" rx="7" fill="#eef2f7"/>
+     <rect x="78" y="200" width="150" height="40" rx="10" fill="url(#vxcap-g)"/>
+     <text x="153" y="225" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#fff">Buy now</text>
+     <rect x="76" y="198" width="154" height="44" rx="12" fill="none" stroke="#008448" stroke-width="2.5" class="vxcap-pulse"/>
+     <g class="vxcap-in">
+       <rect x="300" y="190" width="252" height="86" rx="12" fill="#052e1b" filter="url(#vxcap-s)"/>
+       <circle cx="320" cy="210" r="7" fill="#15c47d"/>
+       <rect x="336" y="204" width="120" height="9" rx="4" fill="#34d399"/>
+       <rect x="312" y="228" width="220" height="8" rx="4" fill="#1e5b43"/>
+       <rect x="312" y="246" width="180" height="8" rx="4" fill="#1e5b43"/>
+     </g>
+     <g>
+       <path d="M150 210 q -2 -34 22 -40" fill="none" stroke="#008448" stroke-width="2" stroke-dasharray="4 6"/>
+       <path class="vxcap-float" d="M470 120 l 14 26 -10 -2 -2 12 z" fill="#0f172a"/>
+     </g>
+</svg></figure><figure class="hero"><img src="https://vynix.in/marketing/p-context.png" alt="Developer context captured with a Vynix report" width="1080" height="1350" /><figcaption>Developer context captured with a Vynix report</figcaption></figure>
   <div class="toc"><strong>On this page</strong><ol><li><a href="#s1-agent-cost-is-often-a-context-">Agent cost is often a context problem</a></li><li><a href="#s2-what-agents-usually-miss-from-">What agents usually miss from a normal bug report</a></li><li><a href="#s3-vynix-captures-the-browser-evi">Vynix captures the browser evidence at the source</a></li><li><a href="#s4-shorter-prompts-work-when-the-">Shorter prompts work when the evidence is specific</a></li><li><a href="#s5-fewer-reruns-means-less-token-">Fewer reruns means less token spend and less review time</a></li><li><a href="#s6-from-browser-issue-to-build-re">From browser issue to build-ready task</a></li><li><a href="#s7-a-practical-workflow-for-lower">A practical workflow for lower-cost agent runs</a></li></ol></div>
   <section id="s1-agent-cost-is-often-a-context-"><h2>Agent cost is often a context problem</h2><p>When an AI coding agent gets a vague task, it has to guess. A ticket that says the checkout button is broken may sound simple, but it leaves out the page, the selected options, the browser state, the visible error, and the network request that failed. The agent may inspect the wrong component, edit the wrong file, or suggest a fix that only works for one path through the UI.</p><p>That guessing creates cost in two places. First, the agent burns tokens reading files, asking follow-up questions, and producing code that may not apply. Second, engineers spend time reviewing bad diffs, adding missing details, rerunning the agent, and checking whether the new attempt is any better. The money spent on the model is visible. The engineering time lost to trial and error is usually larger, even if it is harder to measure.</p><p>Vynix reduces that waste by changing the starting point. Instead of asking someone to describe a bug from memory, Vynix lets them click the broken element on the site. It captures the element, a screenshot, console and network context, page state, and an AI diagnosis of the likely root cause. That context gives the agent a narrower, clearer problem before it writes a line of code.</p></section>
 <section id="s2-what-agents-usually-miss-from-"><h2>What agents usually miss from a normal bug report</h2><p>Most bug reports were designed for humans. They contain a short title, a few notes, maybe a screenshot, and sometimes reproduction steps. A human developer can fill in gaps by asking the reporter questions, opening DevTools, and poking around the app. An agent can do some investigation too, but each extra step increases the chance it follows the wrong trail.</p><p>Website bugs are especially context-heavy. A visual issue may depend on a specific DOM node, a CSS rule, a viewport size, or a feature flag. A broken form may depend on a request payload, a 400 response, or a client-side validation error. A blank panel may be caused by an exception in the console that never appears in the UI.</p><p>A weak prompt usually misses details like these:</p><ul><li>Which exact element is wrong, not just which page has a problem</li><li>What the user saw at the moment the issue was reported</li><li>Relevant console errors or warnings</li><li>Network calls that failed, stalled, or returned unexpected data</li><li>The page state that made the issue appear</li><li>A first-pass diagnosis that points the agent toward the likely layer</li></ul><figure><img src="https://vynix.in/marketing/v2-p-files.png" alt="Likely files surfaced by the Vynix diagnosis" loading="lazy" width="1080" height="1350" /><figcaption>Likely files surfaced by the Vynix diagnosis</figcaption></figure></section>

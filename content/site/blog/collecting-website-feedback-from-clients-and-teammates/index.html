@@ -196,7 +196,49 @@ td.yes{color:var(--green);font-weight:600}
     <span>8 min read</span>
   </div>
   <p class="lead">Website feedback is easy to ask for and hard to use. A client says a button is broken, a designer points at spacing, a teammate reports a console error, and the developer still has to ask which page, which browser, what they clicked, and what happened next.</p>
-  <figure class="hero"><img src="https://vynix.in/marketing/p-viewport.png" alt="Reviewing feedback across viewports in Vynix" width="1080" height="1350" /><figcaption>Reviewing feedback across viewports in Vynix</figcaption></figure>
+  <figure class="ill-hero"><svg class="vx-ill" viewBox="0 0 640 360" role="img" aria-label="Clicking an element and leaving a note with Vynix" preserveAspectRatio="xMidYMid meet" style="width:100%;height:auto;aspect-ratio:16 / 9;display:block">
+  <defs>
+    <linearGradient id="vxcap-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6fdfa"/><stop offset="1" stop-color="#ecfdf5"/>
+    </linearGradient>
+    <linearGradient id="vxcap-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#008448"/><stop offset="1" stop-color="#15c47d"/>
+    </linearGradient>
+    <filter id="vxcap-s" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+  <rect x="1" y="1" width="638" height="358" rx="22" fill="url(#vxcap-bg)" stroke="#d1fae5"/>
+  <style>
+    .vxcap-pulse{transform-box:fill-box;transform-origin:center;animation:vxcap-pulse 2.6s ease-in-out infinite}
+    @keyframes vxcap-pulse{0%,100%{opacity:.55;transform:scale(.92)}50%{opacity:1;transform:scale(1.06)}}
+    .vxcap-dash{stroke-dasharray:8 10;animation:vxcap-dash 1.4s linear infinite}
+    @keyframes vxcap-dash{to{stroke-dashoffset:-36}}
+    .vxcap-float{animation:vxcap-float 4s ease-in-out infinite}
+    @keyframes vxcap-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    .vxcap-in{opacity:0;animation:vxcap-in 6s ease-in-out infinite}
+    @keyframes vxcap-in{0%,8%{opacity:0;transform:translateY(8px)}18%,72%{opacity:1;transform:translateY(0)}88%,100%{opacity:0}}
+  </style>
+  <rect x="48" y="56" width="544" height="248" rx="14" fill="#ffffff" stroke="#e2e8f0" filter="url(#vxcap-s)"/>
+     <rect x="48" y="56" width="544" height="34" rx="14" fill="#f1f5f9"/>
+     <circle cx="70" cy="73" r="5" fill="#f87171"/><circle cx="88" cy="73" r="5" fill="#fbbf24"/><circle cx="106" cy="73" r="5" fill="#34d399"/>
+     <rect x="78" y="120" width="220" height="14" rx="7" fill="#e2e8f0"/>
+     <rect x="78" y="148" width="320" height="14" rx="7" fill="#eef2f7"/>
+     <rect x="78" y="200" width="150" height="40" rx="10" fill="url(#vxcap-g)"/>
+     <text x="153" y="225" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#fff">Buy now</text>
+     <rect x="76" y="198" width="154" height="44" rx="12" fill="none" stroke="#008448" stroke-width="2.5" class="vxcap-pulse"/>
+     <g class="vxcap-in">
+       <rect x="300" y="190" width="252" height="86" rx="12" fill="#052e1b" filter="url(#vxcap-s)"/>
+       <circle cx="320" cy="210" r="7" fill="#15c47d"/>
+       <rect x="336" y="204" width="120" height="9" rx="4" fill="#34d399"/>
+       <rect x="312" y="228" width="220" height="8" rx="4" fill="#1e5b43"/>
+       <rect x="312" y="246" width="180" height="8" rx="4" fill="#1e5b43"/>
+     </g>
+     <g>
+       <path d="M150 210 q -2 -34 22 -40" fill="none" stroke="#008448" stroke-width="2" stroke-dasharray="4 6"/>
+       <path class="vxcap-float" d="M470 120 l 14 26 -10 -2 -2 12 z" fill="#0f172a"/>
+     </g>
+</svg></figure><figure class="hero"><img src="https://vynix.in/marketing/p-viewport.png" alt="Reviewing feedback across viewports in Vynix" width="1080" height="1350" /><figcaption>Reviewing feedback across viewports in Vynix</figcaption></figure>
   <div class="toc"><strong>On this page</strong><ol><li><a href="#s1-why-website-feedback-breaks-do">Why website feedback breaks down</a></li><li><a href="#s2-what-useful-website-feedback-s">What useful website feedback should include</a></li><li><a href="#s3-where-common-feedback-channels">Where common feedback channels fall short</a></li><li><a href="#s4-using-vynix-to-capture-feedbac">Using Vynix to capture feedback in context</a></li><li><a href="#s5-a-practical-review-workflow">A practical review workflow</a></li><li><a href="#s6-how-to-write-feedback-develope">How to write feedback developers can act on</a></li><li><a href="#s7-turning-feedback-into-buildabl">Turning feedback into buildable work</a></li></ol></div>
   <section id="s1-why-website-feedback-breaks-do"><h2>Why website feedback breaks down</h2><p>Most website feedback starts as a human description of a visual or behavioral problem. That sounds reasonable until the issue depends on screen size, login state, cached data, a feature flag, or an API request that failed only once. By the time the message reaches the developer, the useful facts are missing.</p><p>A typical report might say, "The pricing card looks wrong on mobile." That could mean the text wraps badly, the card overlaps another element, the wrong plan is highlighted, or the CSS breakpoint is not firing. The developer needs to recreate the page, guess the viewport, inspect the DOM, check the console, and maybe ask for a screenshot. Each round of clarification delays the fix.</p><p>The problem is not that clients or teammates are bad at giving feedback. The problem is that most feedback tools collect comments, not context. A good website feedback workflow should capture what the person saw, what they clicked, and what the browser knew at that moment.</p></section>
 <section id="s2-what-useful-website-feedback-s"><h2>What useful website feedback should include</h2><p>A useful report has enough detail for someone else to understand the problem without holding a meeting. It should tell the developer where the issue happened, what element was involved, what the user expected, and what technical signals were present when the issue appeared.</p><p>For visual issues, a screenshot matters. For interaction bugs, the clicked element matters. For frontend errors, the console matters. For broken data or slow loading, network context matters. None of these pieces is difficult to collect in isolation, but asking a non-technical reviewer to gather them manually is not realistic.</p><p>A strong feedback item usually includes:</p><ul><li>The exact page URL, including query parameters when they matter.</li><li>A screenshot of the state the reviewer saw, not a later recreation.</li><li>The selected element or area on the page, so the issue is not ambiguous.</li><li>Browser console messages that appeared around the same time.</li><li>Relevant network requests, especially failed API calls or slow responses.</li><li>A short human note explaining what seemed wrong or unexpected.</li><li>A clear owner or next step, so the item does not sit in a chat thread.</li></ul><figure><img src="https://vynix.in/marketing/p-viewport.png" alt="Reviewing feedback across viewports in Vynix" loading="lazy" width="1080" height="1350" /><figcaption>Reviewing feedback across viewports in Vynix</figcaption></figure></section>

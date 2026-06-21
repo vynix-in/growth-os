@@ -170,7 +170,49 @@ td.yes{color:var(--green);font-weight:600}
   <span class="tag">Glossary</span>
   <h1>Website annotation</h1>
   <p class="lead">Website annotation is the practice of attaching comments, bug reports, requests, or technical notes directly to a specific area or element on a web page. It turns visual feedback into structured context that designers, developers, QA testers, and product teams can use to understand and resolve issues faster.</p>
-  <figure class="hero"><img src="https://vynix.in/marketing/p-point.png" alt="Pointing at an element on a live page with Vynix" loading="lazy" width="1080" height="1350" /><figcaption>Pointing at an element on a live page with Vynix</figcaption></figure>
+  <figure class="ill-hero"><svg class="vx-ill" viewBox="0 0 640 360" role="img" aria-label="Clicking an element and leaving a note with Vynix" preserveAspectRatio="xMidYMid meet" style="width:100%;height:auto;aspect-ratio:16 / 9;display:block">
+  <defs>
+    <linearGradient id="vxcap-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6fdfa"/><stop offset="1" stop-color="#ecfdf5"/>
+    </linearGradient>
+    <linearGradient id="vxcap-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#008448"/><stop offset="1" stop-color="#15c47d"/>
+    </linearGradient>
+    <filter id="vxcap-s" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+  <rect x="1" y="1" width="638" height="358" rx="22" fill="url(#vxcap-bg)" stroke="#d1fae5"/>
+  <style>
+    .vxcap-pulse{transform-box:fill-box;transform-origin:center;animation:vxcap-pulse 2.6s ease-in-out infinite}
+    @keyframes vxcap-pulse{0%,100%{opacity:.55;transform:scale(.92)}50%{opacity:1;transform:scale(1.06)}}
+    .vxcap-dash{stroke-dasharray:8 10;animation:vxcap-dash 1.4s linear infinite}
+    @keyframes vxcap-dash{to{stroke-dashoffset:-36}}
+    .vxcap-float{animation:vxcap-float 4s ease-in-out infinite}
+    @keyframes vxcap-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    .vxcap-in{opacity:0;animation:vxcap-in 6s ease-in-out infinite}
+    @keyframes vxcap-in{0%,8%{opacity:0;transform:translateY(8px)}18%,72%{opacity:1;transform:translateY(0)}88%,100%{opacity:0}}
+  </style>
+  <rect x="48" y="56" width="544" height="248" rx="14" fill="#ffffff" stroke="#e2e8f0" filter="url(#vxcap-s)"/>
+     <rect x="48" y="56" width="544" height="34" rx="14" fill="#f1f5f9"/>
+     <circle cx="70" cy="73" r="5" fill="#f87171"/><circle cx="88" cy="73" r="5" fill="#fbbf24"/><circle cx="106" cy="73" r="5" fill="#34d399"/>
+     <rect x="78" y="120" width="220" height="14" rx="7" fill="#e2e8f0"/>
+     <rect x="78" y="148" width="320" height="14" rx="7" fill="#eef2f7"/>
+     <rect x="78" y="200" width="150" height="40" rx="10" fill="url(#vxcap-g)"/>
+     <text x="153" y="225" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#fff">Buy now</text>
+     <rect x="76" y="198" width="154" height="44" rx="12" fill="none" stroke="#008448" stroke-width="2.5" class="vxcap-pulse"/>
+     <g class="vxcap-in">
+       <rect x="300" y="190" width="252" height="86" rx="12" fill="#052e1b" filter="url(#vxcap-s)"/>
+       <circle cx="320" cy="210" r="7" fill="#15c47d"/>
+       <rect x="336" y="204" width="120" height="9" rx="4" fill="#34d399"/>
+       <rect x="312" y="228" width="220" height="8" rx="4" fill="#1e5b43"/>
+       <rect x="312" y="246" width="180" height="8" rx="4" fill="#1e5b43"/>
+     </g>
+     <g>
+       <path d="M150 210 q -2 -34 22 -40" fill="none" stroke="#008448" stroke-width="2" stroke-dasharray="4 6"/>
+       <path class="vxcap-float" d="M470 120 l 14 26 -10 -2 -2 12 z" fill="#0f172a"/>
+     </g>
+</svg></figure><figure class="hero"><img src="https://vynix.in/marketing/p-point.png" alt="Pointing at an element on a live page with Vynix" loading="lazy" width="1080" height="1350" /><figcaption>Pointing at an element on a live page with Vynix</figcaption></figure>
   <section><h2>What website annotation means</h2><p>Website annotation lets someone point at a real page and say, "this part is wrong" without relying only on long written descriptions or screenshots in a separate tool. An annotation can be attached to a button, form field, layout block, image, text copy, or any visible part of a site. It usually includes a comment, the page URL, browser details, viewport size, and sometimes a screenshot or recording.</p><p>For developer teams, the useful part is not just the visual marker. A good annotation preserves context around the issue: what the user clicked, what state the page was in, which component or DOM element was involved, and what happened in the browser at that moment. That makes website annotation different from generic feedback. It is feedback anchored to a specific place in the product.</p></section>
 <section><h2>Why it matters for development teams</h2><p>Most website bugs are expensive to fix when the report is ambiguous. A ticket that says "the checkout page is broken" forces a developer to ask follow-up questions, reproduce the environment, inspect the UI, and guess which part of the flow failed. An annotation can shorten that cycle by showing the exact element, page state, and user intent when the problem was found.</p><p>Website annotation is especially useful when teams ship frequently, work asynchronously, or involve non-developers in QA. Product managers, designers, support staff, and clients can report issues directly on the page without writing a technical bug report. Developers then receive visual evidence and enough surrounding detail to triage the problem. Tools such as Vynix extend this idea by capturing the selected element, a screenshot, console and network context, and an AI diagnosis, then turning that context into a ready-to-build prompt or GitHub issue.</p></section>
 <section><h2>Common examples and mistakes</h2><p>Common website annotations include pointing out misaligned spacing, incorrect copy, broken links, mobile layout problems, inaccessible contrast, unexpected form validation, missing loading states, or a button that does not respond. In content-heavy sites, annotations are often used for editorial review. In web apps, they are frequently used for bug reporting, QA sign-off, and design implementation review.</p><p>A common mistake is treating annotation as a replacement for clear issue tracking. A pin on a page still needs enough detail to be actionable: expected behavior, actual behavior, severity, steps to reproduce, and acceptance criteria when relevant. Another mistake is capturing only a screenshot. Screenshots are helpful, but they often miss runtime details such as JavaScript errors, failed API calls, feature flags, logged-in state, or device-specific behavior.</p></section>

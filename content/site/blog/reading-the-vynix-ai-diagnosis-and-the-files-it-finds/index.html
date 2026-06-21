@@ -196,7 +196,49 @@ td.yes{color:var(--green);font-weight:600}
     <span>7 min read</span>
   </div>
   <p class="lead">A good bug report should tell you what broke, where it broke, and what evidence supports that claim. Vynix helps by capturing the clicked element, screenshot, console and network context, then producing an AI diagnosis you can use as a starting point for a fix.</p>
-  <figure class="hero"><img src="https://vynix.in/marketing/v2-p-diagnose.png" alt="Vynix AI diagnosis of a captured bug" width="1080" height="1350" /><figcaption>Vynix AI diagnosis of a captured bug</figcaption></figure>
+  <figure class="ill-hero"><svg class="vx-ill" viewBox="0 0 640 360" role="img" aria-label="Clicking an element and leaving a note with Vynix" preserveAspectRatio="xMidYMid meet" style="width:100%;height:auto;aspect-ratio:16 / 9;display:block">
+  <defs>
+    <linearGradient id="vxcap-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6fdfa"/><stop offset="1" stop-color="#ecfdf5"/>
+    </linearGradient>
+    <linearGradient id="vxcap-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#008448"/><stop offset="1" stop-color="#15c47d"/>
+    </linearGradient>
+    <filter id="vxcap-s" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+  <rect x="1" y="1" width="638" height="358" rx="22" fill="url(#vxcap-bg)" stroke="#d1fae5"/>
+  <style>
+    .vxcap-pulse{transform-box:fill-box;transform-origin:center;animation:vxcap-pulse 2.6s ease-in-out infinite}
+    @keyframes vxcap-pulse{0%,100%{opacity:.55;transform:scale(.92)}50%{opacity:1;transform:scale(1.06)}}
+    .vxcap-dash{stroke-dasharray:8 10;animation:vxcap-dash 1.4s linear infinite}
+    @keyframes vxcap-dash{to{stroke-dashoffset:-36}}
+    .vxcap-float{animation:vxcap-float 4s ease-in-out infinite}
+    @keyframes vxcap-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    .vxcap-in{opacity:0;animation:vxcap-in 6s ease-in-out infinite}
+    @keyframes vxcap-in{0%,8%{opacity:0;transform:translateY(8px)}18%,72%{opacity:1;transform:translateY(0)}88%,100%{opacity:0}}
+  </style>
+  <rect x="48" y="56" width="544" height="248" rx="14" fill="#ffffff" stroke="#e2e8f0" filter="url(#vxcap-s)"/>
+     <rect x="48" y="56" width="544" height="34" rx="14" fill="#f1f5f9"/>
+     <circle cx="70" cy="73" r="5" fill="#f87171"/><circle cx="88" cy="73" r="5" fill="#fbbf24"/><circle cx="106" cy="73" r="5" fill="#34d399"/>
+     <rect x="78" y="120" width="220" height="14" rx="7" fill="#e2e8f0"/>
+     <rect x="78" y="148" width="320" height="14" rx="7" fill="#eef2f7"/>
+     <rect x="78" y="200" width="150" height="40" rx="10" fill="url(#vxcap-g)"/>
+     <text x="153" y="225" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#fff">Buy now</text>
+     <rect x="76" y="198" width="154" height="44" rx="12" fill="none" stroke="#008448" stroke-width="2.5" class="vxcap-pulse"/>
+     <g class="vxcap-in">
+       <rect x="300" y="190" width="252" height="86" rx="12" fill="#052e1b" filter="url(#vxcap-s)"/>
+       <circle cx="320" cy="210" r="7" fill="#15c47d"/>
+       <rect x="336" y="204" width="120" height="9" rx="4" fill="#34d399"/>
+       <rect x="312" y="228" width="220" height="8" rx="4" fill="#1e5b43"/>
+       <rect x="312" y="246" width="180" height="8" rx="4" fill="#1e5b43"/>
+     </g>
+     <g>
+       <path d="M150 210 q -2 -34 22 -40" fill="none" stroke="#008448" stroke-width="2" stroke-dasharray="4 6"/>
+       <path class="vxcap-float" d="M470 120 l 14 26 -10 -2 -2 12 z" fill="#0f172a"/>
+     </g>
+</svg></figure><figure class="hero"><img src="https://vynix.in/marketing/v2-p-diagnose.png" alt="Vynix AI diagnosis of a captured bug" width="1080" height="1350" /><figcaption>Vynix AI diagnosis of a captured bug</figcaption></figure>
   <div class="toc"><strong>On this page</strong><ol><li><a href="#s1-start-with-the-captured-user-a">Start with the captured user action</a></li><li><a href="#s2-read-the-ai-diagnosis-as-a-hyp">Read the AI diagnosis as a hypothesis, not a verdict</a></li><li><a href="#s3-use-console-and-network-contex">Use console and network context to verify the story</a></li><li><a href="#s4-how-to-read-the-files-vynix-po">How to read the files Vynix points at</a></li><li><a href="#s5-turn-the-diagnosis-into-a-buil">Turn the diagnosis into a buildable prompt</a></li><li><a href="#s6-open-a-github-issue-without-lo">Open a GitHub issue without losing the evidence</a></li></ol></div>
   <section id="s1-start-with-the-captured-user-a"><h2>Start with the captured user action</h2><p>The first thing to read is not the AI text. Start with the thing the reporter clicked. Vynix is built around website annotation, so the selected element matters. If someone clicks a broken checkout button, a missing label, or a blank chart area, that click anchors the report to a real part of the page instead of a vague sentence like the page is broken.</p><p>Treat the captured element and screenshot as the plain-language problem statement. The element tells you the target. The screenshot tells you what the user saw at that moment. Before you inspect stack traces or file hints, ask a simple question: does the captured evidence match the reported issue? If the screenshot shows a disabled button but the note says the button does nothing, the issue may be validation state, not a click handler. If the element is a menu item but the screenshot shows a layout shift, the bug may live in CSS rather than routing code.</p><ul><li>Check the selected element first, because it defines the scope of the report.</li><li>Use the screenshot to confirm the visible symptom, not just the expected behavior.</li><li>Look for state clues such as disabled controls, missing data, loading spinners, or wrong copy.</li></ul></section>
 <section id="s2-read-the-ai-diagnosis-as-a-hyp"><h2>Read the AI diagnosis as a hypothesis, not a verdict</h2><p>The Vynix AI diagnosis is meant to summarize the likely root cause from the available context. It can connect the selected element with console errors, failing requests, and visible UI state faster than a developer reading each signal one by one. That is useful, but it is still a hypothesis. You should read it the same way you would read a careful note from another engineer: helpful, specific, and worth checking.</p><p>A strong diagnosis usually has three parts. It names the symptom, points to one or more supporting signals, and suggests a likely cause. For example, a diagnosis might connect a blank profile card to a failed request for user data and a console error caused by reading a property on undefined data. That is better than saying the component is broken, because it gives you something testable.</p><p>Be cautious when the diagnosis jumps too far beyond the evidence. If the network context shows a 500 response, the frontend may still need a loading or error-state fix, but the root cause could be server-side. If the console shows a hydration warning, the issue might be markup mismatch, browser-only code running during render, or date formatting that differs between server and client. The diagnosis should guide your next check, not replace it.</p><ul><li>Trust diagnoses that cite captured evidence.</li><li>Be careful with diagnoses that sound certain but do not mention a console error, network failure, or selected element.</li><li>Separate the visible bug from the likely code cause before assigning work.</li></ul><figure><img src="https://vynix.in/marketing/v2-p-diagnose.png" alt="Vynix AI diagnosis of a captured bug" loading="lazy" width="1080" height="1350" /><figcaption>Vynix AI diagnosis of a captured bug</figcaption></figure></section>

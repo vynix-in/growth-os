@@ -196,7 +196,49 @@ td.yes{color:var(--green);font-weight:600}
     <span>7 min read</span>
   </div>
   <p class="lead">Vynix started with a simple idea: when something looks wrong on a website, the report should include the context a developer needs to act on it. Instead of asking someone to write a vague ticket, Vynix lets them click the broken part of the page and captures the element, screenshot, console and network context, and an AI diagnosis that points toward the likely root cause.</p>
-  <figure class="hero"><img src="https://vynix.in/marketing/v2-p-loop.png" alt="Closing the feedback-to-fix loop with Vynix" width="1080" height="1350" /><figcaption>Closing the feedback-to-fix loop with Vynix</figcaption></figure>
+  <figure class="ill-hero"><svg class="vx-ill" viewBox="0 0 640 360" role="img" aria-label="Clicking an element and leaving a note with Vynix" preserveAspectRatio="xMidYMid meet" style="width:100%;height:auto;aspect-ratio:16 / 9;display:block">
+  <defs>
+    <linearGradient id="vxcap-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6fdfa"/><stop offset="1" stop-color="#ecfdf5"/>
+    </linearGradient>
+    <linearGradient id="vxcap-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#008448"/><stop offset="1" stop-color="#15c47d"/>
+    </linearGradient>
+    <filter id="vxcap-s" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+  <rect x="1" y="1" width="638" height="358" rx="22" fill="url(#vxcap-bg)" stroke="#d1fae5"/>
+  <style>
+    .vxcap-pulse{transform-box:fill-box;transform-origin:center;animation:vxcap-pulse 2.6s ease-in-out infinite}
+    @keyframes vxcap-pulse{0%,100%{opacity:.55;transform:scale(.92)}50%{opacity:1;transform:scale(1.06)}}
+    .vxcap-dash{stroke-dasharray:8 10;animation:vxcap-dash 1.4s linear infinite}
+    @keyframes vxcap-dash{to{stroke-dashoffset:-36}}
+    .vxcap-float{animation:vxcap-float 4s ease-in-out infinite}
+    @keyframes vxcap-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    .vxcap-in{opacity:0;animation:vxcap-in 6s ease-in-out infinite}
+    @keyframes vxcap-in{0%,8%{opacity:0;transform:translateY(8px)}18%,72%{opacity:1;transform:translateY(0)}88%,100%{opacity:0}}
+  </style>
+  <rect x="48" y="56" width="544" height="248" rx="14" fill="#ffffff" stroke="#e2e8f0" filter="url(#vxcap-s)"/>
+     <rect x="48" y="56" width="544" height="34" rx="14" fill="#f1f5f9"/>
+     <circle cx="70" cy="73" r="5" fill="#f87171"/><circle cx="88" cy="73" r="5" fill="#fbbf24"/><circle cx="106" cy="73" r="5" fill="#34d399"/>
+     <rect x="78" y="120" width="220" height="14" rx="7" fill="#e2e8f0"/>
+     <rect x="78" y="148" width="320" height="14" rx="7" fill="#eef2f7"/>
+     <rect x="78" y="200" width="150" height="40" rx="10" fill="url(#vxcap-g)"/>
+     <text x="153" y="225" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#fff">Buy now</text>
+     <rect x="76" y="198" width="154" height="44" rx="12" fill="none" stroke="#008448" stroke-width="2.5" class="vxcap-pulse"/>
+     <g class="vxcap-in">
+       <rect x="300" y="190" width="252" height="86" rx="12" fill="#052e1b" filter="url(#vxcap-s)"/>
+       <circle cx="320" cy="210" r="7" fill="#15c47d"/>
+       <rect x="336" y="204" width="120" height="9" rx="4" fill="#34d399"/>
+       <rect x="312" y="228" width="220" height="8" rx="4" fill="#1e5b43"/>
+       <rect x="312" y="246" width="180" height="8" rx="4" fill="#1e5b43"/>
+     </g>
+     <g>
+       <path d="M150 210 q -2 -34 22 -40" fill="none" stroke="#008448" stroke-width="2" stroke-dasharray="4 6"/>
+       <path class="vxcap-float" d="M470 120 l 14 26 -10 -2 -2 12 z" fill="#0f172a"/>
+     </g>
+</svg></figure><figure class="hero"><img src="https://vynix.in/marketing/v2-p-loop.png" alt="Closing the feedback-to-fix loop with Vynix" width="1080" height="1350" /><figcaption>Closing the feedback-to-fix loop with Vynix</figcaption></figure>
   <div class="toc"><strong>On this page</strong><ol><li><a href="#s1-why-the-next-step-is-about-con">Why the next step is about context, not just comments</a></li><li><a href="#s2-deeper-agent-workflows-without">Deeper agent workflows without pretending agents are magic</a></li><li><a href="#s3-more-integrations-but-only-whe">More integrations, but only where they reduce handoff friction</a></li><li><a href="#s4-richer-feedback-context-for-th">Richer feedback context for the bugs that are hard to reproduce</a></li><li><a href="#s5-a-cleaner-bridge-between-non-t">A cleaner bridge between non-technical reports and developer action</a></li><li><a href="#s6-how-we-will-talk-about-what-ac">How we will talk about what actually ships</a></li></ol></div>
   <section id="s1-why-the-next-step-is-about-con"><h2>Why the next step is about context, not just comments</h2><p>Website feedback often fails because it loses detail at the exact moment detail matters most. A designer sees a button wrap onto two lines, a product manager notices that a filter stopped working, or a tester hits an empty state that should not exist. By the time the issue reaches a developer, the message may be only "the page is broken" or "this looked weird on my machine." That is not enough to reproduce the problem, let alone fix it.</p><p>Vynix already focuses on capturing the state around the click: the selected element, a screenshot, console output, network activity, and an AI diagnosis of the likely cause. The next direction is to keep improving the quality and usefulness of that context. The goal is not to collect noise. The goal is to help a developer or coding agent understand what happened, where it happened, and what to inspect first.</p><p>That means paying attention to the shape of a good report. A useful report connects visual evidence with technical evidence. It makes it clear which component was selected, what the user expected, what the browser saw, and whether there were errors nearby. When that context is clean, the jump from "someone noticed a problem" to "someone can start fixing it" becomes much shorter.</p><ul><li>Capture the page area that matters, not a full dump that hides the problem.</li><li>Keep browser signals close to the visual issue, such as console and network context.</li><li>Make AI diagnosis practical, with likely causes that can guide the next debugging step.</li><li>Preserve enough detail for a developer or agent to reason about the issue later.</li></ul></section>
 <section id="s2-deeper-agent-workflows-without"><h2>Deeper agent workflows without pretending agents are magic</h2><p>Coding agents are most useful when they receive a narrow, well-described task. They struggle when a report is ambiguous, when the files involved are unclear, or when the expected behavior is hidden in a long comment thread. Vynix sits at an important point in that workflow because it sees the bug at the moment it is reported. That gives it a chance to turn a messy observation into a buildable instruction.</p><p>Today, Vynix can help you copy a ready-to-build prompt or open a GitHub issue and assign it to a coding agent. The direction from here is deeper agent workflows, but with a careful boundary: the tool should help agents start with better evidence, not claim that every UI bug can be solved automatically. A good agent handoff should include the visible failure, the technical context, and a prompt that asks for a focused change.</p><p>For example, if a pricing card button is visually disabled but still sends a request, the agent should not receive only "fix the pricing page." It should receive the clicked element, the screenshot, relevant console or network clues, and a concise description of the mismatch. That is the kind of input that can lead to a useful code investigation.</p><ul><li>Make the handoff from report to prompt more structured.</li><li>Keep the task small enough for an agent to act on.</li><li>Include evidence that supports the diagnosis instead of only a summary.</li><li>Help teams review agent work with the original visual context still attached.</li></ul><figure><img src="https://vynix.in/marketing/v2-p-loop.png" alt="Closing the feedback-to-fix loop with Vynix" loading="lazy" width="1080" height="1350" /><figcaption>Closing the feedback-to-fix loop with Vynix</figcaption></figure></section>

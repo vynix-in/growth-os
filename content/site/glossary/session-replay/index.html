@@ -170,7 +170,49 @@ td.yes{color:var(--green);font-weight:600}
   <span class="tag">Glossary</span>
   <h1>Session replay</h1>
   <p class="lead">Session replay is a technique for recording and reconstructing a user's interaction with a website or app, including clicks, scrolls, page changes, form interactions, console errors, and network activity. It helps product, support, and engineering teams understand what happened in the user's browser without requiring the user to describe every step.</p>
-  <figure class="hero"><img src="https://vynix.in/marketing/v2-p-loop.png" alt="Closing the feedback-to-fix loop with Vynix" loading="lazy" width="1080" height="1350" /><figcaption>Closing the feedback-to-fix loop with Vynix</figcaption></figure>
+  <figure class="ill-hero"><svg class="vx-ill" viewBox="0 0 640 360" role="img" aria-label="Clicking an element and leaving a note with Vynix" preserveAspectRatio="xMidYMid meet" style="width:100%;height:auto;aspect-ratio:16 / 9;display:block">
+  <defs>
+    <linearGradient id="vxcap-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6fdfa"/><stop offset="1" stop-color="#ecfdf5"/>
+    </linearGradient>
+    <linearGradient id="vxcap-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#008448"/><stop offset="1" stop-color="#15c47d"/>
+    </linearGradient>
+    <filter id="vxcap-s" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+  <rect x="1" y="1" width="638" height="358" rx="22" fill="url(#vxcap-bg)" stroke="#d1fae5"/>
+  <style>
+    .vxcap-pulse{transform-box:fill-box;transform-origin:center;animation:vxcap-pulse 2.6s ease-in-out infinite}
+    @keyframes vxcap-pulse{0%,100%{opacity:.55;transform:scale(.92)}50%{opacity:1;transform:scale(1.06)}}
+    .vxcap-dash{stroke-dasharray:8 10;animation:vxcap-dash 1.4s linear infinite}
+    @keyframes vxcap-dash{to{stroke-dashoffset:-36}}
+    .vxcap-float{animation:vxcap-float 4s ease-in-out infinite}
+    @keyframes vxcap-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    .vxcap-in{opacity:0;animation:vxcap-in 6s ease-in-out infinite}
+    @keyframes vxcap-in{0%,8%{opacity:0;transform:translateY(8px)}18%,72%{opacity:1;transform:translateY(0)}88%,100%{opacity:0}}
+  </style>
+  <rect x="48" y="56" width="544" height="248" rx="14" fill="#ffffff" stroke="#e2e8f0" filter="url(#vxcap-s)"/>
+     <rect x="48" y="56" width="544" height="34" rx="14" fill="#f1f5f9"/>
+     <circle cx="70" cy="73" r="5" fill="#f87171"/><circle cx="88" cy="73" r="5" fill="#fbbf24"/><circle cx="106" cy="73" r="5" fill="#34d399"/>
+     <rect x="78" y="120" width="220" height="14" rx="7" fill="#e2e8f0"/>
+     <rect x="78" y="148" width="320" height="14" rx="7" fill="#eef2f7"/>
+     <rect x="78" y="200" width="150" height="40" rx="10" fill="url(#vxcap-g)"/>
+     <text x="153" y="225" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#fff">Buy now</text>
+     <rect x="76" y="198" width="154" height="44" rx="12" fill="none" stroke="#008448" stroke-width="2.5" class="vxcap-pulse"/>
+     <g class="vxcap-in">
+       <rect x="300" y="190" width="252" height="86" rx="12" fill="#052e1b" filter="url(#vxcap-s)"/>
+       <circle cx="320" cy="210" r="7" fill="#15c47d"/>
+       <rect x="336" y="204" width="120" height="9" rx="4" fill="#34d399"/>
+       <rect x="312" y="228" width="220" height="8" rx="4" fill="#1e5b43"/>
+       <rect x="312" y="246" width="180" height="8" rx="4" fill="#1e5b43"/>
+     </g>
+     <g>
+       <path d="M150 210 q -2 -34 22 -40" fill="none" stroke="#008448" stroke-width="2" stroke-dasharray="4 6"/>
+       <path class="vxcap-float" d="M470 120 l 14 26 -10 -2 -2 12 z" fill="#0f172a"/>
+     </g>
+</svg></figure><figure class="hero"><img src="https://vynix.in/marketing/v2-p-loop.png" alt="Closing the feedback-to-fix loop with Vynix" loading="lazy" width="1080" height="1350" /><figcaption>Closing the feedback-to-fix loop with Vynix</figcaption></figure>
   <section><h2>What session replay means</h2><p>Session replay tools capture enough client-side data to rebuild a user's experience after the fact. Instead of storing a literal video in most cases, they usually record DOM changes, user inputs, viewport size, timing, page navigation, and relevant browser events. The replay viewer then uses that data to show a timeline of what the user saw and did.</p><p>For developers, session replay is useful because it connects behavior to technical context. A replay might show that a user clicked a disabled button, hit a validation loop, saw a blank panel after an API failure, or abandoned checkout after a slow request. Good implementations also include console logs, JavaScript errors, network traces, device details, and release metadata.</p></section>
 <section><h2>Why it matters</h2><p>Many bug reports are incomplete. A user may say, "the page is broken," but omit the browser version, account state, previous navigation path, or exact button they clicked. Session replay reduces that ambiguity by showing the sequence of events that led to the issue. This can cut down on back-and-forth between support, QA, and engineering.</p><p>Session replay is also valuable for product analytics. Teams can watch where users hesitate, where UI copy is unclear, and where flows break down. Unlike aggregate metrics, replay gives a concrete example of a user journey. That said, it should be used carefully. Teams should mask sensitive fields, avoid collecting passwords or payment data, and comply with privacy rules such as GDPR, CCPA, and internal security policies.</p></section>
 <section><h2>Common mistakes and examples</h2><p>A common mistake is treating session replay as a replacement for observability. Replay shows behavior, but it does not always explain backend failures, queue delays, database errors, or third-party outages. It works best alongside logs, traces, metrics, feature flags, and error monitoring. Another mistake is recording too much. Capturing every field and every page without masking can create privacy risk and large storage costs.</p><p>For example, imagine a user reports that a settings page will not save. A session replay may show that the Save button was clicked three times, a request returned 403, the UI showed no error state, and the user refreshed the page. That is much more actionable than a generic complaint. The fix might be an authorization bug, but it might also be a missing toast message or a stale client state issue.</p></section>

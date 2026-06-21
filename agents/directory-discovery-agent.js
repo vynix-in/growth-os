@@ -47,6 +47,23 @@ const SEED = [
   { name: 'Uneed', url: 'https://www.uneed.best', submit: 'https://www.uneed.best/submit-a-tool', category: 'startup', authority: 52 },
   { name: 'Hacker News (Show HN)', url: 'https://news.ycombinator.com', submit: 'https://news.ycombinator.com/submit', category: 'developer', authority: 92 },
   { name: 'Reddit r/SideProject', url: 'https://www.reddit.com/r/SideProject', submit: 'https://www.reddit.com/r/SideProject/submit', category: 'developer', authority: 90 },
+  { name: 'Software Advice', url: 'https://www.softwareadvice.com', submit: 'https://www.softwareadvice.com/vendors/', category: 'saas', authority: 88 },
+  { name: 'TrustRadius', url: 'https://www.trustradius.com', submit: 'https://www.trustradius.com/vendors', category: 'saas', authority: 85 },
+  { name: 'SourceForge', url: 'https://sourceforge.net', submit: 'https://sourceforge.net/create/', category: 'developer', authority: 90 },
+  { name: 'AppSumo', url: 'https://appsumo.com', submit: 'https://sell.appsumo.com', category: 'saas', authority: 82 },
+  { name: 'Launching Next', url: 'https://www.launchingnext.com', submit: 'https://www.launchingnext.com/submit/', category: 'startup', authority: 55 },
+  { name: 'BetaPage', url: 'https://betapage.co', submit: 'https://betapage.co/submit-startup', category: 'startup', authority: 56 },
+  { name: 'Startup Buffer', url: 'https://startupbuffer.com', submit: 'https://startupbuffer.com/site/submit', category: 'startup', authority: 52 },
+  { name: 'Fazier', url: 'https://fazier.com', submit: 'https://fazier.com/submit', category: 'startup', authority: 55 },
+  { name: 'Microlaunch', url: 'https://microlaunch.net', submit: 'https://microlaunch.net/submit', category: 'startup', authority: 50 },
+  { name: 'Peerlist', url: 'https://peerlist.io', submit: 'https://peerlist.io', category: 'developer', authority: 66 },
+  { name: 'AI Scout', url: 'https://aiscout.net', submit: 'https://aiscout.net/submit', category: 'ai', authority: 55 },
+  { name: 'Dang.ai', url: 'https://dang.ai', submit: 'https://dang.ai/submit', category: 'ai', authority: 55 },
+  { name: 'TopAI.tools', url: 'https://topai.tools', submit: 'https://topai.tools/submit', category: 'ai', authority: 55 },
+  { name: 'aitools.fyi', url: 'https://aitools.fyi', submit: 'https://aitools.fyi/submit-tool', category: 'ai', authority: 52 },
+  { name: 'Insidr AI Tools', url: 'https://www.insidr.ai', submit: 'https://www.insidr.ai/submit-tool/', category: 'ai', authority: 52 },
+  { name: 'OpenAlternative', url: 'https://openalternative.co', submit: 'https://openalternative.co/submit', category: 'developer', authority: 68 },
+  { name: 'Land-book', url: 'https://land-book.com', submit: 'https://land-book.com/submit', category: 'design', authority: 62 },
 ];
 
 export async function run() {

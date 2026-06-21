@@ -209,7 +209,49 @@ td.yes{color:var(--green);font-weight:600}
     <span>6 min read</span>
   </div>
   <p class="lead">A vague bug report can cost more time than the bug itself. Vynix shortens that path by letting you click the broken part of a website and capture the context a developer or coding agent needs to start fixing it.</p>
-  <figure class="hero"><img src="https://vynix.in/marketing/p-point.png" alt="Pointing at an element on a live page with Vynix" width="1080" height="1350" /><figcaption>Pointing at an element on a live page with Vynix</figcaption></figure>
+  <figure class="ill-hero"><svg class="vx-ill" viewBox="0 0 640 360" role="img" aria-label="Clicking an element and leaving a note with Vynix" preserveAspectRatio="xMidYMid meet" style="width:100%;height:auto;aspect-ratio:16 / 9;display:block">
+  <defs>
+    <linearGradient id="vxcap-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6fdfa"/><stop offset="1" stop-color="#ecfdf5"/>
+    </linearGradient>
+    <linearGradient id="vxcap-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#008448"/><stop offset="1" stop-color="#15c47d"/>
+    </linearGradient>
+    <filter id="vxcap-s" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+  <rect x="1" y="1" width="638" height="358" rx="22" fill="url(#vxcap-bg)" stroke="#d1fae5"/>
+  <style>
+    .vxcap-pulse{transform-box:fill-box;transform-origin:center;animation:vxcap-pulse 2.6s ease-in-out infinite}
+    @keyframes vxcap-pulse{0%,100%{opacity:.55;transform:scale(.92)}50%{opacity:1;transform:scale(1.06)}}
+    .vxcap-dash{stroke-dasharray:8 10;animation:vxcap-dash 1.4s linear infinite}
+    @keyframes vxcap-dash{to{stroke-dashoffset:-36}}
+    .vxcap-float{animation:vxcap-float 4s ease-in-out infinite}
+    @keyframes vxcap-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    .vxcap-in{opacity:0;animation:vxcap-in 6s ease-in-out infinite}
+    @keyframes vxcap-in{0%,8%{opacity:0;transform:translateY(8px)}18%,72%{opacity:1;transform:translateY(0)}88%,100%{opacity:0}}
+  </style>
+  <rect x="48" y="56" width="544" height="248" rx="14" fill="#ffffff" stroke="#e2e8f0" filter="url(#vxcap-s)"/>
+     <rect x="48" y="56" width="544" height="34" rx="14" fill="#f1f5f9"/>
+     <circle cx="70" cy="73" r="5" fill="#f87171"/><circle cx="88" cy="73" r="5" fill="#fbbf24"/><circle cx="106" cy="73" r="5" fill="#34d399"/>
+     <rect x="78" y="120" width="220" height="14" rx="7" fill="#e2e8f0"/>
+     <rect x="78" y="148" width="320" height="14" rx="7" fill="#eef2f7"/>
+     <rect x="78" y="200" width="150" height="40" rx="10" fill="url(#vxcap-g)"/>
+     <text x="153" y="225" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#fff">Buy now</text>
+     <rect x="76" y="198" width="154" height="44" rx="12" fill="none" stroke="#008448" stroke-width="2.5" class="vxcap-pulse"/>
+     <g class="vxcap-in">
+       <rect x="300" y="190" width="252" height="86" rx="12" fill="#052e1b" filter="url(#vxcap-s)"/>
+       <circle cx="320" cy="210" r="7" fill="#15c47d"/>
+       <rect x="336" y="204" width="120" height="9" rx="4" fill="#34d399"/>
+       <rect x="312" y="228" width="220" height="8" rx="4" fill="#1e5b43"/>
+       <rect x="312" y="246" width="180" height="8" rx="4" fill="#1e5b43"/>
+     </g>
+     <g>
+       <path d="M150 210 q -2 -34 22 -40" fill="none" stroke="#008448" stroke-width="2" stroke-dasharray="4 6"/>
+       <path class="vxcap-float" d="M470 120 l 14 26 -10 -2 -2 12 z" fill="#0f172a"/>
+     </g>
+</svg></figure><figure class="hero"><img src="https://vynix.in/marketing/p-point.png" alt="Pointing at an element on a live page with Vynix" width="1080" height="1350" /><figcaption>Pointing at an element on a live page with Vynix</figcaption></figure>
   <div class="toc"><strong>On this page</strong><ol><li><a href="#s1-why-bug-reports-lose-useful-co">Why bug reports lose useful context</a></li><li><a href="#s2-step-1-add-the-widget-to-the-s">Step 1: Add the widget to the site</a></li><li><a href="#s3-step-2-click-what-is-wrong">Step 2: Click what is wrong</a></li><li><a href="#s4-step-3-vynix-captures-the-evid">Step 3: Vynix captures the evidence</a></li><li><a href="#s5-step-4-the-report-becomes-deve">Step 4: The report becomes developer context</a></li><li><a href="#s6-step-5-move-from-diagnosis-to-">Step 5: Move from diagnosis to buildable work</a></li><li><a href="#s7-how-to-get-the-best-results-fr">How to get the best results from Vynix</a></li></ol></div>
   <section id="s1-why-bug-reports-lose-useful-co"><h2>Why bug reports lose useful context</h2><p>Most website bugs start with a sentence like, The checkout button is broken, or The layout looks wrong on the product page. That may be true, but it is not enough to build from. A developer still needs to know which page, which element, what the browser saw, whether a request failed, and whether the console already explains the problem.</p><p>The missing details create a loop. A developer asks for a screenshot. The reporter adds one. The developer asks what happened in the console. The reporter does not have DevTools open. Someone tries to reproduce the issue, but their local data is different. Vynix is designed for the moment when the issue is visible on the page, before that context disappears.</p></section>
 <section id="s2-step-1-add-the-widget-to-the-s"><h2>Step 1: Add the widget to the site</h2><p>Vynix starts as a lightweight widget added to the website you want to review. Once it is present, testers, product managers, designers, support staff, or developers can use it while looking at the real page. The point is not to create a separate reporting flow. The report begins where the issue appears.</p><p>For example, say a product card has a price label overlapping the image on a staging site. Instead of writing a ticket from memory, the reviewer opens Vynix and clicks the broken price label. That click gives the report a target. It tells Vynix which part of the page matters and anchors the rest of the captured context to a specific element.</p><ul><li>Use the widget on the site where the problem is visible.</li><li>Click the element that best represents the issue, such as a button, form field, image, label, or menu item.</li><li>Capture the issue while it is happening, not after refreshing or trying to describe it from memory.</li></ul><figure><img src="https://vynix.in/marketing/p-point.png" alt="Pointing at an element on a live page with Vynix" loading="lazy" width="1080" height="1350" /><figcaption>Pointing at an element on a live page with Vynix</figcaption></figure></section>

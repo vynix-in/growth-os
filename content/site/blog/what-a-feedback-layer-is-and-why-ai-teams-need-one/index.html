@@ -196,7 +196,49 @@ td.yes{color:var(--green);font-weight:600}
     <span>7 min read</span>
   </div>
   <p class="lead">AI can write code, but it still needs a clear description of the problem and the right runtime context. A feedback layer sits between the broken user experience and the developer workflow, turning vague reports into specific, buildable tasks.</p>
-  <figure class="hero"><img src="https://vynix.in/marketing/v2-p-loop.png" alt="Closing the feedback-to-fix loop with Vynix" width="1080" height="1350" /><figcaption>Closing the feedback-to-fix loop with Vynix</figcaption></figure>
+  <figure class="ill-hero"><svg class="vx-ill" viewBox="0 0 640 360" role="img" aria-label="Clicking an element and leaving a note with Vynix" preserveAspectRatio="xMidYMid meet" style="width:100%;height:auto;aspect-ratio:16 / 9;display:block">
+  <defs>
+    <linearGradient id="vxcap-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6fdfa"/><stop offset="1" stop-color="#ecfdf5"/>
+    </linearGradient>
+    <linearGradient id="vxcap-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#008448"/><stop offset="1" stop-color="#15c47d"/>
+    </linearGradient>
+    <filter id="vxcap-s" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+  <rect x="1" y="1" width="638" height="358" rx="22" fill="url(#vxcap-bg)" stroke="#d1fae5"/>
+  <style>
+    .vxcap-pulse{transform-box:fill-box;transform-origin:center;animation:vxcap-pulse 2.6s ease-in-out infinite}
+    @keyframes vxcap-pulse{0%,100%{opacity:.55;transform:scale(.92)}50%{opacity:1;transform:scale(1.06)}}
+    .vxcap-dash{stroke-dasharray:8 10;animation:vxcap-dash 1.4s linear infinite}
+    @keyframes vxcap-dash{to{stroke-dashoffset:-36}}
+    .vxcap-float{animation:vxcap-float 4s ease-in-out infinite}
+    @keyframes vxcap-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    .vxcap-in{opacity:0;animation:vxcap-in 6s ease-in-out infinite}
+    @keyframes vxcap-in{0%,8%{opacity:0;transform:translateY(8px)}18%,72%{opacity:1;transform:translateY(0)}88%,100%{opacity:0}}
+  </style>
+  <rect x="48" y="56" width="544" height="248" rx="14" fill="#ffffff" stroke="#e2e8f0" filter="url(#vxcap-s)"/>
+     <rect x="48" y="56" width="544" height="34" rx="14" fill="#f1f5f9"/>
+     <circle cx="70" cy="73" r="5" fill="#f87171"/><circle cx="88" cy="73" r="5" fill="#fbbf24"/><circle cx="106" cy="73" r="5" fill="#34d399"/>
+     <rect x="78" y="120" width="220" height="14" rx="7" fill="#e2e8f0"/>
+     <rect x="78" y="148" width="320" height="14" rx="7" fill="#eef2f7"/>
+     <rect x="78" y="200" width="150" height="40" rx="10" fill="url(#vxcap-g)"/>
+     <text x="153" y="225" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#fff">Buy now</text>
+     <rect x="76" y="198" width="154" height="44" rx="12" fill="none" stroke="#008448" stroke-width="2.5" class="vxcap-pulse"/>
+     <g class="vxcap-in">
+       <rect x="300" y="190" width="252" height="86" rx="12" fill="#052e1b" filter="url(#vxcap-s)"/>
+       <circle cx="320" cy="210" r="7" fill="#15c47d"/>
+       <rect x="336" y="204" width="120" height="9" rx="4" fill="#34d399"/>
+       <rect x="312" y="228" width="220" height="8" rx="4" fill="#1e5b43"/>
+       <rect x="312" y="246" width="180" height="8" rx="4" fill="#1e5b43"/>
+     </g>
+     <g>
+       <path d="M150 210 q -2 -34 22 -40" fill="none" stroke="#008448" stroke-width="2" stroke-dasharray="4 6"/>
+       <path class="vxcap-float" d="M470 120 l 14 26 -10 -2 -2 12 z" fill="#0f172a"/>
+     </g>
+</svg></figure><figure class="hero"><img src="https://vynix.in/marketing/v2-p-loop.png" alt="Closing the feedback-to-fix loop with Vynix" width="1080" height="1350" /><figcaption>Closing the feedback-to-fix loop with Vynix</figcaption></figure>
   <div class="toc"><strong>On this page</strong><ol><li><a href="#s1-a-feedback-layer-is-the-missin">A feedback layer is the missing step between seeing a bug and fixing it</a></li><li><a href="#s2-why-normal-bug-reports-break-d">Why normal bug reports break down with AI coding</a></li><li><a href="#s3-what-a-good-feedback-layer-sho">What a good feedback layer should capture</a></li><li><a href="#s4-how-vynix-fits-into-this-workf">How Vynix fits into this workflow</a></li><li><a href="#s5-a-concrete-example-the-broken-">A concrete example: the broken upgrade button</a></li><li><a href="#s6-the-feedback-layer-changes-tea">The feedback layer changes team behavior, not just tickets</a></li><li><a href="#s7-what-to-look-for-when-adding-a">What to look for when adding a feedback layer</a></li></ol></div>
   <section id="s1-a-feedback-layer-is-the-missin"><h2>A feedback layer is the missing step between seeing a bug and fixing it</h2><p>Most web teams already have several places where feedback appears. A customer sends a screenshot in Slack. A product manager writes a ticket that says the button does not work. A QA tester records a video. A developer opens DevTools and tries to reproduce the issue on a different machine. None of these steps are wrong, but they often split one bug into fragments.</p><p>A feedback layer is a thin system that collects those fragments at the moment the problem is observed. Instead of asking someone to describe the page, the element, the error, the browser state, and the failed request by hand, the feedback layer captures the useful context from the live site and packages it for the person or agent that will fix it.</p><p>For AI teams, this matters because coding agents do not just need a task. They need context that is close to the source of truth. A prompt that says "fix the checkout page" is weak. A prompt that includes the clicked element, a screenshot, console output, network context, and a likely root cause gives an agent a much better starting point.</p></section>
 <section id="s2-why-normal-bug-reports-break-d"><h2>Why normal bug reports break down with AI coding</h2><p>Traditional bug reports were designed for humans who can ask follow-up questions, infer missing details, and search across logs, code, and product history. AI coding agents can do some of that, but they are sensitive to missing or misleading context. If the prompt points to the wrong symptom, the agent may edit the wrong file or patch around the problem.</p><p>The breakdown usually starts with translation. A non-developer sees something wrong in the UI and translates it into plain language. A product or engineering lead translates that into a ticket. A developer translates the ticket into a hypothesis. An AI agent then receives a prompt that may be several steps removed from the actual broken element.</p><ul><li>A screenshot shows what looked wrong, but not which DOM element was involved.</li><li>A ticket says an action failed, but not which network request failed or what status code came back.</li><li>A console error is pasted without the user action that caused it.</li><li>A prompt asks for a fix, but omits the environment, route, component, or recent runtime behavior.</li><li>A coding agent gets a polished summary, but not the raw evidence needed to test the summary.</li></ul><figure><img src="https://vynix.in/marketing/v2-p-loop.png" alt="Closing the feedback-to-fix loop with Vynix" loading="lazy" width="1080" height="1350" /><figcaption>Closing the feedback-to-fix loop with Vynix</figcaption></figure></section>

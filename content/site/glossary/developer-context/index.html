@@ -170,7 +170,49 @@ td.yes{color:var(--green);font-weight:600}
   <span class="tag">Glossary</span>
   <h1>Developer context</h1>
   <p class="lead">Developer context is the set of technical details a developer needs to understand what happened, where it happened, why it likely happened, and how to act on it. It usually includes environment data, user steps, UI state, affected code or DOM elements, logs, network activity, screenshots, and any constraints around the expected behavior.</p>
-  <figure class="hero"><img src="https://vynix.in/marketing/p-context.png" alt="Developer context captured with a Vynix report" loading="lazy" width="1080" height="1350" /><figcaption>Developer context captured with a Vynix report</figcaption></figure>
+  <figure class="ill-hero"><svg class="vx-ill" viewBox="0 0 640 360" role="img" aria-label="Clicking an element and leaving a note with Vynix" preserveAspectRatio="xMidYMid meet" style="width:100%;height:auto;aspect-ratio:16 / 9;display:block">
+  <defs>
+    <linearGradient id="vxcap-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6fdfa"/><stop offset="1" stop-color="#ecfdf5"/>
+    </linearGradient>
+    <linearGradient id="vxcap-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#008448"/><stop offset="1" stop-color="#15c47d"/>
+    </linearGradient>
+    <filter id="vxcap-s" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+  <rect x="1" y="1" width="638" height="358" rx="22" fill="url(#vxcap-bg)" stroke="#d1fae5"/>
+  <style>
+    .vxcap-pulse{transform-box:fill-box;transform-origin:center;animation:vxcap-pulse 2.6s ease-in-out infinite}
+    @keyframes vxcap-pulse{0%,100%{opacity:.55;transform:scale(.92)}50%{opacity:1;transform:scale(1.06)}}
+    .vxcap-dash{stroke-dasharray:8 10;animation:vxcap-dash 1.4s linear infinite}
+    @keyframes vxcap-dash{to{stroke-dashoffset:-36}}
+    .vxcap-float{animation:vxcap-float 4s ease-in-out infinite}
+    @keyframes vxcap-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    .vxcap-in{opacity:0;animation:vxcap-in 6s ease-in-out infinite}
+    @keyframes vxcap-in{0%,8%{opacity:0;transform:translateY(8px)}18%,72%{opacity:1;transform:translateY(0)}88%,100%{opacity:0}}
+  </style>
+  <rect x="48" y="56" width="544" height="248" rx="14" fill="#ffffff" stroke="#e2e8f0" filter="url(#vxcap-s)"/>
+     <rect x="48" y="56" width="544" height="34" rx="14" fill="#f1f5f9"/>
+     <circle cx="70" cy="73" r="5" fill="#f87171"/><circle cx="88" cy="73" r="5" fill="#fbbf24"/><circle cx="106" cy="73" r="5" fill="#34d399"/>
+     <rect x="78" y="120" width="220" height="14" rx="7" fill="#e2e8f0"/>
+     <rect x="78" y="148" width="320" height="14" rx="7" fill="#eef2f7"/>
+     <rect x="78" y="200" width="150" height="40" rx="10" fill="url(#vxcap-g)"/>
+     <text x="153" y="225" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#fff">Buy now</text>
+     <rect x="76" y="198" width="154" height="44" rx="12" fill="none" stroke="#008448" stroke-width="2.5" class="vxcap-pulse"/>
+     <g class="vxcap-in">
+       <rect x="300" y="190" width="252" height="86" rx="12" fill="#052e1b" filter="url(#vxcap-s)"/>
+       <circle cx="320" cy="210" r="7" fill="#15c47d"/>
+       <rect x="336" y="204" width="120" height="9" rx="4" fill="#34d399"/>
+       <rect x="312" y="228" width="220" height="8" rx="4" fill="#1e5b43"/>
+       <rect x="312" y="246" width="180" height="8" rx="4" fill="#1e5b43"/>
+     </g>
+     <g>
+       <path d="M150 210 q -2 -34 22 -40" fill="none" stroke="#008448" stroke-width="2" stroke-dasharray="4 6"/>
+       <path class="vxcap-float" d="M470 120 l 14 26 -10 -2 -2 12 z" fill="#0f172a"/>
+     </g>
+</svg></figure><figure class="hero"><img src="https://vynix.in/marketing/p-context.png" alt="Developer context captured with a Vynix report" loading="lazy" width="1080" height="1350" /><figcaption>Developer context captured with a Vynix report</figcaption></figure>
   <section><h2>What developer context means</h2><p>Developer context turns a vague report like "the button is broken" into a useful engineering artifact. It answers practical questions: which button, on which page, in which browser, after which action, with what visible result, and with what errors behind the scenes. For web applications, this can include the selected DOM element, component name, route, viewport size, authentication state, console errors, failed requests, response payloads, feature flags, and recent user actions.</p><p>Good developer context is not just more information. It is relevant information organized around the problem. A screenshot helps show the symptom, but a screenshot plus the failing request, console stack trace, element selector, and reproduction steps gives a developer a much shorter path from observation to fix.</p></section>
 <section><h2>Why it matters</h2><p>Most bug fixing time is spent before the code change: reproducing the issue, finding the right area of the codebase, separating expected behavior from actual behavior, and ruling out unrelated causes. Developer context reduces that discovery cost. It helps engineers avoid guessing, asking repeated follow-up questions, or debugging the wrong layer of the system.</p><p>Developer context is especially important when work is asynchronous or distributed. A product manager, QA tester, customer success person, or user may notice the issue hours before an engineer looks at it. If the original state is not captured, the team may lose critical evidence, such as a transient API failure, a specific browser condition, or a race condition triggered by one sequence of clicks.</p></section>
 <section><h2>Common examples and mistakes</h2><p>Examples of strong developer context include: "On /billing in Chrome 126, clicking Save after removing a VAT ID sends PATCH /api/account with vatId: null, returns 400, and the UI still shows Saved." This gives the developer the route, browser, action, network request, bad response, and incorrect UI state. Another useful example is a UI annotation tied to a specific element, with the computed text, selector, screenshot, and console error captured together.</p><p>Common mistakes include reporting only the visible symptom, using subjective labels like "weird" or "broken", omitting reproduction steps, or pasting logs without saying what the user expected. Another mistake is collecting too much unrelated data. A full browser dump can be noisy if it is not connected to the element, action, or user-visible failure.</p></section>

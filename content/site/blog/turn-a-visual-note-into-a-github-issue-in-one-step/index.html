@@ -209,7 +209,49 @@ td.yes{color:var(--green);font-weight:600}
     <span>6 min read</span>
   </div>
   <p class="lead">A useful bug report starts with the exact place where something went wrong. Vynix lets you click the broken part of a page, capture the surrounding developer context, and turn that visual note into a GitHub issue your team can act on.</p>
-  <figure class="hero"><img src="https://vynix.in/marketing/p-github.png" alt="Creating a GitHub issue from a Vynix note" width="1080" height="1350" /><figcaption>Creating a GitHub issue from a Vynix note</figcaption></figure>
+  <figure class="ill-hero"><svg class="vx-ill" viewBox="0 0 640 360" role="img" aria-label="Clicking an element and leaving a note with Vynix" preserveAspectRatio="xMidYMid meet" style="width:100%;height:auto;aspect-ratio:16 / 9;display:block">
+  <defs>
+    <linearGradient id="vxcap-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6fdfa"/><stop offset="1" stop-color="#ecfdf5"/>
+    </linearGradient>
+    <linearGradient id="vxcap-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#008448"/><stop offset="1" stop-color="#15c47d"/>
+    </linearGradient>
+    <filter id="vxcap-s" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+  <rect x="1" y="1" width="638" height="358" rx="22" fill="url(#vxcap-bg)" stroke="#d1fae5"/>
+  <style>
+    .vxcap-pulse{transform-box:fill-box;transform-origin:center;animation:vxcap-pulse 2.6s ease-in-out infinite}
+    @keyframes vxcap-pulse{0%,100%{opacity:.55;transform:scale(.92)}50%{opacity:1;transform:scale(1.06)}}
+    .vxcap-dash{stroke-dasharray:8 10;animation:vxcap-dash 1.4s linear infinite}
+    @keyframes vxcap-dash{to{stroke-dashoffset:-36}}
+    .vxcap-float{animation:vxcap-float 4s ease-in-out infinite}
+    @keyframes vxcap-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    .vxcap-in{opacity:0;animation:vxcap-in 6s ease-in-out infinite}
+    @keyframes vxcap-in{0%,8%{opacity:0;transform:translateY(8px)}18%,72%{opacity:1;transform:translateY(0)}88%,100%{opacity:0}}
+  </style>
+  <rect x="48" y="56" width="544" height="248" rx="14" fill="#ffffff" stroke="#e2e8f0" filter="url(#vxcap-s)"/>
+     <rect x="48" y="56" width="544" height="34" rx="14" fill="#f1f5f9"/>
+     <circle cx="70" cy="73" r="5" fill="#f87171"/><circle cx="88" cy="73" r="5" fill="#fbbf24"/><circle cx="106" cy="73" r="5" fill="#34d399"/>
+     <rect x="78" y="120" width="220" height="14" rx="7" fill="#e2e8f0"/>
+     <rect x="78" y="148" width="320" height="14" rx="7" fill="#eef2f7"/>
+     <rect x="78" y="200" width="150" height="40" rx="10" fill="url(#vxcap-g)"/>
+     <text x="153" y="225" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#fff">Buy now</text>
+     <rect x="76" y="198" width="154" height="44" rx="12" fill="none" stroke="#008448" stroke-width="2.5" class="vxcap-pulse"/>
+     <g class="vxcap-in">
+       <rect x="300" y="190" width="252" height="86" rx="12" fill="#052e1b" filter="url(#vxcap-s)"/>
+       <circle cx="320" cy="210" r="7" fill="#15c47d"/>
+       <rect x="336" y="204" width="120" height="9" rx="4" fill="#34d399"/>
+       <rect x="312" y="228" width="220" height="8" rx="4" fill="#1e5b43"/>
+       <rect x="312" y="246" width="180" height="8" rx="4" fill="#1e5b43"/>
+     </g>
+     <g>
+       <path d="M150 210 q -2 -34 22 -40" fill="none" stroke="#008448" stroke-width="2" stroke-dasharray="4 6"/>
+       <path class="vxcap-float" d="M470 120 l 14 26 -10 -2 -2 12 z" fill="#0f172a"/>
+     </g>
+</svg></figure><figure class="hero"><img src="https://vynix.in/marketing/p-github.png" alt="Creating a GitHub issue from a Vynix note" width="1080" height="1350" /><figcaption>Creating a GitHub issue from a Vynix note</figcaption></figure>
   <div class="toc"><strong>On this page</strong><ol><li><a href="#s1-why-visual-feedback-often-brea">Why visual feedback often breaks down</a></li><li><a href="#s2-what-vynix-captures-when-you-c">What Vynix captures when you click the problem</a></li><li><a href="#s3-from-note-to-issue-without-rew">From note to issue without rewriting the bug report</a></li><li><a href="#s4-a-concrete-example-the-checkou">A concrete example: the checkout button looks enabled but does nothing</a></li><li><a href="#s5-what-to-put-in-the-github-issu">What to put in the GitHub issue</a></li><li><a href="#s6-how-this-changes-triage-for-de">How this changes triage for developers</a></li></ol></div>
   <section id="s1-why-visual-feedback-often-brea"><h2>Why visual feedback often breaks down</h2><p>Most website bugs are first noticed visually. A designer spots a button wrapping onto two lines. A product manager sees a checkout message that does not match the state of the cart. A QA tester clicks a dropdown and nothing opens. The first report usually sounds simple, but the developer who receives it still has to answer a long list of questions before writing code.</p><p>Which page was it on? What screen size? Which element? Was there a console error? Did an API request fail? Was the user logged in? Was the issue caused by CSS, client-side state, or a backend response? If the bug report is only a screenshot with a circle drawn around a problem, the next step is often detective work.</p><ul><li>Screenshots show the symptom, but not the DOM element behind it.</li><li>Written notes often miss browser console messages and failed requests.</li><li>A vague issue title can send a developer to the wrong component.</li><li>Extra back-and-forth slows down small fixes that should be quick.</li></ul></section>
 <section id="s2-what-vynix-captures-when-you-c"><h2>What Vynix captures when you click the problem</h2><p>Vynix is built around a lightweight widget you add to a site. When someone sees a problem, they click the affected part of the page instead of writing a long explanation from memory. Vynix captures the selected element, a screenshot, the console and network context, and an AI diagnosis of the likely root cause.</p><p>That context matters because many visual bugs are not only visual. A missing label may come from a failed translation request. A disabled submit button may come from client-side validation that never resets. A layout shift may point to a CSS rule, but it may also depend on an API payload that contains a longer than expected string.</p><ul><li>The element capture helps identify the exact part of the page being reported.</li><li>The screenshot preserves what the reporter saw at that moment.</li><li>Console context can reveal JavaScript errors related to the bug.</li><li>Network context can show failed or suspicious requests near the time of the report.</li><li>The AI diagnosis gives the developer a starting hypothesis, not a final verdict.</li></ul><figure><img src="https://vynix.in/marketing/p-github.png" alt="Creating a GitHub issue from a Vynix note" loading="lazy" width="1080" height="1350" /><figcaption>Creating a GitHub issue from a Vynix note</figcaption></figure></section>

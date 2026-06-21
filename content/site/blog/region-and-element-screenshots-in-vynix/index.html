@@ -209,7 +209,49 @@ td.yes{color:var(--green);font-weight:600}
     <span>6 min read</span>
   </div>
   <p class="lead">Screenshots are useful, but a plain screenshot often leaves developers guessing. Vynix connects the visual bug report to the page element, browser context, console output, network activity, and an AI diagnosis so a developer or coding agent can start from the real problem instead of a vague description.</p>
-  <figure class="hero"><img src="https://vynix.in/marketing/p-point.png" alt="Pointing at an element on a live page with Vynix" width="1080" height="1350" /><figcaption>Pointing at an element on a live page with Vynix</figcaption></figure>
+  <figure class="ill-hero"><svg class="vx-ill" viewBox="0 0 640 360" role="img" aria-label="Clicking an element and leaving a note with Vynix" preserveAspectRatio="xMidYMid meet" style="width:100%;height:auto;aspect-ratio:16 / 9;display:block">
+  <defs>
+    <linearGradient id="vxcap-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6fdfa"/><stop offset="1" stop-color="#ecfdf5"/>
+    </linearGradient>
+    <linearGradient id="vxcap-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#008448"/><stop offset="1" stop-color="#15c47d"/>
+    </linearGradient>
+    <filter id="vxcap-s" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+  <rect x="1" y="1" width="638" height="358" rx="22" fill="url(#vxcap-bg)" stroke="#d1fae5"/>
+  <style>
+    .vxcap-pulse{transform-box:fill-box;transform-origin:center;animation:vxcap-pulse 2.6s ease-in-out infinite}
+    @keyframes vxcap-pulse{0%,100%{opacity:.55;transform:scale(.92)}50%{opacity:1;transform:scale(1.06)}}
+    .vxcap-dash{stroke-dasharray:8 10;animation:vxcap-dash 1.4s linear infinite}
+    @keyframes vxcap-dash{to{stroke-dashoffset:-36}}
+    .vxcap-float{animation:vxcap-float 4s ease-in-out infinite}
+    @keyframes vxcap-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    .vxcap-in{opacity:0;animation:vxcap-in 6s ease-in-out infinite}
+    @keyframes vxcap-in{0%,8%{opacity:0;transform:translateY(8px)}18%,72%{opacity:1;transform:translateY(0)}88%,100%{opacity:0}}
+  </style>
+  <rect x="48" y="56" width="544" height="248" rx="14" fill="#ffffff" stroke="#e2e8f0" filter="url(#vxcap-s)"/>
+     <rect x="48" y="56" width="544" height="34" rx="14" fill="#f1f5f9"/>
+     <circle cx="70" cy="73" r="5" fill="#f87171"/><circle cx="88" cy="73" r="5" fill="#fbbf24"/><circle cx="106" cy="73" r="5" fill="#34d399"/>
+     <rect x="78" y="120" width="220" height="14" rx="7" fill="#e2e8f0"/>
+     <rect x="78" y="148" width="320" height="14" rx="7" fill="#eef2f7"/>
+     <rect x="78" y="200" width="150" height="40" rx="10" fill="url(#vxcap-g)"/>
+     <text x="153" y="225" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#fff">Buy now</text>
+     <rect x="76" y="198" width="154" height="44" rx="12" fill="none" stroke="#008448" stroke-width="2.5" class="vxcap-pulse"/>
+     <g class="vxcap-in">
+       <rect x="300" y="190" width="252" height="86" rx="12" fill="#052e1b" filter="url(#vxcap-s)"/>
+       <circle cx="320" cy="210" r="7" fill="#15c47d"/>
+       <rect x="336" y="204" width="120" height="9" rx="4" fill="#34d399"/>
+       <rect x="312" y="228" width="220" height="8" rx="4" fill="#1e5b43"/>
+       <rect x="312" y="246" width="180" height="8" rx="4" fill="#1e5b43"/>
+     </g>
+     <g>
+       <path d="M150 210 q -2 -34 22 -40" fill="none" stroke="#008448" stroke-width="2" stroke-dasharray="4 6"/>
+       <path class="vxcap-float" d="M470 120 l 14 26 -10 -2 -2 12 z" fill="#0f172a"/>
+     </g>
+</svg></figure><figure class="hero"><img src="https://vynix.in/marketing/p-point.png" alt="Pointing at an element on a live page with Vynix" width="1080" height="1350" /><figcaption>Pointing at an element on a live page with Vynix</figcaption></figure>
   <div class="toc"><strong>On this page</strong><ol><li><a href="#s1-why-ordinary-screenshots-lose-">Why ordinary screenshots lose important context</a></li><li><a href="#s2-what-region-and-element-screen">What region and element screenshots capture</a></li><li><a href="#s3-how-vynix-turns-a-click-into-d">How Vynix turns a click into developer context</a></li><li><a href="#s4-example-a-clipped-button-in-a-">Example: a clipped button in a pricing card</a></li><li><a href="#s5-example-an-empty-table-caused-">Example: an empty table caused by a failed request</a></li><li><a href="#s6-writing-better-issues-from-scr">Writing better issues from screenshot captures</a></li></ol></div>
   <section id="s1-why-ordinary-screenshots-lose-"><h2>Why ordinary screenshots lose important context</h2><p>A screenshot tells you what someone saw, but not always why it happened. If a button is clipped, a dropdown opens behind a modal, or a price label wraps onto two lines, the image shows the symptom. It usually does not show which element was involved, what CSS was applied, whether a request failed, or whether an error hit the console at the same time.</p><p>This gap gets bigger when the person reporting the bug is not the person fixing it. A product manager might write, "The checkout button is broken on the pricing page." A developer then has to ask which browser, which plan card, which viewport, whether the button was disabled, and whether there were errors. Vynix is built to shorten that loop. You drop a lightweight widget on the site, click on what is wrong, and capture the visual state along with developer context.</p><ul><li>A screenshot shows the visual symptom, not the code path.</li><li>A written bug report often misses the exact element that caused the issue.</li><li>Console and network context can explain visual problems that are not visible in the image.</li><li>A report is easier to act on when the selected element and screenshot are captured together.</li></ul></section>
 <section id="s2-what-region-and-element-screen"><h2>What region and element screenshots capture</h2><p>Region and element screenshots solve different parts of the same problem. A region screenshot gives the surrounding visual area, which helps a developer understand layout, spacing, stacking, and nearby content. An element-focused capture ties the report to the specific thing the reporter clicked, such as a button, input, card, menu item, image, or banner.</p><p>In Vynix, the click matters. Instead of asking someone to describe the broken area in a comment, Vynix lets them point at the problem on the live page. The capture can include the element, a screenshot, console context, network context, and an AI diagnosis of the likely root cause. That combination is much better than an image named screenshot-27.png in a chat thread.</p><ul><li>Use the region view to understand the visible page state around the issue.</li><li>Use the selected element context to know which part of the DOM was reported.</li><li>Use console context to spot runtime errors near the moment of capture.</li><li>Use network context to see whether missing or failed data may have caused the UI state.</li><li>Use the AI diagnosis as a starting point, then verify it in code.</li></ul><figure><img src="https://vynix.in/marketing/v2-p-files.png" alt="Likely files surfaced by the Vynix diagnosis" loading="lazy" width="1080" height="1350" /><figcaption>Likely files surfaced by the Vynix diagnosis</figcaption></figure></section>

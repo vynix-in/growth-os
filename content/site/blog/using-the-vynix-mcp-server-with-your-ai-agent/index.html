@@ -209,7 +209,49 @@ td.yes{color:var(--green);font-weight:600}
     <span>6 min read</span>
   </div>
   <p class="lead">AI coding agents are much better when they start with the same evidence a developer would ask for in a bug report. The Vynix MCP server helps pass website annotation context to a compatible agent, so the agent is not guessing from a vague sentence like "the button is broken."</p>
-  <figure class="hero"><img src="https://vynix.in/marketing/p-mcp.png" alt="Vynix MCP server connecting to an AI client" width="1080" height="1350" /><figcaption>Vynix MCP server connecting to an AI client</figcaption></figure>
+  <figure class="ill-hero"><svg class="vx-ill" viewBox="0 0 640 360" role="img" aria-label="Clicking an element and leaving a note with Vynix" preserveAspectRatio="xMidYMid meet" style="width:100%;height:auto;aspect-ratio:16 / 9;display:block">
+  <defs>
+    <linearGradient id="vxcap-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6fdfa"/><stop offset="1" stop-color="#ecfdf5"/>
+    </linearGradient>
+    <linearGradient id="vxcap-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#008448"/><stop offset="1" stop-color="#15c47d"/>
+    </linearGradient>
+    <filter id="vxcap-s" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+  <rect x="1" y="1" width="638" height="358" rx="22" fill="url(#vxcap-bg)" stroke="#d1fae5"/>
+  <style>
+    .vxcap-pulse{transform-box:fill-box;transform-origin:center;animation:vxcap-pulse 2.6s ease-in-out infinite}
+    @keyframes vxcap-pulse{0%,100%{opacity:.55;transform:scale(.92)}50%{opacity:1;transform:scale(1.06)}}
+    .vxcap-dash{stroke-dasharray:8 10;animation:vxcap-dash 1.4s linear infinite}
+    @keyframes vxcap-dash{to{stroke-dashoffset:-36}}
+    .vxcap-float{animation:vxcap-float 4s ease-in-out infinite}
+    @keyframes vxcap-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    .vxcap-in{opacity:0;animation:vxcap-in 6s ease-in-out infinite}
+    @keyframes vxcap-in{0%,8%{opacity:0;transform:translateY(8px)}18%,72%{opacity:1;transform:translateY(0)}88%,100%{opacity:0}}
+  </style>
+  <rect x="48" y="56" width="544" height="248" rx="14" fill="#ffffff" stroke="#e2e8f0" filter="url(#vxcap-s)"/>
+     <rect x="48" y="56" width="544" height="34" rx="14" fill="#f1f5f9"/>
+     <circle cx="70" cy="73" r="5" fill="#f87171"/><circle cx="88" cy="73" r="5" fill="#fbbf24"/><circle cx="106" cy="73" r="5" fill="#34d399"/>
+     <rect x="78" y="120" width="220" height="14" rx="7" fill="#e2e8f0"/>
+     <rect x="78" y="148" width="320" height="14" rx="7" fill="#eef2f7"/>
+     <rect x="78" y="200" width="150" height="40" rx="10" fill="url(#vxcap-g)"/>
+     <text x="153" y="225" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#fff">Buy now</text>
+     <rect x="76" y="198" width="154" height="44" rx="12" fill="none" stroke="#008448" stroke-width="2.5" class="vxcap-pulse"/>
+     <g class="vxcap-in">
+       <rect x="300" y="190" width="252" height="86" rx="12" fill="#052e1b" filter="url(#vxcap-s)"/>
+       <circle cx="320" cy="210" r="7" fill="#15c47d"/>
+       <rect x="336" y="204" width="120" height="9" rx="4" fill="#34d399"/>
+       <rect x="312" y="228" width="220" height="8" rx="4" fill="#1e5b43"/>
+       <rect x="312" y="246" width="180" height="8" rx="4" fill="#1e5b43"/>
+     </g>
+     <g>
+       <path d="M150 210 q -2 -34 22 -40" fill="none" stroke="#008448" stroke-width="2" stroke-dasharray="4 6"/>
+       <path class="vxcap-float" d="M470 120 l 14 26 -10 -2 -2 12 z" fill="#0f172a"/>
+     </g>
+</svg></figure><figure class="hero"><img src="https://vynix.in/marketing/p-mcp.png" alt="Vynix MCP server connecting to an AI client" width="1080" height="1350" /><figcaption>Vynix MCP server connecting to an AI client</figcaption></figure>
   <div class="toc"><strong>On this page</strong><ol><li><a href="#s1-why-mcp-is-useful-for-frontend">Why MCP is useful for frontend bug work</a></li><li><a href="#s2-what-vynix-adds-before-the-age">What Vynix adds before the agent sees the issue</a></li><li><a href="#s3-a-practical-workflow-with-the-">A practical workflow with the Vynix MCP server</a></li><li><a href="#s4-what-to-ask-your-agent-for">What to ask your agent for</a></li><li><a href="#s5-example-turning-a-bad-bug-repo">Example: turning a bad bug report into useful agent context</a></li><li><a href="#s6-keep-humans-in-the-review-loop">Keep humans in the review loop</a></li></ol></div>
   <section id="s1-why-mcp-is-useful-for-frontend"><h2>Why MCP is useful for frontend bug work</h2><p>The Model Context Protocol, usually called MCP, gives AI tools a standard way to connect to outside context. Instead of pasting a long description into chat, you can give your agent access to structured information from another tool. For frontend work, that context matters because the visible symptom is often only a small part of the problem.</p><p>A broken checkout button, for example, could come from a disabled state that never resets, a JavaScript exception, a failed API request, a CSS overlay sitting on top of the button, or a feature flag returning the wrong value. If your agent only sees "checkout button does not work," it has to search too wide. If it sees the selected element, page screenshot, console errors, network context, and a diagnosis from Vynix, it can start much closer to the real issue.</p><p>The goal is not to let the agent blindly change code. The goal is to remove the low-value back and forth that usually happens before anyone can start fixing the bug.</p><ul><li>Less time spent asking for screenshots, logs, and reproduction details.</li><li>Fewer agent responses based on assumptions.</li><li>A clearer path from a website issue to a code change or GitHub issue.</li></ul></section>
 <section id="s2-what-vynix-adds-before-the-age"><h2>What Vynix adds before the agent sees the issue</h2><p>Vynix starts at the page where the problem happens. You drop a lightweight widget on the site, click on the thing that is wrong, and Vynix records the evidence around that click. That is a better starting point than a plain text report because the selected element and the browser state are tied to the exact moment of failure.</p><p>This is especially helpful for UI defects that are hard to describe. A tester might say, "the card layout is broken on the pricing page," but the useful details are more specific: which card, which viewport, which DOM element, what CSS class, whether a console error appeared, and whether a request failed just before the layout shifted.</p><ul><li>The page element the reporter clicked.</li><li>A screenshot of the page state.</li><li>Console context, such as JavaScript errors or warnings.</li><li>Network context, such as failed or suspicious requests.</li><li>An AI diagnosis of the likely root cause.</li><li>A ready-to-build prompt or a GitHub issue that can be assigned to a coding agent.</li></ul><figure><img src="https://vynix.in/marketing/p-mcp.png" alt="Vynix MCP server connecting to an AI client" loading="lazy" width="1080" height="1350" /><figcaption>Vynix MCP server connecting to an AI client</figcaption></figure></section>

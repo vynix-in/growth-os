@@ -58,7 +58,7 @@ function copyDir(src, dest) {
 // (vynix.in, vynix.in/docs, vynix.in/pricing, vynix.in/marketing) are kept as
 // they are. This covers every section of the generated site so a new page type
 // can never ship with a canonical that points at a missing vynix.in URL.
-const SELF_SECTIONS = 'blog|compare|kb|best|for|alternatives|glossary|assets|sitemap\\.xml|feed\\.xml|404\\.html';
+const SELF_SECTIONS = 'blog|compare|kb|best|for|alternatives|glossary|badge|assets|sitemap\\.xml|feed\\.xml|404\\.html|badge\\.svg';
 function rewriteSelfUrls(content, isSitemapOrRobots) {
   if (isSitemapOrRobots) {
     return content.split('https://vynix.in').join(BASE);

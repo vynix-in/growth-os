@@ -170,7 +170,49 @@ td.yes{color:var(--green);font-weight:600}
   <span class="tag">Glossary</span>
   <h1>Visual feedback</h1>
   <p class="lead">Visual feedback is any visible response in a user interface that confirms an action, shows system state, or guides the user toward the next step. It includes changes like hover states, loading indicators, validation messages, highlights, animations, and error cues.</p>
-  <figure class="hero"><img src="https://vynix.in/marketing/p-point.png" alt="Pointing at an element on a live page with Vynix" loading="lazy" width="1080" height="1350" /><figcaption>Pointing at an element on a live page with Vynix</figcaption></figure>
+  <figure class="ill-hero"><svg class="vx-ill" viewBox="0 0 640 360" role="img" aria-label="Clicking an element and leaving a note with Vynix" preserveAspectRatio="xMidYMid meet" style="width:100%;height:auto;aspect-ratio:16 / 9;display:block">
+  <defs>
+    <linearGradient id="vxcap-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6fdfa"/><stop offset="1" stop-color="#ecfdf5"/>
+    </linearGradient>
+    <linearGradient id="vxcap-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#008448"/><stop offset="1" stop-color="#15c47d"/>
+    </linearGradient>
+    <filter id="vxcap-s" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+  <rect x="1" y="1" width="638" height="358" rx="22" fill="url(#vxcap-bg)" stroke="#d1fae5"/>
+  <style>
+    .vxcap-pulse{transform-box:fill-box;transform-origin:center;animation:vxcap-pulse 2.6s ease-in-out infinite}
+    @keyframes vxcap-pulse{0%,100%{opacity:.55;transform:scale(.92)}50%{opacity:1;transform:scale(1.06)}}
+    .vxcap-dash{stroke-dasharray:8 10;animation:vxcap-dash 1.4s linear infinite}
+    @keyframes vxcap-dash{to{stroke-dashoffset:-36}}
+    .vxcap-float{animation:vxcap-float 4s ease-in-out infinite}
+    @keyframes vxcap-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    .vxcap-in{opacity:0;animation:vxcap-in 6s ease-in-out infinite}
+    @keyframes vxcap-in{0%,8%{opacity:0;transform:translateY(8px)}18%,72%{opacity:1;transform:translateY(0)}88%,100%{opacity:0}}
+  </style>
+  <rect x="48" y="56" width="544" height="248" rx="14" fill="#ffffff" stroke="#e2e8f0" filter="url(#vxcap-s)"/>
+     <rect x="48" y="56" width="544" height="34" rx="14" fill="#f1f5f9"/>
+     <circle cx="70" cy="73" r="5" fill="#f87171"/><circle cx="88" cy="73" r="5" fill="#fbbf24"/><circle cx="106" cy="73" r="5" fill="#34d399"/>
+     <rect x="78" y="120" width="220" height="14" rx="7" fill="#e2e8f0"/>
+     <rect x="78" y="148" width="320" height="14" rx="7" fill="#eef2f7"/>
+     <rect x="78" y="200" width="150" height="40" rx="10" fill="url(#vxcap-g)"/>
+     <text x="153" y="225" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#fff">Buy now</text>
+     <rect x="76" y="198" width="154" height="44" rx="12" fill="none" stroke="#008448" stroke-width="2.5" class="vxcap-pulse"/>
+     <g class="vxcap-in">
+       <rect x="300" y="190" width="252" height="86" rx="12" fill="#052e1b" filter="url(#vxcap-s)"/>
+       <circle cx="320" cy="210" r="7" fill="#15c47d"/>
+       <rect x="336" y="204" width="120" height="9" rx="4" fill="#34d399"/>
+       <rect x="312" y="228" width="220" height="8" rx="4" fill="#1e5b43"/>
+       <rect x="312" y="246" width="180" height="8" rx="4" fill="#1e5b43"/>
+     </g>
+     <g>
+       <path d="M150 210 q -2 -34 22 -40" fill="none" stroke="#008448" stroke-width="2" stroke-dasharray="4 6"/>
+       <path class="vxcap-float" d="M470 120 l 14 26 -10 -2 -2 12 z" fill="#0f172a"/>
+     </g>
+</svg></figure><figure class="hero"><img src="https://vynix.in/marketing/p-point.png" alt="Pointing at an element on a live page with Vynix" loading="lazy" width="1080" height="1350" /><figcaption>Pointing at an element on a live page with Vynix</figcaption></figure>
   <section><h2>What visual feedback means</h2><p>Visual feedback is the part of an interface that answers the user's implicit question: "Did the system notice what I just did?" When someone clicks a button, drags an item, submits a form, or waits for data to load, the UI should respond visibly. That response might be a pressed button state, a spinner, a success banner, a disabled submit button, a red input border, or a selected tab highlight.</p><p>Good visual feedback is immediate, specific, and tied to the user's action. It does not have to be flashy. A subtle color change, focus ring, skeleton loader, or inline message can be enough if it makes the state clear. The goal is to reduce uncertainty by making invisible application state visible.</p></section>
 <section><h2>Why visual feedback matters</h2><p>Without visual feedback, users cannot reliably tell whether an interface is working, broken, slow, or ignoring them. This leads to repeated clicks, abandoned flows, duplicate submissions, and support tickets that are hard to reproduce. For example, if a checkout button does nothing for two seconds after being clicked, many users will click it again or assume payment failed.</p><p>For developers, visual feedback is also part of correctness. A request can technically succeed while the UI still feels broken if there is no loading state, no success confirmation, or stale data remains on screen. Strong feedback patterns improve perceived performance, accessibility, and trust because users can understand both progress and outcome.</p></section>
 <section><h2>Common examples and mistakes</h2><p>Common examples include hover and active states for controls, focus styles for keyboard navigation, progress bars for uploads, toast notifications after saves, inline validation for form errors, and empty states when no data exists. In collaborative tools, visual feedback might show that a comment was posted, a field is locked, or another user is editing the same item.</p><p>Common mistakes include relying only on color to communicate errors, hiding useful messages too quickly, showing generic failures like "Something went wrong", or adding animations that delay the task instead of clarifying it. Another frequent issue is feedback that appears far away from the action, such as a form error at the top of a long page when the invalid field is near the bottom.</p></section>

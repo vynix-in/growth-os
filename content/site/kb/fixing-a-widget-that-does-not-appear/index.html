@@ -152,6 +152,45 @@ td.yes{color:var(--green);font-weight:600}
   <h1>Fixing a widget that does not appear</h1>
   <div class="meta-row"><span>Updated 21 June 2026</span></div>
   <p class="lead">If the Vynix widget does not appear on your site, it usually means the install snippet is missing, blocked, or not loading on the current page. Use these checks to find the cause.</p>
+<figure class="ill-hero"><svg class="vx-ill" viewBox="0 0 640 360" role="img" aria-label="Handing a Vynix report to a coding agent" preserveAspectRatio="xMidYMid meet" style="width:100%;height:auto;aspect-ratio:16 / 9;display:block">
+  <defs>
+    <linearGradient id="vxho-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6fdfa"/><stop offset="1" stop-color="#ecfdf5"/>
+    </linearGradient>
+    <linearGradient id="vxho-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#008448"/><stop offset="1" stop-color="#15c47d"/>
+    </linearGradient>
+    <filter id="vxho-s" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+  <rect x="1" y="1" width="638" height="358" rx="22" fill="url(#vxho-bg)" stroke="#d1fae5"/>
+  <style>
+    .vxho-pulse{transform-box:fill-box;transform-origin:center;animation:vxho-pulse 2.6s ease-in-out infinite}
+    @keyframes vxho-pulse{0%,100%{opacity:.55;transform:scale(.92)}50%{opacity:1;transform:scale(1.06)}}
+    .vxho-dash{stroke-dasharray:8 10;animation:vxho-dash 1.4s linear infinite}
+    @keyframes vxho-dash{to{stroke-dashoffset:-36}}
+    .vxho-float{animation:vxho-float 4s ease-in-out infinite}
+    @keyframes vxho-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    .vxho-in{opacity:0;animation:vxho-in 6s ease-in-out infinite}
+    @keyframes vxho-in{0%,8%{opacity:0;transform:translateY(8px)}18%,72%{opacity:1;transform:translateY(0)}88%,100%{opacity:0}}
+  </style>
+  <rect x="60" y="120" width="180" height="120" rx="14" fill="#ffffff" stroke="#e2e8f0" filter="url(#vxho-s)"/>
+     <circle cx="90" cy="150" r="9" fill="#15c47d"/>
+     <rect x="108" y="145" width="100" height="9" rx="4" fill="#0f172a"/>
+     <rect x="80" y="178" width="140" height="8" rx="4" fill="#e2e8f0"/>
+     <rect x="80" y="198" width="120" height="8" rx="4" fill="#eef2f7"/>
+     <path d="M250 180 h120" stroke="url(#vxho-g)" stroke-width="3" class="vxho-dash" marker-end=""/>
+     <path d="M362 172 l16 8 -16 8 z" fill="#008448"/>
+     <rect x="400" y="120" width="180" height="120" rx="14" fill="#052e1b" filter="url(#vxho-s)"/>
+     <circle cx="430" cy="150" r="10" fill="none" stroke="#34d399" stroke-width="2.5" class="vxho-pulse"/>
+     <path d="M425 150 l4 4 7 -8" fill="none" stroke="#34d399" stroke-width="2.5" stroke-linecap="round"/>
+     <rect x="450" y="145" width="100" height="9" rx="4" fill="#34d399"/>
+     <rect x="420" y="178" width="140" height="8" rx="4" fill="#1e5b43"/>
+     <rect x="420" y="198" width="110" height="8" rx="4" fill="#1e5b43"/>
+     <text x="150" y="104" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#065f46">Report</text>
+     <text x="490" y="104" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#065f46">Coding agent</text>
+</svg></figure>
   <ol><li>Confirm the Vynix widget snippet is installed on the page you are testing. It should be included in the site code or tag manager for that page, not only on a different route or template.</li><li>Check that the snippet is placed where your site can load it on every page that needs Vynix. If your app uses client-side routing, make sure the widget is initialized after route changes if required.</li><li>Open your browser developer tools and check the Console and Network tabs. Look for blocked scripts, failed requests, JavaScript errors, or content security policy errors.</li><li>Review browser extensions, ad blockers, privacy tools, and consent settings. These can block third-party scripts or stop the widget from loading until consent is granted.</li><li>Verify your Vynix configuration matches the site you are testing. Check the current setup against the latest installation steps in the Vynix docs.</li><li>Clear cache, reload the page, and test in a private window or another browser. This helps rule out stale code, cached pages, or browser-specific blocking.</li></ol>
   <p>The most common reason the Vynix widget is not showing up is that the widget script is not present on the active page, or it is being blocked before it can load. This can happen after a deploy, when testing a different environment, or when the site uses a template that does not include the snippet.</p><p>If the script is present but the widget still does not appear, check for runtime errors, blocked network requests, content security policy rules, and browser privacy settings. For exact install requirements and configuration options, see the Vynix docs at https://vynix.in/docs.</p>
   <figure><img src="https://vynix.in/marketing/p-install.png" alt="Installing the Vynix widget with one script tag" loading="lazy" width="1080" height="1350" /><figcaption>Installing the Vynix widget with one script tag</figcaption></figure>
