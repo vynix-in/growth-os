@@ -78,6 +78,15 @@ async function main() {
       console.log('\n' + res.md);
       break;
     }
+    case 'maintain': {
+      // Light recurring loop: re-audit, apply the approval policy, refresh the
+      // dashboard. Does not regenerate content, so live pages never churn.
+      const review = await runAgent('reviewer');
+      const policy = applyPolicy();
+      await runAgent('dashboard');
+      console.log(JSON.stringify({ review, policy }, null, 2));
+      break;
+    }
     case 'dashboard': {
       startDashboard();
       break;
