@@ -23,6 +23,7 @@ import { scanFile } from '../lib/publication-gate.js';
 import { publishRepo, approveAllRepos, publishAllRepos } from '../github/publish.js';
 import { deployPages } from '../github/deploy-pages.js';
 import { buildVynixResources } from '../tools/build-vynix-resources.mjs';
+import { applyRealShots } from '../tools/real-shots.mjs';
 import { applyPolicy } from '../lib/policy.js';
 import { record as recordActivity } from '../lib/activity.js';
 
@@ -124,6 +125,8 @@ async function main() {
       await runAgent('distribution');
       await runAgent('internal-linking');
       await runAgent('site-builder');
+      // Swap in real product screenshots and thread distinct shots through articles.
+      applyRealShots();
       const review = await runAgent('reviewer');
       const policy = applyPolicy();
       // Refresh the /resources copy served from vynix.in so it stays in sync.
@@ -178,6 +181,11 @@ async function main() {
     }
     case 'build-resources': {
       const res = buildVynixResources();
+      console.log(JSON.stringify(res, null, 2));
+      break;
+    }
+    case 'real-shots': {
+      const res = applyRealShots();
       console.log(JSON.stringify(res, null, 2));
       break;
     }
