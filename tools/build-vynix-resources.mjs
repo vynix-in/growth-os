@@ -26,6 +26,9 @@ function copyDir(src, dest) {
 // Rewrite one text file's content to use the /resources prefix.
 function rewrite(content, isSitemapOrText) {
   let out = content;
+  // The github.io mirror host (used by submit-urls.txt and any stray reference)
+  // maps directly onto the live resources path: github.io/<path> -> vynix.in/resources/<path>.
+  out = out.split('https://vynix-in.github.io').join(`https://vynix.in${PREFIX}`);
   // Root-relative internal links and asset references -> add the prefix.
   out = out.replace(new RegExp(`(href|src)="/(${SECTIONS})(/|")`, 'g'), `$1="${PREFIX}/$2$3`);
   out = out.replace(new RegExp(`(href|src)="/(${FILES})"`, 'g'), `$1="${PREFIX}/$2"`);
