@@ -12,7 +12,7 @@ import { db } from '../lib/db.js';
 import { logger } from '../lib/logger.js';
 import { product } from '../lib/vynix-facts.js';
 import { renderPage, breadcrumbsHtml } from '../lib/page.js';
-import { headMeta, breadcrumbLd, faqLd, abs } from '../lib/seo.js';
+import { headMeta, breadcrumbLd, faqLd, itemListLd, abs } from '../lib/seo.js';
 import { pickImage } from '../lib/images.js';
 import { humanDate, now } from '../lib/util.js';
 
@@ -20,6 +20,8 @@ const log = logger('site-builder');
 const blog = db('content');
 const comparisons = db('comparisons');
 const knowledgebase = db('knowledgebase');
+const listicles = db('listicles');
+const usecases = db('usecases');
 
 export const meta = { id: 'site-builder', name: 'Site Builder Agent' };
 
@@ -30,13 +32,14 @@ function card(href, title, desc, img) {
   </a>`;
 }
 
-function listingPage({ title, description, canonical, eyebrow, intro, bodyParas = [], faqs = [], cards }) {
+function listingPage({ title, description, canonical, eyebrow, intro, bodyParas = [], faqs = [], cards, items = [] }) {
   const head = [
     headMeta({ title: `${title} | Vynix`, description, canonical, type: 'website' }),
     breadcrumbLd([
       { name: 'Home', url: product.website },
       { name: eyebrow, url: canonical },
     ]),
+    items.length ? itemListLd(items, title) : '',
     faqs.length ? faqLd(faqs) : '',
   ]
     .filter(Boolean)
@@ -64,6 +67,15 @@ function write(file, content) {
   fs.writeFileSync(file, content);
 }
 
+function escapeXml(s) {
+  return String(s || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
+
 // Self-healing: walk every generated page and drop internal list links that
 // point to a page which no longer exists (for example a post that was renamed
 // or removed). This keeps the site free of broken internal links on every build.
@@ -80,7 +92,7 @@ function fixBrokenLinks(siteRoot) {
       else if (entry.name === 'index.html') {
         let html = fs.readFileSync(full, 'utf8');
         const before = html;
-        html = html.replace(/<li><a href="(\/(?:blog|compare|kb)\/[^"/]+\/)">[^<]*<\/a><\/li>/g, (m, route) =>
+        html = html.replace(/<li><a href="(\/(?:blog|compare|kb|best|alternatives|for)\/[^"/]+\/)">[^<]*<\/a><\/li>/g, (m, route) =>
           exists(route) ? m : '',
         );
         if (html !== before) {
@@ -99,6 +111,8 @@ export async function run() {
   const posts = blog.find({ kind: 'blog' }).filter((p) => p.slug && p.status !== 'blocked');
   const comps = comparisons.all().filter((c) => c.slug && c.status !== 'blocked');
   const kb = knowledgebase.all().filter((k) => k.slug && k.og_image && k.status !== 'blocked');
+  const lists = listicles.all().filter((l) => l.slug && l.status !== 'blocked');
+  const ucs = usecases.all().filter((u) => u.slug && u.status !== 'blocked');
 
   // Blog index
   write(
@@ -121,6 +135,7 @@ export async function run() {
       cards: posts.length
         ? posts.map((p) => card(`/blog/${p.slug}/`, p.title, p.description, p.hero))
         : ['<p>New articles are on the way.</p>'],
+      items: posts.map((p) => ({ name: p.title, url: `/blog/${p.slug}/` })),
     }),
   );
 
@@ -143,6 +158,7 @@ export async function run() {
         { q: 'How is Vynix different from most of these tools?', a: 'Vynix attaches an AI diagnosis to every report and hands the work straight to a coding agent or a GitHub issue, so feedback turns into a fix faster.' },
       ],
       cards: comps.map((c) => card(`/compare/${c.slug}/`, `${c.competitor} vs Vynix`, `How ${c.competitor} and Vynix compare.`, pickImage('diagnosis', c.slug.length).url)),
+      items: comps.map((c) => ({ name: `${c.competitor} vs Vynix`, url: `/compare/${c.slug}/` })),
     }),
   );
 
@@ -164,8 +180,58 @@ export async function run() {
         { q: 'Where can I get more help?', a: 'Read the full documentation at vynix.in/docs, or email the team at hello@vynix.in.' },
       ],
       cards: kb.map((k) => card(`/kb/${k.slug}/`, k.title, k.type, pickImage('install', k.slug.length).url)),
+      items: kb.map((k) => ({ name: k.title, url: `/kb/${k.slug}/` })),
     }),
   );
+
+  // Guides index (best-of and alternatives listicles)
+  if (lists.length) {
+    write(
+      path.join(siteRoot, 'best', 'index.html'),
+      listingPage({
+        title: 'Vynix Guides: best tools and alternatives',
+        description: 'Buyer guides comparing the best bug reporting and visual feedback tools, and alternatives to popular options.',
+        canonical: '/best/',
+        eyebrow: 'Guides',
+        intro: 'Straight buyer guides to the best bug reporting and feedback tools, and honest alternatives to the popular ones.',
+        bodyParas: [
+          'Choosing a feedback tool is easier when you can see the options side by side. These guides round up the main tools in each category, say what each one is best for, and explain where Vynix fits. They are written to be fair, so if another tool suits you better, the guide says so.',
+          'Use these alongside the detailed one-to-one comparisons. Start with a guide to see the field, then read the head-to-head page for the two tools you are weighing up.',
+        ],
+        faqs: [
+          { q: 'How do you pick the tools in these guides?', a: 'We include the widely used tools in each category and describe them from known facts. We do not rank by who pays us, because no one does.' },
+          { q: 'Is Vynix always listed first?', a: 'Vynix is listed as a strong option because it is our product, but each guide explains what every tool is best for so you can choose honestly.' },
+        ],
+        cards: lists.map((l) => card(`${l.url}/`, l.title, l.kind === 'alternatives' ? 'Alternatives guide' : 'Buyer guide', pickImage('workflow', l.slug.length).url)),
+        items: lists.map((l) => ({ name: l.title, url: `${l.url}/` })),
+      }),
+    );
+  }
+
+  // Use cases index (persona landing pages)
+  if (ucs.length) {
+    write(
+      path.join(siteRoot, 'for', 'index.html'),
+      listingPage({
+        title: 'Vynix use cases',
+        description: 'How different teams use Vynix: agencies, QA, startups, designers, AI developers and support teams.',
+        canonical: '/for/',
+        eyebrow: 'Use cases',
+        intro: 'See how Vynix fits the way your team works.',
+        bodyParas: [
+          'Vynix helps any team that collects feedback on a website, but the day-to-day looks different depending on who you are. These pages walk through the specific problems each audience faces and how Vynix helps, with the features that matter most to them.',
+          'Pick the page closest to your role to see the fastest path to value. Each one ends with a free way to try Vynix on your own site.',
+          'Whether you run an agency collecting client feedback, a QA team filing reproducible bugs, a startup shipping fast with AI agents, a design team reviewing live work, or a support team turning user reports into clear tickets, the same idea applies. Feedback is only useful when it carries the context needed to act on it, and Vynix captures that context for you so the work moves forward instead of bouncing back and forth.',
+        ],
+        faqs: [
+          { q: 'Which plan do I need?', a: 'Most teams start on the free plan. Check vynix.in/pricing for current details on what each plan includes.' },
+          { q: 'Does Vynix work with my stack?', a: 'Yes. The widget installs with one script tag and works on any framework or plain HTML.' },
+        ],
+        cards: ucs.map((u) => card(`/for/${u.slug}/`, u.title, 'Use case', pickImage('review', u.slug.length).url)),
+        items: ucs.map((u) => ({ name: u.title, url: `/for/${u.slug}/` })),
+      }),
+    );
+  }
 
   // Resources home (a hub that links the three sections)
   write(
@@ -187,6 +253,8 @@ export async function run() {
       cards: [
         card('/blog/', 'Blog', 'Guides on context, diagnosis and AI handoff.', pickImage('workflow', 1).url),
         card('/compare/', 'Compare', 'How Vynix compares with other tools.', pickImage('diagnosis', 2).url),
+        card('/best/', 'Guides', 'Best tools and alternatives, compared.', pickImage('files', 4).url),
+        card('/for/', 'Use cases', 'How different teams use Vynix.', pickImage('review', 5).url),
         card('/kb/', 'Help Center', 'Setup and troubleshooting guides.', pickImage('install', 3).url),
       ],
     }),
@@ -198,9 +266,13 @@ export async function run() {
     '/blog/',
     '/compare/',
     '/kb/',
+    ...(lists.length ? ['/best/'] : []),
+    ...(ucs.length ? ['/for/'] : []),
     ...posts.map((p) => `/blog/${p.slug}/`),
     ...comps.map((c) => `/compare/${c.slug}/`),
     ...kb.map((k) => `/kb/${k.slug}/`),
+    ...lists.map((l) => `${l.url}/`),
+    ...ucs.map((u) => `/for/${u.slug}/`),
   ];
   const lastmod = now().slice(0, 10);
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -216,10 +288,55 @@ ${urls.map((u) => `  <url><loc>${abs(u)}</loc><lastmod>${lastmod}</lastmod></url
     `User-agent: *\nAllow: /\n\nSitemap: ${abs('/sitemap.xml')}\n`,
   );
 
+  // RSS feed for the blog (helps syndication and faster indexing).
+  const rssItems = posts
+    .slice(0, 30)
+    .map(
+      (p) => `    <item>
+      <title>${escapeXml(p.title)}</title>
+      <link>${abs('/blog/' + p.slug + '/')}</link>
+      <guid>${abs('/blog/' + p.slug + '/')}</guid>
+      <description>${escapeXml(p.description || '')}</description>
+      <pubDate>${new Date(p.published || now()).toUTCString()}</pubDate>
+    </item>`,
+    )
+    .join('\n');
+  const rss = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Vynix Blog</title>
+    <link>${abs('/blog/')}</link>
+    <description>Practical guides on bug reporting, developer context, and shipping with AI coding agents.</description>
+    <language>en</language>
+${rssItems}
+  </channel>
+</rss>
+`;
+  write(path.join(siteRoot, 'blog', 'rss.xml'), rss);
+  write(path.join(siteRoot, 'feed.xml'), rss);
+
+  // A friendly 404 page.
+  write(
+    path.join(siteRoot, '404.html'),
+    listingPage({
+      title: 'Page not found',
+      description: 'That page could not be found. Browse the Vynix blog, comparisons and help center instead.',
+      canonical: '/404.html',
+      eyebrow: 'Not found',
+      intro: 'We could not find that page. Here are some good places to go next.',
+      bodyParas: ['The link may be old or mistyped. Try one of the sections below, or head to the product.'],
+      cards: [
+        card('/blog/', 'Blog', 'Guides and how-tos.', pickImage('workflow', 1).url),
+        card('/compare/', 'Compare', 'Vynix vs other tools.', pickImage('diagnosis', 2).url),
+        card('/best/', 'Guides', 'Best tools and alternatives.', pickImage('files', 4).url),
+      ],
+    }),
+  );
+
   const total = urls.length;
   const fixedLinks = fixBrokenLinks(siteRoot);
-  log.info('site built', { pages: total, posts: posts.length, comparisons: comps.length, kb: kb.length, fixedLinks });
-  return { pages: total, blog: posts.length, comparisons: comps.length, kb: kb.length, fixed_links: fixedLinks, updated: humanDate() };
+  log.info('site built', { pages: total, posts: posts.length, comparisons: comps.length, kb: kb.length, listicles: lists.length, usecases: ucs.length, fixedLinks });
+  return { pages: total, blog: posts.length, comparisons: comps.length, kb: kb.length, listicles: lists.length, usecases: ucs.length, fixed_links: fixedLinks, updated: humanDate() };
 }
 
 export default { meta, run };

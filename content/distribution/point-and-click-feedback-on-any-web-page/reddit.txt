@@ -1,0 +1,9 @@
+Subreddits: r/webdev, r/SideProject, r/programming, r/devtools
+
+Title: Point and click feedback on any web page
+
+I wrote up how we think about this: Use Vynix to click broken UI, capture page context, and turn feedback into a GitHub issue or coding-agent prompt.
+
+https://vynix-in.github.io/blog/point-and-click-feedback-on-any-web-page/
+
+Short version: capture the element, the page state, and the console and network detail with every report, add an AI diagnosis, then hand it to a coding agent. Happy to answer questions in the comments.

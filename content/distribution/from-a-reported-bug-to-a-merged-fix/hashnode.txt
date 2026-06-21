@@ -1,0 +1,8 @@
+Title: From a Reported Bug to a Merged Fix
+Canonical URL (set this in Hashnode settings): https://vynix-in.github.io/blog/from-a-reported-bug-to-a-merged-fix/
+Tags: webdev, ai, programming, productivity
+
+See a practical workflow for taking a vague website bug report, capturing page context with Vynix, and turning it into a reviewed, merged fix.
+
+Originally published on the Vynix blog: https://vynix-in.github.io/blog/from-a-reported-bug-to-a-merged-fix/
+Learn more about Vynix at https://vynix.in.

@@ -1,0 +1,8 @@
+Title: How Vynix cuts the cost of running AI coding agents
+Canonical URL (set this in Hashnode settings): https://vynix-in.github.io/blog/how-vynix-cuts-the-cost-of-running-ai-coding-agents/
+Tags: webdev, ai, programming, productivity
+
+See how Vynix gives AI coding agents precise bug context so they waste fewer runs, use shorter prompts, and cost less to operate.
+
+Originally published on the Vynix blog: https://vynix-in.github.io/blog/how-vynix-cuts-the-cost-of-running-ai-coding-agents/
+Learn more about Vynix at https://vynix.in.

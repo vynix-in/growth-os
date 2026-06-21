@@ -79,6 +79,18 @@ async function load() {
     </div>
     ${pub.deployed_at ? `<div class="sub" style="margin-top:8px">Last deploy: ${new Date(pub.deployed_at).toLocaleString()}</div>` : ''}`;
 
+  // Growth plan
+  const g = s.growth || { goals: [] };
+  $('growth').innerHTML = (g.goals || [])
+    .map((goal) => {
+      const color = goal.pct >= 100 ? 'var(--green-bright)' : goal.pct >= 50 ? 'var(--green)' : 'var(--amber)';
+      return `<div style="margin:10px 0">
+        <div style="display:flex;justify-content:space-between;font-size:.9rem"><span>${goal.label}</span><strong>${goal.current} / ${goal.target}</strong></div>
+        <div style="height:8px;background:var(--panel-2);border:1px solid var(--border);border-radius:999px;overflow:hidden;margin-top:4px"><div style="height:100%;width:${goal.pct}%;background:${color}"></div></div>
+      </div>`;
+    })
+    .join('');
+
   // Reviewer
   const rev = s.review || {};
   const ok = (rev.failed || 0) === 0;

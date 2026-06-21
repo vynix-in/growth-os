@@ -1,0 +1,12 @@
+Collecting Website Feedback From Clients and Teammates
+
+A practical guide to collecting useful website feedback with screenshots, technical context, clear ownership, and fewer back-and-forth messages.
+
+A quick take from what we keep seeing:
+- Feedback without context is slow to fix.
+- An AI diagnosis on every report saves a round of back and forth.
+- A direct path to a GitHub issue or a coding agent closes the loop.
+
+Read the full post: https://vynix-in.github.io/blog/collecting-website-feedback-from-clients-and-teammates/
+
+#webdev #softwaredevelopment #ai #devtools

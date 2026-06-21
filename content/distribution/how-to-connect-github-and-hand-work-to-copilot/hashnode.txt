@@ -1,0 +1,8 @@
+Title: How to Connect GitHub and Hand Work to Copilot
+Canonical URL (set this in Hashnode settings): https://vynix-in.github.io/blog/how-to-connect-github-and-hand-work-to-copilot/
+Tags: webdev, ai, programming, productivity
+
+Connect Vynix to GitHub, turn annotated website bugs into clear issues, and assign the right work to Copilot without losing context.
+
+Originally published on the Vynix blog: https://vynix-in.github.io/blog/how-to-connect-github-and-hand-work-to-copilot/
+Learn more about Vynix at https://vynix.in.

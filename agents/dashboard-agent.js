@@ -39,6 +39,10 @@ export function buildSnapshot() {
   const agentRuns = db('agents').all();
   const reviewRows = db('reviews').all();
   const reportRows = db('reports').all();
+  const listicles = db('listicles').all();
+  const usecases = db('usecases').all();
+  const distributions = db('distributions').all();
+  const backlinks = db('backlinks').all();
 
   const publishedRepos = repos.filter((r) => r.status === 'published');
   const lastDeploy = reportRows
@@ -55,9 +59,13 @@ export function buildSnapshot() {
       repositories: repos.length,
       comparison_pages: comparisons.length,
       blog_posts: content.filter((c) => c.kind === 'blog').length,
+      listicles: listicles.length,
+      use_cases: usecases.length,
       directories: directories.length,
       submissions: submissions.length,
       knowledge_base_articles: knowledgebase.length,
+      distribution_packets: distributions.length,
+      backlink_targets: backlinks.length,
       content_assets: content.length,
       open_source_candidates: opensource.length,
       internal_link_suggestions: links.length,
@@ -86,6 +94,23 @@ export function buildSnapshot() {
       comparison_pages: comparisons.length,
       kb_articles: knowledgebase.filter((k) => k.og_image).length,
     },
+    growth: (() => {
+      const livePages = lastDeploy ? lastDeploy.pages : 0;
+      const goals = [
+        { label: 'Live SEO pages', current: livePages, target: 120 },
+        { label: 'Comparison pages', current: comparisons.length, target: 30 },
+        { label: 'Buyer guides', current: listicles.length, target: 20 },
+        { label: 'Use-case pages', current: usecases.length, target: 10 },
+        { label: 'Published repos', current: publishedRepos.length, target: 11 },
+        { label: 'Directory opportunities', current: directories.length, target: 60 },
+        { label: 'Backlink targets', current: backlinks.length, target: 40 },
+        { label: 'Distribution packets', current: distributions.length, target: 20 },
+      ];
+      return {
+        window_days: 60,
+        goals: goals.map((g) => ({ ...g, pct: Math.min(100, Math.round((g.current / g.target) * 100)) })),
+      };
+    })(),
     breakdowns: {
       repositories_by_status: countBy(repos, 'status'),
       directories_by_category: countBy(directories, 'category'),

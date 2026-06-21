@@ -1,0 +1,12 @@
+How to Write Bug Reports AI Agents Can Fix
+
+Learn how to write bug reports with UI evidence, logs, repro steps, and clear prompts so AI coding agents can actually ship fixes.
+
+A quick take from what we keep seeing:
+- Feedback without context is slow to fix.
+- An AI diagnosis on every report saves a round of back and forth.
+- A direct path to a GitHub issue or a coding agent closes the loop.
+
+Read the full post: https://vynix-in.github.io/blog/how-to-write-bug-reports-ai-agents-can-fix/
+
+#webdev #softwaredevelopment #ai #devtools

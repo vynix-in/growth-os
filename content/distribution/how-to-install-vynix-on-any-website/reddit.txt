@@ -1,0 +1,9 @@
+Subreddits: r/webdev, r/SideProject, r/programming, r/devtools
+
+Title: How to install Vynix on any website
+
+I wrote up how we think about this: Add Vynix to your site, verify the widget, and capture useful bug context from real pages without changing your workflow.
+
+https://vynix-in.github.io/blog/how-to-install-vynix-on-any-website/
+
+Short version: capture the element, the page state, and the console and network detail with every report, add an AI diagnosis, then hand it to a coding agent. Happy to answer questions in the comments.

@@ -15,7 +15,7 @@ import { humanizeDeep } from '../lib/humanize.js';
 import { scanText } from '../lib/publication-gate.js';
 import { product } from '../lib/vynix-facts.js';
 import { renderPage, breadcrumbsHtml } from '../lib/page.js';
-import { headMeta, faqLd, breadcrumbLd } from '../lib/seo.js';
+import { headMeta, faqLd, breadcrumbLd, howToLd } from '../lib/seo.js';
 import { pickImage, makeOgImage } from '../lib/images.js';
 import { slug as toSlug, humanDate, now } from '../lib/util.js';
 
@@ -132,6 +132,9 @@ async function buildArticle(topic) {
       { name: 'Help', url: '/kb/' },
       { name: article.title, url: `/kb/${slug}/` },
     ]),
+    article.steps && article.steps.length >= 2
+      ? howToLd({ name: article.title, description: article.metaDescription, steps: article.steps, image: ogImage })
+      : '',
     faqLd(article.faqs),
   ].join('\n');
 

@@ -1,0 +1,8 @@
+Title: How to Write Bug Reports AI Agents Can Fix
+Canonical URL (set this in Hashnode settings): https://vynix-in.github.io/blog/how-to-write-bug-reports-ai-agents-can-fix/
+Tags: webdev, ai, programming, productivity
+
+Learn how to write bug reports with UI evidence, logs, repro steps, and clear prompts so AI coding agents can actually ship fixes.
+
+Originally published on the Vynix blog: https://vynix-in.github.io/blog/how-to-write-bug-reports-ai-agents-can-fix/
+Learn more about Vynix at https://vynix.in.

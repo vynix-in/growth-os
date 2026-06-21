@@ -1,0 +1,9 @@
+Subreddits: r/webdev, r/SideProject, r/programming, r/devtools
+
+Title: Reading the Vynix AI diagnosis and the files it finds
+
+I wrote up how we think about this: Learn how to read a Vynix AI diagnosis, check the evidence, and turn file hints into a clear fix plan or GitHub issue.
+
+https://vynix-in.github.io/blog/reading-the-vynix-ai-diagnosis-and-the-files-it-finds/
+
+Short version: capture the element, the page state, and the console and network detail with every report, add an AI diagnosis, then hand it to a coding agent. Happy to answer questions in the comments.

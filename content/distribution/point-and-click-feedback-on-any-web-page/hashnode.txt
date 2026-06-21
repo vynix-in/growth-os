@@ -1,0 +1,8 @@
+Title: Point and click feedback on any web page
+Canonical URL (set this in Hashnode settings): https://vynix-in.github.io/blog/point-and-click-feedback-on-any-web-page/
+Tags: webdev, ai, programming, productivity
+
+Use Vynix to click broken UI, capture page context, and turn feedback into a GitHub issue or coding-agent prompt.
+
+Originally published on the Vynix blog: https://vynix-in.github.io/blog/point-and-click-feedback-on-any-web-page/
+Learn more about Vynix at https://vynix.in.

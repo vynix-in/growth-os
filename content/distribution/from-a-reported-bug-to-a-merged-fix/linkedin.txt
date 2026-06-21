@@ -1,0 +1,12 @@
+From a Reported Bug to a Merged Fix
+
+See a practical workflow for taking a vague website bug report, capturing page context with Vynix, and turning it into a reviewed, merged fix.
+
+A quick take from what we keep seeing:
+- Feedback without context is slow to fix.
+- An AI diagnosis on every report saves a round of back and forth.
+- A direct path to a GitHub issue or a coding agent closes the loop.
+
+Read the full post: https://vynix-in.github.io/blog/from-a-reported-bug-to-a-merged-fix/
+
+#webdev #softwaredevelopment #ai #devtools

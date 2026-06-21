@@ -1,0 +1,12 @@
+Turn a visual note into a GitHub issue in one step
+
+Show how Vynix turns a clicked UI problem into a GitHub issue with screenshot, element data, logs, network context, and AI diagnosis.
+
+A quick take from what we keep seeing:
+- Feedback without context is slow to fix.
+- An AI diagnosis on every report saves a round of back and forth.
+- A direct path to a GitHub issue or a coding agent closes the loop.
+
+Read the full post: https://vynix-in.github.io/blog/turn-a-visual-note-into-a-github-issue-in-one-step/
+
+#webdev #softwaredevelopment #ai #devtools

@@ -1,0 +1,12 @@
+How Vynix Captures Console and Network Detail
+
+See how Vynix turns a clicked UI bug into useful console, network, screenshot, element, and AI diagnosis context for developers.
+
+A quick take from what we keep seeing:
+- Feedback without context is slow to fix.
+- An AI diagnosis on every report saves a round of back and forth.
+- A direct path to a GitHub issue or a coding agent closes the loop.
+
+Read the full post: https://vynix-in.github.io/blog/how-vynix-captures-console-and-network-detail/
+
+#webdev #softwaredevelopment #ai #devtools

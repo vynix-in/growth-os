@@ -1,0 +1,8 @@
+Title: Collecting Website Feedback From Clients and Teammates
+Canonical URL (set this in Hashnode settings): https://vynix-in.github.io/blog/collecting-website-feedback-from-clients-and-teammates/
+Tags: webdev, ai, programming, productivity
+
+A practical guide to collecting useful website feedback with screenshots, technical context, clear ownership, and fewer back-and-forth messages.
+
+Originally published on the Vynix blog: https://vynix-in.github.io/blog/collecting-website-feedback-from-clients-and-teammates/
+Learn more about Vynix at https://vynix.in.

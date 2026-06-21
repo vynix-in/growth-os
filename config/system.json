@@ -42,11 +42,15 @@
     "priority": [
       "github-seo",
       "comparison",
+      "listicle",
+      "usecase",
       "blog",
       "changelog",
       "directory-discovery",
+      "backlinks",
       "submission",
       "knowledgebase",
+      "distribution",
       "internal-linking",
       "site-builder",
       "opensource-funnel"

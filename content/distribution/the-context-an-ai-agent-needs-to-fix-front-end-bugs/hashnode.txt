@@ -1,0 +1,8 @@
+Title: The context an AI agent needs to fix front-end bugs
+Canonical URL (set this in Hashnode settings): https://vynix-in.github.io/blog/the-context-an-ai-agent-needs-to-fix-front-end-bugs/
+Tags: webdev, ai, programming, productivity
+
+Learn what front-end bug context an AI coding agent needs: DOM element, screenshot, console logs, network calls, reproduction notes, and scope.
+
+Originally published on the Vynix blog: https://vynix-in.github.io/blog/the-context-an-ai-agent-needs-to-fix-front-end-bugs/
+Learn more about Vynix at https://vynix.in.

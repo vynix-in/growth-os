@@ -1,0 +1,8 @@
+Title: Projects, roles and sharing in Vynix
+Canonical URL (set this in Hashnode settings): https://vynix-in.github.io/blog/projects-roles-and-sharing-in-vynix/
+Tags: webdev, ai, programming, productivity
+
+Learn how to organize Vynix projects, share annotated issues, and give developers the context they need to fix site bugs faster.
+
+Originally published on the Vynix blog: https://vynix-in.github.io/blog/projects-roles-and-sharing-in-vynix/
+Learn more about Vynix at https://vynix.in.

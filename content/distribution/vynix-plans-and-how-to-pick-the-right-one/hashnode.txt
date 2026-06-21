@@ -1,0 +1,8 @@
+Title: Vynix plans, and how to pick the right one
+Canonical URL (set this in Hashnode settings): https://vynix-in.github.io/blog/vynix-plans-and-how-to-pick-the-right-one/
+Tags: webdev, ai, programming, productivity
+
+Compare Vynix plan types at a high level, from the free plan to paid options, and choose based on your debugging workflow.
+
+Originally published on the Vynix blog: https://vynix-in.github.io/blog/vynix-plans-and-how-to-pick-the-right-one/
+Learn more about Vynix at https://vynix.in.

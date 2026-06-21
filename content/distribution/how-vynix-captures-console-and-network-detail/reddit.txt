@@ -1,0 +1,9 @@
+Subreddits: r/webdev, r/SideProject, r/programming, r/devtools
+
+Title: How Vynix Captures Console and Network Detail
+
+I wrote up how we think about this: See how Vynix turns a clicked UI bug into useful console, network, screenshot, element, and AI diagnosis context for developers.
+
+https://vynix-in.github.io/blog/how-vynix-captures-console-and-network-detail/
+
+Short version: capture the element, the page state, and the console and network detail with every report, add an AI diagnosis, then hand it to a coding agent. Happy to answer questions in the comments.

@@ -1,0 +1,12 @@
+Vynix plans, and how to pick the right one
+
+Compare Vynix plan types at a high level, from the free plan to paid options, and choose based on your debugging workflow.
+
+A quick take from what we keep seeing:
+- Feedback without context is slow to fix.
+- An AI diagnosis on every report saves a round of back and forth.
+- A direct path to a GitHub issue or a coding agent closes the loop.
+
+Read the full post: https://vynix-in.github.io/blog/vynix-plans-and-how-to-pick-the-right-one/
+
+#webdev #softwaredevelopment #ai #devtools

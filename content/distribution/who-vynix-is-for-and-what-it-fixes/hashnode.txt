@@ -1,0 +1,8 @@
+Title: Who Vynix is for, and what it fixes
+Canonical URL (set this in Hashnode settings): https://vynix-in.github.io/blog/who-vynix-is-for-and-what-it-fixes/
+Tags: webdev, ai, programming, productivity
+
+See who should use Vynix, from founders to QA teams, and how it turns website bugs into useful developer context.
+
+Originally published on the Vynix blog: https://vynix-in.github.io/blog/who-vynix-is-for-and-what-it-fixes/
+Learn more about Vynix at https://vynix.in.

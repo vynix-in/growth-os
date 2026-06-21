@@ -1,0 +1,12 @@
+How to install Vynix on any website
+
+Add Vynix to your site, verify the widget, and capture useful bug context from real pages without changing your workflow.
+
+A quick take from what we keep seeing:
+- Feedback without context is slow to fix.
+- An AI diagnosis on every report saves a round of back and forth.
+- A direct path to a GitHub issue or a coding agent closes the loop.
+
+Read the full post: https://vynix-in.github.io/blog/how-to-install-vynix-on-any-website/
+
+#webdev #softwaredevelopment #ai #devtools

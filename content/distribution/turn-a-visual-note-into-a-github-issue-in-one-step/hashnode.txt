@@ -1,0 +1,8 @@
+Title: Turn a visual note into a GitHub issue in one step
+Canonical URL (set this in Hashnode settings): https://vynix-in.github.io/blog/turn-a-visual-note-into-a-github-issue-in-one-step/
+Tags: webdev, ai, programming, productivity
+
+Show how Vynix turns a clicked UI problem into a GitHub issue with screenshot, element data, logs, network context, and AI diagnosis.
+
+Originally published on the Vynix blog: https://vynix-in.github.io/blog/turn-a-visual-note-into-a-github-issue-in-one-step/
+Learn more about Vynix at https://vynix.in.

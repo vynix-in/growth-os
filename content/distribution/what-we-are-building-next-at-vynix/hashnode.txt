@@ -1,0 +1,8 @@
+Title: What we are building next at Vynix
+Canonical URL (set this in Hashnode settings): https://vynix-in.github.io/blog/what-we-are-building-next-at-vynix/
+Tags: webdev, ai, programming, productivity
+
+A practical look at Vynix's direction: deeper agent workflows, richer feedback context, broader integrations, and where to track shipped updates.
+
+Originally published on the Vynix blog: https://vynix-in.github.io/blog/what-we-are-building-next-at-vynix/
+Learn more about Vynix at https://vynix.in.

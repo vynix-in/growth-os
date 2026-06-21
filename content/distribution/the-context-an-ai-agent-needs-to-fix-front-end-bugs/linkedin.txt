@@ -1,0 +1,12 @@
+The context an AI agent needs to fix front-end bugs
+
+Learn what front-end bug context an AI coding agent needs: DOM element, screenshot, console logs, network calls, reproduction notes, and scope.
+
+A quick take from what we keep seeing:
+- Feedback without context is slow to fix.
+- An AI diagnosis on every report saves a round of back and forth.
+- A direct path to a GitHub issue or a coding agent closes the loop.
+
+Read the full post: https://vynix-in.github.io/blog/the-context-an-ai-agent-needs-to-fix-front-end-bugs/
+
+#webdev #softwaredevelopment #ai #devtools

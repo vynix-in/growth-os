@@ -46,12 +46,16 @@ async function main() {
       // Order matters: directories before submissions, content before linking.
       const order = [
         'directory-discovery',
+        'backlinks',
         'github-seo',
         'comparison',
+        'listicle',
+        'usecase',
         'blog',
         'changelog',
         'knowledgebase',
         'submission',
+        'distribution',
         'opensource-funnel',
         'internal-linking',
         'site-builder',

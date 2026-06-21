@@ -1,0 +1,12 @@
+Who Vynix is for, and what it fixes
+
+See who should use Vynix, from founders to QA teams, and how it turns website bugs into useful developer context.
+
+A quick take from what we keep seeing:
+- Feedback without context is slow to fix.
+- An AI diagnosis on every report saves a round of back and forth.
+- A direct path to a GitHub issue or a coding agent closes the loop.
+
+Read the full post: https://vynix-in.github.io/blog/who-vynix-is-for-and-what-it-fixes/
+
+#webdev #softwaredevelopment #ai #devtools

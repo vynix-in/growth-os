@@ -1,0 +1,9 @@
+Subreddits: r/webdev, r/SideProject, r/programming, r/devtools
+
+Title: Vynix plans, and how to pick the right one
+
+I wrote up how we think about this: Compare Vynix plan types at a high level, from the free plan to paid options, and choose based on your debugging workflow.
+
+https://vynix-in.github.io/blog/vynix-plans-and-how-to-pick-the-right-one/
+
+Short version: capture the element, the page state, and the console and network detail with every report, add an AI diagnosis, then hand it to a coding agent. Happy to answer questions in the comments.

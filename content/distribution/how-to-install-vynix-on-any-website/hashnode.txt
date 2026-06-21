@@ -1,0 +1,8 @@
+Title: How to install Vynix on any website
+Canonical URL (set this in Hashnode settings): https://vynix-in.github.io/blog/how-to-install-vynix-on-any-website/
+Tags: webdev, ai, programming, productivity
+
+Add Vynix to your site, verify the widget, and capture useful bug context from real pages without changing your workflow.
+
+Originally published on the Vynix blog: https://vynix-in.github.io/blog/how-to-install-vynix-on-any-website/
+Learn more about Vynix at https://vynix.in.

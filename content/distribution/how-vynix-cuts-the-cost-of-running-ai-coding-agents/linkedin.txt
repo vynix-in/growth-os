@@ -1,0 +1,12 @@
+How Vynix cuts the cost of running AI coding agents
+
+See how Vynix gives AI coding agents precise bug context so they waste fewer runs, use shorter prompts, and cost less to operate.
+
+A quick take from what we keep seeing:
+- Feedback without context is slow to fix.
+- An AI diagnosis on every report saves a round of back and forth.
+- A direct path to a GitHub issue or a coding agent closes the loop.
+
+Read the full post: https://vynix-in.github.io/blog/how-vynix-cuts-the-cost-of-running-ai-coding-agents/
+
+#webdev #softwaredevelopment #ai #devtools

@@ -35,8 +35,42 @@
       "description": "Writes in-depth, original blog articles and renders them as full SEO HTML pages with images, clips, structured data and internal links.",
       "schedule": "daily",
       "enabled": true
+    },    {
+      "id": "listicle",
+      "name": "Listicle Agent",
+      "module": "agents/listicle-agent.js",
+      "phase": 4,
+      "description": "Builds high commercial-intent best-of and alternatives pages with ItemList and FAQ schema.",
+      "schedule": "weekly",
+      "enabled": true
     },
     {
+      "id": "usecase",
+      "name": "Use-case Agent",
+      "module": "agents/usecase-agent.js",
+      "phase": 4,
+      "description": "Builds persona landing pages (for agencies, QA, startups, designers and more).",
+      "schedule": "weekly",
+      "enabled": true
+    },
+    {
+      "id": "distribution",
+      "name": "Distribution Agent",
+      "module": "agents/distribution-agent.js",
+      "phase": 4,
+      "description": "Turns each post into ready-to-paste drafts for X, LinkedIn, Reddit, dev.to and Hashnode, with canonical back-links.",
+      "schedule": "daily",
+      "enabled": true
+    },
+    {
+      "id": "backlinks",
+      "name": "Backlinks and Outreach Agent",
+      "module": "agents/backlinks-agent.js",
+      "phase": 5,
+      "description": "Maintains a curated list of outreach targets: communities, newsletters, podcasts and guest-post sites.",
+      "schedule": "weekly",
+      "enabled": true
+    },    {
       "id": "directory-discovery",
       "name": "Directory Discovery Agent",
       "module": "agents/directory-discovery-agent.js",

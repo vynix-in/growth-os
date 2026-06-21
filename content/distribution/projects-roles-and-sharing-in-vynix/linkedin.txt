@@ -1,0 +1,12 @@
+Projects, roles and sharing in Vynix
+
+Learn how to organize Vynix projects, share annotated issues, and give developers the context they need to fix site bugs faster.
+
+A quick take from what we keep seeing:
+- Feedback without context is slow to fix.
+- An AI diagnosis on every report saves a round of back and forth.
+- A direct path to a GitHub issue or a coding agent closes the loop.
+
+Read the full post: https://vynix-in.github.io/blog/projects-roles-and-sharing-in-vynix/
+
+#webdev #softwaredevelopment #ai #devtools

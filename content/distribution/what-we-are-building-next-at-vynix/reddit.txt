@@ -1,0 +1,9 @@
+Subreddits: r/webdev, r/SideProject, r/programming, r/devtools
+
+Title: What we are building next at Vynix
+
+I wrote up how we think about this: A practical look at Vynix's direction: deeper agent workflows, richer feedback context, broader integrations, and where to track shipped updates.
+
+https://vynix-in.github.io/blog/what-we-are-building-next-at-vynix/
+
+Short version: capture the element, the page state, and the console and network detail with every report, add an AI diagnosis, then hand it to a coding agent. Happy to answer questions in the comments.

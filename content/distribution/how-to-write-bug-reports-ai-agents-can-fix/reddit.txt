@@ -1,0 +1,9 @@
+Subreddits: r/webdev, r/SideProject, r/programming, r/devtools
+
+Title: How to Write Bug Reports AI Agents Can Fix
+
+I wrote up how we think about this: Learn how to write bug reports with UI evidence, logs, repro steps, and clear prompts so AI coding agents can actually ship fixes.
+
+https://vynix-in.github.io/blog/how-to-write-bug-reports-ai-agents-can-fix/
+
+Short version: capture the element, the page state, and the console and network detail with every report, add an AI diagnosis, then hand it to a coding agent. Happy to answer questions in the comments.

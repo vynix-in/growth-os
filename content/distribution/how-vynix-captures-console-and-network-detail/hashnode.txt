@@ -1,0 +1,8 @@
+Title: How Vynix Captures Console and Network Detail
+Canonical URL (set this in Hashnode settings): https://vynix-in.github.io/blog/how-vynix-captures-console-and-network-detail/
+Tags: webdev, ai, programming, productivity
+
+See how Vynix turns a clicked UI bug into useful console, network, screenshot, element, and AI diagnosis context for developers.
+
+Originally published on the Vynix blog: https://vynix-in.github.io/blog/how-vynix-captures-console-and-network-detail/
+Learn more about Vynix at https://vynix.in.

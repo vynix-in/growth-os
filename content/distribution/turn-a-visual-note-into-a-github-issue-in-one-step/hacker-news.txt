@@ -1,0 +1,4 @@
+Title: Turn a visual note into a GitHub issue in one step
+URL: https://vynix-in.github.io/blog/turn-a-visual-note-into-a-github-issue-in-one-step/
+
+Note: post during US morning hours, keep the title plain and factual, and reply to comments quickly.

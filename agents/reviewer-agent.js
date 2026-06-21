@@ -106,12 +106,11 @@ function checkPage(page, routeSet) {
   if (count(/<img[\s>]/gi, html) === 0) warnings.push('no images on page');
 
   // Internal links resolve to a generated page
-  const links = [...html.matchAll(/href="(\/(?:blog|compare|kb)\/[^"#?]*)"/gi)].map((m) => m[1]);
+  const links = [...html.matchAll(/href="(\/(?:blog|compare|kb|best|alternatives|for)\/[^"#?]*)"/gi)].map((m) => m[1]);
   for (const link of links) {
     const normalized = link.endsWith('/') ? link : link + '/';
-    if (!routeSet.has(normalized) && normalized !== '/blog/' && normalized !== '/compare/' && normalized !== '/kb/') {
-      // Only warn: the index routes always exist; a deep link that is missing is an error.
-      if (/\/(blog|compare|kb)\/[^/]+\//.test(normalized)) {
+    if (!routeSet.has(normalized) && !/^\/(blog|compare|kb|best|alternatives|for)\/$/.test(normalized)) {
+      if (/\/(blog|compare|kb|best|alternatives|for)\/[^/]+\//.test(normalized)) {
         errors.push(`broken internal link: ${link}`);
       }
     }

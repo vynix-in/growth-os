@@ -1,0 +1,9 @@
+Subreddits: r/webdev, r/SideProject, r/programming, r/devtools
+
+Title: Review rounds: turn notes into a short fix list
+
+I wrote up how we think about this: Use Vynix to turn scattered website review comments into clear, contextual fixes developers and coding agents can act on.
+
+https://vynix-in.github.io/blog/review-rounds-turn-notes-into-a-short-fix-list/
+
+Short version: capture the element, the page state, and the console and network detail with every report, add an AI diagnosis, then hand it to a coding agent. Happy to answer questions in the comments.

@@ -1,0 +1,4 @@
+Title: How to Write Bug Reports AI Agents Can Fix
+URL: https://vynix-in.github.io/blog/how-to-write-bug-reports-ai-agents-can-fix/
+
+Note: post during US morning hours, keep the title plain and factual, and reply to comments quickly.

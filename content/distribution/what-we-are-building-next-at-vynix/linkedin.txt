@@ -1,0 +1,12 @@
+What we are building next at Vynix
+
+A practical look at Vynix's direction: deeper agent workflows, richer feedback context, broader integrations, and where to track shipped updates.
+
+A quick take from what we keep seeing:
+- Feedback without context is slow to fix.
+- An AI diagnosis on every report saves a round of back and forth.
+- A direct path to a GitHub issue or a coding agent closes the loop.
+
+Read the full post: https://vynix-in.github.io/blog/what-we-are-building-next-at-vynix/
+
+#webdev #softwaredevelopment #ai #devtools

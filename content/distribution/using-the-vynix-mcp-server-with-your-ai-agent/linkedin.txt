@@ -1,0 +1,12 @@
+Using the Vynix MCP Server With Your AI Agent
+
+Learn how to use Vynix context with an AI coding agent so bug reports include the element, screenshot, logs, and likely cause.
+
+A quick take from what we keep seeing:
+- Feedback without context is slow to fix.
+- An AI diagnosis on every report saves a round of back and forth.
+- A direct path to a GitHub issue or a coding agent closes the loop.
+
+Read the full post: https://vynix-in.github.io/blog/using-the-vynix-mcp-server-with-your-ai-agent/
+
+#webdev #softwaredevelopment #ai #devtools

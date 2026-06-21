@@ -1,0 +1,9 @@
+Subreddits: r/webdev, r/SideProject, r/programming, r/devtools
+
+Title: The context an AI agent needs to fix front-end bugs
+
+I wrote up how we think about this: Learn what front-end bug context an AI coding agent needs: DOM element, screenshot, console logs, network calls, reproduction notes, and scope.
+
+https://vynix-in.github.io/blog/the-context-an-ai-agent-needs-to-fix-front-end-bugs/
+
+Short version: capture the element, the page state, and the console and network detail with every report, add an AI diagnosis, then hand it to a coding agent. Happy to answer questions in the comments.

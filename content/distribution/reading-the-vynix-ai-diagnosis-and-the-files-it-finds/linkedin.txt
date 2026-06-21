@@ -1,0 +1,12 @@
+Reading the Vynix AI diagnosis and the files it finds
+
+Learn how to read a Vynix AI diagnosis, check the evidence, and turn file hints into a clear fix plan or GitHub issue.
+
+A quick take from what we keep seeing:
+- Feedback without context is slow to fix.
+- An AI diagnosis on every report saves a round of back and forth.
+- A direct path to a GitHub issue or a coding agent closes the loop.
+
+Read the full post: https://vynix-in.github.io/blog/reading-the-vynix-ai-diagnosis-and-the-files-it-finds/
+
+#webdev #softwaredevelopment #ai #devtools

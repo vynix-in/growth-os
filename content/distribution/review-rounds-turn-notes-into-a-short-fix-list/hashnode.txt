@@ -1,0 +1,8 @@
+Title: Review rounds: turn notes into a short fix list
+Canonical URL (set this in Hashnode settings): https://vynix-in.github.io/blog/review-rounds-turn-notes-into-a-short-fix-list/
+Tags: webdev, ai, programming, productivity
+
+Use Vynix to turn scattered website review comments into clear, contextual fixes developers and coding agents can act on.
+
+Originally published on the Vynix blog: https://vynix-in.github.io/blog/review-rounds-turn-notes-into-a-short-fix-list/
+Learn more about Vynix at https://vynix.in.

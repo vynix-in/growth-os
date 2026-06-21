@@ -1,0 +1,8 @@
+Title: Reading the Vynix AI diagnosis and the files it finds
+Canonical URL (set this in Hashnode settings): https://vynix-in.github.io/blog/reading-the-vynix-ai-diagnosis-and-the-files-it-finds/
+Tags: webdev, ai, programming, productivity
+
+Learn how to read a Vynix AI diagnosis, check the evidence, and turn file hints into a clear fix plan or GitHub issue.
+
+Originally published on the Vynix blog: https://vynix-in.github.io/blog/reading-the-vynix-ai-diagnosis-and-the-files-it-finds/
+Learn more about Vynix at https://vynix.in.

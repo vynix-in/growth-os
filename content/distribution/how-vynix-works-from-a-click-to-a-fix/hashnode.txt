@@ -1,0 +1,8 @@
+Title: How Vynix Works, From a Click to a Fix
+Canonical URL (set this in Hashnode settings): https://vynix-in.github.io/blog/how-vynix-works-from-a-click-to-a-fix/
+Tags: webdev, ai, programming, productivity
+
+See how Vynix captures element, screenshot, console, network context, and AI diagnosis to turn website bugs into build-ready work.
+
+Originally published on the Vynix blog: https://vynix-in.github.io/blog/how-vynix-works-from-a-click-to-a-fix/
+Learn more about Vynix at https://vynix.in.

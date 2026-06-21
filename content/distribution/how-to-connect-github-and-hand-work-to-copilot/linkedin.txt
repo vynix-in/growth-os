@@ -1,0 +1,12 @@
+How to Connect GitHub and Hand Work to Copilot
+
+Connect Vynix to GitHub, turn annotated website bugs into clear issues, and assign the right work to Copilot without losing context.
+
+A quick take from what we keep seeing:
+- Feedback without context is slow to fix.
+- An AI diagnosis on every report saves a round of back and forth.
+- A direct path to a GitHub issue or a coding agent closes the loop.
+
+Read the full post: https://vynix-in.github.io/blog/how-to-connect-github-and-hand-work-to-copilot/
+
+#webdev #softwaredevelopment #ai #devtools

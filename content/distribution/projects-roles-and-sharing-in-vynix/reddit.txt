@@ -1,0 +1,9 @@
+Subreddits: r/webdev, r/SideProject, r/programming, r/devtools
+
+Title: Projects, roles and sharing in Vynix
+
+I wrote up how we think about this: Learn how to organize Vynix projects, share annotated issues, and give developers the context they need to fix site bugs faster.
+
+https://vynix-in.github.io/blog/projects-roles-and-sharing-in-vynix/
+
+Short version: capture the element, the page state, and the console and network detail with every report, add an AI diagnosis, then hand it to a coding agent. Happy to answer questions in the comments.

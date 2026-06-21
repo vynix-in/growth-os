@@ -1,0 +1,12 @@
+Point and click feedback on any web page
+
+Use Vynix to click broken UI, capture page context, and turn feedback into a GitHub issue or coding-agent prompt.
+
+A quick take from what we keep seeing:
+- Feedback without context is slow to fix.
+- An AI diagnosis on every report saves a round of back and forth.
+- A direct path to a GitHub issue or a coding agent closes the loop.
+
+Read the full post: https://vynix-in.github.io/blog/point-and-click-feedback-on-any-web-page/
+
+#webdev #softwaredevelopment #ai #devtools

@@ -1,0 +1,8 @@
+Title: Using the Vynix MCP Server With Your AI Agent
+Canonical URL (set this in Hashnode settings): https://vynix-in.github.io/blog/using-the-vynix-mcp-server-with-your-ai-agent/
+Tags: webdev, ai, programming, productivity
+
+Learn how to use Vynix context with an AI coding agent so bug reports include the element, screenshot, logs, and likely cause.
+
+Originally published on the Vynix blog: https://vynix-in.github.io/blog/using-the-vynix-mcp-server-with-your-ai-agent/
+Learn more about Vynix at https://vynix.in.

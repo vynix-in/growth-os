@@ -1,0 +1,8 @@
+Title: Region and Element Screenshots in Vynix
+Canonical URL (set this in Hashnode settings): https://vynix-in.github.io/blog/region-and-element-screenshots-in-vynix/
+Tags: webdev, ai, programming, productivity
+
+Learn how Vynix uses region and element screenshots to turn visual bugs into clear developer context, prompts, and GitHub issues.
+
+Originally published on the Vynix blog: https://vynix-in.github.io/blog/region-and-element-screenshots-in-vynix/
+Learn more about Vynix at https://vynix.in.

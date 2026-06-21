@@ -1,0 +1,11 @@
+Using the Vynix MCP Server With Your AI Agent
+
+Most bug reports lose the context that makes them fixable. Here is the short version.
+
+1. Capture the element, the page state, the console and the network detail.
+2. Let an AI read it and point at the likely cause and the files involved.
+3. Hand it to your coding agent as a prompt or a GitHub issue.
+
+Full post: https://vynix-in.github.io/blog/using-the-vynix-mcp-server-with-your-ai-agent/
+
+Built with Vynix, the feedback layer for teams shipping with AI agents. https://vynix.in
