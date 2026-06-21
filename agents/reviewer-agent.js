@@ -121,6 +121,12 @@ function checkPage(page, routeSet) {
   const scan = scanText(html, `review:${page.route}`);
   if (!scan.clean) errors.push(`gate: ${scan.violations.map((v) => v.rule).join(', ')}`);
 
+  // Machine-looking characters that read as AI (em-dash is the main tell).
+  const emDash = (html.match(/\u2014/g) || []).length;
+  const curly = (html.match(/[\u2018\u2019\u201C\u201D]/g) || []).length;
+  if (emDash > 0) warnings.push(`${emDash} em-dash characters (should be zero)`);
+  if (curly > 0) warnings.push(`${curly} curly quote characters (should be zero)`);
+
   return { route: page.route, file: page.file, words, errors, warnings, pass: errors.length === 0 };
 }
 

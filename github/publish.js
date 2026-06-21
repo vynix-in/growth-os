@@ -99,7 +99,7 @@ export async function publishRepo(repoName, opts = {}) {
   const task = approvedTaskFor(repoName);
   if (!task) {
     log.warn(`"${repoName}" is not approved for publishing`);
-    return { ok: false, reason: 'not approved — approve it in the dashboard first' };
+    return { ok: false, reason: 'not approved, approve it in the dashboard first' };
   }
 
   // 2. Gate check on the actual files.

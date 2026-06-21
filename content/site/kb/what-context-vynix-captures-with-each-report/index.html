@@ -4,22 +4,22 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>What context Vynix captures with each report | Vynix Help</title>
-<meta name="description" content="See what Vynix includes in each website issue report, including screenshots, element details, console logs, network context, and AI diagnosis." />
+<meta name="description" content="Learn what Vynix includes in each website report, from screenshots and selected elements to console, network, and AI context." />
 <link rel="canonical" href="https://vynix.in/kb/what-context-vynix-captures-with-each-report/" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="What context Vynix captures with each report | Vynix Help" />
-<meta property="og:description" content="See what Vynix includes in each website issue report, including screenshots, element details, console logs, network context, and AI diagnosis." />
+<meta property="og:description" content="Learn what Vynix includes in each website report, from screenshots and selected elements to console, network, and AI context." />
 <meta property="og:url" content="https://vynix.in/kb/what-context-vynix-captures-with-each-report/" />
 <meta property="og:image" content="https://vynix.in/assets/og/what-context-vynix-captures-with-each-report.png" />
 <meta property="og:site_name" content="Vynix" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@usevynix" />
 <meta name="twitter:title" content="What context Vynix captures with each report | Vynix Help" />
-<meta name="twitter:description" content="See what Vynix includes in each website issue report, including screenshots, element details, console logs, network context, and AI diagnosis." />
+<meta name="twitter:description" content="Learn what Vynix includes in each website report, from screenshots and selected elements to console, network, and AI context." />
 <meta name="twitter:image" content="https://vynix.in/assets/og/what-context-vynix-captures-with-each-report.png" />
-<meta property="article:published_time" content="2026-06-21T19:00:45.314Z" />
-<meta property="article:modified_time" content="2026-06-21T19:00:45.314Z" />
+<meta property="article:published_time" content="2026-06-21T19:44:31.384Z" />
+<meta property="article:modified_time" content="2026-06-21T19:44:31.384Z" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -53,18 +53,18 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Does Vynix capture a screenshot with each report?",
+      "name": "Does a Vynix report include a screenshot?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Vynix captures a screenshot so developers can see what the reporter saw when the issue was created."
+        "text": "Yes. Vynix captures a screenshot so the developer can see the issue in context, along with the selected element or area that was reported."
       }
     },
     {
       "@type": "Question",
-      "name": "Does Vynix include technical debugging context?",
+      "name": "Does Vynix capture console and network information?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Vynix can include the selected element, console messages, network context, and an AI diagnosis to help identify the likely root cause."
+        "text": "Yes. Vynix captures relevant console and network context to help developers understand errors, failed requests, and related frontend behavior."
       }
     }
   ]
@@ -151,11 +151,11 @@ td.yes{color:var(--green);font-weight:600}
   <span class="tag">article</span>
   <h1>What context Vynix captures with each report</h1>
   <div class="meta-row"><span>Updated 21 June 2026</span></div>
-  <p class="lead">A Vynix report captures the page context a developer needs to understand and fix a website issue. When you click the problem area, Vynix gathers visual, technical, and diagnostic details into one report.</p>
-  <ol><li>Open the Vynix widget on the page where you see an issue.</li><li>Click the element or area that looks wrong.</li><li>Vynix captures the selected element, page screenshot, console context, and relevant network context.</li><li>Review the AI diagnosis and suggested likely root cause.</li><li>Copy the ready-to-build prompt or open a GitHub issue and assign it to a coding agent.</li></ol>
-  <p>Each Vynix report is designed to reduce back-and-forth between product, QA, and engineering teams. Instead of describing a bug from memory, you can send a report that shows what was clicked, what was visible, and what technical signals were present at the time.</p><p>A report can include the selected page element, a screenshot of the page, browser console messages, related network activity, and an AI-generated diagnosis of the likely root cause. This helps developers see both the user-facing problem and the surrounding technical context.</p><p>Vynix also turns the captured context into action. You can copy a prompt for implementation work, or create a GitHub issue with the relevant details so it can be picked up by a developer or coding agent.</p><p>The exact fields available in a report can depend on your site setup, browser permissions, and widget configuration. For setup and configuration details, see the Vynix docs at https://vynix.in/docs.</p>
+  <p class="lead">A Vynix report packages the visual issue with the developer context needed to understand and fix it. It helps turn a click on a broken part of a page into a clear, actionable task.</p>
+  <ol><li>Open the site where the Vynix widget is installed.</li><li>Click the widget, then select the page element or area that has the issue.</li><li>Add a short note describing what looks wrong or what you expected to happen.</li><li>Vynix captures the selected element, screenshot, console context, network context, and page details.</li><li>Review the AI diagnosis, then copy a ready-to-build prompt or create a GitHub issue for your team or coding agent.</li></ol>
+  <p>Each Vynix report is designed to capture both what the user saw and what a developer needs to investigate. This usually includes a screenshot of the page, the selected element or affected area, page and browser context, relevant console output, and recent network activity.</p><p>Vynix also adds an AI diagnosis that suggests the likely root cause based on the captured context. This can help explain whether the issue may be related to styling, JavaScript behavior, failed requests, missing data, or another frontend problem.</p><p>Reports can be used as developer-ready handoff material. After review, you can copy a prompt for implementation work or open a GitHub issue and assign it to a coding agent.</p><p>The exact fields in a report may vary based on your Vynix setup, browser permissions, and site configuration. For the most current details, check the Vynix docs at https://vynix.in/docs.</p>
   <figure><img src="https://vynix.in/marketing/p-context.png" alt="Developer context captured with a Vynix report" loading="lazy" width="1080" height="1350" /><figcaption>Developer context captured with a Vynix report</figcaption></figure>
-  <section class="faq"><h2>Related questions</h2><h3>Does Vynix capture a screenshot with each report?</h3><p>Yes. Vynix captures a screenshot so developers can see what the reporter saw when the issue was created.</p><h3>Does Vynix include technical debugging context?</h3><p>Yes. Vynix can include the selected element, console messages, network context, and an AI diagnosis to help identify the likely root cause.</p></section>
+  <section class="faq"><h2>Related questions</h2><h3>Does a Vynix report include a screenshot?</h3><p>Yes. Vynix captures a screenshot so the developer can see the issue in context, along with the selected element or area that was reported.</p><h3>Does Vynix capture console and network information?</h3><p>Yes. Vynix captures relevant console and network context to help developers understand errors, failed requests, and related frontend behavior.</p></section>
   <div class="callout"><strong>Still need help?</strong><p>Read the full <a href="https://vynix.in/docs">documentation</a> or email hello@vynix.in.</p></div>
 </article>
 </main>

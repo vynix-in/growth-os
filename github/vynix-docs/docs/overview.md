@@ -1,4 +1,4 @@
-# Vynix Developer Docs — Overview
+# Vynix Developer Docs, Overview
 
 The feedback layer for teams that build with AI coding agents.
 

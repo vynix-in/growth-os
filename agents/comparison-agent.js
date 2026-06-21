@@ -12,6 +12,7 @@ import { db } from '../lib/db.js';
 import { queue, APPROVAL } from '../lib/queue.js';
 import { logger } from '../lib/logger.js';
 import { completeJson } from '../lib/ai.js';
+import { humanizeDeep } from '../lib/humanize.js';
 import { scanText } from '../lib/publication-gate.js';
 import { competitors, product, features } from '../lib/vynix-facts.js';
 import { renderPage, breadcrumbsHtml } from '../lib/page.js';
@@ -47,7 +48,7 @@ async function buildAngle(competitor) {
   const fb = defaultAngle(competitor);
   const { value, source } = await completeJson({
     system:
-      'You write fair, accurate, original software comparison pages. Never make false or unverifiable claims about a competitor. When unsure about a competitor capability, say it varies or depends on the plan. Keep a neutral, factual tone and avoid keyword stuffing. Return only valid JSON.',
+      'You write fair, accurate, original software comparison pages. Never make false or unverifiable claims about a competitor. When unsure about a competitor capability, say it varies or depends on the plan. Keep a neutral, factual tone and avoid keyword stuffing. Write the way a person types: commas, periods, plain hyphens, straight quotes. Never use an em-dash or curly quotes. Return only valid JSON.',
     prompt: `Produce JSON for a unique comparison page "${competitor.name} vs Vynix".
 
 About Vynix: ${product.what}
@@ -70,7 +71,7 @@ Write 3-4 short sections, 6-8 table rows, and 3 FAQs. Do not claim a competitor 
     fallback: () => JSON.stringify(fb),
     defaultValue: fb,
   });
-  return { angle: value || fb, source };
+  return { angle: humanizeDeep(value || fb), source };
 }
 
 function renderBody(competitor, angle, assets) {

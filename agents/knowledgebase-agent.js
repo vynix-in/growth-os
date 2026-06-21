@@ -11,6 +11,7 @@ import { db } from '../lib/db.js';
 import { queue, APPROVAL } from '../lib/queue.js';
 import { logger } from '../lib/logger.js';
 import { completeJson } from '../lib/ai.js';
+import { humanizeDeep } from '../lib/humanize.js';
 import { scanText } from '../lib/publication-gate.js';
 import { product } from '../lib/vynix-facts.js';
 import { renderPage, breadcrumbsHtml } from '../lib/page.js';
@@ -57,7 +58,7 @@ async function writeArticle(topic) {
   const fb = fallbackArticle(topic);
   const { value, source } = await completeJson({
     system:
-      'You write clear, calm help-centre articles for a developer tool. Plain language, short steps. Never include customer names, emails, IP addresses, or internal system names. If unsure of an exact detail, describe it generally and refer to the docs. Return only valid JSON.',
+      'You write clear, calm help-centre articles for a developer tool. Plain language, short steps. Never include customer names, emails, IP addresses, or internal system names. If unsure of an exact detail, describe it generally and refer to the docs. Write the way a person types: commas, periods, plain hyphens, straight quotes. Never use an em-dash or curly quotes. Return only valid JSON.',
     prompt: `Write a knowledge base ${topic.type} for Vynix titled "${topic.title}". It should answer: "${cleanQ}".
 
 About Vynix: ${product.what}
@@ -77,7 +78,7 @@ Keep it under 400 words. Include 3-6 steps where it makes sense and 2 FAQs. Retu
     fallback: () => JSON.stringify(fb),
     defaultValue: fb,
   });
-  return { article: value || fb, source };
+  return { article: humanizeDeep(value || fb), source };
 }
 
 function renderBody(topic, article, assets, slug) {

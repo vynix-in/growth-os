@@ -1,4 +1,4 @@
-# Vynix PHP SDK — Overview
+# Vynix PHP SDK, Overview
 
 The feedback layer for teams that build with AI coding agents.
 

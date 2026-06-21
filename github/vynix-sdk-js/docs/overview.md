@@ -1,4 +1,4 @@
-# Vynix JavaScript SDK — Overview
+# Vynix JavaScript SDK, Overview
 
 The feedback layer for teams that build with AI coding agents.
 

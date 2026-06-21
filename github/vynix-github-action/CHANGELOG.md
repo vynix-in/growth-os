@@ -1,6 +1,6 @@
-# Release notes — Vynix GitHub Action
+# Release notes, Vynix GitHub Action
 
-## v0.1.0 — 21 June 2026
+## v0.1.0, 21 June 2026
 
 First public release.
 

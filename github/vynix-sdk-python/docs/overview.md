@@ -1,4 +1,4 @@
-# Vynix Python SDK — Overview
+# Vynix Python SDK, Overview
 
 The feedback layer for teams that build with AI coding agents.
 

@@ -1,6 +1,6 @@
-# Release notes — Vynix Python SDK
+# Release notes, Vynix Python SDK
 
-## v0.1.0 — 21 June 2026
+## v0.1.0, 21 June 2026
 
 First public release.
 

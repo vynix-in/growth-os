@@ -108,7 +108,7 @@ export async function deployPages(opts = {}) {
   const revs = reviews.all();
   const failed = revs.filter((r) => r.pass === false);
   if (!revs.length) {
-    log.warn('no review on record — run the reviewer first');
+    log.warn('no review on record, run the reviewer first');
     return { ok: false, reason: 'not reviewed' };
   }
   if (failed.length) {

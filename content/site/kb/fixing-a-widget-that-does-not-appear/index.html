@@ -4,22 +4,22 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Fixing a widget that does not appear | Vynix Help</title>
-<meta name="description" content="Troubleshoot why the Vynix widget is not showing on your site and learn how to check installation, permissions, and browser issues." />
+<meta name="description" content="Troubleshoot why the Vynix widget is not showing on your site and how to check installation, loading, and access issues." />
 <link rel="canonical" href="https://vynix.in/kb/fixing-a-widget-that-does-not-appear/" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Fixing a widget that does not appear | Vynix Help" />
-<meta property="og:description" content="Troubleshoot why the Vynix widget is not showing on your site and learn how to check installation, permissions, and browser issues." />
+<meta property="og:description" content="Troubleshoot why the Vynix widget is not showing on your site and how to check installation, loading, and access issues." />
 <meta property="og:url" content="https://vynix.in/kb/fixing-a-widget-that-does-not-appear/" />
 <meta property="og:image" content="https://vynix.in/assets/og/fixing-a-widget-that-does-not-appear.png" />
 <meta property="og:site_name" content="Vynix" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@usevynix" />
 <meta name="twitter:title" content="Fixing a widget that does not appear | Vynix Help" />
-<meta name="twitter:description" content="Troubleshoot why the Vynix widget is not showing on your site and learn how to check installation, permissions, and browser issues." />
+<meta name="twitter:description" content="Troubleshoot why the Vynix widget is not showing on your site and how to check installation, loading, and access issues." />
 <meta name="twitter:image" content="https://vynix.in/assets/og/fixing-a-widget-that-does-not-appear.png" />
-<meta property="article:published_time" content="2026-06-21T19:01:30.287Z" />
-<meta property="article:modified_time" content="2026-06-21T19:01:30.287Z" />
+<meta property="article:published_time" content="2026-06-21T19:45:15.684Z" />
+<meta property="article:modified_time" content="2026-06-21T19:45:15.684Z" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -53,18 +53,18 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Why is the Vynix widget not showing up?",
+      "name": "Why is the Vynix widget not showing up after I installed it?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Most often, the widget script is not installed on the page, has not been deployed yet, or is being blocked by browser settings, extensions, or site security rules. Check the install snippet, clear cache, and review console and network errors."
+        "text": "The snippet may not be on the page you are viewing, may be loading too late, or may be blocked by a browser setting, extension, content security policy, or consent tool. Check the page source, Console, and Network tabs first."
       }
     },
     {
       "@type": "Question",
-      "name": "Can Vynix work on staging or local sites?",
+      "name": "Does Vynix work on single-page apps?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Vynix can be used in development and test environments if the widget is installed and allowed to load there. Check the Vynix docs for the latest environment and setup requirements."
+        "text": "Yes, but single-page apps can change routes without a full page reload. Make sure the widget is loaded and initialized in a way that works with your app. Check the Vynix docs for the recommended setup."
       }
     }
   ]
@@ -151,11 +151,11 @@ td.yes{color:var(--green);font-weight:600}
   <span class="tag">troubleshooting</span>
   <h1>Fixing a widget that does not appear</h1>
   <div class="meta-row"><span>Updated 21 June 2026</span></div>
-  <p class="lead">If the Vynix widget does not appear on your site, it usually means the install snippet is missing, blocked, or not loading on the current page. Use these steps to find and fix the most common causes.</p>
-  <ol><li>Confirm the Vynix widget snippet is installed on the page you are testing. Check that it is included in the site layout, not only on one route or template.</li><li>Refresh the page with the browser cache cleared. If your site uses a build or deploy process, make sure the latest version has been published.</li><li>Check browser developer tools for script errors or blocked requests. Content Security Policy rules, ad blockers, privacy tools, or script blockers can stop the widget from loading.</li><li>Make sure the widget is allowed to run in the current environment. Some sites load different scripts for production, staging, preview, or local development.</li><li>Test in another browser or an incognito/private window with extensions disabled. This helps confirm whether the issue is site-side or browser-side.</li><li>Review the Vynix setup instructions in the docs at https://vynix.in/docs to confirm the current install method and required configuration.</li></ol>
-  <p>The Vynix widget appears only after its script loads successfully on the page. If the script is not present, is added in the wrong place, or is removed during deployment, the widget will not be visible.</p><p>The widget can also be hidden by page styling, blocked by browser extensions, or prevented from loading by security settings. Check for console errors, failed network requests, and any rules that block third-party or external scripts.</p><p>If the widget loads on one page but not another, compare the page templates and routing setup. Single-page apps may need the snippet in the shared root layout so it remains available across routes.</p>
+  <p class="lead">If the Vynix widget does not appear on your site, it usually means the install snippet is missing, blocked, or not loading on the current page. Use these checks to find the cause.</p>
+  <ol><li>Confirm the Vynix widget snippet is installed on the page you are testing. It should be included in the site code or tag manager for that page, not only on a different route or template.</li><li>Check that the snippet is placed where your site can load it on every page that needs Vynix. If your app uses client-side routing, make sure the widget is initialized after route changes if required.</li><li>Open your browser developer tools and check the Console and Network tabs. Look for blocked scripts, failed requests, JavaScript errors, or content security policy errors.</li><li>Review browser extensions, ad blockers, privacy tools, and consent settings. These can block third-party scripts or stop the widget from loading until consent is granted.</li><li>Verify your Vynix configuration matches the site you are testing. Check the current setup against the latest installation steps in the Vynix docs.</li><li>Clear cache, reload the page, and test in a private window or another browser. This helps rule out stale code, cached pages, or browser-specific blocking.</li></ol>
+  <p>The most common reason the Vynix widget is not showing up is that the widget script is not present on the active page, or it is being blocked before it can load. This can happen after a deploy, when testing a different environment, or when the site uses a template that does not include the snippet.</p><p>If the script is present but the widget still does not appear, check for runtime errors, blocked network requests, content security policy rules, and browser privacy settings. For exact install requirements and configuration options, see the Vynix docs at https://vynix.in/docs.</p>
   <figure><img src="https://vynix.in/marketing/p-install.png" alt="Installing the Vynix widget with one script tag" loading="lazy" width="1080" height="1350" /><figcaption>Installing the Vynix widget with one script tag</figcaption></figure>
-  <section class="faq"><h2>Related questions</h2><h3>Why is the Vynix widget not showing up?</h3><p>Most often, the widget script is not installed on the page, has not been deployed yet, or is being blocked by browser settings, extensions, or site security rules. Check the install snippet, clear cache, and review console and network errors.</p><h3>Can Vynix work on staging or local sites?</h3><p>Vynix can be used in development and test environments if the widget is installed and allowed to load there. Check the Vynix docs for the latest environment and setup requirements.</p></section>
+  <section class="faq"><h2>Related questions</h2><h3>Why is the Vynix widget not showing up after I installed it?</h3><p>The snippet may not be on the page you are viewing, may be loading too late, or may be blocked by a browser setting, extension, content security policy, or consent tool. Check the page source, Console, and Network tabs first.</p><h3>Does Vynix work on single-page apps?</h3><p>Yes, but single-page apps can change routes without a full page reload. Make sure the widget is loaded and initialized in a way that works with your app. Check the Vynix docs for the recommended setup.</p></section>
   <div class="callout"><strong>Still need help?</strong><p>Read the full <a href="https://vynix.in/docs">documentation</a> or email hello@vynix.in.</p></div>
 </article>
 </main>

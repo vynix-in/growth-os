@@ -1,4 +1,4 @@
-# Vynix CLI — Overview
+# Vynix CLI, Overview
 
 The feedback layer for teams that build with AI coding agents.
 

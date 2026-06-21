@@ -13,6 +13,7 @@ import { db } from '../lib/db.js';
 import { queue, APPROVAL } from '../lib/queue.js';
 import { logger } from '../lib/logger.js';
 import { completeJson } from '../lib/ai.js';
+import { humanizeDeep } from '../lib/humanize.js';
 import { scanText } from '../lib/publication-gate.js';
 import { product } from '../lib/vynix-facts.js';
 import { renderPage, breadcrumbsHtml } from '../lib/page.js';
@@ -27,16 +28,47 @@ const comparisons = db('comparisons');
 export const meta = { id: 'blog', name: 'Blog Agent' };
 
 // High-value, genuinely useful topics for the Vynix audience. Each has a theme
-// used to pick the matching real image and clip.
+// used to pick the matching real image and clip. Some carry extra guidance so
+// the model stays accurate on plans and roadmap.
 const TOPICS = [
-  { title: 'How to write bug reports that AI coding agents can actually fix', theme: 'context handoff agent', clip: true },
-  { title: 'The context an AI coding agent needs to fix a front-end bug', theme: 'context console network debug', clip: true },
-  { title: 'What is a feedback layer, and why teams building with AI need one', theme: 'loop workflow review', clip: false },
-  { title: 'From a visual note to a GitHub issue in one step', theme: 'github issue handoff', clip: true },
-  { title: 'Automatic console and network capture for bug reports', theme: 'console network debug', clip: false },
-  { title: 'Using MCP to let AI agents read your bug reports', theme: 'mcp agent ai', clip: true },
-  { title: 'Closing the loop: from a reported bug to a merged fix', theme: 'loop workflow fix', clip: true },
-  { title: 'Collecting visual website feedback from clients and stakeholders', theme: 'annotate review viewport', clip: false },
+  { title: 'How to write bug reports an AI coding agent can fix', theme: 'context handoff agent', clip: true },
+  { title: 'The context an AI agent needs to fix a front-end bug', theme: 'context console network debug', clip: true },
+  { title: 'What a feedback layer is, and why AI teams need one', theme: 'loop workflow review', clip: false },
+  { title: 'Turn a visual note into a GitHub issue in one step', theme: 'github issue handoff', clip: true },
+  { title: 'How Vynix captures console and network detail for you', theme: 'console network debug', clip: false },
+  { title: 'Using the Vynix MCP server with your AI agent', theme: 'mcp agent ai', clip: true },
+  { title: 'From a reported bug to a merged fix, start to finish', theme: 'loop workflow fix', clip: true },
+  { title: 'Collecting website feedback from clients and teammates', theme: 'annotate review viewport', clip: false },
+  { title: 'How Vynix works, from a click to a fix', theme: 'point capture workflow', clip: true },
+  { title: 'Who Vynix is for, and the problems it solves', theme: 'review workflow', clip: false },
+  { title: 'Point and click feedback on any web page', theme: 'annotate point capture', clip: true },
+  { title: 'Reading the Vynix AI diagnosis and the files it finds', theme: 'diagnosis ai files', clip: false },
+  { title: 'Review rounds: turn a pile of notes into a short fix list', theme: 'review loop workflow', clip: false },
+  { title: 'Region and element screenshots in Vynix', theme: 'screenshot region capture', clip: true },
+  { title: 'Projects, roles and sharing in Vynix', theme: 'review workflow', clip: false },
+  {
+    title: 'How Vynix cuts the cost of running AI coding agents',
+    theme: 'context diagnosis agent',
+    clip: false,
+    guidance:
+      'Explain how giving an agent the right context up front (element, page state, console, network, AI diagnosis) means fewer wasted agent runs, shorter prompts, and less trial and error, which lowers token spend and engineer time. Do not invent specific dollar figures or savings percentages.',
+  },
+  { title: 'How to install Vynix on any website', theme: 'install widget setup', clip: false },
+  { title: 'How to connect GitHub and hand work to Copilot', theme: 'github handoff agent', clip: true },
+  {
+    title: 'Vynix plans, and how to pick the right one',
+    theme: 'review workflow',
+    clip: false,
+    guidance:
+      'Describe the plans at a high level only: there is a free plan, and paid plans add more. Do not state exact prices or credit numbers, since those can change. Tell the reader to check vynix.in/pricing for current details.',
+  },
+  {
+    title: 'What we are building next at Vynix',
+    theme: 'loop workflow',
+    clip: false,
+    guidance:
+      'Talk about general directions (deeper agent workflows, more integrations, richer feedback context) without promising specific features or dates. Point readers to the changelog at vynix.in for what has actually shipped.',
+  },
 ];
 
 function fallbackArticle(topic) {
@@ -79,11 +111,12 @@ async function writeArticle(topic) {
   const fb = fallbackArticle(topic);
   const { value, source } = await completeJson({
     system:
-      'You are an experienced software writer producing an original, genuinely useful blog article for a developer-tool company. Write in plain, specific English. No marketing fluff, no keyword stuffing, no filler. Use concrete examples. The article must be unique and substantial. Return only valid JSON.',
+      'You are an experienced software writer producing an original, genuinely useful blog article for a developer-tool company. Write in plain, specific English the way a real person types: use commas, periods, and ordinary hyphens. Never use an em-dash or any dash that is not on a standard keyboard. Use straight quotes, not curly ones. No marketing fluff, no keyword stuffing, no filler, and avoid stock phrases like "in today\'s fast-paced world", "seamless", "robust", "leverage", "delve" and "moreover". Use concrete examples. The article must be unique and substantial. Return only valid JSON.',
     prompt: `Write a blog article for Vynix.
 
 About Vynix: ${product.what}
 Article title: "${topic.title}"
+${topic.guidance ? `Important guidance: ${topic.guidance}` : ''}
 
 Return JSON with exactly these keys:
 {
@@ -95,12 +128,12 @@ Return JSON with exactly these keys:
   "keyTakeaways": ["takeaway", "takeaway", "takeaway"]
 }
 
-Write 5 to 7 sections totalling roughly 1000-1400 words. Make at least two sections have bullets. Include 3 FAQs. Be accurate about Vynix and never invent features that contradict the description. Do not include any HTML. Return JSON only.`,
+Write 5 to 7 sections totalling roughly 1000-1400 words. Make at least two sections have bullets. Include 3 FAQs. Be accurate about Vynix and never invent features, prices, or numbers that contradict the description or the guidance. Do not include any HTML. Return JSON only.`,
     maxTokens: 2600,
     fallback: () => JSON.stringify(fb),
     defaultValue: fb,
   });
-  return { article: value || fb, source };
+  return { article: humanizeDeep(value || fb), source };
 }
 
 function readingTime(article) {
@@ -145,7 +178,7 @@ function renderArticleBody(topic, article, assets, slug) {
     .join('\n');
 
   const clipHtml = assets.clip
-    ? `<figure><video controls preload="none" poster="${assets.clip.poster}" width="1080" height="1350"><source src="${assets.clip.url}" type="video/mp4" /></video><figcaption>${assets.clip.title} — see Vynix in action</figcaption></figure>`
+    ? `<figure><video controls preload="none" poster="${assets.clip.poster}" width="1080" height="1350"><source src="${assets.clip.url}" type="video/mp4" /></video><figcaption>${assets.clip.title}: see Vynix in action</figcaption></figure>`
     : '';
 
   const takeaways = (article.keyTakeaways || []).length

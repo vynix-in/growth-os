@@ -1,4 +1,4 @@
-# Vynix Public API Examples — Overview
+# Vynix Public API Examples, Overview
 
 The feedback layer for teams that build with AI coding agents.
 

@@ -16,6 +16,7 @@ import { db } from '../lib/db.js';
 import { queue, APPROVAL } from '../lib/queue.js';
 import { logger } from '../lib/logger.js';
 import { complete } from '../lib/ai.js';
+import { humanizeText } from '../lib/humanize.js';
 import { scanText } from '../lib/publication-gate.js';
 import { publicComponents, product, features } from '../lib/vynix-facts.js';
 import { humanDate } from '../lib/util.js';
@@ -198,6 +199,8 @@ ${featureList}
 
 ${ht.install}
 
+> Note: the Vynix toolkit is rolling out. If a package or command above does not resolve yet, watch this repo for the release and use the hosted product at [vynix.in](${product.website}) in the meantime.
+
 ## Usage
 
 ${ht.usage}
@@ -374,6 +377,7 @@ async function buildRepo(component) {
     'CHANGELOG.md': releaseNotes(component),
     'CONTRIBUTING.md': contributing(component),
     'examples/README.md': example(component),
+    '.gitignore': 'repo-meta.json\n',
     'LICENSE': mitLicense(),
   };
 
@@ -386,7 +390,7 @@ async function buildRepo(component) {
   for (const [name, content] of Object.entries(files)) {
     const full = path.join(dir, name);
     fs.mkdirSync(path.dirname(full), { recursive: true });
-    fs.writeFileSync(full, content);
+    fs.writeFileSync(full, name === 'LICENSE' ? content : humanizeText(content));
   }
   // Write the repository metadata the publisher uses for homepage + topics.
   fs.writeFileSync(path.join(dir, 'repo-meta.json'), JSON.stringify(repoMeta(component), null, 2));

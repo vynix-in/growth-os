@@ -18,8 +18,8 @@
 <meta name="twitter:title" content="How the Vynix AI diagnosis works | Vynix Help" />
 <meta name="twitter:description" content="Learn how Vynix captures page context and uses AI to suggest the likely root cause of website issues." />
 <meta name="twitter:image" content="https://vynix.in/assets/og/how-the-vynix-ai-diagnosis-works.png" />
-<meta property="article:published_time" content="2026-06-21T19:00:53.347Z" />
-<meta property="article:modified_time" content="2026-06-21T19:00:53.347Z" />
+<meta property="article:published_time" content="2026-06-21T19:44:40.012Z" />
+<meta property="article:modified_time" content="2026-06-21T19:44:40.012Z" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -53,18 +53,18 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Does the AI diagnosis fix the issue automatically?",
+      "name": "Does Vynix change my website when it diagnoses an issue?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Vynix identifies the likely root cause and prepares helpful context. You can then copy a prompt, create a GitHub issue, or send the context to a coding agent to build the fix."
+        "text": "No. Vynix captures context from the page and generates a diagnosis. It does not automatically change your code or deploy a fix."
       }
     },
     {
       "@type": "Question",
-      "name": "What information does Vynix use for the diagnosis?",
+      "name": "Why might the AI diagnosis be incomplete or wrong?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Vynix uses the element you clicked, a screenshot, console messages, network context, and related page state. The exact captured details can depend on your setup and browser environment."
+        "text": "The diagnosis depends on the context available in the browser. If the root cause is in backend code, build configuration, private services, or data Vynix cannot see, the AI may only provide a likely direction. Use the diagnosis with your code review and tests."
       }
     }
   ]
@@ -151,11 +151,11 @@ td.yes{color:var(--green);font-weight:600}
   <span class="tag">article</span>
   <h1>How the Vynix AI diagnosis works</h1>
   <div class="meta-row"><span>Updated 21 June 2026</span></div>
-  <p class="lead">Vynix AI diagnosis helps explain why something on a website may be broken. It combines what you click with page context, screenshots, console logs, and network details to suggest a likely root cause.</p>
-  <ol><li>Add the lightweight Vynix widget to the site you want to inspect.</li><li>Open the page, then click the element or area that looks wrong.</li><li>Vynix captures the selected element, a screenshot, and relevant browser context.</li><li>Vynix reviews console and network activity around the issue.</li><li>The AI diagnosis summarizes the likely cause and gives you a ready-to-build prompt or issue context.</li></ol>
-  <p>When you report an issue with Vynix, the tool does more than save a screenshot. It records the specific page element you selected and gathers nearby developer context, such as visible UI state, browser console messages, and network request information.</p><p>The AI uses that context to look for common signals, such as missing data, failed requests, JavaScript errors, styling problems, or mismatches between the expected and rendered UI. It then produces a plain-language diagnosis that explains what may be causing the issue.</p><p>The diagnosis is meant to speed up debugging, not replace developer review. You should treat it as a strong starting point, especially when creating a GitHub issue, assigning work to a coding agent, or copying a prompt for implementation.</p><p>For setup details and the latest supported options, see the Vynix documentation at https://vynix.in/docs.</p>
+  <p class="lead">Vynix AI diagnosis helps turn a clicked website problem into useful developer context. It combines the selected page element, visual evidence, browser activity, and nearby technical signals to suggest a likely root cause.</p>
+  <ol><li>Add the Vynix widget to the site you want to inspect, following the setup steps in the Vynix docs.</li><li>Open the page with the issue, start Vynix, and click the broken or confusing part of the page.</li><li>Vynix captures the selected element, a screenshot, console messages, and relevant network activity.</li><li>The AI reviews that context and generates a diagnosis of the likely cause, such as a frontend bug, missing data, failed request, styling issue, or integration problem.</li><li>Review the diagnosis, then copy a ready-to-build prompt or create a GitHub issue and assign it to a coding agent.</li></ol>
+  <p>The diagnosis is based on the context Vynix can capture from the page at the time you click. That includes what you selected, what the page looked like, and browser signals that may explain the problem. This gives the AI more detail than a plain text bug report.</p><p>The AI output is meant to be a starting point for developers, not a guaranteed final answer. You should review the captured evidence, confirm the cause in your codebase, and test the fix before shipping changes.</p><p>For best results, reproduce the issue before clicking, choose the most specific broken element, and make sure the page is in the same state a user would see. If the issue depends on login state, feature flags, or data, include that context in the follow-up prompt or issue description.</p>
   <figure><img src="https://vynix.in/marketing/v2-p-diagnose.png" alt="Vynix AI diagnosis of a captured bug" loading="lazy" width="1080" height="1350" /><figcaption>Vynix AI diagnosis of a captured bug</figcaption></figure>
-  <section class="faq"><h2>Related questions</h2><h3>Does the AI diagnosis fix the issue automatically?</h3><p>No. Vynix identifies the likely root cause and prepares helpful context. You can then copy a prompt, create a GitHub issue, or send the context to a coding agent to build the fix.</p><h3>What information does Vynix use for the diagnosis?</h3><p>Vynix uses the element you clicked, a screenshot, console messages, network context, and related page state. The exact captured details can depend on your setup and browser environment.</p></section>
+  <section class="faq"><h2>Related questions</h2><h3>Does Vynix change my website when it diagnoses an issue?</h3><p>No. Vynix captures context from the page and generates a diagnosis. It does not automatically change your code or deploy a fix.</p><h3>Why might the AI diagnosis be incomplete or wrong?</h3><p>The diagnosis depends on the context available in the browser. If the root cause is in backend code, build configuration, private services, or data Vynix cannot see, the AI may only provide a likely direction. Use the diagnosis with your code review and tests.</p></section>
   <div class="callout"><strong>Still need help?</strong><p>Read the full <a href="https://vynix.in/docs">documentation</a> or email hello@vynix.in.</p></div>
 </article>
 </main>

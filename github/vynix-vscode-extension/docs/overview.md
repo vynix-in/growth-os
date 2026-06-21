@@ -1,4 +1,4 @@
-# Vynix VS Code Extension — Overview
+# Vynix VS Code Extension, Overview
 
 The feedback layer for teams that build with AI coding agents.
 

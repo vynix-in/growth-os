@@ -1,4 +1,4 @@
-# Vynix Templates — Overview
+# Vynix Templates, Overview
 
 The feedback layer for teams that build with AI coding agents.
 

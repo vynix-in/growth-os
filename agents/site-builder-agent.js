@@ -64,6 +64,36 @@ function write(file, content) {
   fs.writeFileSync(file, content);
 }
 
+// Self-healing: walk every generated page and drop internal list links that
+// point to a page which no longer exists (for example a post that was renamed
+// or removed). This keeps the site free of broken internal links on every build.
+function fixBrokenLinks(siteRoot) {
+  const exists = (route) => {
+    const rel = route.replace(/^\//, '').replace(/\/$/, '');
+    return fs.existsSync(path.join(siteRoot, rel, 'index.html'));
+  };
+  let fixed = 0;
+  const walk = (dir) => {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) walk(full);
+      else if (entry.name === 'index.html') {
+        let html = fs.readFileSync(full, 'utf8');
+        const before = html;
+        html = html.replace(/<li><a href="(\/(?:blog|compare|kb)\/[^"/]+\/)">[^<]*<\/a><\/li>/g, (m, route) =>
+          exists(route) ? m : '',
+        );
+        if (html !== before) {
+          fs.writeFileSync(full, html);
+          fixed += 1;
+        }
+      }
+    }
+  };
+  walk(siteRoot);
+  return fixed;
+}
+
 export async function run() {
   const siteRoot = path.join(paths.content, 'site');
   const posts = blog.find({ kind: 'blog' }).filter((p) => p.slug && p.status !== 'blocked');
@@ -187,8 +217,9 @@ ${urls.map((u) => `  <url><loc>${abs(u)}</loc><lastmod>${lastmod}</lastmod></url
   );
 
   const total = urls.length;
-  log.info('site built', { pages: total, posts: posts.length, comparisons: comps.length, kb: kb.length });
-  return { pages: total, blog: posts.length, comparisons: comps.length, kb: kb.length, updated: humanDate() };
+  const fixedLinks = fixBrokenLinks(siteRoot);
+  log.info('site built', { pages: total, posts: posts.length, comparisons: comps.length, kb: kb.length, fixedLinks });
+  return { pages: total, blog: posts.length, comparisons: comps.length, kb: kb.length, fixed_links: fixedLinks, updated: humanDate() };
 }
 
 export default { meta, run };

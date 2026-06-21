@@ -1,4 +1,4 @@
-# Vynix GitHub Action — Overview
+# Vynix GitHub Action, Overview
 
 The feedback layer for teams that build with AI coding agents.
 

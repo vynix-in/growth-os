@@ -4,22 +4,22 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Controlling who can see the Vynix widget | Vynix Help</title>
-<meta name="description" content="Limit the Vynix widget by environment, user role, route, or your own app logic before loading the script." />
+<meta name="description" content="Limit who can see the Vynix widget by loading it only for approved users, environments, or internal teams." />
 <link rel="canonical" href="https://vynix.in/kb/controlling-who-can-see-the-vynix-widget/" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Controlling who can see the Vynix widget | Vynix Help" />
-<meta property="og:description" content="Limit the Vynix widget by environment, user role, route, or your own app logic before loading the script." />
+<meta property="og:description" content="Limit who can see the Vynix widget by loading it only for approved users, environments, or internal teams." />
 <meta property="og:url" content="https://vynix.in/kb/controlling-who-can-see-the-vynix-widget/" />
 <meta property="og:image" content="https://vynix.in/assets/og/controlling-who-can-see-the-vynix-widget.png" />
 <meta property="og:site_name" content="Vynix" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@usevynix" />
 <meta name="twitter:title" content="Controlling who can see the Vynix widget | Vynix Help" />
-<meta name="twitter:description" content="Limit the Vynix widget by environment, user role, route, or your own app logic before loading the script." />
+<meta name="twitter:description" content="Limit who can see the Vynix widget by loading it only for approved users, environments, or internal teams." />
 <meta name="twitter:image" content="https://vynix.in/assets/og/controlling-who-can-see-the-vynix-widget.png" />
-<meta property="article:published_time" content="2026-06-21T19:01:12.802Z" />
-<meta property="article:modified_time" content="2026-06-21T19:01:12.802Z" />
+<meta property="article:published_time" content="2026-06-21T19:44:57.653Z" />
+<meta property="article:modified_time" content="2026-06-21T19:44:57.653Z" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -53,18 +53,18 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Can I show the Vynix widget only to my team?",
+      "name": "Can I hide the widget with CSS?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Gate the widget behind your app’s sign-in and role or permission checks, then load it only for approved users. Check the Vynix docs for the latest setup options."
+        "text": "You can, but it is not recommended as the main control. If the script still loads, the widget code is still present on the page. It is better to prevent the Vynix script from loading for users who should not see it."
       }
     },
     {
       "@type": "Question",
-      "name": "Is it safe to just hide the widget with CSS?",
+      "name": "Can I show Vynix only on staging or test sites?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Hiding the widget visually may still leave it loaded on the page. For stronger control, prevent the widget script from loading unless the user is allowed to see it."
+        "text": "Yes. Add an environment check around the widget install code, or configure your deployment so the widget is only included in staging, preview, or test builds."
       }
     }
   ]
@@ -151,11 +151,11 @@ td.yes{color:var(--green);font-weight:600}
   <span class="tag">guide</span>
   <h1>Controlling who can see the Vynix widget</h1>
   <div class="meta-row"><span>Updated 21 June 2026</span></div>
-  <p class="lead">You can control who sees the Vynix widget by only loading it for the users, pages, or environments you choose. The safest approach is to gate the widget in your own application code before the Vynix script is added to the page.</p>
-  <ol><li>Decide who should have access. Common options include admins, developers, QA testers, signed-in users, or users in a feature flag group.</li><li>Add a condition in your app before loading the Vynix widget. For example, check the current environment, user role, route, or feature flag.</li><li>Only insert or initialize the Vynix widget when the condition is true. If the condition is false, do not load the widget script.</li><li>Test with both allowed and blocked users to confirm the widget appears only for the right audience.</li><li>Review the Vynix docs for the current installation options and any workspace-level visibility settings.</li></ol>
-  <p>Vynix is designed to sit on your site and capture developer context when someone clicks an issue, including the selected element, screenshot, console and network context, and an AI diagnosis. Because of that, you should avoid showing it to every visitor unless that is intentional.</p><p>The most common setup is to load Vynix only in development, staging, or preview environments. If you need it in production, restrict it to trusted users such as your team, authenticated testers, or users behind an internal feature flag.</p><p>Visibility should usually be controlled where you already manage access in your app. For example, use your authentication state, role checks, route guards, environment variables, or feature flag service to decide whether the widget should load.</p><p>If you remove access for a user, make sure the page no longer initializes the widget for that user. Hiding the button with CSS is not enough, because the widget may still be present in the page.</p>
+  <p class="lead">You can limit who sees the Vynix widget by controlling when the widget script loads on your site. The safest approach is to show it only to approved users, roles, or environments.</p>
+  <ol><li>Decide who should have access, such as developers, QA testers, admins, or users in a private beta.</li><li>Add a condition around the Vynix widget install code so it only runs when the current user or environment is allowed.</li><li>Use your existing access logic where possible, such as logged-in user roles, feature flags, workspace settings, or environment checks.</li><li>Avoid loading the widget script at all for users who should not see it. Hiding it with CSS is not enough.</li><li>Test with both allowed and blocked accounts to confirm the widget appears only where expected.</li></ol>
+  <p>Vynix works by adding a lightweight widget to your website. If the widget script is loaded, users may be able to open it and create annotations. To limit visibility, place the install snippet behind your own access checks instead of adding it globally to every page.</p><p>Common options include showing Vynix only in staging, only for signed-in team members, only for admin roles, or only when a feature flag is enabled. For example, your app can check the current user's role before rendering the Vynix snippet.</p><p>For production sites, use server-side or application-level checks when possible. This helps prevent the widget from being sent to users who should not have access. Client-side checks can be useful for convenience, but they should not be your only control if access is sensitive.</p><p>If you are using a tag manager, make sure the tag trigger follows the same rules. Do not publish the Vynix tag on all pages unless everyone who can visit those pages should see it.</p><p>For the latest install options and configuration details, see the Vynix documentation at https://vynix.in/docs.</p>
   <figure><img src="https://vynix.in/marketing/p-install.png" alt="Installing the Vynix widget with one script tag" loading="lazy" width="1080" height="1350" /><figcaption>Installing the Vynix widget with one script tag</figcaption></figure>
-  <section class="faq"><h2>Related questions</h2><h3>Can I show the Vynix widget only to my team?</h3><p>Yes. Gate the widget behind your app’s sign-in and role or permission checks, then load it only for approved users. Check the Vynix docs for the latest setup options.</p><h3>Is it safe to just hide the widget with CSS?</h3><p>No. Hiding the widget visually may still leave it loaded on the page. For stronger control, prevent the widget script from loading unless the user is allowed to see it.</p></section>
+  <section class="faq"><h2>Related questions</h2><h3>Can I hide the widget with CSS?</h3><p>You can, but it is not recommended as the main control. If the script still loads, the widget code is still present on the page. It is better to prevent the Vynix script from loading for users who should not see it.</p><h3>Can I show Vynix only on staging or test sites?</h3><p>Yes. Add an environment check around the widget install code, or configure your deployment so the widget is only included in staging, preview, or test builds.</p></section>
   <div class="callout"><strong>Still need help?</strong><p>Read the full <a href="https://vynix.in/docs">documentation</a> or email hello@vynix.in.</p></div>
 </article>
 </main>

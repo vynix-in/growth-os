@@ -4,22 +4,22 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Fixing a report with no screenshot | Vynix Help</title>
-<meta name="description" content="Learn why a Vynix report may not include a screenshot and how to fix common capture issues." />
+<meta name="description" content="Learn why a Vynix report may not include a screenshot and how to capture one successfully." />
 <link rel="canonical" href="https://vynix.in/kb/fixing-a-report-with-no-screenshot/" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Fixing a report with no screenshot | Vynix Help" />
-<meta property="og:description" content="Learn why a Vynix report may not include a screenshot and how to fix common capture issues." />
+<meta property="og:description" content="Learn why a Vynix report may not include a screenshot and how to capture one successfully." />
 <meta property="og:url" content="https://vynix.in/kb/fixing-a-report-with-no-screenshot/" />
 <meta property="og:image" content="https://vynix.in/assets/og/fixing-a-report-with-no-screenshot.png" />
 <meta property="og:site_name" content="Vynix" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@usevynix" />
 <meta name="twitter:title" content="Fixing a report with no screenshot | Vynix Help" />
-<meta name="twitter:description" content="Learn why a Vynix report may not include a screenshot and how to fix common capture issues." />
+<meta name="twitter:description" content="Learn why a Vynix report may not include a screenshot and how to capture one successfully." />
 <meta name="twitter:image" content="https://vynix.in/assets/og/fixing-a-report-with-no-screenshot.png" />
-<meta property="article:published_time" content="2026-06-21T19:01:39.580Z" />
-<meta property="article:modified_time" content="2026-06-21T19:01:39.580Z" />
+<meta property="article:published_time" content="2026-06-21T19:45:25.594Z" />
+<meta property="article:modified_time" content="2026-06-21T19:45:25.594Z" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -53,18 +53,18 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Why does the report have console or network details but no screenshot?",
+      "name": "Can I still use a report without a screenshot?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Screenshot capture and developer-context capture use different browser capabilities. A page may allow Vynix to collect console or network context while still preventing a visual screenshot."
+        "text": "Yes. The report can still help because Vynix may include the clicked element, console logs, network context, and an AI diagnosis. Add a manual screenshot if the visual state is important."
       }
     },
     {
       "@type": "Question",
-      "name": "Can I still use a report without a screenshot?",
+      "name": "Why does the screenshot work on one page but not another?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. The report can still help developers by showing the selected element, console output, network context, and AI diagnosis. If the missing screenshot is important, recreate the report after checking the steps above."
+        "text": "Different pages can have different security rules, embedded content, or script restrictions. A page with protected content, strict policies, or cross-origin frames may block screenshot capture while other pages work normally."
       }
     }
   ]
@@ -151,11 +151,11 @@ td.yes{color:var(--green);font-weight:600}
   <span class="tag">troubleshooting</span>
   <h1>Fixing a report with no screenshot</h1>
   <div class="meta-row"><span>Updated 21 June 2026</span></div>
-  <p class="lead">A Vynix report usually includes a screenshot of the page at the moment you annotate an issue. If the screenshot is missing, it is usually caused by browser permissions, page restrictions, or timing during capture.</p>
-  <ol><li>Reload the page, open the Vynix widget again, and create a new report. This fixes temporary capture or loading issues.</li><li>Check that the page is fully loaded before clicking the issue. Screenshots may fail if the page is still navigating, rendering, or blocked by a loading overlay.</li><li>Review browser privacy settings and extensions. Ad blockers, script blockers, strict tracking protection, or privacy extensions can prevent screenshot capture.</li><li>Try the report in another supported browser or in a clean browser profile. This helps confirm whether the issue is caused by a browser setting or extension.</li><li>Check whether the page uses protected content, cross-origin frames, browser-restricted pages, or security policies. Some areas cannot be captured by browser-based tools.</li><li>If screenshots are still missing, include the console and network context from the report when contacting support, and check the latest setup guidance in the Vynix docs.</li></ol>
-  <p>There may be no screenshot on your report if Vynix could not access the visible page content at capture time. Common causes include browser permission limits, security settings, content inside restricted frames, or extensions that block page scripts.</p><p>The rest of the report may still be useful. Vynix can still capture developer context such as the selected element, console details, network activity, and an AI diagnosis when those signals are available.</p><p>For setup requirements and the latest browser guidance, see the Vynix documentation at https://vynix.in/docs.</p>
+  <p class="lead">A Vynix report can still include useful context even when the screenshot is missing. This usually happens when the page, browser, or site settings prevent Vynix from capturing the view.</p>
+  <ol><li>Refresh the page, open Vynix again, and create a new report. A full page reload can fix temporary capture issues.</li><li>Check that the Vynix widget is fully loaded before you click the issue. If the widget is still loading, the screenshot may not be captured.</li><li>Disable browser extensions that block scripts, screenshots, or trackers, then try again. Ad blockers and privacy tools can stop capture features.</li><li>Try the same report in another supported browser or in a clean browser profile.</li><li>Check whether the page uses strict security settings, blocked cross-origin content, protected media, or embedded frames. These can limit what Vynix is allowed to capture.</li><li>If the screenshot is still missing, copy the report context and attach a manual screenshot when you share the issue.</li></ol>
+  <p>There is no screenshot on a report when Vynix cannot access or render the visible page area at the time the report is created. The report may still include the selected element, console context, network context, and an AI diagnosis, depending on what was available.</p><p>Common causes include the widget not finishing its load, browser privacy settings, extensions that block capture, page security policies, cross-origin iframes, or content that the browser does not allow tools to screenshot.</p><p>If this happens often on the same site, review your Vynix setup against the documentation at https://vynix.in/docs. In some cases, a site configuration change may be needed so the widget can run and capture context correctly.</p>
   <figure><img src="https://vynix.in/marketing/p-point.png" alt="Pointing at an element on a live page with Vynix" loading="lazy" width="1080" height="1350" /><figcaption>Pointing at an element on a live page with Vynix</figcaption></figure>
-  <section class="faq"><h2>Related questions</h2><h3>Why does the report have console or network details but no screenshot?</h3><p>Screenshot capture and developer-context capture use different browser capabilities. A page may allow Vynix to collect console or network context while still preventing a visual screenshot.</p><h3>Can I still use a report without a screenshot?</h3><p>Yes. The report can still help developers by showing the selected element, console output, network context, and AI diagnosis. If the missing screenshot is important, recreate the report after checking the steps above.</p></section>
+  <section class="faq"><h2>Related questions</h2><h3>Can I still use a report without a screenshot?</h3><p>Yes. The report can still help because Vynix may include the clicked element, console logs, network context, and an AI diagnosis. Add a manual screenshot if the visual state is important.</p><h3>Why does the screenshot work on one page but not another?</h3><p>Different pages can have different security rules, embedded content, or script restrictions. A page with protected content, strict policies, or cross-origin frames may block screenshot capture while other pages work normally.</p></section>
   <div class="callout"><strong>Still need help?</strong><p>Read the full <a href="https://vynix.in/docs">documentation</a> or email hello@vynix.in.</p></div>
 </article>
 </main>
