@@ -5,7 +5,7 @@
 First public release.
 
 - Initial project scaffold and documentation.
-- Links to the Vynix website and documentation.
+- Links to the [Vynix website](https://vynix.in) and [documentation](https://vynix.in/docs).
 - Ready for community feedback.
 
-Report problems or ideas through the issues tab. For product feedback, use Vynix itself at https://vynix.in.
+For product feedback, use Vynix itself at [https://vynix.in](https://vynix.in).

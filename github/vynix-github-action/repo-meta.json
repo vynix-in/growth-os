@@ -1,0 +1,18 @@
+{
+  "name": "vynix-github-action",
+  "description": "GitHub Action to turn Vynix website feedback into issues for your coding agents.",
+  "homepage": "https://vynix.in",
+  "topics": [
+    "vynix",
+    "bug-reporting",
+    "visual-feedback",
+    "website-annotation",
+    "ai-diagnosis",
+    "developer-tools",
+    "feedback-tool",
+    "github-action",
+    "ci-cd",
+    "automation",
+    "devops"
+  ]
+}

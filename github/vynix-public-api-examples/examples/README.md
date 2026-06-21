@@ -2,8 +2,12 @@
 
 A minimal example for Vynix Public API Examples.
 
-Replace the placeholder values with your own Vynix project key from https://vynix.in.
+Get your project key from [https://vynix.in](https://vynix.in), then:
 
-```text
-This example is a starting point. See the README for full setup instructions.
+```bash
+cd vynix-public-api-examples/list-annotations
+export VYNIX_PROJECT_KEY=YOUR_PROJECT_KEY
+node index.js
 ```
+
+See the [README](../README.md) for full setup, and the [Vynix docs](https://vynix.in/docs) for the API reference.

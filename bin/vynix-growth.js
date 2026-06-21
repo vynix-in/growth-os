@@ -20,7 +20,7 @@ import { startDashboard } from '../dashboard/server.js';
 import { buildSnapshot } from '../agents/dashboard-agent.js';
 import { queue } from '../lib/queue.js';
 import { scanFile } from '../lib/publication-gate.js';
-import { publishRepo } from '../github/publish.js';
+import { publishRepo, approveAllRepos, publishAllRepos } from '../github/publish.js';
 
 ensureDirs();
 
@@ -102,7 +102,20 @@ async function main() {
     }
     case 'publish': {
       if (!arg1) return console.log('Usage: publish <repo-name>');
-      await publishRepo(arg1, { dryRun: arg2 === '--dry-run' });
+      const res = await publishRepo(arg1, { dryRun: arg2 === '--dry-run' });
+      console.log(JSON.stringify(res, null, 2));
+      break;
+    }
+    case 'approve-all-repos': {
+      const n = approveAllRepos();
+      console.log(`Approved ${n} repository tasks.`);
+      break;
+    }
+    case 'publish-all-repos': {
+      const results = await publishAllRepos({ dryRun: arg1 === '--dry-run', force: arg1 === '--force' });
+      for (const r of results) {
+        console.log(`${r.ok ? 'OK  ' : 'FAIL'} ${r.repo}${r.url ? '  ' + r.url : ''}${r.reason ? '  ' + r.reason : ''}${r.skipped ? '  (' + r.skipped + ')' : ''}`);
+      }
       break;
     }
     default:
@@ -118,6 +131,8 @@ Commands:
   gate <file>            scan a file with the publication gate
   approvals              list items waiting for approval
   publish <repo>         push an approved repository to GitHub (gated)
+  approve-all-repos      approve every pending repository for publishing
+  publish-all-repos      push every approved repository to GitHub (gated)
 `);
   }
 }

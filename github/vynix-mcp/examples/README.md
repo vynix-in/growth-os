@@ -2,8 +2,18 @@
 
 A minimal example for Vynix MCP Server.
 
-Replace the placeholder values with your own Vynix project key from https://vynix.in.
+Get your project key from [https://vynix.in](https://vynix.in), then:
 
-```text
-This example is a starting point. See the README for full setup instructions.
+```json
+{
+  "mcpServers": {
+    "vynix": {
+      "command": "npx",
+      "args": ["-y", "@vynix/mcp"],
+      "env": { "VYNIX_API_TOKEN": "YOUR_TOKEN" }
+    }
+  }
+}
 ```
+
+See the [README](../README.md) for full setup, and the [Vynix docs](https://vynix.in/docs) for the API reference.

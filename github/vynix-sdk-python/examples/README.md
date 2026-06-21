@@ -2,8 +2,14 @@
 
 A minimal example for Vynix Python SDK.
 
-Replace the placeholder values with your own Vynix project key from https://vynix.in.
+Get your project key from [https://vynix.in](https://vynix.in), then:
 
-```text
-This example is a starting point. See the README for full setup instructions.
+```python
+from vynix import Vynix
+
+vynix = Vynix(project_key="YOUR_PROJECT_KEY")
+for note in vynix.annotations.list():
+    print(note.title)
 ```
+
+See the [README](../README.md) for full setup, and the [Vynix docs](https://vynix.in/docs) for the API reference.

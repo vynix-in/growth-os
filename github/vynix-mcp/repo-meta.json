@@ -1,0 +1,19 @@
+{
+  "name": "vynix-mcp",
+  "description": "Vynix MCP server. Give AI coding agents access to your visual feedback and bug reports.",
+  "homepage": "https://vynix.in",
+  "topics": [
+    "vynix",
+    "bug-reporting",
+    "visual-feedback",
+    "website-annotation",
+    "ai-diagnosis",
+    "developer-tools",
+    "feedback-tool",
+    "mcp",
+    "model-context-protocol",
+    "ai-agents",
+    "claude",
+    "copilot"
+  ]
+}

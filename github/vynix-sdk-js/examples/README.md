@@ -2,8 +2,13 @@
 
 A minimal example for Vynix JavaScript SDK.
 
-Replace the placeholder values with your own Vynix project key from https://vynix.in.
+Get your project key from [https://vynix.in](https://vynix.in), then:
 
-```text
-This example is a starting point. See the README for full setup instructions.
+```js
+import { Vynix } from '@vynix/sdk';
+
+const vynix = new Vynix({ projectKey: 'YOUR_PROJECT_KEY' });
+const notes = await vynix.annotations.list();
 ```
+
+See the [README](../README.md) for full setup, and the [Vynix docs](https://vynix.in/docs) for the API reference.

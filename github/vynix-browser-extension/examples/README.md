@@ -2,8 +2,9 @@
 
 A minimal example for Vynix Browser Extension.
 
-Replace the placeholder values with your own Vynix project key from https://vynix.in.
+Get your project key from [https://vynix.in](https://vynix.in), then:
 
-```text
-This example is a starting point. See the README for full setup instructions.
-```
+// The extension needs no code. Configure your project key at:
+// https://vynix.in
+
+See the [README](../README.md) for full setup, and the [Vynix docs](https://vynix.in/docs) for the API reference.

@@ -1,0 +1,17 @@
+{
+  "name": "vynix-vscode-extension",
+  "description": "Vynix for VS Code. See website feedback and bug reports inside your editor.",
+  "homepage": "https://vynix.in",
+  "topics": [
+    "vynix",
+    "bug-reporting",
+    "visual-feedback",
+    "website-annotation",
+    "ai-diagnosis",
+    "developer-tools",
+    "feedback-tool",
+    "vscode-extension",
+    "editor-integration",
+    "productivity"
+  ]
+}

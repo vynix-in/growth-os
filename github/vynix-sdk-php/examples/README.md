@@ -2,8 +2,14 @@
 
 A minimal example for Vynix PHP SDK.
 
-Replace the placeholder values with your own Vynix project key from https://vynix.in.
+Get your project key from [https://vynix.in](https://vynix.in), then:
 
-```text
-This example is a starting point. See the README for full setup instructions.
+```php
+<?php
+use Vynix\Client;
+
+$vynix = new Client('YOUR_PROJECT_KEY');
+$annotations = $vynix->annotations()->list();
 ```
+
+See the [README](../README.md) for full setup, and the [Vynix docs](https://vynix.in/docs) for the API reference.

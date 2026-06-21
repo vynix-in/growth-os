@@ -1,0 +1,17 @@
+{
+  "name": "vynix-templates",
+  "description": "Starter templates with the Vynix feedback widget pre-installed.",
+  "homepage": "https://vynix.in",
+  "topics": [
+    "vynix",
+    "bug-reporting",
+    "visual-feedback",
+    "website-annotation",
+    "ai-diagnosis",
+    "developer-tools",
+    "feedback-tool",
+    "templates",
+    "boilerplate",
+    "starter-kit"
+  ]
+}
