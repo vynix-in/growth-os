@@ -223,7 +223,7 @@ async function buildPage(page) {
     itemListLd(listItems, page.title),
     breadcrumbLd([
       { name: 'Home', url: product.website },
-      { name: 'Guides', url: `/${dir1}/` },
+      { name: 'Guides', url: '/best/' },
       { name: page.title, url: `/${dir1}/${page.slug}/` },
     ]),
     faqLd(angle.faqs),
