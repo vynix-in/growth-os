@@ -30,6 +30,10 @@ const deploys = db('reports');
 const ORG = config.github.org; // vynix-in
 const PAGES_REPO = `${ORG}.github.io`;
 const BASE = `https://${ORG}.github.io`;
+// The live primary: the same content is served from vynix.in/resources. The
+// github.io copy is a mirror whose canonicals point here so search engines
+// consolidate all ranking signals to vynix.in (no duplicate-content split).
+const PRIMARY = 'https://vynix.in/resources';
 const SITE = path.join(paths.content, 'site');
 const BUILD = path.join(paths.database, '..', '.pages-build');
 
@@ -64,6 +68,13 @@ function rewriteSelfUrls(content, isSitemapOrRobots) {
     return content.split('https://vynix.in').join(BASE);
   }
   return content
+    // Canonical + og:url point at the live primary (vynix.in/resources) so the
+    // github.io mirror passes its authority there instead of competing for it.
+    .replace(new RegExp(`(rel="canonical" href=")https://vynix\\.in(/(?:${SELF_SECTIONS})[^"]*)`, 'g'), `$1${PRIMARY}$2`)
+    .replace(new RegExp(`(property="og:url" content=")https://vynix\\.in(/(?:${SELF_SECTIONS})[^"]*)`, 'g'), `$1${PRIMARY}$2`)
+    .replace(/(rel="canonical" href=")https:\/\/vynix\.in\/"/g, `$1${PRIMARY}/"`)
+    .replace(/(property="og:url" content=")https:\/\/vynix\.in\/"/g, `$1${PRIMARY}/"`)
+    // Every other self-referencing URL -> the Pages origin so the mirror works.
     .replace(new RegExp(`https://vynix\\.in(/(?:${SELF_SECTIONS})[^"'\\s)]*)`, 'g'), `${BASE}$1`)
     .split('href="https://vynix.in/"').join(`href="${BASE}/"`)
     .split('content="https://vynix.in/"').join(`content="${BASE}/"`);

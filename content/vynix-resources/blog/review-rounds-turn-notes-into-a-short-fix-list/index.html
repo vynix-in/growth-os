@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Review rounds: turn notes into a short fix list | Vynix</title>
+<meta name="description" content="Use Vynix to turn scattered website review comments into clear, contextual fixes developers and coding agents can act on." />
+<meta name="keywords" content="review, loop, workflow, vynix, bug reporting, ai coding agents" />
+<link rel="canonical" href="https://vynix.in/resources/blog/review-rounds-turn-notes-into-a-short-fix-list/" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Review rounds: turn notes into a short fix list | Vynix" />
+<meta property="og:description" content="Use Vynix to turn scattered website review comments into clear, contextual fixes developers and coding agents can act on." />
+<meta property="og:url" content="https://vynix.in/resources/blog/review-rounds-turn-notes-into-a-short-fix-list/" />
+<meta property="og:image" content="https://vynix.in/resources/assets/og/review-rounds-turn-notes-into-a-short-fix-list.png" />
+<meta property="og:site_name" content="Vynix" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@usevynix" />
+<meta name="twitter:title" content="Review rounds: turn notes into a short fix list | Vynix" />
+<meta name="twitter:description" content="Use Vynix to turn scattered website review comments into clear, contextual fixes developers and coding agents can act on." />
+<meta name="twitter:image" content="https://vynix.in/resources/assets/og/review-rounds-turn-notes-into-a-short-fix-list.png" />
+<meta property="article:published_time" content="2026-06-21T19:35:24.430Z" />
+<meta property="article:modified_time" content="2026-06-21T19:35:24.430Z" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Review rounds: turn notes into a short fix list",
+  "description": "Use Vynix to turn scattered website review comments into clear, contextual fixes developers and coding agents can act on.",
+  "image": [
+    "https://vynix.in/resources/assets/og/review-rounds-turn-notes-into-a-short-fix-list.png"
+  ],
+  "datePublished": "2026-06-21T19:35:24.430Z",
+  "dateModified": "2026-06-21T19:35:24.430Z",
+  "author": {
+    "@type": "Organization",
+    "name": "The Vynix Team",
+    "url": "https://vynix.in"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Vynix",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://vynix.in/icon-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://vynix.in/resources/blog/review-rounds-turn-notes-into-a-short-fix-list/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://vynix.in"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://vynix.in/resources/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Review rounds: turn notes into a short fix list",
+      "item": "https://vynix.in/resources/blog/review-rounds-turn-notes-into-a-short-fix-list/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How is this different from leaving comments in a design file?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Design comments are useful before implementation, but review bugs happen in the running site. Vynix captures the live element, screenshot, console and network context, and a likely root cause, so the note reflects what actually happened in the browser."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should every annotation become a GitHub issue?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. First group duplicates, remove questions that need a product decision, and combine notes that share one root cause. Open a GitHub issue when the item is clear, fixable, and has enough context for a developer or coding agent to act."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can an AI diagnosis replace a developer investigation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Treat it as a starting point. The captured context and diagnosis can reduce guesswork, but a developer still needs to confirm the cause, choose the right fix, and check that the change does not break related behavior."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Vynix",
+  "url": "https://vynix.in",
+  "logo": "https://vynix.in/icon-512.png",
+  "sameAs": [
+    "https://github.com/vynix-in",
+    "https://twitter.com/usevynix"
+  ]
+}
+</script>
+<style>
+:root{--green:#008448;--green-2:#06a463;--ink:#0f172a;--muted:#475569;--line:#e2e8f0;--bg:#ffffff;--soft:#f8fafc}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;font-size:17px}
+a{color:var(--green);text-decoration:none}
+a:hover{text-decoration:underline}
+img,video{max-width:100%;height:auto;border-radius:12px}
+.container{max-width:880px;margin:0 auto;padding:0 20px}
+.site-header{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);z-index:10}
+.site-header .container{display:flex;align-items:center;justify-content:space-between;height:62px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--ink)}
+.brand .mark{width:26px;height:26px;border-radius:7px;background:linear-gradient(135deg,var(--green),var(--green-2));position:relative;display:inline-block}
+.brand .mark::after{content:"";position:absolute;inset:7px 8px;border-left:3px solid #fff;border-bottom:3px solid #fff;transform:rotate(-45deg)}
+nav.main a{color:var(--muted);font-size:.95rem;margin-left:18px;font-weight:500}
+nav.main a:hover{color:var(--green)}
+.cta{display:inline-block;background:var(--green);color:#fff!important;padding:9px 16px;border-radius:9px;font-weight:600;text-decoration:none!important}
+.cta:hover{background:var(--green-2)}
+.breadcrumbs{font-size:.85rem;color:var(--muted);padding:16px 0}
+.breadcrumbs a{color:var(--muted)}
+article{padding:8px 0 48px}
+article h1{font-size:2.3rem;line-height:1.15;margin:.2em 0 .3em}
+article h2{font-size:1.5rem;margin:1.6em 0 .5em}
+article h3{font-size:1.2rem;margin:1.4em 0 .4em}
+.lead{font-size:1.2rem;color:var(--muted)}
+.meta-row{display:flex;gap:14px;align-items:center;color:var(--muted);font-size:.9rem;margin:10px 0 22px;flex-wrap:wrap}
+.hero{margin:18px 0 26px;border:1px solid var(--line)}
+figure{margin:24px 0}
+figure img,figure video{border:1px solid var(--line);width:100%}
+figcaption{color:var(--muted);font-size:.85rem;margin-top:8px;text-align:center}
+table{width:100%;border-collapse:collapse;margin:22px 0;font-size:.96rem}
+th,td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--soft);font-weight:600}
+td.yes{color:var(--green);font-weight:600}
+.toc{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:24px 0}
+.toc strong{display:block;margin-bottom:8px;font-size:.9rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.toc ol{margin:0;padding-left:20px}
+.faq h3{font-size:1.08rem;margin-top:1.2em}
+.callout{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;padding:18px 20px;margin:26px 0}
+.callout a.cta{margin-top:8px}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;margin:24px 0}
+.card{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;transition:box-shadow .15s}
+.card:hover{box-shadow:0 8px 24px rgba(15,23,42,.08)}
+.card img{border-radius:0;display:block;aspect-ratio:16/9;object-fit:cover;width:100%}
+.card .body{padding:14px 16px}
+.card h3{margin:.2em 0;font-size:1.05rem}
+.card p{color:var(--muted);font-size:.92rem;margin:.3em 0 0}
+.tag{display:inline-block;font-size:.72rem;color:var(--green);background:#ecfdf5;border:1px solid #bbf7d0;border-radius:999px;padding:2px 9px;margin-right:6px}
+.site-footer{border-top:1px solid var(--line);background:var(--soft);margin-top:40px}
+.site-footer .container{padding:32px 20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;color:var(--muted);font-size:.9rem}
+.site-footer a{color:var(--muted)}
+@media(max-width:640px){article h1{font-size:1.8rem}nav.main a{margin-left:12px}body{font-size:16px}}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="container">
+  <a class="brand" href="https://vynix.in"><span class="mark"></span> Vynix</a>
+  <nav class="main">
+    <a href="https://vynix.in">Product</a><a href="/resources/blog/">Blog</a><a href="/resources/compare/">Compare</a><a href="https://vynix.in/docs">Docs</a><a href="/resources/kb/">Help</a>
+    <a class="cta" href="https://vynix.in">Try free</a>
+  </nav>
+</div></header>
+<main class="container">
+<div class="breadcrumbs container"><a href="https://vynix.in">Home</a> / <a href="/resources/blog/">Blog</a> / <span>Review rounds: turn notes into a short fix list</span></div>
+<article>
+  <h1>Review rounds: turn notes into a short fix list</h1>
+  <div class="meta-row">
+    <span>By the Vynix Team</span>
+    <span>&middot;</span>
+    <time datetime="2026-06-21T19:35:24.430Z">21 June 2026</time>
+    <span>&middot;</span>
+    <span>6 min read</span>
+  </div>
+  <p class="lead">Website review rounds often start with good intent and end with a messy document full of screenshots, vague comments, and duplicate notes. A short fix list is better: each item points to the exact problem, carries the context a developer needs, and is ready to build.</p>
+  <figure class="ill-hero"><svg class="vx-ill" viewBox="0 0 640 360" role="img" aria-label="Clicking an element and leaving a note with Vynix" preserveAspectRatio="xMidYMid meet" style="width:100%;height:auto;aspect-ratio:16 / 9;display:block">
+  <defs>
+    <linearGradient id="vxcap-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6fdfa"/><stop offset="1" stop-color="#ecfdf5"/>
+    </linearGradient>
+    <linearGradient id="vxcap-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#008448"/><stop offset="1" stop-color="#15c47d"/>
+    </linearGradient>
+    <filter id="vxcap-s" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+  <rect x="1" y="1" width="638" height="358" rx="22" fill="url(#vxcap-bg)" stroke="#d1fae5"/>
+  <style>
+    .vxcap-pulse{transform-box:fill-box;transform-origin:center;animation:vxcap-pulse 2.6s ease-in-out infinite}
+    @keyframes vxcap-pulse{0%,100%{opacity:.55;transform:scale(.92)}50%{opacity:1;transform:scale(1.06)}}
+    .vxcap-dash{stroke-dasharray:8 10;animation:vxcap-dash 1.4s linear infinite}
+    @keyframes vxcap-dash{to{stroke-dashoffset:-36}}
+    .vxcap-float{animation:vxcap-float 4s ease-in-out infinite}
+    @keyframes vxcap-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    .vxcap-in{opacity:0;animation:vxcap-in 6s ease-in-out infinite}
+    @keyframes vxcap-in{0%,8%{opacity:0;transform:translateY(8px)}18%,72%{opacity:1;transform:translateY(0)}88%,100%{opacity:0}}
+  </style>
+  <rect x="48" y="56" width="544" height="248" rx="14" fill="#ffffff" stroke="#e2e8f0" filter="url(#vxcap-s)"/>
+     <rect x="48" y="56" width="544" height="34" rx="14" fill="#f1f5f9"/>
+     <circle cx="70" cy="73" r="5" fill="#f87171"/><circle cx="88" cy="73" r="5" fill="#fbbf24"/><circle cx="106" cy="73" r="5" fill="#34d399"/>
+     <rect x="78" y="120" width="220" height="14" rx="7" fill="#e2e8f0"/>
+     <rect x="78" y="148" width="320" height="14" rx="7" fill="#eef2f7"/>
+     <rect x="78" y="200" width="150" height="40" rx="10" fill="url(#vxcap-g)"/>
+     <text x="153" y="225" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#fff">Buy now</text>
+     <rect x="76" y="198" width="154" height="44" rx="12" fill="none" stroke="#008448" stroke-width="2.5" class="vxcap-pulse"/>
+     <g class="vxcap-in">
+       <rect x="300" y="190" width="252" height="86" rx="12" fill="#052e1b" filter="url(#vxcap-s)"/>
+       <circle cx="320" cy="210" r="7" fill="#15c47d"/>
+       <rect x="336" y="204" width="120" height="9" rx="4" fill="#34d399"/>
+       <rect x="312" y="228" width="220" height="8" rx="4" fill="#1e5b43"/>
+       <rect x="312" y="246" width="180" height="8" rx="4" fill="#1e5b43"/>
+     </g>
+     <g>
+       <path d="M150 210 q -2 -34 22 -40" fill="none" stroke="#008448" stroke-width="2" stroke-dasharray="4 6"/>
+       <path class="vxcap-float" d="M470 120 l 14 26 -10 -2 -2 12 z" fill="#0f172a"/>
+     </g>
+</svg></figure><figure class="hero"><img src="https://vynix.in/marketing/v2-p-loop.png" alt="Closing the feedback-to-fix loop with Vynix" width="1080" height="1350" /><figcaption>Closing the feedback-to-fix loop with Vynix</figcaption></figure>
+  <div class="toc"><strong>On this page</strong><ol><li><a href="#s1-why-review-notes-get-hard-to-u">Why review notes get hard to use</a></li><li><a href="#s2-start-every-note-at-the-broken">Start every note at the broken element</a></li><li><a href="#s3-separate-observations-from-fix">Separate observations from fixes</a></li><li><a href="#s4-use-context-to-cut-reproductio">Use context to cut reproduction time</a></li><li><a href="#s5-turn-annotations-into-buildabl">Turn annotations into buildable tasks</a></li><li><a href="#s6-run-the-next-round-against-the">Run the next round against the fix list</a></li></ol></div>
+  <section id="s1-why-review-notes-get-hard-to-u"><h2>Why review notes get hard to use</h2><p>Most review notes are written far away from the thing being reviewed. Someone sees a broken menu, takes a screenshot, pastes it into a document, and writes something like "nav looks weird on mobile". By the time a developer opens the note, they have to guess the page, viewport, state, browser, account type, and the exact element that looked wrong.</p><p>That guesswork adds friction to every round. A designer may report the same spacing issue in three places. A product manager may flag copy that has already changed. A developer may spend ten minutes trying to reproduce a bug before they can even decide whether it is a CSS issue, a data issue, or expected behavior.</p><p>The goal is not to collect more notes. The goal is to collect better notes, then reduce them into a small set of fixable items. A good fix list removes duplicates, groups related problems, and preserves the evidence needed to act.</p><ul><li>Vague note: "This card looks off."</li><li>Useful note: "On /pricing at 390px wide, the third plan card title wraps behind the badge."</li><li>Best note: the same description plus the selected element, screenshot, console logs, network context, and likely root cause.</li></ul></section>
+<section id="s2-start-every-note-at-the-broken"><h2>Start every note at the broken element</h2><p>A review comment should begin where the problem is visible. If the issue is a button label, the note should attach to the button. If the issue is a layout shift, it should attach to the container that moves. If the issue is a blank state, it should be captured while the blank state is on screen.</p><p>This is where Vynix changes the review flow. You drop a lightweight widget on the site, open the page you want to review, and click on what is wrong. Vynix captures the element, a screenshot, console and network context, and an AI diagnosis of the likely root cause. That means the report starts with the page itself, not a separate spreadsheet or chat thread.</p><p>Element-level capture is especially useful for visual bugs that are hard to describe. A reviewer does not need to know whether a problem comes from flexbox, a missing class, or a failed API request. They can point at the issue and leave enough context for someone else to investigate.</p><ul><li>Click the exact element, not the general page area.</li><li>Capture the state before refreshing, navigating, or dismissing a modal.</li><li>Add a short human note that says what you expected to happen.</li><li>Avoid long theories unless you have already confirmed them.</li></ul><figure><img src="https://vynix.in/marketing/v2-p-loop.png" alt="Closing the feedback-to-fix loop with Vynix" loading="lazy" width="1080" height="1350" /><figcaption>Closing the feedback-to-fix loop with Vynix</figcaption></figure></section>
+<section id="s3-separate-observations-from-fix"><h2>Separate observations from fixes</h2><p>Review rounds become noisy when every observation is treated as a task. Some notes describe real defects. Some are questions. Some are preferences. Some are symptoms of the same underlying bug. Before creating work, sort the notes by what they actually mean.</p><p>A practical fix list usually has fewer items than the original review pile. For example, five comments about inconsistent card heights may become one task to adjust the card layout rules. Three notes about missing product images may become one task to handle failed image responses. Two comments about confusing language may stay as two copy edits because they affect different screens.</p><p>Keep the original evidence attached to the grouped fix. If you collapse ten comments into one issue but lose the screenshots and runtime context, the developer has to rebuild the investigation. Vynix helps here because each annotation can carry the captured element, screenshot, console output, network context, and AI diagnosis with it. The short list stays short without becoming thin.</p><ul><li>Observation: "The checkout total shows $0 after applying this coupon."</li><li>Question: "Should the coupon field be visible for guest checkout?"</li><li>Preference: "Can the success message be shorter?"</li><li>Fix item: "Correct checkout total recalculation when a coupon is applied."</li></ul></section>
+<section id="s4-use-context-to-cut-reproductio"><h2>Use context to cut reproduction time</h2><p>The slowest part of many review fixes is not the code change. It is reproducing the bug. A developer needs to know what route was open, what request failed, which component rendered, and whether the browser logged an error. If that information is missing, the fix starts with a detective story.</p><p>Context also helps decide priority. A visual gap on one marketing card is different from a failed network request that prevents checkout from loading prices. A note with console and network context gives the team a clearer signal. It may show a 404 for an image, a failed API call, or a JavaScript exception tied to the click that triggered the problem.</p><p>Vynix captures that surrounding information at the moment the reviewer clicks the broken element. The AI diagnosis is not a replacement for engineering judgment, but it gives the person picking up the task a starting point. Instead of opening an issue that says "broken on staging", you can include a likely cause such as a missing prop, a selector mismatch, or a failing request, when the captured context supports that direction.</p></section>
+<section id="s5-turn-annotations-into-buildabl"><h2>Turn annotations into buildable tasks</h2><p>Once the review notes are grouped and trimmed, each remaining item should be written so someone can build it without a follow-up meeting. A good task names the page, the visible problem, the expected result, and the evidence. If a coding agent will work on it, the task also needs enough instruction to avoid broad, risky changes.</p><p>Vynix supports that handoff by letting you copy a ready-to-build prompt or open a GitHub issue and assign it to a coding agent. The important part is discipline: do not send a raw pile of comments to an agent and hope it infers the plan. Give it one fix at a time, with the relevant annotations and a clear acceptance check.</p><p>For example, a weak task is "fix mobile pricing page". A better task is "On the pricing page at a narrow mobile width, the enterprise plan badge overlaps the heading. Adjust the plan card layout so the badge stays above the heading with at least the existing spacing used on the other cards. Use the attached Vynix annotation for the selected element, screenshot, and console and network context. Do not change plan copy or pricing."</p><ul><li>Write one task per root cause when possible.</li><li>Include what should not change, especially on shared components.</li><li>Attach the original annotation so the implementer can see the exact state.</li><li>Use the copied prompt or GitHub issue as the source of truth for the fix.</li></ul></section>
+<section id="s6-run-the-next-round-against-the"><h2>Run the next round against the fix list</h2><p>A review round is not finished when the first list is created. It is finished when the team can verify the fixes and avoid re-litigating the same notes. The next pass should start from the short fix list, not from the original comment dump.</p><p>For each item, check the acceptance condition first. If the pricing badge no longer overlaps the heading, close that item. If the fix caused another layout issue in the same component, create a new annotation at the new problem. Do not bury it as a reply under the old issue unless it is truly the same root cause.</p><p>This keeps review history readable. Closed items show what was resolved. Open items show what still needs work. New annotations carry fresh context instead of depending on stale screenshots from the first pass. Over time, the team builds a habit: capture at the source, group by cause, write buildable tasks, and verify against the list.</p><ul><li>Re-test the exact page and state from the original annotation.</li><li>Close tasks only when the expected result is visible.</li><li>Create a new annotation for new behavior introduced by the fix.</li><li>Keep the final list short enough that anyone can scan it in a few minutes.</li></ul></section>
+  
+  <div class="callout"><strong>Key takeaways</strong><ul><li>Start review notes on the exact broken element so the context is captured while the problem is visible.</li><li>Group scattered comments into a short fix list based on root cause, not on who reported the note.</li><li>Use Vynix annotations, ready-to-build prompts, and GitHub issues to hand off clear, contextual tasks to developers or coding agents.</li></ul></div>
+  <section class="faq"><h2>Frequently asked questions</h2><h3>How is this different from leaving comments in a design file?</h3><p>Design comments are useful before implementation, but review bugs happen in the running site. Vynix captures the live element, screenshot, console and network context, and a likely root cause, so the note reflects what actually happened in the browser.</p><h3>Should every annotation become a GitHub issue?</h3><p>No. First group duplicates, remove questions that need a product decision, and combine notes that share one root cause. Open a GitHub issue when the item is clear, fixable, and has enough context for a developer or coding agent to act.</p><h3>Can an AI diagnosis replace a developer investigation?</h3><p>No. Treat it as a starting point. The captured context and diagnosis can reduce guesswork, but a developer still needs to confirm the cause, choose the right fix, and check that the change does not break related behavior.</p></section>
+  <div class="callout">
+    <strong>Try Vynix on your own site</strong>
+    <p>Install the widget with one script tag, point at a bug, and hand the fix to your coding agent.</p>
+    <a class="cta" href="https://vynix.in">Get started free</a>
+  </div>
+  <h2>Keep reading</h2><ul><li><a href="/resources/blog/how-to-write-bug-reports-ai-agents-can-fix/">How to Write Bug Reports AI Agents Can Fix</a></li><li><a href="/resources/compare/jam-vs-vynix/">Jam vs Vynix</a></li><li><a href="/resources/compare/marker-io-vs-vynix/">Marker.io vs Vynix</a></li></ul>
+</article>
+</main>
+<footer class="site-footer"><div class="container">
+  <div>&copy; 2026 Vynix &middot; <a href="https://vynix.in">vynix.in</a></div>
+  <div>
+    <a href="/resources/blog/">Blog</a> &middot;
+    <a href="/resources/compare/">Compare</a> &middot;
+    <a href="/resources/kb/">Help</a> &middot;
+    <a href="https://github.com/vynix-in">GitHub</a> &middot;
+    <a href="https://vynix.in/privacy">Privacy</a>
+  </div>
+</div></footer>
+</body>
+</html>

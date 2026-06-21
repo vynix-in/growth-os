@@ -22,6 +22,7 @@ import { queue } from '../lib/queue.js';
 import { scanFile } from '../lib/publication-gate.js';
 import { publishRepo, approveAllRepos, publishAllRepos } from '../github/publish.js';
 import { deployPages } from '../github/deploy-pages.js';
+import { buildVynixResources } from '../tools/build-vynix-resources.mjs';
 import { applyPolicy } from '../lib/policy.js';
 import { record as recordActivity } from '../lib/activity.js';
 
@@ -125,13 +126,19 @@ async function main() {
       await runAgent('site-builder');
       const review = await runAgent('reviewer');
       const policy = applyPolicy();
+      // Refresh the /resources copy served from vynix.in so it stays in sync.
+      let resources = { skipped: true };
+      if (review.failed === 0) {
+        resources = buildVynixResources();
+        recordActivity('resources', `vynix.in/resources rebuilt: ${resources.pages} pages`, resources);
+      }
       let deploy = { skipped: true };
       if (review.failed === 0 && !process.env.VYNIX_NO_DEPLOY) {
         deploy = await deployPages({});
       }
       await runAgent('dashboard');
       recordActivity('grow', `Growth pass complete: ${review.checked} pages reviewed`, { review, deploy });
-      console.log(JSON.stringify({ review, policy, deploy }, null, 2));
+      console.log(JSON.stringify({ review, policy, resources, deploy }, null, 2));
       break;
     }
     case 'dashboard': {
@@ -166,6 +173,11 @@ async function main() {
     }
     case 'deploy-pages': {
       const res = await deployPages({ dryRun: arg1 === '--dry-run' });
+      console.log(JSON.stringify(res, null, 2));
+      break;
+    }
+    case 'build-resources': {
+      const res = buildVynixResources();
       console.log(JSON.stringify(res, null, 2));
       break;
     }
@@ -218,6 +230,7 @@ Commands:
   review                 audit every generated page (SEO, links, schema, gate)
   policy                 auto-approve safe items, hold the rest
   deploy-pages [--dry-run] publish the reviewed site to GitHub Pages
+  build-resources        rebuild the /resources copy served from vynix.in
   gate <file>            scan a file with the publication gate
   approvals              list items waiting for approval
   publish <repo>         push an approved repository to GitHub (gated)
