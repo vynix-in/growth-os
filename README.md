@@ -55,9 +55,41 @@ node bin/vynix-growth.js orchestrate
 | Knowledge Base | Turns issues and fixes into sanitized HTML help articles. |
 | Internal Linking | Suggests links, clusters and hub pages across the content. |
 | Site Builder | Assembles index pages, sitemap.xml and robots.txt into a deployable static site. |
+| Reviewer | Audits every page for SEO, working links, valid structured data and leaks. Holds back anything that fails. |
 
 The orchestrator runs the agents in priority order, refreshes the dashboard, and
 writes a progress report.
+
+## What runs on its own, and what waits for you
+
+The system acts on its own where it is clearly safe and reversible, and asks
+only where there is real doubt.
+
+Done automatically (our own content on our own properties, fully reversible):
+
+- Writing and updating blog posts, comparison pages and knowledge base articles.
+- Reviewing every page before it ships. Anything that fails the audit is held
+  back, not published.
+- Deploying the reviewed site to GitHub Pages at https://vynix-in.github.io.
+
+Held for your approval (external, public, or hard to undo):
+
+- Submitting to third-party directories.
+- Open-sourcing new components.
+- Creating new public GitHub repositories.
+
+The dashboard shows both: a "Published & live" panel for what is already out, and
+a "Needs your approval" panel for what is waiting. The reviewer panel shows the
+audit result for every page.
+
+## The live site
+
+The generated resources site is deployed to **https://vynix-in.github.io** (blog,
+comparisons, help center). It is a separate, reversible property and never
+touches the live vynix.in application. Canonicals are self-referencing so there
+is no duplicate-content risk, and every page links back to vynix.in. To move it
+onto the main domain later, regenerate with `SITE_CANONICAL_BASE=https://vynix.in`
+and add redirects.
 
 ## The generated site
 

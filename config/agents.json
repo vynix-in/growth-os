@@ -98,6 +98,15 @@
       "description": "Assembles index pages, sitemap.xml and robots.txt into a deployable static site under content/site.",
       "schedule": "daily",
       "enabled": true
+    },
+    {
+      "id": "reviewer",
+      "name": "Reviewer Agent",
+      "module": "agents/reviewer-agent.js",
+      "phase": 11,
+      "description": "Audits every generated page for SEO correctness, valid structured data, working internal links, enough content, and a clean publication-gate scan. Holds back anything that fails.",
+      "schedule": "daily",
+      "enabled": true
     }
   ]
 }

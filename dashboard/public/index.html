@@ -26,16 +26,34 @@
   <main>
     <section class="stat-grid" id="stats"></section>
 
+    <section class="panel" id="published-panel">
+      <h2>Published &amp; live</h2>
+      <p class="muted">What is live right now. Nothing here needed your sign-off because it was clearly safe.</p>
+      <div id="published"></div>
+    </section>
+
     <div class="columns">
       <section class="panel">
-        <h2>Approval queue</h2>
-        <p class="muted">Nothing is published automatically. Review and approve items here.</p>
+        <h2>Needs your approval</h2>
+        <p class="muted">External or hard-to-undo actions. Held until you say yes.</p>
         <div id="approvals"></div>
       </section>
 
       <section class="panel">
+        <h2>Reviewer</h2>
+        <p class="muted">Every page is audited for SEO, links, schema and leaks before it ships.</p>
+        <div id="reviewer"></div>
+      </section>
+    </div>
+
+    <div class="columns">
+      <section class="panel">
         <h2>Agents</h2>
         <div id="agents"></div>
+      </section>
+      <section class="panel">
+        <h2>Publication gate</h2>
+        <div id="gate"></div>
       </section>
     </div>
 
@@ -45,15 +63,10 @@
         <div id="queue"></div>
       </section>
       <section class="panel">
-        <h2>Publication gate</h2>
-        <div id="gate"></div>
+        <h2>Breakdowns</h2>
+        <div id="breakdowns" class="breakdowns"></div>
       </section>
     </div>
-
-    <section class="panel">
-      <h2>Breakdowns</h2>
-      <div id="breakdowns" class="breakdowns"></div>
-    </section>
   </main>
 
   <footer class="muted">

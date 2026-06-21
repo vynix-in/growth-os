@@ -10,6 +10,8 @@ import { config, paths } from '../lib/config.js';
 import { runAgent } from '../agents/index.js';
 import { db } from '../lib/db.js';
 import { queue } from '../lib/queue.js';
+import { applyPolicy } from '../lib/policy.js';
+import { deployPages } from '../github/deploy-pages.js';
 import { logger } from '../lib/logger.js';
 import { now, humanDate, id as makeId } from '../lib/util.js';
 
@@ -29,6 +31,31 @@ export async function orchestrate(opts = {}) {
       results[agentId] = await runAgent(agentId);
     } catch (err) {
       results[agentId] = { error: String(err) };
+    }
+  }
+
+  // Review everything that was produced before anything is treated as ready.
+  try {
+    results.reviewer = await runAgent('reviewer');
+  } catch (err) {
+    results.reviewer = { error: String(err) };
+  }
+
+  // Auto-approve the items that are clearly safe; leave the rest for the founder.
+  try {
+    results.policy = applyPolicy();
+  } catch (err) {
+    results.policy = { error: String(err) };
+  }
+
+  // Deploy the reviewed site to GitHub Pages (a separate, reversible property;
+  // never touches the live vynix.in app). Skipped automatically if anything
+  // failed review. Disable with VYNIX_NO_DEPLOY=1.
+  if (!process.env.VYNIX_NO_DEPLOY && !opts.noDeploy) {
+    try {
+      results.deploy = await deployPages({ dryRun: Boolean(opts.dryRunDeploy) });
+    } catch (err) {
+      results.deploy = { error: String(err) };
     }
   }
 

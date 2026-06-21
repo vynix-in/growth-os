@@ -37,6 +37,15 @@ export function buildSnapshot() {
   const links = db('links').all();
   const gateScans = db('gate_scans').all();
   const agentRuns = db('agents').all();
+  const reviewRows = db('reviews').all();
+  const reportRows = db('reports').all();
+
+  const publishedRepos = repos.filter((r) => r.status === 'published');
+  const lastDeploy = reportRows
+    .filter((r) => r.kind === 'pages-deploy')
+    .sort((a, b) => (b.deployed_at || '').localeCompare(a.deployed_at || ''))[0] || null;
+  const reviewPassed = reviewRows.filter((r) => r.pass === true).length;
+  const reviewFailed = reviewRows.filter((r) => r.pass === false).length;
 
   const snapshot = {
     generated_at: now(),
@@ -58,6 +67,24 @@ export function buildSnapshot() {
     gate: {
       total_scans: gateScans.length,
       blocked: gateScans.filter((s) => !s.clean).length,
+    },
+    review: {
+      checked: reviewRows.length,
+      passed: reviewPassed,
+      failed: reviewFailed,
+    },
+    published: {
+      site_url: lastDeploy ? lastDeploy.base : null,
+      site_pages: lastDeploy ? lastDeploy.pages : 0,
+      deployed_at: lastDeploy ? lastDeploy.deployed_at : null,
+      repositories: publishedRepos.map((r) => ({
+        name: r.name,
+        title: r.title,
+        url: r.published_to ? `https://github.com/${r.published_to}` : `https://github.com/vynix-in/${r.name}`,
+      })),
+      blog_posts: content.filter((c) => c.kind === 'blog').length,
+      comparison_pages: comparisons.length,
+      kb_articles: knowledgebase.filter((k) => k.og_image).length,
     },
     breakdowns: {
       repositories_by_status: countBy(repos, 'status'),

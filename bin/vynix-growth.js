@@ -21,6 +21,8 @@ import { buildSnapshot } from '../agents/dashboard-agent.js';
 import { queue } from '../lib/queue.js';
 import { scanFile } from '../lib/publication-gate.js';
 import { publishRepo, approveAllRepos, publishAllRepos } from '../github/publish.js';
+import { deployPages } from '../github/deploy-pages.js';
+import { applyPolicy } from '../lib/policy.js';
 
 ensureDirs();
 
@@ -86,6 +88,21 @@ async function main() {
       else console.log('No report yet. Run: node bin/vynix-growth.js orchestrate');
       break;
     }
+    case 'review': {
+      const res = await runAgent('reviewer');
+      console.log(JSON.stringify(res, null, 2));
+      break;
+    }
+    case 'policy': {
+      const res = applyPolicy();
+      console.log(JSON.stringify(res, null, 2));
+      break;
+    }
+    case 'deploy-pages': {
+      const res = await deployPages({ dryRun: arg1 === '--dry-run' });
+      console.log(JSON.stringify(res, null, 2));
+      break;
+    }
     case 'gate': {
       if (!arg1) return console.log('Usage: gate <file>');
       const res = scanFile(arg1);
@@ -130,6 +147,9 @@ Commands:
   orchestrate [agent]    run one full orchestration pass
   dashboard              start the web command center
   report                 print the latest report
+  review                 audit every generated page (SEO, links, schema, gate)
+  policy                 auto-approve safe items, hold the rest
+  deploy-pages [--dry-run] publish the reviewed site to GitHub Pages
   gate <file>            scan a file with the publication gate
   approvals              list items waiting for approval
   publish <repo>         push an approved repository to GitHub (gated)

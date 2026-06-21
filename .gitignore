@@ -7,6 +7,7 @@ logs/
 dashboard/data/
 reports/
 node_modules/
+.pages-build/
 
 # Git metadata created inside repository proposals when publishing.
 github/*/.git/

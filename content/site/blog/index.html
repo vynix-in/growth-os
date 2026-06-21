@@ -41,6 +41,30 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who is the Vynix blog for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Front-end and full-stack engineers, QA and support teams, designers reviewing live sites, and founders shipping with AI coding agents."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often is it updated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "New articles are published regularly as we learn more about what makes feedback fixable and how teams work with AI agents."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Vynix",
   "url": "https://vynix.in",
@@ -118,6 +142,7 @@ td.yes{color:var(--green);font-weight:600}
 <article>
   <h1>Vynix Blog</h1>
   <p class="lead">Practical writing on capturing feedback with context, diagnosing bugs, and handing work to AI coding agents.</p>
+  <p>Most feedback loses the one thing that makes it actionable: the context an engineer needs to reproduce and fix the problem. These articles focus on the practical side of that problem, from what to capture in a bug report to how to hand the work to an AI coding agent without a long back and forth.</p><p>If you build with AI agents like Copilot, Claude or Cursor, the quality of your input decides the quality of the output. We write about how to give those tools the element, the page state, the console and the network detail they need, and how Vynix captures that automatically so every report arrives ready to act on.</p><p>New posts are added regularly. Each one is written to be genuinely useful on its own, with concrete steps and real product examples rather than generic advice.</p>
   <div class="card-grid"><a class="card" href="/blog/how-to-write-bug-reports-ai-agents-can-fix/">
     <img src="https://vynix.in/marketing/p-copilot.png" alt="How to Write Bug Reports AI Agents Can Fix" loading="lazy" width="1080" height="608" />
     <div class="body"><h3>How to Write Bug Reports AI Agents Can Fix</h3><p>Learn how to write bug reports with the context AI coding agents need: steps, UI evidence, logs, network data, and expected behavior.</p></div>
@@ -150,6 +175,8 @@ td.yes{color:var(--green);font-weight:600}
     <img src="https://vynix.in/marketing/p-viewport.png" alt="Collecting Visual Website Feedback from Clients" loading="lazy" width="1080" height="608" />
     <div class="body"><h3>Collecting Visual Website Feedback from Clients</h3><p>A practical guide to gathering clear website feedback from clients and stakeholders without losing technical context.</p></div>
   </a></div>
+  <section class="faq"><h2>Common questions</h2><h3>Who is the Vynix blog for?</h3><p>Front-end and full-stack engineers, QA and support teams, designers reviewing live sites, and founders shipping with AI coding agents.</p><h3>How often is it updated?</h3><p>New articles are published regularly as we learn more about what makes feedback fixable and how teams work with AI agents.</p></section>
+  <div class="callout"><strong>Try Vynix on your own site</strong><p>Install the widget with one script tag and capture your first report with full developer context.</p><a class="cta" href="https://vynix.in">Get started free</a></div>
 </article>
 </main>
 <footer class="site-footer"><div class="container">

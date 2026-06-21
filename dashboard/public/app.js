@@ -56,6 +56,38 @@ async function load() {
     statCard(s.queue.awaiting_approval, 'Awaiting approval'),
   ].join('');
 
+  // Published & live
+  const pub = s.published || {};
+  const repoLinks = (pub.repositories || [])
+    .map((r) => `<a href="${r.url}" target="_blank" rel="noopener" class="tag" style="margin:3px 6px 3px 0;display:inline-block">${r.name}</a>`)
+    .join('');
+  $('published').innerHTML = `
+    <div class="row">
+      <div>
+        <div class="title">Live resources site</div>
+        <div class="sub">${pub.site_pages || 0} pages · ${pub.blog_posts || 0} blog · ${pub.comparison_pages || 0} comparisons · ${pub.kb_articles || 0} help articles</div>
+      </div>
+      <div class="actions">
+        ${pub.site_url ? `<a class="btn" href="${pub.site_url}" target="_blank" rel="noopener">Open live site</a>` : '<span class="muted">not deployed</span>'}
+      </div>
+    </div>
+    <div class="row">
+      <div>
+        <div class="title">Published GitHub repositories (${(pub.repositories || []).length})</div>
+        <div class="sub" style="margin-top:6px">${repoLinks || 'none yet'}</div>
+      </div>
+    </div>
+    ${pub.deployed_at ? `<div class="sub" style="margin-top:8px">Last deploy: ${new Date(pub.deployed_at).toLocaleString()}</div>` : ''}`;
+
+  // Reviewer
+  const rev = s.review || {};
+  const ok = (rev.failed || 0) === 0;
+  $('reviewer').innerHTML = `
+    <div class="kv"><span>Pages checked</span><strong>${rev.checked || 0}</strong></div>
+    <div class="kv"><span>Passed</span><strong style="color:var(--green-bright)">${rev.passed || 0}</strong></div>
+    <div class="kv"><span>Failed</span><strong style="color:${ok ? 'var(--green-bright)' : 'var(--red)'}">${rev.failed || 0}</strong></div>
+    <div class="sub" style="margin-top:8px">${ok ? 'All pages passed the audit.' : 'Some pages are held back until fixed.'}</div>`;
+
   // Approvals
   const approvals = s.awaiting_approval || [];
   $('approvals').innerHTML = approvals.length
