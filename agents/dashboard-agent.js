@@ -85,6 +85,16 @@ export function buildSnapshot() {
       passed: reviewPassed,
       failed: reviewFailed,
     },
+    crawl: (() => {
+      const rows = db('crawl').all();
+      const last = reportRows.filter((r) => r.kind === 'crawl').sort((a, b) => (b.at || '').localeCompare(a.at || ''))[0] || null;
+      return {
+        total: rows.length,
+        live: rows.filter((r) => r.ok).length,
+        broken: rows.filter((r) => !r.ok).length,
+        checked_at: last?.at || null,
+      };
+    })(),
     published: {
       site_url: lastDeploy ? lastDeploy.base : null,
       site_pages: lastDeploy ? lastDeploy.pages : 0,
@@ -259,6 +269,15 @@ export function buildProgress() {
     pending: Object.values(pending),
     deploys,
     agents,
+    crawl: (() => {
+      const rows = db('crawl').all();
+      return {
+        total: rows.length,
+        live: rows.filter((r) => r.ok).length,
+        broken: rows.filter((r) => !r.ok).map((r) => ({ url: r.url, status: r.status })),
+        checked_at: s.crawl?.checked_at || null,
+      };
+    })(),
     activity: recentActivity(80),
   };
 }

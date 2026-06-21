@@ -422,6 +422,9 @@ ${urls.map((u) => `  <url><loc>${abs(u)}</loc><lastmod>${lastmod}</lastmod></url
 `;
   write(path.join(siteRoot, 'sitemap.xml'), sitemap);
 
+  // Plain URL list for manual submission to search engines (one per line).
+  write(path.join(siteRoot, 'submit-urls.txt'), urls.map((u) => abs(u)).join('\n') + '\n');
+
   // robots.txt
   write(
     path.join(siteRoot, 'robots.txt'),

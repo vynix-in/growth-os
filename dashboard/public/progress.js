@@ -49,6 +49,32 @@ async function load() {
     stat(p.totals.distribution_packets, 'Distribution sets'),
   ].join('');
 
+  // Growth progress bars
+  const g = p.growth || { goals: [] };
+  $('growth').innerHTML = (g.goals || [])
+    .map((goal) => {
+      const color = goal.pct >= 100 ? 'var(--green-bright)' : goal.pct >= 50 ? 'var(--green)' : 'var(--amber)';
+      return `<div style="margin:12px 0">
+        <div style="display:flex;justify-content:space-between;font-size:.92rem"><span>${goal.label}</span><strong>${goal.current} / ${goal.target}</strong></div>
+        <div style="height:10px;background:var(--panel-2);border:1px solid var(--border);border-radius:999px;overflow:hidden;margin-top:5px"><div style="height:100%;width:${goal.pct}%;background:${color};transition:width .4s"></div></div>
+      </div>`;
+    })
+    .join('');
+
+  // Crawl status
+  const c = p.crawl || { total: 0, live: 0, broken: [] };
+  const brokenList = Array.isArray(c.broken) ? c.broken : [];
+  const pct = c.total ? Math.round((c.live / c.total) * 100) : 0;
+  $('crawl').innerHTML = `
+    <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:center;margin-bottom:10px">
+      <div><div class="num" style="font-size:1.6rem;color:var(--green-bright)">${c.live}</div><div class="label">links live</div></div>
+      <div><div class="num" style="font-size:1.6rem">${c.total}</div><div class="label">checked</div></div>
+      <div><div class="num" style="font-size:1.6rem;color:${brokenList.length ? 'var(--red)' : 'var(--green-bright)'}">${brokenList.length}</div><div class="label">broken</div></div>
+      <div style="flex:1;min-width:160px"><div style="height:10px;background:var(--panel-2);border:1px solid var(--border);border-radius:999px;overflow:hidden"><div style="height:100%;width:${pct}%;background:var(--green-bright)"></div></div><div class="sub" style="margin-top:4px">${pct}% reachable${c.checked_at ? ' &middot; ' + timeAgo(c.checked_at) : ''}</div></div>
+    </div>
+    ${brokenList.length ? brokenList.slice(0, 10).map((b) => `<div class="row"><div class="sub" style="color:var(--red)">${b.status} ${b.url}</div></div>`).join('') : '<div class="sub">All published links are reachable.</div>'}
+    <div style="margin-top:10px"><a class="btn ghost" href="${p.live_site}/submit-urls.txt" target="_blank" rel="noopener">Open the submit-to-search list</a></div>`;
+
   // Inventory
   const sections = [
     ['Blog', p.inventory.blog],

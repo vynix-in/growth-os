@@ -83,7 +83,7 @@ function buildSite() {
       const full = path.join(dir, entry.name);
       if (entry.isDirectory()) walk(full);
       else if (/\.(html|xml|txt)$/.test(entry.name)) {
-        const isSr = /sitemap\.xml$|robots\.txt$/.test(entry.name);
+        const isSr = /sitemap\.xml$|robots\.txt$|submit-urls\.txt$/.test(entry.name);
         fs.writeFileSync(full, rewriteSelfUrls(fs.readFileSync(full, 'utf8'), isSr));
       }
     }

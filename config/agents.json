@@ -150,6 +150,15 @@
       "description": "Audits every generated page for SEO correctness, valid structured data, working internal links, enough content, and a clean publication-gate scan. Holds back anything that fails.",
       "schedule": "daily",
       "enabled": true
+    },
+    {
+      "id": "crawler",
+      "name": "Crawler Agent",
+      "module": "agents/crawler-agent.js",
+      "phase": 11,
+      "description": "Crawls every published link, verifies it is live, and produces the manual-submission URL list.",
+      "schedule": "hourly",
+      "enabled": true
     }
   ]
 }

@@ -72,12 +72,32 @@ async function load() {
       </div>
     </div>
     <div class="row">
+      <div style="width:100%">
+        <div class="title">Published sections</div>
+        <div class="sub" style="margin-top:6px">
+          ${
+            pub.site_url
+              ? ['blog', 'compare', 'best', 'for', 'glossary', 'kb', 'badge']
+                  .map((sec) => `<a class="tag" style="margin:3px 6px 3px 0;display:inline-block" href="${pub.site_url}/${sec}/" target="_blank" rel="noopener">/${sec}</a>`)
+                  .join('')
+              : 'not deployed yet'
+          }
+        </div>
+      </div>
+    </div>
+    ${
+      s.crawl
+        ? `<div class="row"><div><div class="title">Links live</div><div class="sub">${s.crawl.live} of ${s.crawl.total} reachable${s.crawl.broken ? ' · ' + s.crawl.broken + ' broken' : ''}</div></div><div>${pill(s.crawl.broken ? s.crawl.broken + ' broken' : 'all live')}</div></div>`
+        : ''
+    }
+    <div class="row">
       <div>
         <div class="title">Published GitHub repositories (${(pub.repositories || []).length})</div>
         <div class="sub" style="margin-top:6px">${repoLinks || 'none yet'}</div>
       </div>
     </div>
-    ${pub.deployed_at ? `<div class="sub" style="margin-top:8px">Last deploy: ${new Date(pub.deployed_at).toLocaleString()}</div>` : ''}`;
+    ${pub.deployed_at ? `<div class="sub" style="margin-top:8px">Last deploy: ${new Date(pub.deployed_at).toLocaleString()}</div>` : ''}
+    <div style="margin-top:10px"><a class="btn ghost" href="/progress">See all published links and progress</a></div>`;
 
   // Growth plan
   const g = s.growth || { goals: [] };

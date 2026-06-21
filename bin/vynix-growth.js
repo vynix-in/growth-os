@@ -99,7 +99,15 @@ async function main() {
         health = 'unreachable';
         recordActivity('health', 'Live site unreachable', { error: String(err) });
       }
-      console.log(JSON.stringify({ review, policy, health }, null, 2));
+      // Crawl the published links to keep their status fresh.
+      let crawl = null;
+      try {
+        crawl = await runAgent('crawler');
+      } catch (err) {
+        crawl = { error: String(err) };
+      }
+      await runAgent('dashboard');
+      console.log(JSON.stringify({ review, policy, health, crawl }, null, 2));
       break;
     }
     case 'grow': {
@@ -144,6 +152,11 @@ async function main() {
     case 'audit': {
       // Deep, read-only audit of the generated site.
       await import('../tools/audit.mjs');
+      break;
+    }
+    case 'crawl': {
+      const res = await runAgent('crawler');
+      console.log(JSON.stringify(res, null, 2));
       break;
     }
     case 'policy': {
