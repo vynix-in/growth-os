@@ -53,16 +53,16 @@ function copyDir(src, dest) {
 }
 
 // Rewrite only self-referencing URLs to the Pages origin. Product links
-// (vynix.in, vynix.in/docs, vynix.in/marketing) are deliberately left alone.
+// (vynix.in, vynix.in/docs, vynix.in/pricing, vynix.in/marketing) are kept as
+// they are. This covers every section of the generated site so a new page type
+// can never ship with a canonical that points at a missing vynix.in URL.
+const SELF_SECTIONS = 'blog|compare|kb|best|for|alternatives|assets|sitemap\\.xml|feed\\.xml|404\\.html';
 function rewriteSelfUrls(content, isSitemapOrRobots) {
   if (isSitemapOrRobots) {
     return content.split('https://vynix.in').join(BASE);
   }
   return content
-    .split('https://vynix.in/blog').join(`${BASE}/blog`)
-    .split('https://vynix.in/compare').join(`${BASE}/compare`)
-    .split('https://vynix.in/kb').join(`${BASE}/kb`)
-    .split('https://vynix.in/assets').join(`${BASE}/assets`)
+    .replace(new RegExp(`https://vynix\\.in(/(?:${SELF_SECTIONS})[^"'\\s)]*)`, 'g'), `${BASE}$1`)
     .split('href="https://vynix.in/"').join(`href="${BASE}/"`)
     .split('content="https://vynix.in/"').join(`content="${BASE}/"`);
 }

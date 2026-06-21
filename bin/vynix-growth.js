@@ -106,6 +106,11 @@ async function main() {
       console.log(JSON.stringify(res, null, 2));
       break;
     }
+    case 'audit': {
+      // Deep, read-only audit of the generated site.
+      await import('../tools/audit.mjs');
+      break;
+    }
     case 'policy': {
       const res = applyPolicy();
       console.log(JSON.stringify(res, null, 2));

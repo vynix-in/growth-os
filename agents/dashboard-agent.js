@@ -36,6 +36,9 @@ export function buildSnapshot() {
   const opensource = db('opensource').all();
   const links = db('links').all();
   const gateScans = db('gate_scans').all();
+  const counters = db('counters').all();
+  const gateTotal = (counters.find((c) => c.key === 'gate_total') || {}).n ?? gateScans.length;
+  const gateBlocked = (counters.find((c) => c.key === 'gate_blocked') || {}).n ?? gateScans.filter((s) => !s.clean).length;
   const agentRuns = db('agents').all();
   const reviewRows = db('reviews').all();
   const reportRows = db('reports').all();
@@ -69,12 +72,12 @@ export function buildSnapshot() {
       content_assets: content.length,
       open_source_candidates: opensource.length,
       internal_link_suggestions: links.length,
-      gate_scans: gateScans.length,
+      gate_scans: gateTotal,
     },
     queue: queue.stats(),
     gate: {
-      total_scans: gateScans.length,
-      blocked: gateScans.filter((s) => !s.clean).length,
+      total_scans: gateTotal,
+      blocked: gateBlocked,
     },
     review: {
       checked: reviewRows.length,

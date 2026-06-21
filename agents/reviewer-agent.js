@@ -46,6 +46,21 @@ function collectPages() {
   return pages;
 }
 
+// Every file in the site, as site-relative paths (for link checking).
+function collectFiles() {
+  const files = new Set();
+  if (!fs.existsSync(SITE)) return files;
+  const walk = (dir) => {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) walk(full);
+      else files.add('/' + path.relative(SITE, full).split(path.sep).join('/'));
+    }
+  };
+  walk(SITE);
+  return files;
+}
+
 function textContent(html) {
   return html
     .replace(/<script[\s\S]*?<\/script>/gi, ' ')
@@ -59,7 +74,7 @@ function count(re, html) {
   return (html.match(re) || []).length;
 }
 
-function checkPage(page, routeSet) {
+function checkPage(page, routeSet, fileSet) {
   const html = fs.readFileSync(page.file, 'utf8');
   const errors = [];
   const warnings = [];
@@ -105,15 +120,18 @@ function checkPage(page, routeSet) {
   // At least one image
   if (count(/<img[\s>]/gi, html) === 0) warnings.push('no images on page');
 
-  // Internal links resolve to a generated page
-  const links = [...html.matchAll(/href="(\/(?:blog|compare|kb|best|alternatives|for)\/[^"#?]*)"/gi)].map((m) => m[1]);
-  for (const link of links) {
-    const normalized = link.endsWith('/') ? link : link + '/';
-    if (!routeSet.has(normalized) && !/^\/(blog|compare|kb|best|alternatives|for)\/$/.test(normalized)) {
-      if (/\/(blog|compare|kb|best|alternatives|for)\/[^/]+\//.test(normalized)) {
-        errors.push(`broken internal link: ${link}`);
-      }
-    }
+  // Every site-relative link must resolve to a real route or file.
+  const resolveLink = (href) => {
+    let h = href.split('#')[0].split('?')[0];
+    if (h === '' || h.startsWith('//')) return true;
+    if (h === '/') return routeSet.has('/');
+    if (fileSet.has(h)) return true;
+    const withSlash = h.endsWith('/') ? h : h + '/';
+    return routeSet.has(withSlash);
+  };
+  const hrefs = [...html.matchAll(/href="(\/[^"]*)"/g)].map((m) => m[1]);
+  for (const href of new Set(hrefs)) {
+    if (!resolveLink(href)) errors.push(`broken internal link: ${href}`);
   }
 
   // Publication gate
@@ -142,9 +160,10 @@ function flagSource(route, pass) {
 export async function run() {
   const pages = collectPages();
   const routeSet = new Set(pages.map((p) => p.route));
+  const fileSet = collectFiles();
   const results = [];
   for (const page of pages) {
-    const r = checkPage(page, routeSet);
+    const r = checkPage(page, routeSet, fileSet);
     results.push(r);
     if (page.route !== '/' && /\/(blog|compare|kb)\//.test(page.route)) flagSource(page.route, r.pass);
   }
