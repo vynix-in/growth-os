@@ -28,8 +28,8 @@ Live site: https://vynix-in.github.io  (98 pages, sitemap submitted to search en
 | Help-center articles | 8 |
 | Index and hub pages | 8 |
 | Open-source repositories in the org | 11 (+ the live site repo) |
-| Directory opportunities tracked | 49 |
-| Backlink / outreach targets | 36 |
+| Directory opportunities tracked | 47 |
+| Backlink / outreach targets | 35 |
 | Distribution drafts (X, LinkedIn, Reddit, dev.to, Hashnode, HN) | 20 sets |
 
 Every page carries correct titles, meta descriptions, canonicals, Open Graph and
