@@ -70,6 +70,15 @@
       "description": "Maintains a curated list of outreach targets: communities, newsletters, podcasts and guest-post sites.",
       "schedule": "weekly",
       "enabled": true
+    },
+    {
+      "id": "glossary",
+      "name": "Glossary Agent",
+      "module": "agents/glossary-agent.js",
+      "phase": 4,
+      "description": "Builds substantial definition pages for terms developers search, with DefinedTerm and FAQ schema.",
+      "schedule": "weekly",
+      "enabled": true
     },    {
       "id": "directory-discovery",
       "name": "Directory Discovery Agent",

@@ -7,7 +7,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { config } from '../lib/config.js';
 import { queue } from '../lib/queue.js';
-import { buildSnapshot } from '../agents/dashboard-agent.js';
+import { buildSnapshot, buildProgress } from '../agents/dashboard-agent.js';
 import { logger } from '../lib/logger.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -70,6 +70,9 @@ export function startDashboard(opts = {}) {
     if (route === '/api/snapshot') {
       return sendJson(res, 200, buildSnapshot());
     }
+    if (route === '/api/progress') {
+      return sendJson(res, 200, buildProgress());
+    }
     if (route === '/api/queue') {
       return sendJson(res, 200, { awaiting: queue.awaitingApproval(), stats: queue.stats() });
     }
@@ -106,6 +109,7 @@ export function startDashboard(opts = {}) {
 
     // Static
     if (route === '/' || route === '') return serveStatic(res, path.join(PUBLIC, 'index.html'));
+    if (route === '/progress' || route === '/progress/') return serveStatic(res, path.join(PUBLIC, 'progress.html'));
     return serveStatic(res, path.join(PUBLIC, route.replace(/^\//, '')));
   });
 

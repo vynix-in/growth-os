@@ -12,6 +12,7 @@ import { logger } from '../lib/logger.js';
 import { agentsConfig } from '../lib/config.js';
 import { aiConfigured } from '../lib/ai.js';
 import { now, humanDate } from '../lib/util.js';
+import { recent as recentActivity } from '../lib/activity.js';
 
 const log = logger('dashboard');
 
@@ -150,6 +151,7 @@ export async function run() {
   const snapshot = buildSnapshot();
   fs.mkdirSync(paths.dashboardData, { recursive: true });
   fs.writeFileSync(path.join(paths.dashboardData, 'snapshot.json'), JSON.stringify(snapshot, null, 2));
+  fs.writeFileSync(path.join(paths.dashboardData, 'progress.json'), JSON.stringify(buildProgress(), null, 2));
 
   // Also write a plain Markdown summary for quick reading.
   const t = snapshot.totals;
@@ -182,6 +184,83 @@ AI provider configured: ${snapshot.ai.configured ? 'yes' : 'no (using templates)
 
   log.info('dashboard snapshot updated', snapshot.totals);
   return snapshot.totals;
+}
+
+// A richer view for the Status and Progress page: a timeline of activity, the
+// content that is live with direct links, deploy history, the work waiting, and
+// the schedule of what runs next.
+export function buildProgress() {
+  const s = buildSnapshot();
+  const liveBase = s.published.site_url || 'https://vynix-in.github.io';
+  const content = db('content').all();
+  const comparisons = db('comparisons').all();
+  const listicles = db('listicles').all();
+  const usecases = db('usecases').all();
+  const knowledgebase = db('knowledgebase').all();
+  const reportRows = db('reports').all();
+  const agentRuns = db('agents').all();
+
+  const link = (url) => `${liveBase}${url.endsWith('/') ? url : url + '/'}`;
+
+  const inventory = {
+    blog: content.filter((c) => c.kind === 'blog' && c.slug).map((c) => ({ title: c.title, url: link(c.url), updated: c.published || c.updated_at })),
+    comparisons: comparisons.filter((c) => c.slug).map((c) => ({ title: `${c.competitor} vs Vynix`, url: link('/compare/' + c.slug + '/'), updated: c.updated })),
+    guides: listicles.filter((l) => l.slug).map((l) => ({ title: l.title, url: link(l.url), updated: l.updated })),
+    use_cases: usecases.filter((u) => u.slug).map((u) => ({ title: u.title, url: link('/for/' + u.slug + '/'), updated: u.updated })),
+    help: knowledgebase.filter((k) => k.slug && k.og_image).map((k) => ({ title: k.title, url: link('/kb/' + k.slug + '/'), updated: k.updated })),
+  };
+
+  // Pending work grouped by what it is and who acts on it.
+  const pending = {};
+  for (const t of queue.awaitingApproval()) {
+    const k = t.type;
+    pending[k] = pending[k] || { type: k, count: 0, items: [] };
+    pending[k].count += 1;
+    if (pending[k].items.length < 8) pending[k].items.push(t.payload?.title || t.payload?.repo || t.payload?.directory || t.id);
+  }
+
+  const deploys = reportRows
+    .filter((r) => r.kind === 'pages-deploy')
+    .sort((a, b) => (b.deployed_at || '').localeCompare(a.deployed_at || ''))
+    .slice(0, 10)
+    .map((d) => ({ base: d.base, pages: d.pages, at: d.deployed_at }));
+
+  // Per-agent: last run plus a rough "next due" based on schedule.
+  const nextDue = (schedule, lastRun) => {
+    if (!lastRun) return 'soon';
+    const map = { hourly: 3600e3, daily: 86400e3, weekly: 604800e3, 'on-demand': 0 };
+    const ms = map[schedule] ?? 0;
+    if (!ms) return 'on demand';
+    return new Date(new Date(lastRun).getTime() + ms).toISOString();
+  };
+  const agents = agentsConfig.agents.map((a) => {
+    const last = agentRuns.filter((r) => r.agent === a.id).sort((x, y) => (y.finished_at || '').localeCompare(x.finished_at || ''))[0];
+    return {
+      id: a.id,
+      name: a.name,
+      schedule: a.schedule,
+      enabled: a.enabled,
+      last_run: last?.finished_at || null,
+      last_status: last?.status || 'never run',
+      next_due: nextDue(a.schedule, last?.finished_at),
+    };
+  });
+
+  return {
+    generated_at: now(),
+    generated_human: humanDate(),
+    live_site: liveBase,
+    ai: s.ai,
+    review: s.review,
+    growth: s.growth,
+    totals: s.totals,
+    inventory,
+    inventory_counts: Object.fromEntries(Object.entries(inventory).map(([k, v]) => [k, v.length])),
+    pending: Object.values(pending),
+    deploys,
+    agents,
+    activity: recentActivity(80),
+  };
 }
 
 export default { meta, run };

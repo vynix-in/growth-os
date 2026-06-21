@@ -4,6 +4,7 @@ import { agentsConfig, p } from '../lib/config.js';
 import { db } from '../lib/db.js';
 import { logger } from '../lib/logger.js';
 import { now } from '../lib/util.js';
+import { record as recordActivity } from '../lib/activity.js';
 
 const log = logger('runner');
 const runs = db('agents');
@@ -36,10 +37,12 @@ export async function runAgent(id, payload = {}) {
     const impl = await load(agent);
     const result = await impl.run(payload);
     runs.insert({ agent: id, status: 'done', started_at: startedAt, finished_at: now(), result });
+    recordActivity('agent_run', `${agent.name} finished`, { agent: id, result });
     log.info(`agent "${id}" finished`, result);
     return result;
   } catch (err) {
     runs.insert({ agent: id, status: 'failed', started_at: startedAt, finished_at: now(), error: String(err) });
+    recordActivity('agent_error', `${agent.name} failed`, { agent: id, error: String(err) });
     log.error(`agent "${id}" failed`, { error: String(err) });
     throw err;
   }

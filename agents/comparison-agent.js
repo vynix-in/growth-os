@@ -178,7 +178,11 @@ async function buildPage(competitor) {
 }
 
 export async function run(payload = {}) {
-  const targets = payload.only ? competitors.filter((c) => c.slug === payload.only) : competitors;
+  let targets = payload.only ? competitors.filter((c) => c.slug === payload.only) : competitors;
+  // Expand mode: only build comparisons that do not exist yet.
+  if (payload.expand) {
+    targets = targets.filter((c) => !fs.existsSync(path.join(paths.content, 'site', 'compare', `${c.slug}-vs-vynix`, 'index.html')));
+  }
   const built = [];
   for (const competitor of targets) {
     built.push(await buildPage(competitor));

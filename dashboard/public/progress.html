@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Status &amp; Progress — Vynix Growth OS</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="chevron"></span>
+      <div>
+        <div class="brand-name">Status &amp; Progress</div>
+        <div class="brand-sub">What is done, in progress, and pending</div>
+      </div>
+    </div>
+    <div class="meta">
+      <span id="ai-badge" class="badge">AI: …</span>
+      <span id="generated" class="muted"></span>
+      <a class="btn ghost" href="/">Command center</a>
+      <a class="btn ghost" id="site-link" href="#" target="_blank" rel="noopener">Live site</a>
+      <button id="refresh" class="btn">Refresh</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="stat-grid" id="kpi"></section>
+
+    <div class="columns">
+      <section class="panel">
+        <h2>Live content</h2>
+        <p class="muted">Everything published, grouped by type. Click to open the live page.</p>
+        <div id="inventory"></div>
+      </section>
+      <section class="panel">
+        <h2>Pending work</h2>
+        <p class="muted">Waiting for you. Drafts are ready to copy.</p>
+        <div id="pending"></div>
+      </section>
+    </div>
+
+    <div class="columns">
+      <section class="panel">
+        <h2>Agent schedule</h2>
+        <div id="agents"></div>
+      </section>
+      <section class="panel">
+        <h2>Deploy history</h2>
+        <div id="deploys"></div>
+      </section>
+    </div>
+
+    <section class="panel">
+      <h2>Activity timeline</h2>
+      <p class="muted">The most recent things the system did.</p>
+      <div id="activity"></div>
+    </section>
+  </main>
+
+  <footer class="muted">Vynix Growth OS &middot; status updates every 15 seconds</footer>
+  <script src="/progress.js"></script>
+</body>
+</html>

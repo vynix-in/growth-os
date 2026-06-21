@@ -14,12 +14,14 @@
 //   3. scans every file with the publication gate.
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 import { execSync } from 'node:child_process';
 import { config, paths } from '../lib/config.js';
 import { db } from '../lib/db.js';
 import { logger } from '../lib/logger.js';
 import { scanFile } from '../lib/publication-gate.js';
 import { now } from '../lib/util.js';
+import { record as recordActivity } from '../lib/activity.js';
 
 const log = logger('deploy-pages');
 const reviews = db('reviews');
@@ -56,7 +58,7 @@ function copyDir(src, dest) {
 // (vynix.in, vynix.in/docs, vynix.in/pricing, vynix.in/marketing) are kept as
 // they are. This covers every section of the generated site so a new page type
 // can never ship with a canonical that points at a missing vynix.in URL.
-const SELF_SECTIONS = 'blog|compare|kb|best|for|alternatives|assets|sitemap\\.xml|feed\\.xml|404\\.html';
+const SELF_SECTIONS = 'blog|compare|kb|best|for|alternatives|glossary|assets|sitemap\\.xml|feed\\.xml|404\\.html';
 function rewriteSelfUrls(content, isSitemapOrRobots) {
   if (isSitemapOrRobots) {
     return content.split('https://vynix.in').join(BASE);
@@ -72,6 +74,9 @@ function buildSite() {
   copyDir(SITE, BUILD);
   // .nojekyll so GitHub Pages serves every file as-is (faster, no Jekyll step).
   fs.writeFileSync(path.join(BUILD, '.nojekyll'), '');
+  // IndexNow key file, hosted at the site root so search engines can verify it.
+  const key = indexNowKey();
+  fs.writeFileSync(path.join(BUILD, `${key}.txt`), key);
 
   const walk = (dir) => {
     for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -101,6 +106,34 @@ function gateBuild() {
   };
   walk(BUILD);
   return violations;
+}
+
+// A stable IndexNow key, generated once and kept in the local store.
+function indexNowKey() {
+  const counters = db('counters');
+  const existing = counters.findOne({ key: 'indexnow_key' });
+  if (existing?.value) return existing.value;
+  const key = crypto.randomBytes(16).toString('hex');
+  counters.upsert({ key: 'indexnow_key', value: key }, 'key');
+  return key;
+}
+
+// Tell IndexNow-aware search engines (Bing, Yandex and others) about the live
+// URLs so they crawl the new content quickly. Best-effort: never fails a deploy.
+async function submitIndexNow(urls) {
+  if (!urls.length) return;
+  const key = indexNowKey();
+  const host = BASE.replace(/^https?:\/\//, '');
+  try {
+    const res = await fetch('https://api.indexnow.org/indexnow', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ host, key, keyLocation: `${BASE}/${key}.txt`, urlList: urls.slice(0, 1000) }),
+    });
+    log.info(`IndexNow submitted ${urls.length} urls`, { status: res.status });
+  } catch (err) {
+    log.warn('IndexNow submit failed (non-fatal)', { error: String(err) });
+  }
 }
 
 export async function deployPages(opts = {}) {
@@ -160,6 +193,9 @@ export async function deployPages(opts = {}) {
   shQuiet(`gh repo edit ${ORG}/${PAGES_REPO} --homepage ${BASE}`);
 
   deploys.insert({ kind: 'pages-deploy', base: BASE, repo: `${ORG}/${PAGES_REPO}`, pages: revs.length, deployed_at: now() });
+  recordActivity('deploy', `Deployed ${revs.length} pages to ${BASE}`, { base: BASE, pages: revs.length });
+  // Notify search engines about the live URLs.
+  await submitIndexNow(revs.map((r) => `${BASE}${r.route}`));
   log.info(`deployed to ${BASE}`, { pages: revs.length });
   return { ok: true, base: BASE, repo: `${ORG}/${PAGES_REPO}`, pages: revs.length };
 }

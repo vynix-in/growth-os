@@ -22,6 +22,7 @@ const comparisons = db('comparisons');
 const knowledgebase = db('knowledgebase');
 const listicles = db('listicles');
 const usecases = db('usecases');
+const glossary = db('glossary');
 
 export const meta = { id: 'site-builder', name: 'Site Builder Agent' };
 
@@ -92,7 +93,7 @@ function fixBrokenLinks(siteRoot) {
       else if (entry.name === 'index.html') {
         let html = fs.readFileSync(full, 'utf8');
         const before = html;
-        html = html.replace(/<li><a href="(\/(?:blog|compare|kb|best|alternatives|for)\/[^"/]+\/)">[^<]*<\/a><\/li>/g, (m, route) =>
+        html = html.replace(/<li><a href="(\/(?:blog|compare|kb|best|alternatives|for|glossary)\/[^"/]+\/)">[^<]*<\/a><\/li>/g, (m, route) =>
           exists(route) ? m : '',
         );
         if (html !== before) {
@@ -113,6 +114,7 @@ export async function run() {
   const kb = knowledgebase.all().filter((k) => k.slug && k.og_image && k.status !== 'blocked');
   const lists = listicles.all().filter((l) => l.slug && l.status !== 'blocked');
   const ucs = usecases.all().filter((u) => u.slug && u.status !== 'blocked');
+  const gloss = glossary.all().filter((g) => g.slug && g.status !== 'blocked');
 
   // Blog index
   write(
@@ -233,6 +235,30 @@ export async function run() {
     );
   }
 
+  // Glossary index
+  if (gloss.length) {
+    write(
+      path.join(siteRoot, 'glossary', 'index.html'),
+      listingPage({
+        title: 'Vynix glossary',
+        description: 'Plain-language definitions of bug reporting, feedback and debugging terms developers use every day.',
+        canonical: '/glossary/',
+        eyebrow: 'Glossary',
+        intro: 'Clear definitions of the terms that come up when teams report and fix problems on a website.',
+        bodyParas: [
+          'Words like session replay, error monitoring and developer context get used loosely, which leads to confusion when a bug is handed off. This glossary explains each term in plain language, with enough detail to be genuinely useful rather than a one-line dictionary stub.',
+          'Each entry covers what the term means, why it matters, and how it fits into the work of capturing feedback and shipping a fix. Where it helps, the entries point to the deeper guides and to the product.',
+        ],
+        faqs: [
+          { q: 'Who is this glossary for?', a: 'Developers, QA, designers and anyone who reports or fixes problems on a website and wants the vocabulary to be clear.' },
+          { q: 'How is it kept current?', a: 'New terms are added over time as the way teams work with AI agents and feedback tools changes.' },
+        ],
+        cards: gloss.map((g) => card(`/glossary/${g.slug}/`, g.term, 'Definition', pickImage('context', g.slug.length).url)),
+        items: gloss.map((g) => ({ name: g.term, url: `/glossary/${g.slug}/` })),
+      }),
+    );
+  }
+
   // Resources home (a hub that links the three sections)
   write(
     path.join(siteRoot, 'index.html'),
@@ -255,6 +281,7 @@ export async function run() {
         card('/compare/', 'Compare', 'How Vynix compares with other tools.', pickImage('diagnosis', 2).url),
         card('/best/', 'Guides', 'Best tools and alternatives, compared.', pickImage('files', 4).url),
         card('/for/', 'Use cases', 'How different teams use Vynix.', pickImage('review', 5).url),
+        card('/glossary/', 'Glossary', 'Plain definitions of the terms.', pickImage('context', 6).url),
         card('/kb/', 'Help Center', 'Setup and troubleshooting guides.', pickImage('install', 3).url),
       ],
     }),
@@ -268,11 +295,13 @@ export async function run() {
     '/kb/',
     ...(lists.length ? ['/best/'] : []),
     ...(ucs.length ? ['/for/'] : []),
+    ...(gloss.length ? ['/glossary/'] : []),
     ...posts.map((p) => `/blog/${p.slug}/`),
     ...comps.map((c) => `/compare/${c.slug}/`),
     ...kb.map((k) => `/kb/${k.slug}/`),
     ...lists.map((l) => `${l.url}/`),
     ...ucs.map((u) => `/for/${u.slug}/`),
+    ...gloss.map((g) => `/glossary/${g.slug}/`),
   ];
   const lastmod = now().slice(0, 10);
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -335,7 +364,7 @@ ${rssItems}
 
   const total = urls.length;
   const fixedLinks = fixBrokenLinks(siteRoot);
-  log.info('site built', { pages: total, posts: posts.length, comparisons: comps.length, kb: kb.length, listicles: lists.length, usecases: ucs.length, fixedLinks });
+  log.info('site built', { pages: total, posts: posts.length, comparisons: comps.length, kb: kb.length, listicles: lists.length, usecases: ucs.length, glossary: gloss.length, fixedLinks });
   return { pages: total, blog: posts.length, comparisons: comps.length, kb: kb.length, listicles: lists.length, usecases: ucs.length, fixed_links: fixedLinks, updated: humanDate() };
 }
 

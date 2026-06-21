@@ -53,6 +53,54 @@
         {
           "title": "Userback vs Vynix",
           "url": "/compare/userback-vs-vynix"
+        },
+        {
+          "title": "FullStory vs Vynix",
+          "url": "/compare/fullstory-vs-vynix"
+        },
+        {
+          "title": "Smartlook vs Vynix",
+          "url": "/compare/smartlook-vs-vynix"
+        },
+        {
+          "title": "Mouseflow vs Vynix",
+          "url": "/compare/mouseflow-vs-vynix"
+        },
+        {
+          "title": "Trello vs Vynix",
+          "url": "/compare/trello-vs-vynix"
+        },
+        {
+          "title": "Asana vs Vynix",
+          "url": "/compare/asana-vs-vynix"
+        },
+        {
+          "title": "ClickUp vs Vynix",
+          "url": "/compare/clickup-vs-vynix"
+        },
+        {
+          "title": "Shortcut vs Vynix",
+          "url": "/compare/shortcut-vs-vynix"
+        },
+        {
+          "title": "Ruttl vs Vynix",
+          "url": "/compare/ruttl-vs-vynix"
+        },
+        {
+          "title": "Pastel vs Vynix",
+          "url": "/compare/pastel-vs-vynix"
+        },
+        {
+          "title": "MarkUp.io vs Vynix",
+          "url": "/compare/markup-io-vs-vynix"
+        },
+        {
+          "title": "Bird Eats Bug vs Vynix",
+          "url": "/compare/bird-eats-bug-vs-vynix"
+        },
+        {
+          "title": "Replay.io vs Vynix",
+          "url": "/compare/replay-io-vs-vynix"
         }
       ]
     },
@@ -85,12 +133,12 @@
       "hub": "/kb/troubleshooting",
       "members": [
         {
-          "title": "Troubleshooting: the widget is not appearing",
-          "url": "/kb/troubleshooting-the-widget-is-not-appearing"
+          "title": "Fixing a widget that does not appear",
+          "url": "/kb/fixing-a-widget-that-does-not-appear"
         },
         {
-          "title": "Troubleshooting: my report has no screenshot",
-          "url": "/kb/troubleshooting-my-report-has-no-screenshot"
+          "title": "Fixing a report with no screenshot",
+          "url": "/kb/fixing-a-report-with-no-screenshot"
         }
       ]
     },
@@ -246,12 +294,108 @@
       "from": "/compare/bugherd-vs-vynix",
       "add_links_to": [
         "/compare/userback-vs-vynix",
-        "/compare/jam-vs-vynix"
+        "/compare/fullstory-vs-vynix"
       ],
       "reason": "Related comparison pages"
     },
     {
       "from": "/compare/userback-vs-vynix",
+      "add_links_to": [
+        "/compare/fullstory-vs-vynix",
+        "/compare/smartlook-vs-vynix"
+      ],
+      "reason": "Related comparison pages"
+    },
+    {
+      "from": "/compare/fullstory-vs-vynix",
+      "add_links_to": [
+        "/compare/smartlook-vs-vynix",
+        "/compare/mouseflow-vs-vynix"
+      ],
+      "reason": "Related comparison pages"
+    },
+    {
+      "from": "/compare/smartlook-vs-vynix",
+      "add_links_to": [
+        "/compare/mouseflow-vs-vynix",
+        "/compare/trello-vs-vynix"
+      ],
+      "reason": "Related comparison pages"
+    },
+    {
+      "from": "/compare/mouseflow-vs-vynix",
+      "add_links_to": [
+        "/compare/trello-vs-vynix",
+        "/compare/asana-vs-vynix"
+      ],
+      "reason": "Related comparison pages"
+    },
+    {
+      "from": "/compare/trello-vs-vynix",
+      "add_links_to": [
+        "/compare/asana-vs-vynix",
+        "/compare/clickup-vs-vynix"
+      ],
+      "reason": "Related comparison pages"
+    },
+    {
+      "from": "/compare/asana-vs-vynix",
+      "add_links_to": [
+        "/compare/clickup-vs-vynix",
+        "/compare/shortcut-vs-vynix"
+      ],
+      "reason": "Related comparison pages"
+    },
+    {
+      "from": "/compare/clickup-vs-vynix",
+      "add_links_to": [
+        "/compare/shortcut-vs-vynix",
+        "/compare/ruttl-vs-vynix"
+      ],
+      "reason": "Related comparison pages"
+    },
+    {
+      "from": "/compare/shortcut-vs-vynix",
+      "add_links_to": [
+        "/compare/ruttl-vs-vynix",
+        "/compare/pastel-vs-vynix"
+      ],
+      "reason": "Related comparison pages"
+    },
+    {
+      "from": "/compare/ruttl-vs-vynix",
+      "add_links_to": [
+        "/compare/pastel-vs-vynix",
+        "/compare/markup-io-vs-vynix"
+      ],
+      "reason": "Related comparison pages"
+    },
+    {
+      "from": "/compare/pastel-vs-vynix",
+      "add_links_to": [
+        "/compare/markup-io-vs-vynix",
+        "/compare/bird-eats-bug-vs-vynix"
+      ],
+      "reason": "Related comparison pages"
+    },
+    {
+      "from": "/compare/markup-io-vs-vynix",
+      "add_links_to": [
+        "/compare/bird-eats-bug-vs-vynix",
+        "/compare/replay-io-vs-vynix"
+      ],
+      "reason": "Related comparison pages"
+    },
+    {
+      "from": "/compare/bird-eats-bug-vs-vynix",
+      "add_links_to": [
+        "/compare/replay-io-vs-vynix",
+        "/compare/jam-vs-vynix"
+      ],
+      "reason": "Related comparison pages"
+    },
+    {
+      "from": "/compare/replay-io-vs-vynix",
       "add_links_to": [
         "/compare/jam-vs-vynix",
         "/compare/marker-io-vs-vynix"
@@ -287,14 +431,14 @@
       "reason": "Link back to the Getting started with Vynix hub"
     },
     {
-      "from": "/kb/troubleshooting-the-widget-is-not-appearing",
+      "from": "/kb/fixing-a-widget-that-does-not-appear",
       "add_links_to": [
         "/kb/troubleshooting"
       ],
       "reason": "Link back to the Troubleshooting hub"
     },
     {
-      "from": "/kb/troubleshooting-my-report-has-no-screenshot",
+      "from": "/kb/fixing-a-report-with-no-screenshot",
       "add_links_to": [
         "/kb/troubleshooting"
       ],

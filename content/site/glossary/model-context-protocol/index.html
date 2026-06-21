@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#008448" />
+<link rel="icon" href="https://vynix.in/favicon.ico" />
+<link rel="icon" type="image/svg+xml" href="https://vynix.in/favicon.svg" />
+<link rel="apple-touch-icon" href="https://vynix.in/apple-touch-icon.png" />
+<title>Model Context Protocol (MCP): definition and how it works | Vynix</title>
+<meta name="description" content="Model Context Protocol (MCP) is a standard for connecting AI models to tools, data, and developer workflows." />
+<meta name="keywords" content="model context protocol (mcp), definition, meaning, bug reporting, developer tools" />
+<link rel="canonical" href="https://vynix.in/glossary/model-context-protocol/" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Model Context Protocol (MCP): definition and how it works | Vynix" />
+<meta property="og:description" content="Model Context Protocol (MCP) is a standard for connecting AI models to tools, data, and developer workflows." />
+<meta property="og:url" content="https://vynix.in/glossary/model-context-protocol/" />
+<meta property="og:image" content="https://vynix.in/assets/og/glossary-model-context-protocol.png" />
+<meta property="og:site_name" content="Vynix" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@usevynix" />
+<meta name="twitter:title" content="Model Context Protocol (MCP): definition and how it works | Vynix" />
+<meta name="twitter:description" content="Model Context Protocol (MCP) is a standard for connecting AI models to tools, data, and developer workflows." />
+<meta name="twitter:image" content="https://vynix.in/assets/og/glossary-model-context-protocol.png" />
+<meta property="article:published_time" content="2026-06-21T20:43:56.383Z" />
+<meta property="article:modified_time" content="2026-06-21T20:43:56.383Z" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "Model Context Protocol (MCP)",
+  "description": "Model Context Protocol (MCP) is an open protocol for connecting AI applications to external tools, data sources, and services in a consistent way. It lets an AI model discover available capabilities, request context, and call approved tools without every integration needing a custom interface.",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "Vynix Glossary",
+    "url": "https://vynix.in/glossary/"
+  },
+  "url": "https://vynix.in/glossary/model-context-protocol/"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://vynix.in"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Glossary",
+      "item": "https://vynix.in/glossary/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Model Context Protocol (MCP)",
+      "item": "https://vynix.in/glossary/model-context-protocol/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is MCP only for coding assistants?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Coding assistants are a major use case because they need access to repos, issues, logs, and build tools, but MCP can connect any AI client to external resources and actions. It can be used for support workflows, data analysis, documentation search, QA, operations, and internal business tools."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is MCP different from a normal API integration?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A normal API integration is usually built for one app and one service. MCP standardizes how AI clients discover tools, request resources, use prompts, and call actions across many services. The underlying service may still have a normal API, but MCP provides the AI-facing interface that makes those capabilities reusable across compatible clients."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Vynix",
+  "url": "https://vynix.in",
+  "logo": "https://vynix.in/icon-512.png",
+  "sameAs": [
+    "https://github.com/vynix-in",
+    "https://twitter.com/usevynix"
+  ]
+}
+</script>
+<style>
+:root{--green:#008448;--green-2:#06a463;--ink:#0f172a;--muted:#475569;--line:#e2e8f0;--bg:#ffffff;--soft:#f8fafc}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;font-size:17px}
+a{color:var(--green);text-decoration:none}
+a:hover{text-decoration:underline}
+img,video{max-width:100%;height:auto;border-radius:12px}
+.container{max-width:880px;margin:0 auto;padding:0 20px}
+.site-header{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);z-index:10}
+.site-header .container{display:flex;align-items:center;justify-content:space-between;height:62px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--ink)}
+.brand .mark{width:26px;height:26px;border-radius:7px;background:linear-gradient(135deg,var(--green),var(--green-2));position:relative;display:inline-block}
+.brand .mark::after{content:"";position:absolute;inset:7px 8px;border-left:3px solid #fff;border-bottom:3px solid #fff;transform:rotate(-45deg)}
+nav.main a{color:var(--muted);font-size:.95rem;margin-left:18px;font-weight:500}
+nav.main a:hover{color:var(--green)}
+.cta{display:inline-block;background:var(--green);color:#fff!important;padding:9px 16px;border-radius:9px;font-weight:600;text-decoration:none!important}
+.cta:hover{background:var(--green-2)}
+.breadcrumbs{font-size:.85rem;color:var(--muted);padding:16px 0}
+.breadcrumbs a{color:var(--muted)}
+article{padding:8px 0 48px}
+article h1{font-size:2.3rem;line-height:1.15;margin:.2em 0 .3em}
+article h2{font-size:1.5rem;margin:1.6em 0 .5em}
+article h3{font-size:1.2rem;margin:1.4em 0 .4em}
+.lead{font-size:1.2rem;color:var(--muted)}
+.meta-row{display:flex;gap:14px;align-items:center;color:var(--muted);font-size:.9rem;margin:10px 0 22px;flex-wrap:wrap}
+.hero{margin:18px 0 26px;border:1px solid var(--line)}
+figure{margin:24px 0}
+figure img,figure video{border:1px solid var(--line);width:100%}
+figcaption{color:var(--muted);font-size:.85rem;margin-top:8px;text-align:center}
+table{width:100%;border-collapse:collapse;margin:22px 0;font-size:.96rem}
+th,td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--soft);font-weight:600}
+td.yes{color:var(--green);font-weight:600}
+.toc{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:24px 0}
+.toc strong{display:block;margin-bottom:8px;font-size:.9rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.toc ol{margin:0;padding-left:20px}
+.faq h3{font-size:1.08rem;margin-top:1.2em}
+.callout{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;padding:18px 20px;margin:26px 0}
+.callout a.cta{margin-top:8px}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;margin:24px 0}
+.card{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;transition:box-shadow .15s}
+.card:hover{box-shadow:0 8px 24px rgba(15,23,42,.08)}
+.card img{border-radius:0;display:block;aspect-ratio:16/9;object-fit:cover;width:100%}
+.card .body{padding:14px 16px}
+.card h3{margin:.2em 0;font-size:1.05rem}
+.card p{color:var(--muted);font-size:.92rem;margin:.3em 0 0}
+.tag{display:inline-block;font-size:.72rem;color:var(--green);background:#ecfdf5;border:1px solid #bbf7d0;border-radius:999px;padding:2px 9px;margin-right:6px}
+.site-footer{border-top:1px solid var(--line);background:var(--soft);margin-top:40px}
+.site-footer .container{padding:32px 20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;color:var(--muted);font-size:.9rem}
+.site-footer a{color:var(--muted)}
+@media(max-width:640px){article h1{font-size:1.8rem}nav.main a{margin-left:12px}body{font-size:16px}}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="container">
+  <a class="brand" href="https://vynix.in"><span class="mark"></span> Vynix</a>
+  <nav class="main">
+    <a href="https://vynix.in">Product</a><a href="/blog/">Blog</a><a href="/compare/">Compare</a><a href="/best/">Guides</a><a href="/for/">Use cases</a><a href="/kb/">Help</a>
+    <a class="cta" href="https://vynix.in">Try free</a>
+  </nav>
+</div></header>
+<main class="container">
+<div class="breadcrumbs container"><a href="https://vynix.in">Home</a> / <a href="/glossary/">Glossary</a> / <span>Model Context Protocol (MCP)</span></div>
+<article>
+  <span class="tag">Glossary</span>
+  <h1>Model Context Protocol (MCP)</h1>
+  <p class="lead">Model Context Protocol (MCP) is an open protocol for connecting AI applications to external tools, data sources, and services in a consistent way. It lets an AI model discover available capabilities, request context, and call approved tools without every integration needing a custom interface.</p>
+  <figure class="hero"><img src="https://vynix.in/marketing/p-mcp.png" alt="Vynix MCP server connecting to an AI client" loading="lazy" width="1080" height="1350" /><figcaption>Vynix MCP server connecting to an AI client</figcaption></figure>
+  <section><h2>What MCP means</h2><p>Model Context Protocol, usually shortened to MCP, defines a standard client-server pattern for giving AI systems access to useful context and actions. An MCP server exposes resources, prompts, and tools, while an MCP client, such as an AI coding assistant or desktop app, connects to that server and decides what to use during a task.</p><p>In practice, MCP is a bridge between a language model and the systems developers already work with: repositories, issue trackers, databases, logs, design systems, browser sessions, internal APIs, documentation, and deployment tools. Instead of hard-coding a separate integration for each AI product, a team can expose a capability once through MCP and let compatible clients use it.</p></section>
+<section><h2>Why MCP matters</h2><p>AI tools are most useful when they have the right context. A model that only sees a pasted error message may guess, but a model that can inspect related files, logs, open issues, recent deployments, API responses, or browser console output can reason more accurately. MCP gives teams a structured way to provide that context without dumping everything into a prompt.</p><p>MCP also helps with permissioning and repeatability. Tool access can be scoped by server, environment, user, or workflow. The model can ask for a specific resource or invoke a specific action, and the surrounding application can approve, deny, log, or constrain that request. That makes MCP more suitable for production developer workflows than ad hoc copy-paste automation.</p></section>
+<section><h2>Common examples and mistakes</h2><p>A common MCP example is a GitHub server that lets an AI assistant read issues, inspect pull requests, or create a branch. Another is a database server that lets the assistant read schema metadata or run safe, read-only queries. Teams can also expose internal documentation, feature flag services, error monitoring tools, or design tokens as MCP resources and tools.</p><p>A common mistake is treating MCP as the model itself. MCP does not make decisions, train a model, or guarantee correct output. It is the protocol layer that lets an AI client access external capabilities. Another mistake is exposing broad write access too early. A good MCP setup starts with narrow, auditable operations, such as read-only context retrieval, then adds write actions after guardrails are clear.</p></section>
+<section><h2>How MCP relates to feedback and fixing bugs</h2><p>Bug fixing often fails because the feedback report lacks context. A developer may get a vague note like "the button is broken" without knowing the DOM element, browser state, console errors, network requests, screenshot, or reproduction path. MCP is valuable because it can make that surrounding evidence available to AI tools and coding agents in a predictable format.</p><p>For example, Vynix captures website feedback by letting someone click the broken element, then collecting the element, screenshot, console and network context, and an AI diagnosis. That kind of structured bug context can be turned into a ready-to-build prompt or GitHub issue, and MCP-style integrations can help route it into coding agents, repos, issue trackers, or diagnostic tools with less manual copying.</p></section>
+  <section class="faq"><h2>Frequently asked questions</h2><h3>Is MCP only for coding assistants?</h3><p>No. Coding assistants are a major use case because they need access to repos, issues, logs, and build tools, but MCP can connect any AI client to external resources and actions. It can be used for support workflows, data analysis, documentation search, QA, operations, and internal business tools.</p><h3>How is MCP different from a normal API integration?</h3><p>A normal API integration is usually built for one app and one service. MCP standardizes how AI clients discover tools, request resources, use prompts, and call actions across many services. The underlying service may still have a normal API, but MCP provides the AI-facing interface that makes those capabilities reusable across compatible clients.</p></section>
+  <div class="callout"><strong>See it in practice</strong><p>Vynix captures the context that turns a vague report into a clear fix.</p><a class="cta" href="https://vynix.in">Try Vynix free</a></div>
+</article>
+</main>
+<footer class="site-footer"><div class="container">
+  <div>&copy; 2026 Vynix &middot; <a href="https://vynix.in">vynix.in</a></div>
+  <div>
+    <a href="/blog/">Blog</a> &middot;
+    <a href="/compare/">Compare</a> &middot;
+    <a href="/best/">Guides</a> &middot;
+    <a href="/glossary/">Glossary</a> &middot;
+    <a href="/kb/">Help</a> &middot;
+    <a href="https://github.com/vynix-in">GitHub</a> &middot;
+    <a href="https://vynix.in/privacy">Privacy</a>
+  </div>
+</div></footer>
+</body>
+</html>

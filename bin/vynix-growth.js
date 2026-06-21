@@ -23,6 +23,7 @@ import { scanFile } from '../lib/publication-gate.js';
 import { publishRepo, approveAllRepos, publishAllRepos } from '../github/publish.js';
 import { deployPages } from '../github/deploy-pages.js';
 import { applyPolicy } from '../lib/policy.js';
+import { record as recordActivity } from '../lib/activity.js';
 
 ensureDirs();
 
@@ -88,7 +89,41 @@ async function main() {
       const review = await runAgent('reviewer');
       const policy = applyPolicy();
       await runAgent('dashboard');
-      console.log(JSON.stringify({ review, policy }, null, 2));
+      // Health check: confirm the live site is reachable.
+      let health = 'unknown';
+      try {
+        const r = await fetch('https://vynix-in.github.io/');
+        health = r.ok ? 'up' : `status ${r.status}`;
+        recordActivity('health', `Live site check: ${health}`, { status: r.status });
+      } catch (err) {
+        health = 'unreachable';
+        recordActivity('health', 'Live site unreachable', { error: String(err) });
+      }
+      console.log(JSON.stringify({ review, policy, health }, null, 2));
+      break;
+    }
+    case 'grow': {
+      // Autonomous growth pass: ADD new content only (no rewrite, no churn),
+      // refresh the site, review, auto-approve safe items, and deploy.
+      console.log('Growth pass: adding new content only.\n');
+      await runAgent('directory-discovery');
+      await runAgent('backlinks');
+      await runAgent('github-seo', { expand: true });
+      for (const id of ['comparison', 'listicle', 'usecase', 'glossary', 'blog']) {
+        await runAgent(id, { expand: true });
+      }
+      await runAgent('distribution');
+      await runAgent('internal-linking');
+      await runAgent('site-builder');
+      const review = await runAgent('reviewer');
+      const policy = applyPolicy();
+      let deploy = { skipped: true };
+      if (review.failed === 0 && !process.env.VYNIX_NO_DEPLOY) {
+        deploy = await deployPages({});
+      }
+      await runAgent('dashboard');
+      recordActivity('grow', `Growth pass complete: ${review.checked} pages reviewed`, { review, deploy });
+      console.log(JSON.stringify({ review, policy, deploy }, null, 2));
       break;
     }
     case 'dashboard': {
@@ -163,6 +198,8 @@ Commands:
   seed                   run every agent once to populate the system
   run <agent> [only]     run a single agent
   orchestrate [agent]    run one full orchestration pass
+  grow                   add NEW content only, then review and deploy (no churn)
+  maintain               light loop: review, policy, dashboard, health check
   dashboard              start the web command center
   report                 print the latest report
   review                 audit every generated page (SEO, links, schema, gate)

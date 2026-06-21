@@ -19,7 +19,7 @@ import { product } from '../lib/vynix-facts.js';
 import { renderPage, breadcrumbsHtml } from '../lib/page.js';
 import { headMeta, articleLd, faqLd, breadcrumbLd, videoLd } from '../lib/seo.js';
 import { pickImage, pickClip, makeOgImage } from '../lib/images.js';
-import { slug as toSlug, humanDate, now } from '../lib/util.js';
+import { slug as toSlug, humanDate, now, hash } from '../lib/util.js';
 
 const log = logger('blog');
 const store = db('content');
@@ -30,7 +30,7 @@ export const meta = { id: 'blog', name: 'Blog Agent' };
 // High-value, genuinely useful topics for the Vynix audience. Each has a theme
 // used to pick the matching real image and clip. Some carry extra guidance so
 // the model stays accurate on plans and roadmap.
-const TOPICS = [
+export const TOPICS = [
   { title: 'How to write bug reports an AI coding agent can fix', theme: 'context handoff agent', clip: true },
   { title: 'The context an AI agent needs to fix a front-end bug', theme: 'context console network debug', clip: true },
   { title: 'What a feedback layer is, and why AI teams need one', theme: 'loop workflow review', clip: false },
@@ -279,6 +279,7 @@ async function buildPost(topic) {
       kind: 'blog',
       title: article.title,
       slug,
+      topic_key: hash(topic.title),
       description: article.metaDescription,
       url: `/blog/${slug}/`,
       theme: topic.theme,
@@ -305,16 +306,21 @@ async function buildPost(topic) {
 }
 
 export async function run(payload = {}) {
-  const targets = payload.only ? TOPICS.filter((t) => toSlug(t.title).includes(payload.only)) : TOPICS;
+  let targets = payload.only ? TOPICS.filter((t) => toSlug(t.title).includes(payload.only)) : TOPICS;
+  // Expand mode: only write topics that have not been generated before.
+  if (payload.expand) {
+    const existing = new Set(store.find({ kind: 'blog' }).map((r) => r.topic_key).filter(Boolean));
+    targets = targets.filter((t) => !existing.has(hash(t.title)));
+  }
   const built = [];
   for (const topic of targets) {
     built.push(await buildPost(topic));
   }
 
   // On a full run, remove any blog page that is no longer in the topic set, so
-  // renamed or dropped posts never linger as orphans.
+  // renamed or dropped posts never linger as orphans. Skipped in expand mode.
   let removed = 0;
-  if (!payload.only) {
+  if (!payload.only && !payload.expand) {
     const valid = new Set(built.map((b) => b.slug));
     for (const rec of store.find({ kind: 'blog' })) {
       if (!valid.has(rec.slug)) {

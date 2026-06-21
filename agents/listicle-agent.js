@@ -110,6 +110,54 @@ const PAGES = [
     tools: ['Marker.io', 'BugHerd', 'Jam', 'Userback'],
     keyword: 'usersnap alternatives',
   },
+  {
+    kind: 'best',
+    slug: 'best-session-replay-tools',
+    title: 'The best session replay tools in 2026',
+    intro: 'Session replay shows you what users did. Here are the main tools and where each one fits.',
+    tools: ['FullStory', 'Smartlook', 'LogRocket', 'Mouseflow', 'Hotjar'],
+    keyword: 'best session replay tools',
+  },
+  {
+    kind: 'best',
+    slug: 'best-error-monitoring-tools',
+    title: 'The best error monitoring tools in 2026',
+    intro: 'Error monitoring catches problems in production. These are the tools teams rely on.',
+    tools: ['Sentry', 'Bugsnag', 'LogRocket'],
+    keyword: 'best error monitoring tools',
+  },
+  {
+    kind: 'best',
+    slug: 'best-website-feedback-tools',
+    title: 'The best website feedback tools in 2026',
+    intro: 'Tools for collecting feedback on a live website, compared by what they do well.',
+    tools: ['Marker.io', 'BugHerd', 'Ruttl', 'Pastel', 'MarkUp.io', 'Userback'],
+    keyword: 'best website feedback tools',
+  },
+  {
+    kind: 'best',
+    slug: 'best-issue-tracking-tools-for-developers',
+    title: 'The best issue tracking tools for developers in 2026',
+    intro: 'Where bugs and tasks live once they are reported. Here are the main options.',
+    tools: ['Linear', 'Jira', 'Shortcut', 'Trello', 'ClickUp'],
+    keyword: 'best issue tracking tools',
+  },
+  {
+    kind: 'alternatives',
+    slug: 'hotjar-alternatives',
+    title: 'Hotjar alternatives in 2026',
+    intro: 'Hotjar is known for heatmaps and recordings. Here are other tools to consider.',
+    tools: ['Mouseflow', 'Smartlook', 'FullStory', 'LogRocket'],
+    keyword: 'hotjar alternatives',
+  },
+  {
+    kind: 'alternatives',
+    slug: 'logrocket-alternatives',
+    title: 'LogRocket alternatives in 2026',
+    intro: 'LogRocket combines session replay and front-end monitoring. These are the alternatives.',
+    tools: ['FullStory', 'Sentry', 'Smartlook', 'Bugsnag'],
+    keyword: 'logrocket alternatives',
+  },
 ];
 
 function fallback(page, entries) {
@@ -259,7 +307,13 @@ async function buildPage(page) {
 }
 
 export async function run(payload = {}) {
-  const targets = payload.only ? PAGES.filter((p) => p.slug === payload.only) : PAGES;
+  let targets = payload.only ? PAGES.filter((p) => p.slug === payload.only) : PAGES;
+  if (payload.expand) {
+    targets = targets.filter((p) => {
+      const dir1 = p.kind === 'alternatives' ? 'alternatives' : 'best';
+      return !fs.existsSync(path.join(paths.content, 'site', dir1, p.slug, 'index.html'));
+    });
+  }
   const built = [];
   for (const page of targets) built.push(await buildPage(page));
   log.info(`built ${built.length} listicles`);

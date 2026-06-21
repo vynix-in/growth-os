@@ -23,6 +23,18 @@ Hub: /compare
 - [Jira vs Vynix](/compare/jira-vs-vynix)
 - [BugHerd vs Vynix](/compare/bugherd-vs-vynix)
 - [Userback vs Vynix](/compare/userback-vs-vynix)
+- [FullStory vs Vynix](/compare/fullstory-vs-vynix)
+- [Smartlook vs Vynix](/compare/smartlook-vs-vynix)
+- [Mouseflow vs Vynix](/compare/mouseflow-vs-vynix)
+- [Trello vs Vynix](/compare/trello-vs-vynix)
+- [Asana vs Vynix](/compare/asana-vs-vynix)
+- [ClickUp vs Vynix](/compare/clickup-vs-vynix)
+- [Shortcut vs Vynix](/compare/shortcut-vs-vynix)
+- [Ruttl vs Vynix](/compare/ruttl-vs-vynix)
+- [Pastel vs Vynix](/compare/pastel-vs-vynix)
+- [MarkUp.io vs Vynix](/compare/markup-io-vs-vynix)
+- [Bird Eats Bug vs Vynix](/compare/bird-eats-bug-vs-vynix)
+- [Replay.io vs Vynix](/compare/replay-io-vs-vynix)
 
 ## Getting started with Vynix
 
@@ -37,8 +49,8 @@ Hub: /docs
 
 Hub: /kb/troubleshooting
 
-- [Troubleshooting: the widget is not appearing](/kb/troubleshooting-the-widget-is-not-appearing)
-- [Troubleshooting: my report has no screenshot](/kb/troubleshooting-my-report-has-no-screenshot)
+- [Fixing a widget that does not appear](/kb/fixing-a-widget-that-does-not-appear)
+- [Fixing a report with no screenshot](/kb/fixing-a-report-with-no-screenshot)
 
 ## Vynix open source
 

@@ -6,6 +6,7 @@
   <url><loc>https://vynix.in/kb/</loc><lastmod>2026-06-21</lastmod></url>
   <url><loc>https://vynix.in/best/</loc><lastmod>2026-06-21</lastmod></url>
   <url><loc>https://vynix.in/for/</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://vynix.in/glossary/</loc><lastmod>2026-06-21</lastmod></url>
   <url><loc>https://vynix.in/blog/how-to-write-bug-reports-ai-agents-can-fix/</loc><lastmod>2026-06-21</lastmod></url>
   <url><loc>https://vynix.in/blog/how-vynix-cuts-the-cost-of-running-ai-coding-agents/</loc><lastmod>2026-06-21</lastmod></url>
   <url><loc>https://vynix.in/blog/the-context-an-ai-agent-needs-to-fix-front-end-bugs/</loc><lastmod>2026-06-21</lastmod></url>
@@ -38,6 +39,18 @@
   <url><loc>https://vynix.in/compare/jira-vs-vynix/</loc><lastmod>2026-06-21</lastmod></url>
   <url><loc>https://vynix.in/compare/bugherd-vs-vynix/</loc><lastmod>2026-06-21</lastmod></url>
   <url><loc>https://vynix.in/compare/userback-vs-vynix/</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://vynix.in/compare/fullstory-vs-vynix/</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://vynix.in/compare/smartlook-vs-vynix/</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://vynix.in/compare/mouseflow-vs-vynix/</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://vynix.in/compare/trello-vs-vynix/</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://vynix.in/compare/asana-vs-vynix/</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://vynix.in/compare/clickup-vs-vynix/</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://vynix.in/compare/shortcut-vs-vynix/</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://vynix.in/compare/ruttl-vs-vynix/</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://vynix.in/compare/pastel-vs-vynix/</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://vynix.in/compare/markup-io-vs-vynix/</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://vynix.in/compare/bird-eats-bug-vs-vynix/</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://vynix.in/compare/replay-io-vs-vynix/</loc><lastmod>2026-06-21</lastmod></url>
   <url><loc>https://vynix.in/kb/how-to-install-the-vynix-widget-on-any-website/</loc><lastmod>2026-06-21</lastmod></url>
   <url><loc>https://vynix.in/kb/turning-a-vynix-note-into-a-github-issue/</loc><lastmod>2026-06-21</lastmod></url>
   <url><loc>https://vynix.in/kb/controlling-who-can-see-the-vynix-widget/</loc><lastmod>2026-06-21</lastmod></url>
@@ -54,10 +67,34 @@
   <url><loc>https://vynix.in/alternatives/marker-io-alternatives/</loc><lastmod>2026-06-21</lastmod></url>
   <url><loc>https://vynix.in/alternatives/bugherd-alternatives/</loc><lastmod>2026-06-21</lastmod></url>
   <url><loc>https://vynix.in/alternatives/usersnap-alternatives/</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://vynix.in/best/best-session-replay-tools/</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://vynix.in/best/best-error-monitoring-tools/</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://vynix.in/best/best-website-feedback-tools/</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://vynix.in/best/best-issue-tracking-tools-for-developers/</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://vynix.in/alternatives/hotjar-alternatives/</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://vynix.in/alternatives/logrocket-alternatives/</loc><lastmod>2026-06-21</lastmod></url>
   <url><loc>https://vynix.in/for/agencies/</loc><lastmod>2026-06-21</lastmod></url>
   <url><loc>https://vynix.in/for/qa-teams/</loc><lastmod>2026-06-21</lastmod></url>
   <url><loc>https://vynix.in/for/startups/</loc><lastmod>2026-06-21</lastmod></url>
   <url><loc>https://vynix.in/for/designers/</loc><lastmod>2026-06-21</lastmod></url>
   <url><loc>https://vynix.in/for/ai-developers/</loc><lastmod>2026-06-21</lastmod></url>
   <url><loc>https://vynix.in/for/support-teams/</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://vynix.in/for/saas-teams/</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://vynix.in/for/ecommerce/</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://vynix.in/for/open-source/</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://vynix.in/for/remote-teams/</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://vynix.in/glossary/bug-report/</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://vynix.in/glossary/visual-feedback/</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://vynix.in/glossary/session-replay/</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://vynix.in/glossary/error-monitoring/</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://vynix.in/glossary/website-annotation/</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://vynix.in/glossary/developer-context/</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://vynix.in/glossary/root-cause-analysis/</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://vynix.in/glossary/feedback-loop/</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://vynix.in/glossary/issue-tracker/</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://vynix.in/glossary/ai-coding-agent/</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://vynix.in/glossary/model-context-protocol/</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://vynix.in/glossary/regression/</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://vynix.in/glossary/console-error/</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://vynix.in/glossary/network-request/</loc><lastmod>2026-06-21</lastmod></url>
 </urlset>

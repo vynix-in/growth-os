@@ -460,9 +460,15 @@ SOFTWARE.
 }
 
 export async function run(payload = {}) {
-  const targets = payload.only
+  let targets = payload.only
     ? publicComponents.filter((c) => c.repo === payload.only || c.key === payload.only)
     : publicComponents;
+
+  // Expand mode: skip repositories that are already published.
+  if (payload.expand) {
+    const published = new Set(repos.find({ status: 'published' }).map((r) => r.name));
+    targets = targets.filter((c) => !published.has(c.repo));
+  }
 
   const built = [];
   for (const component of targets) {

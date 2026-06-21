@@ -31,6 +31,10 @@ const PERSONAS = [
   { slug: 'designers', title: 'Vynix for product designers', who: 'designers reviewing live work and leaving precise feedback', theme: 'annotate point review' },
   { slug: 'ai-developers', title: 'Vynix for developers using AI agents', who: 'engineers who build with Copilot, Claude or Cursor', theme: 'mcp agent diagnosis handoff' },
   { slug: 'support-teams', title: 'Vynix for support teams', who: 'support and success teams turning user reports into clear bug tickets', theme: 'context capture handoff' },
+  { slug: 'saas-teams', title: 'Vynix for SaaS teams', who: 'SaaS product and engineering teams shipping continuously', theme: 'loop workflow diagnosis' },
+  { slug: 'ecommerce', title: 'Vynix for ecommerce teams', who: 'ecommerce teams keeping storefronts fast and bug-free', theme: 'capture review viewport' },
+  { slug: 'open-source', title: 'Vynix for open source maintainers', who: 'open source maintainers triaging community bug reports', theme: 'github handoff context' },
+  { slug: 'remote-teams', title: 'Vynix for remote teams', who: 'distributed teams that need clear, self-contained bug reports', theme: 'context handoff review' },
 ];
 
 function fallback(p) {
@@ -157,7 +161,10 @@ async function buildPage(p) {
 }
 
 export async function run(payload = {}) {
-  const targets = payload.only ? PERSONAS.filter((p) => p.slug === payload.only) : PERSONAS;
+  let targets = payload.only ? PERSONAS.filter((p) => p.slug === payload.only) : PERSONAS;
+  if (payload.expand) {
+    targets = targets.filter((p) => !fs.existsSync(path.join(paths.content, 'site', 'for', p.slug, 'index.html')));
+  }
   const built = [];
   for (const p of targets) built.push(await buildPage(p));
   log.info(`built ${built.length} use-case pages`);
