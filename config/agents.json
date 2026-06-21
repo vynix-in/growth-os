@@ -1,0 +1,85 @@
+{
+  "agents": [
+    {
+      "id": "dashboard",
+      "name": "Dashboard Agent",
+      "module": "agents/dashboard-agent.js",
+      "phase": 2,
+      "description": "Builds the command center metrics snapshot from every store and writes it for the web dashboard.",
+      "schedule": "on-demand",
+      "enabled": true
+    },
+    {
+      "id": "github-seo",
+      "name": "GitHub SEO Agent",
+      "module": "agents/github-seo-agent.js",
+      "phase": 3,
+      "description": "Proposes public repositories for the vynix-in organization and generates READMEs, docs, examples and release notes. Never publishes automatically.",
+      "schedule": "hourly",
+      "enabled": true
+    },
+    {
+      "id": "changelog",
+      "name": "Changelog SEO Agent",
+      "module": "agents/changelog-agent.js",
+      "phase": 4,
+      "description": "Turns releases and notable commits into blog drafts, release notes and social drafts.",
+      "schedule": "hourly",
+      "enabled": true
+    },
+    {
+      "id": "directory-discovery",
+      "name": "Directory Discovery Agent",
+      "module": "agents/directory-discovery-agent.js",
+      "phase": 5,
+      "description": "Maintains the master list of directories where Vynix can be listed for backlinks and discovery.",
+      "schedule": "daily",
+      "enabled": true
+    },
+    {
+      "id": "submission",
+      "name": "Submission Preparation Agent",
+      "module": "agents/submission-agent.js",
+      "phase": 6,
+      "description": "Builds copy-paste ready submission packets for every discovered directory.",
+      "schedule": "daily",
+      "enabled": true
+    },
+    {
+      "id": "opensource-funnel",
+      "name": "Open Source Funnel Agent",
+      "module": "agents/opensource-funnel-agent.js",
+      "phase": 7,
+      "description": "Reviews the codebase and proposes safe components to open source, with proprietary parts excluded.",
+      "schedule": "weekly",
+      "enabled": true
+    },
+    {
+      "id": "comparison",
+      "name": "Comparison Page Agent",
+      "module": "agents/comparison-agent.js",
+      "phase": 8,
+      "description": "Generates and updates competitor comparison pages from a shared template.",
+      "schedule": "weekly",
+      "enabled": true
+    },
+    {
+      "id": "knowledgebase",
+      "name": "Knowledge Base Agent",
+      "module": "agents/knowledgebase-agent.js",
+      "phase": 9,
+      "description": "Turns issues, fixes and releases into sanitized knowledge base articles, FAQs and troubleshooting guides.",
+      "schedule": "daily",
+      "enabled": true
+    },
+    {
+      "id": "internal-linking",
+      "name": "Internal Linking Agent",
+      "module": "agents/internal-linking-agent.js",
+      "phase": 10,
+      "description": "Audits all generated content and suggests internal links, topic clusters and hub pages.",
+      "schedule": "weekly",
+      "enabled": true
+    }
+  ]
+}

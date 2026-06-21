@@ -1,0 +1,57 @@
+{
+  "system": {
+    "name": "Vynix Growth OS",
+    "version": "1.0.0",
+    "owner": "Vynix",
+    "workspaceRoot": "/home/azureuser/PinPoint/growth"
+  },
+  "brand": {
+    "name": "Vynix",
+    "tagline": "Point it. Capture it. Ship it.",
+    "description": "AI-native website annotation and developer-context tool. Capture visual feedback on any page, get an AI diagnosis of the root cause, and hand a ready-to-build prompt or GitHub issue to your coding agent.",
+    "website": "https://vynix.in",
+    "docs": "https://vynix.in/docs",
+    "blog": "https://vynix.in/blog",
+    "twitter": "usevynix",
+    "email": "hello@vynix.in",
+    "githubOrg": "vynix-in",
+    "githubOrgUrl": "https://github.com/vynix-in"
+  },
+  "github": {
+    "org": "vynix-in",
+    "fallbackOwner": "Surajsharma07",
+    "defaultBranch": "main",
+    "license": "MIT"
+  },
+  "ai": {
+    "provider": "azure",
+    "envEndpoint": "AZURE_OPENAI_ENDPOINT",
+    "envDeployment": "AZURE_OPENAI_DEPLOYMENT",
+    "envApiKey": "AZURE_OPENAI_API_KEY",
+    "envApiVersion": "AZURE_OPENAI_API_VERSION",
+    "defaultApiVersion": "2024-10-21",
+    "reasoningTokenHeadroom": 2500,
+    "fallback": "template"
+  },
+  "dashboard": {
+    "host": "127.0.0.1",
+    "port": 4310
+  },
+  "orchestrator": {
+    "intervalMinutes": 60,
+    "priority": [
+      "github-seo",
+      "comparison",
+      "changelog",
+      "directory-discovery",
+      "submission",
+      "knowledgebase",
+      "internal-linking",
+      "opensource-funnel"
+    ]
+  },
+  "publicationGate": {
+    "blockOnViolation": true,
+    "requireManualApproval": true
+  }
+}

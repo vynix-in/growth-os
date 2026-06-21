@@ -1,0 +1,24 @@
+{
+  "name": "vynix-growth-os",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Autonomous SEO and growth operating system for Vynix. Generates discoverability assets, GitHub authority, directory submissions, comparison pages, knowledge base content, and release content while protecting proprietary code.",
+  "engines": {
+    "node": ">=18"
+  },
+  "bin": {
+    "vynix-growth": "bin/vynix-growth.js"
+  },
+  "scripts": {
+    "start": "node bin/vynix-growth.js dashboard",
+    "dashboard": "node bin/vynix-growth.js dashboard",
+    "run-agent": "node bin/vynix-growth.js run",
+    "orchestrate": "node bin/vynix-growth.js orchestrate",
+    "report": "node bin/vynix-growth.js report",
+    "gate": "node bin/vynix-growth.js gate",
+    "seed": "node bin/vynix-growth.js seed",
+    "status": "node bin/vynix-growth.js status"
+  },
+  "dependencies": {}
+}

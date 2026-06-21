@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vynix Growth OS — Command Center</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="chevron"></span>
+      <div>
+        <div class="brand-name">Vynix Growth OS</div>
+        <div class="brand-sub">Autonomous SEO &amp; growth command center</div>
+      </div>
+    </div>
+    <div class="meta">
+      <span id="ai-badge" class="badge">AI: …</span>
+      <span id="generated" class="muted"></span>
+      <button id="refresh" class="btn">Refresh</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="stat-grid" id="stats"></section>
+
+    <div class="columns">
+      <section class="panel">
+        <h2>Approval queue</h2>
+        <p class="muted">Nothing is published automatically. Review and approve items here.</p>
+        <div id="approvals"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Agents</h2>
+        <div id="agents"></div>
+      </section>
+    </div>
+
+    <div class="columns">
+      <section class="panel">
+        <h2>Queue</h2>
+        <div id="queue"></div>
+      </section>
+      <section class="panel">
+        <h2>Publication gate</h2>
+        <div id="gate"></div>
+      </section>
+    </div>
+
+    <section class="panel">
+      <h2>Breakdowns</h2>
+      <div id="breakdowns" class="breakdowns"></div>
+    </section>
+  </main>
+
+  <footer class="muted">
+    Vynix Growth OS &middot; data is local &middot; publishing requires human approval
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>

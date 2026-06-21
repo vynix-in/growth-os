@@ -1,0 +1,395 @@
+{
+  "generated": "21 June 2026",
+  "clusters": [
+    {
+      "id": "comparisons",
+      "title": "Vynix vs other tools",
+      "hub": "/compare",
+      "members": [
+        {
+          "title": "Jam vs Vynix",
+          "url": "/compare/jam-vs-vynix"
+        },
+        {
+          "title": "Marker.io vs Vynix",
+          "url": "/compare/marker-io-vs-vynix"
+        },
+        {
+          "title": "Usersnap vs Vynix",
+          "url": "/compare/usersnap-vs-vynix"
+        },
+        {
+          "title": "Sentry vs Vynix",
+          "url": "/compare/sentry-vs-vynix"
+        },
+        {
+          "title": "Bugsnag vs Vynix",
+          "url": "/compare/bugsnag-vs-vynix"
+        },
+        {
+          "title": "LogRocket vs Vynix",
+          "url": "/compare/logrocket-vs-vynix"
+        },
+        {
+          "title": "Hotjar vs Vynix",
+          "url": "/compare/hotjar-vs-vynix"
+        },
+        {
+          "title": "Instabug vs Vynix",
+          "url": "/compare/instabug-vs-vynix"
+        },
+        {
+          "title": "Linear vs Vynix",
+          "url": "/compare/linear-vs-vynix"
+        },
+        {
+          "title": "Jira vs Vynix",
+          "url": "/compare/jira-vs-vynix"
+        },
+        {
+          "title": "BugHerd vs Vynix",
+          "url": "/compare/bugherd-vs-vynix"
+        },
+        {
+          "title": "Userback vs Vynix",
+          "url": "/compare/userback-vs-vynix"
+        }
+      ]
+    },
+    {
+      "id": "getting-started",
+      "title": "Getting started with Vynix",
+      "hub": "/docs",
+      "members": [
+        {
+          "title": "How to install the Vynix widget on any website",
+          "url": "/kb/how-to-install-the-vynix-widget-on-any-website"
+        },
+        {
+          "title": "Turning a Vynix note into a GitHub issue",
+          "url": "/kb/turning-a-vynix-note-into-a-github-issue"
+        },
+        {
+          "title": "Controlling who can see the Vynix widget",
+          "url": "/kb/controlling-who-can-see-the-vynix-widget"
+        },
+        {
+          "title": "Using review rounds to group feedback into fixes",
+          "url": "/kb/using-review-rounds-to-group-feedback-into-fixes"
+        }
+      ]
+    },
+    {
+      "id": "troubleshooting",
+      "title": "Troubleshooting",
+      "hub": "/kb/troubleshooting",
+      "members": [
+        {
+          "title": "Troubleshooting: the widget is not appearing",
+          "url": "/kb/troubleshooting-the-widget-is-not-appearing"
+        },
+        {
+          "title": "Troubleshooting: my report has no screenshot",
+          "url": "/kb/troubleshooting-my-report-has-no-screenshot"
+        }
+      ]
+    },
+    {
+      "id": "open-source",
+      "title": "Vynix open source",
+      "hub": "https://github.com/vynix-in",
+      "members": [
+        {
+          "title": "Vynix Browser Extension",
+          "url": "https://github.com/vynix-in/vynix-browser-extension"
+        },
+        {
+          "title": "Vynix JavaScript SDK",
+          "url": "https://github.com/vynix-in/vynix-sdk-js"
+        },
+        {
+          "title": "Vynix PHP SDK",
+          "url": "https://github.com/vynix-in/vynix-sdk-php"
+        },
+        {
+          "title": "Vynix Python SDK",
+          "url": "https://github.com/vynix-in/vynix-sdk-python"
+        },
+        {
+          "title": "Vynix MCP Server",
+          "url": "https://github.com/vynix-in/vynix-mcp"
+        },
+        {
+          "title": "Vynix GitHub Action",
+          "url": "https://github.com/vynix-in/vynix-github-action"
+        },
+        {
+          "title": "Vynix VS Code Extension",
+          "url": "https://github.com/vynix-in/vynix-vscode-extension"
+        },
+        {
+          "title": "Vynix CLI",
+          "url": "https://github.com/vynix-in/vynix-cli"
+        },
+        {
+          "title": "Vynix Public API Examples",
+          "url": "https://github.com/vynix-in/vynix-public-api-examples"
+        },
+        {
+          "title": "Vynix Templates",
+          "url": "https://github.com/vynix-in/vynix-templates"
+        },
+        {
+          "title": "Vynix Developer Docs",
+          "url": "https://github.com/vynix-in/vynix-docs"
+        }
+      ]
+    },
+    {
+      "id": "updates",
+      "title": "Product updates",
+      "hub": "/blog",
+      "members": [
+        {
+          "title": "Release content — 21 June 2026",
+          "url": "/blog"
+        },
+        {
+          "title": "Release content — 21 June 2026",
+          "url": "/blog"
+        }
+      ]
+    }
+  ],
+  "suggestions": [
+    {
+      "from": "/compare/jam-vs-vynix",
+      "add_links_to": [
+        "/compare/marker-io-vs-vynix",
+        "/compare/usersnap-vs-vynix"
+      ],
+      "reason": "Related comparison pages"
+    },
+    {
+      "from": "/compare/marker-io-vs-vynix",
+      "add_links_to": [
+        "/compare/usersnap-vs-vynix",
+        "/compare/sentry-vs-vynix"
+      ],
+      "reason": "Related comparison pages"
+    },
+    {
+      "from": "/compare/usersnap-vs-vynix",
+      "add_links_to": [
+        "/compare/sentry-vs-vynix",
+        "/compare/bugsnag-vs-vynix"
+      ],
+      "reason": "Related comparison pages"
+    },
+    {
+      "from": "/compare/sentry-vs-vynix",
+      "add_links_to": [
+        "/compare/bugsnag-vs-vynix",
+        "/compare/logrocket-vs-vynix"
+      ],
+      "reason": "Related comparison pages"
+    },
+    {
+      "from": "/compare/bugsnag-vs-vynix",
+      "add_links_to": [
+        "/compare/logrocket-vs-vynix",
+        "/compare/hotjar-vs-vynix"
+      ],
+      "reason": "Related comparison pages"
+    },
+    {
+      "from": "/compare/logrocket-vs-vynix",
+      "add_links_to": [
+        "/compare/hotjar-vs-vynix",
+        "/compare/instabug-vs-vynix"
+      ],
+      "reason": "Related comparison pages"
+    },
+    {
+      "from": "/compare/hotjar-vs-vynix",
+      "add_links_to": [
+        "/compare/instabug-vs-vynix",
+        "/compare/linear-vs-vynix"
+      ],
+      "reason": "Related comparison pages"
+    },
+    {
+      "from": "/compare/instabug-vs-vynix",
+      "add_links_to": [
+        "/compare/linear-vs-vynix",
+        "/compare/jira-vs-vynix"
+      ],
+      "reason": "Related comparison pages"
+    },
+    {
+      "from": "/compare/linear-vs-vynix",
+      "add_links_to": [
+        "/compare/jira-vs-vynix",
+        "/compare/bugherd-vs-vynix"
+      ],
+      "reason": "Related comparison pages"
+    },
+    {
+      "from": "/compare/jira-vs-vynix",
+      "add_links_to": [
+        "/compare/bugherd-vs-vynix",
+        "/compare/userback-vs-vynix"
+      ],
+      "reason": "Related comparison pages"
+    },
+    {
+      "from": "/compare/bugherd-vs-vynix",
+      "add_links_to": [
+        "/compare/userback-vs-vynix",
+        "/compare/jam-vs-vynix"
+      ],
+      "reason": "Related comparison pages"
+    },
+    {
+      "from": "/compare/userback-vs-vynix",
+      "add_links_to": [
+        "/compare/jam-vs-vynix",
+        "/compare/marker-io-vs-vynix"
+      ],
+      "reason": "Related comparison pages"
+    },
+    {
+      "from": "/kb/how-to-install-the-vynix-widget-on-any-website",
+      "add_links_to": [
+        "/docs"
+      ],
+      "reason": "Link back to the Getting started with Vynix hub"
+    },
+    {
+      "from": "/kb/turning-a-vynix-note-into-a-github-issue",
+      "add_links_to": [
+        "/docs"
+      ],
+      "reason": "Link back to the Getting started with Vynix hub"
+    },
+    {
+      "from": "/kb/controlling-who-can-see-the-vynix-widget",
+      "add_links_to": [
+        "/docs"
+      ],
+      "reason": "Link back to the Getting started with Vynix hub"
+    },
+    {
+      "from": "/kb/using-review-rounds-to-group-feedback-into-fixes",
+      "add_links_to": [
+        "/docs"
+      ],
+      "reason": "Link back to the Getting started with Vynix hub"
+    },
+    {
+      "from": "/kb/troubleshooting-the-widget-is-not-appearing",
+      "add_links_to": [
+        "/kb/troubleshooting"
+      ],
+      "reason": "Link back to the Troubleshooting hub"
+    },
+    {
+      "from": "/kb/troubleshooting-my-report-has-no-screenshot",
+      "add_links_to": [
+        "/kb/troubleshooting"
+      ],
+      "reason": "Link back to the Troubleshooting hub"
+    },
+    {
+      "from": "https://github.com/vynix-in/vynix-browser-extension",
+      "add_links_to": [
+        "https://github.com/vynix-in"
+      ],
+      "reason": "Link back to the Vynix open source hub"
+    },
+    {
+      "from": "https://github.com/vynix-in/vynix-sdk-js",
+      "add_links_to": [
+        "https://github.com/vynix-in"
+      ],
+      "reason": "Link back to the Vynix open source hub"
+    },
+    {
+      "from": "https://github.com/vynix-in/vynix-sdk-php",
+      "add_links_to": [
+        "https://github.com/vynix-in"
+      ],
+      "reason": "Link back to the Vynix open source hub"
+    },
+    {
+      "from": "https://github.com/vynix-in/vynix-sdk-python",
+      "add_links_to": [
+        "https://github.com/vynix-in"
+      ],
+      "reason": "Link back to the Vynix open source hub"
+    },
+    {
+      "from": "https://github.com/vynix-in/vynix-mcp",
+      "add_links_to": [
+        "https://github.com/vynix-in"
+      ],
+      "reason": "Link back to the Vynix open source hub"
+    },
+    {
+      "from": "https://github.com/vynix-in/vynix-github-action",
+      "add_links_to": [
+        "https://github.com/vynix-in"
+      ],
+      "reason": "Link back to the Vynix open source hub"
+    },
+    {
+      "from": "https://github.com/vynix-in/vynix-vscode-extension",
+      "add_links_to": [
+        "https://github.com/vynix-in"
+      ],
+      "reason": "Link back to the Vynix open source hub"
+    },
+    {
+      "from": "https://github.com/vynix-in/vynix-cli",
+      "add_links_to": [
+        "https://github.com/vynix-in"
+      ],
+      "reason": "Link back to the Vynix open source hub"
+    },
+    {
+      "from": "https://github.com/vynix-in/vynix-public-api-examples",
+      "add_links_to": [
+        "https://github.com/vynix-in"
+      ],
+      "reason": "Link back to the Vynix open source hub"
+    },
+    {
+      "from": "https://github.com/vynix-in/vynix-templates",
+      "add_links_to": [
+        "https://github.com/vynix-in"
+      ],
+      "reason": "Link back to the Vynix open source hub"
+    },
+    {
+      "from": "https://github.com/vynix-in/vynix-docs",
+      "add_links_to": [
+        "https://github.com/vynix-in"
+      ],
+      "reason": "Link back to the Vynix open source hub"
+    },
+    {
+      "from": "/blog",
+      "add_links_to": [
+        "/blog"
+      ],
+      "reason": "Link back to the Product updates hub"
+    },
+    {
+      "from": "/blog",
+      "add_links_to": [
+        "/blog"
+      ],
+      "reason": "Link back to the Product updates hub"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+Shipped in Vynix:
+• Review rounds now group a batch of notes into a short list of suggested fixes.
+• AI diagnosis is attached to every report and flows into the generated prompt and GitHub issue.
+• One-click GitHub connect with a native account, organisation and repository picker.
+Point it. Capture it. Ship it. https://vynix.in

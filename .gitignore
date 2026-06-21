@@ -1,0 +1,22 @@
+# Runtime state only. The generated content (comparison pages, repo proposals,
+# submission packets, knowledge base, release content, link plans) is committed
+# on purpose so the work is visible. The database, logs, reports, and the
+# dashboard snapshot are regenerated on every run, so they stay out.
+database/
+logs/
+dashboard/data/
+reports/
+node_modules/
+
+# Git metadata created inside repository proposals when publishing.
+github/*/.git/
+
+# Never commit environment files or keys.
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# OS noise
+.DS_Store
