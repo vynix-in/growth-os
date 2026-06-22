@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vynix.in/resources/sitemap.xml
+Sitemap: https://www.vynix.in/resources/sitemap.xml

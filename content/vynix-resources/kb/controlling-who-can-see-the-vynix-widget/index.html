@@ -3,23 +3,27 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#008448" />
+<link rel="icon" href="https://www.vynix.in/favicon.ico" />
+<link rel="icon" type="image/svg+xml" href="https://www.vynix.in/favicon.svg" />
+<link rel="apple-touch-icon" href="https://www.vynix.in/apple-touch-icon.png" />
 <title>Controlling who can see the Vynix widget | Vynix Help</title>
-<meta name="description" content="Limit who can see the Vynix widget by loading it only for approved users, environments, or internal teams." />
-<link rel="canonical" href="https://vynix.in/resources/kb/controlling-who-can-see-the-vynix-widget/" />
+<meta name="description" content="Limit the Vynix widget to the right users, environments, or pages by controlling where and when the widget script loads." />
+<link rel="canonical" href="https://www.vynix.in/resources/kb/controlling-who-can-see-the-vynix-widget/" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Controlling who can see the Vynix widget | Vynix Help" />
-<meta property="og:description" content="Limit who can see the Vynix widget by loading it only for approved users, environments, or internal teams." />
-<meta property="og:url" content="https://vynix.in/resources/kb/controlling-who-can-see-the-vynix-widget/" />
-<meta property="og:image" content="https://vynix.in/resources/assets/og/controlling-who-can-see-the-vynix-widget.png" />
+<meta property="og:description" content="Limit the Vynix widget to the right users, environments, or pages by controlling where and when the widget script loads." />
+<meta property="og:url" content="https://www.vynix.in/resources/kb/controlling-who-can-see-the-vynix-widget/" />
+<meta property="og:image" content="https://www.vynix.in/resources/assets/og/controlling-who-can-see-the-vynix-widget.png" />
 <meta property="og:site_name" content="Vynix" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@usevynix" />
 <meta name="twitter:title" content="Controlling who can see the Vynix widget | Vynix Help" />
-<meta name="twitter:description" content="Limit who can see the Vynix widget by loading it only for approved users, environments, or internal teams." />
-<meta name="twitter:image" content="https://vynix.in/resources/assets/og/controlling-who-can-see-the-vynix-widget.png" />
-<meta property="article:published_time" content="2026-06-21T19:44:57.653Z" />
-<meta property="article:modified_time" content="2026-06-21T19:44:57.653Z" />
+<meta name="twitter:description" content="Limit the Vynix widget to the right users, environments, or pages by controlling where and when the widget script loads." />
+<meta name="twitter:image" content="https://www.vynix.in/resources/assets/og/controlling-who-can-see-the-vynix-widget.png" />
+<meta property="article:published_time" content="2026-06-22T03:26:53.587Z" />
+<meta property="article:modified_time" content="2026-06-22T03:26:53.587Z" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -29,19 +33,62 @@
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://vynix.in"
+      "item": "https://www.vynix.in"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Help",
-      "item": "https://vynix.in/resources/kb/"
+      "item": "https://www.vynix.in/resources/kb/"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Controlling who can see the Vynix widget",
-      "item": "https://vynix.in/resources/kb/controlling-who-can-see-the-vynix-widget/"
+      "item": "https://www.vynix.in/resources/kb/controlling-who-can-see-the-vynix-widget/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Controlling who can see the Vynix widget",
+  "description": "Limit the Vynix widget to the right users, environments, or pages by controlling where and when the widget script loads.",
+  "image": [
+    "https://www.vynix.in/resources/assets/og/controlling-who-can-see-the-vynix-widget.png"
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Decide who should have access, such as internal users, QA te",
+      "text": "Decide who should have access, such as internal users, QA testers, developers, or signed-in users with a specific role."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Add the Vynix widget only in the environments where you want",
+      "text": "Add the Vynix widget only in the environments where you want it to appear, such as staging, preview, or selected production pages."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Wrap the Vynix install snippet in your own access check, for",
+      "text": "Wrap the Vynix install snippet in your own access check, for example a signed-in user check, role check, feature flag, or environment check."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Avoid loading the widget for visitors who should not use it.",
+      "text": "Avoid loading the widget for visitors who should not use it. If the script is not added to the page, the widget will not appear."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Test with an approved user and a non-approved user to confir",
+      "text": "Test with an approved user and a non-approved user to confirm the widget appears only for the right audience."
     }
   ]
 }
@@ -53,18 +100,18 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Can I hide the widget with CSS?",
+      "name": "Can I show the Vynix widget only on staging?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "You can, but it is not recommended as the main control. If the script still loads, the widget code is still present on the page. It is better to prevent the Vynix script from loading for users who should not see it."
+        "text": "Yes. Add the Vynix snippet only when your app is running in your staging or preview environment. Do not include it in production unless you want approved production users to see it."
       }
     },
     {
       "@type": "Question",
-      "name": "Can I show Vynix only on staging or test sites?",
+      "name": "Can I show the widget only to certain signed-in users?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Add an environment check around the widget install code, or configure your deployment so the widget is only included in staging, preview, or test builds."
+        "text": "Yes. Use your app's existing authentication, role, or feature flag logic. Load the Vynix widget only after confirming the current user is allowed to see it."
       }
     }
   ]
@@ -75,8 +122,8 @@
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Vynix",
-  "url": "https://vynix.in",
-  "logo": "https://vynix.in/icon-512.png",
+  "url": "https://www.vynix.in",
+  "logo": "https://www.vynix.in/icon-512.png",
   "sameAs": [
     "https://github.com/vynix-in",
     "https://twitter.com/usevynix"
@@ -113,6 +160,8 @@ article h3{font-size:1.2rem;margin:1.4em 0 .4em}
 figure{margin:24px 0}
 figure img,figure video{border:1px solid var(--line);width:100%}
 figcaption{color:var(--muted);font-size:.85rem;margin-top:8px;text-align:center}
+.ill-hero{margin:18px 0 26px}
+.ill-hero svg{border:1px solid var(--line);border-radius:16px;box-shadow:0 8px 24px rgba(15,23,42,.06)}
 table{width:100%;border-collapse:collapse;margin:22px 0;font-size:.96rem}
 th,td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
 th{background:var(--soft);font-weight:600}
@@ -139,73 +188,38 @@ td.yes{color:var(--green);font-weight:600}
 </head>
 <body>
 <header class="site-header"><div class="container">
-  <a class="brand" href="https://vynix.in"><span class="mark"></span> Vynix</a>
+  <a class="brand" href="https://www.vynix.in"><svg class="vx-logo" viewBox="0 0 1024 1024" width="28" height="28" fill="none" aria-hidden="true"><g transform="translate(0,1024) scale(0.1,-0.1)" fill="#008448"><path d="M30 8675 c0 -2 600 -532 1333 -1177 732 -645 1878 -1653 2544 -2240 l1213 -1068 1087 958 c599 526 1744 1535 2546 2240 801 706 1457 1285 1457 1288 0 2 -17 -6 -37 -19 -21 -13 -1166 -713 -2546 -1555 l-2507 -1532 -2388 1458 c-1313 803 -2458 1502 -2544 1555 -87 53 -158 95 -158 92z M1745 8503 c17 -11 783 -489 1702 -1061 l1673 -1042 1702 1061 c937 584 1694 1059 1683 1057 -11 -3 -777 -249 -1703 -548 l-1682 -543 -1683 543 c-1829 590 -1735 561 -1692 533z M1087 6789 c3048 -4001 4027 -5284 4033 -5284 9 0 4169 5458 4165 5463 -2 2 -295 -252 -652 -565 -356 -313 -1288 -1130 -2071 -1816 -783 -687 -1429 -1250 -1436 -1253 -8 -3 -239 192 -547 463 -1857 1629 -3606 3160 -3618 3168 -8 4 49 -74 126 -176z"/></g></svg><span class="brand-name">Vynix</span></a>
   <nav class="main">
-    <a href="https://vynix.in">Product</a><a href="/resources/blog/">Blog</a><a href="/resources/compare/">Compare</a><a href="https://vynix.in/docs">Docs</a><a href="/resources/kb/">Help</a>
-    <a class="cta" href="https://vynix.in">Try free</a>
+    <a href="https://www.vynix.in">Product</a><a href="/resources/blog/">Blog</a><a href="/resources/compare/">Compare</a><a href="/resources/best/">Guides</a><a href="/resources/for/">Use cases</a><a href="/resources/kb/">Help</a>
+    <a class="cta" href="https://www.vynix.in">Try free</a>
   </nav>
 </div></header>
 <main class="container">
-<div class="breadcrumbs container"><a href="https://vynix.in">Home</a> / <a href="/resources/kb/">Help</a> / <span>Controlling who can see the Vynix widget</span></div>
+<div class="breadcrumbs container"><a href="https://www.vynix.in">Home</a> / <a href="/resources/kb/">Help</a> / <span>Controlling who can see the Vynix widget</span></div>
 <article>
   <span class="tag">guide</span>
   <h1>Controlling who can see the Vynix widget</h1>
-  <div class="meta-row"><span>Updated 21 June 2026</span></div>
-  <p class="lead">You can limit who sees the Vynix widget by controlling when the widget script loads on your site. The safest approach is to show it only to approved users, roles, or environments.</p>
-<figure class="ill-hero"><svg class="vx-ill" viewBox="0 0 640 360" role="img" aria-label="Handing a Vynix report to a coding agent" preserveAspectRatio="xMidYMid meet" style="width:100%;height:auto;aspect-ratio:16 / 9;display:block">
-  <defs>
-    <linearGradient id="vxho-bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#f6fdfa"/><stop offset="1" stop-color="#ecfdf5"/>
-    </linearGradient>
-    <linearGradient id="vxho-g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#008448"/><stop offset="1" stop-color="#15c47d"/>
-    </linearGradient>
-    <filter id="vxho-s" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.10"/>
-    </filter>
-  </defs>
-  <rect x="1" y="1" width="638" height="358" rx="22" fill="url(#vxho-bg)" stroke="#d1fae5"/>
-  <style>
-    .vxho-pulse{transform-box:fill-box;transform-origin:center;animation:vxho-pulse 2.6s ease-in-out infinite}
-    @keyframes vxho-pulse{0%,100%{opacity:.55;transform:scale(.92)}50%{opacity:1;transform:scale(1.06)}}
-    .vxho-dash{stroke-dasharray:8 10;animation:vxho-dash 1.4s linear infinite}
-    @keyframes vxho-dash{to{stroke-dashoffset:-36}}
-    .vxho-float{animation:vxho-float 4s ease-in-out infinite}
-    @keyframes vxho-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
-    .vxho-in{opacity:0;animation:vxho-in 6s ease-in-out infinite}
-    @keyframes vxho-in{0%,8%{opacity:0;transform:translateY(8px)}18%,72%{opacity:1;transform:translateY(0)}88%,100%{opacity:0}}
-  </style>
-  <rect x="60" y="120" width="180" height="120" rx="14" fill="#ffffff" stroke="#e2e8f0" filter="url(#vxho-s)"/>
-     <circle cx="90" cy="150" r="9" fill="#15c47d"/>
-     <rect x="108" y="145" width="100" height="9" rx="4" fill="#0f172a"/>
-     <rect x="80" y="178" width="140" height="8" rx="4" fill="#e2e8f0"/>
-     <rect x="80" y="198" width="120" height="8" rx="4" fill="#eef2f7"/>
-     <path d="M250 180 h120" stroke="url(#vxho-g)" stroke-width="3" class="vxho-dash" marker-end=""/>
-     <path d="M362 172 l16 8 -16 8 z" fill="#008448"/>
-     <rect x="400" y="120" width="180" height="120" rx="14" fill="#052e1b" filter="url(#vxho-s)"/>
-     <circle cx="430" cy="150" r="10" fill="none" stroke="#34d399" stroke-width="2.5" class="vxho-pulse"/>
-     <path d="M425 150 l4 4 7 -8" fill="none" stroke="#34d399" stroke-width="2.5" stroke-linecap="round"/>
-     <rect x="450" y="145" width="100" height="9" rx="4" fill="#34d399"/>
-     <rect x="420" y="178" width="140" height="8" rx="4" fill="#1e5b43"/>
-     <rect x="420" y="198" width="110" height="8" rx="4" fill="#1e5b43"/>
-     <text x="150" y="104" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#065f46">Report</text>
-     <text x="490" y="104" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#065f46">Coding agent</text>
-</svg></figure>
-  <ol><li>Decide who should have access, such as developers, QA testers, admins, or users in a private beta.</li><li>Add a condition around the Vynix widget install code so it only runs when the current user or environment is allowed.</li><li>Use your existing access logic where possible, such as logged-in user roles, feature flags, workspace settings, or environment checks.</li><li>Avoid loading the widget script at all for users who should not see it. Hiding it with CSS is not enough.</li><li>Test with both allowed and blocked accounts to confirm the widget appears only where expected.</li></ol>
-  <p>Vynix works by adding a lightweight widget to your website. If the widget script is loaded, users may be able to open it and create annotations. To limit visibility, place the install snippet behind your own access checks instead of adding it globally to every page.</p><p>Common options include showing Vynix only in staging, only for signed-in team members, only for admin roles, or only when a feature flag is enabled. For example, your app can check the current user's role before rendering the Vynix snippet.</p><p>For production sites, use server-side or application-level checks when possible. This helps prevent the widget from being sent to users who should not have access. Client-side checks can be useful for convenience, but they should not be your only control if access is sensitive.</p><p>If you are using a tag manager, make sure the tag trigger follows the same rules. Do not publish the Vynix tag on all pages unless everyone who can visit those pages should see it.</p><p>For the latest install options and configuration details, see the Vynix documentation at https://vynix.in/docs.</p>
-  <figure><img src="/resources/assets/shots/shot-install.png" alt="Installing the Vynix widget with one script tag" loading="lazy" width="1344" height="496" /><figcaption>Installing the Vynix widget with one script tag</figcaption></figure>
-  <section class="faq"><h2>Related questions</h2><h3>Can I hide the widget with CSS?</h3><p>You can, but it is not recommended as the main control. If the script still loads, the widget code is still present on the page. It is better to prevent the Vynix script from loading for users who should not see it.</p><h3>Can I show Vynix only on staging or test sites?</h3><p>Yes. Add an environment check around the widget install code, or configure your deployment so the widget is only included in staging, preview, or test builds.</p></section>
-  <div class="callout"><strong>Still need help?</strong><p>Read the full <a href="https://vynix.in/docs">documentation</a> or email hello@vynix.in.</p></div>
-</article>
+  <div class="meta-row"><span>Updated 22 June 2026</span></div>
+  <p class="lead">You can limit who sees the Vynix widget by controlling when the widget is loaded on your site. The safest approach is to only include the Vynix script for approved users, roles, environments, or pages.</p>
+
+  <ol><li>Decide who should have access, such as internal users, QA testers, developers, or signed-in users with a specific role.</li><li>Add the Vynix widget only in the environments where you want it to appear, such as staging, preview, or selected production pages.</li><li>Wrap the Vynix install snippet in your own access check, for example a signed-in user check, role check, feature flag, or environment check.</li><li>Avoid loading the widget for visitors who should not use it. If the script is not added to the page, the widget will not appear.</li><li>Test with an approved user and a non-approved user to confirm the widget appears only for the right audience.</li></ol>
+  <p>Vynix works by adding a lightweight widget to your site. To control visibility, control where that widget script is included. This is usually handled in your application code, tag manager, or feature flag system.</p><p>Common options include showing the widget only on staging, only to authenticated team members, only to users with an admin or QA role, or only when a feature flag is enabled. You can also limit it by route if you only want Vynix available on certain parts of your app.</p><p>For the best results, make the access decision before the Vynix script loads. Hiding the widget with CSS is not recommended, because the script may still run on the page.</p><p>If your setup uses a framework, add the Vynix snippet to the layout, app shell, or page component only after your access check passes. For exact installation details, see the Vynix docs.</p>
+  <figure><img src="/resources/assets/shots/shot-install.png" alt="Installing the Vynix widget with one script tag and confirming it is live" loading="lazy" width="1080" height="1350" /><figcaption>Installing the Vynix widget with one script tag and confirming it is live</figcaption></figure>
+  <section class="faq"><figure class="hero"><img src="/resources/assets/banners/controlling-who-can-see-the-vynix-widget.png" alt="Controlling who can see the Vynix widget" width="1200" height="630" /></figure><h2>Related questions</h2><h3>Can I show the Vynix widget only on staging?</h3><p>Yes. Add the Vynix snippet only when your app is running in your staging or preview environment. Do not include it in production unless you want approved production users to see it.</p><h3>Can I show the widget only to certain signed-in users?</h3><p>Yes. Use your app's existing authentication, role, or feature flag logic. Load the Vynix widget only after confirming the current user is allowed to see it.</p></section>
+  <div class="callout"><strong>Still need help?</strong><p>Read the full <a href="https://www.vynix.in/docs">documentation</a> or email hello@vynix.in.</p></div>
+<section class="related"><h2>Help articles</h2><ul><li><a href="/resources/kb/what-context-vynix-captures-with-each-report/">What context Vynix captures with each report</a></li><li><a href="/resources/kb/fixing-a-report-with-no-screenshot/">Fixing a report with no screenshot</a></li><li><a href="/resources/kb/fixing-a-widget-that-does-not-appear/">Fixing a widget that does not appear</a></li><li><a href="/resources/kb/how-the-vynix-ai-diagnosis-works/">How the Vynix AI diagnosis works</a></li></ul></section></article>
 </main>
 <footer class="site-footer"><div class="container">
-  <div>&copy; 2026 Vynix &middot; <a href="https://vynix.in">vynix.in</a></div>
+  <div>&copy; 2026 Vynix &middot; <a href="https://www.vynix.in">vynix.in</a></div>
   <div>
     <a href="/resources/blog/">Blog</a> &middot;
     <a href="/resources/compare/">Compare</a> &middot;
+    <a href="/resources/best/">Guides</a> &middot;
+    <a href="/resources/glossary/">Glossary</a> &middot;
     <a href="/resources/kb/">Help</a> &middot;
+    <a href="/resources/badge/">Badge</a> &middot;
     <a href="https://github.com/vynix-in">GitHub</a> &middot;
-    <a href="https://vynix.in/privacy">Privacy</a>
+    <a href="https://www.vynix.in/privacy">Privacy</a>
   </div>
 </div></footer>
 </body>

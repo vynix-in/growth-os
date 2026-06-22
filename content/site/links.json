@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-21T21:04:47.179Z",
+  "generated": "2026-06-22T17:00:08.056Z",
   "base": "https://vynix-in.github.io",
   "total": 98,
   "live": 98,
@@ -8,589 +8,589 @@
       "url": "https://vynix-in.github.io/",
       "status": 200,
       "ok": true,
-      "ms": 231
+      "ms": 53
     },
     {
       "url": "https://vynix-in.github.io/blog/",
       "status": 200,
       "ok": true,
-      "ms": 368
+      "ms": 361
     },
     {
       "url": "https://vynix-in.github.io/compare/",
       "status": 200,
       "ok": true,
-      "ms": 290
+      "ms": 449
     },
     {
       "url": "https://vynix-in.github.io/kb/",
       "status": 200,
       "ok": true,
-      "ms": 273
+      "ms": 435
     },
     {
       "url": "https://vynix-in.github.io/best/",
       "status": 200,
       "ok": true,
-      "ms": 281
+      "ms": 316
     },
     {
       "url": "https://vynix-in.github.io/for/",
       "status": 200,
       "ok": true,
-      "ms": 287
+      "ms": 318
     },
     {
       "url": "https://vynix-in.github.io/glossary/",
       "status": 200,
       "ok": true,
-      "ms": 245
+      "ms": 258
     },
     {
       "url": "https://vynix-in.github.io/badge/",
       "status": 200,
       "ok": true,
-      "ms": 233
-    },
-    {
-      "url": "https://vynix-in.github.io/blog/how-to-write-bug-reports-ai-agents-can-fix/",
-      "status": 200,
-      "ok": true,
-      "ms": 244
+      "ms": 264
     },
     {
       "url": "https://vynix-in.github.io/blog/how-vynix-cuts-the-cost-of-running-ai-coding-agents/",
       "status": 200,
       "ok": true,
-      "ms": 253
-    },
-    {
-      "url": "https://vynix-in.github.io/blog/the-context-an-ai-agent-needs-to-fix-front-end-bugs/",
-      "status": 200,
-      "ok": true,
-      "ms": 229
+      "ms": 255
     },
     {
       "url": "https://vynix-in.github.io/blog/what-a-feedback-layer-is-and-why-ai-teams-need-one/",
       "status": 200,
       "ok": true,
-      "ms": 227
+      "ms": 435
     },
     {
       "url": "https://vynix-in.github.io/blog/turn-a-visual-note-into-a-github-issue-in-one-step/",
       "status": 200,
       "ok": true,
-      "ms": 231
+      "ms": 261
     },
     {
       "url": "https://vynix-in.github.io/blog/how-vynix-captures-console-and-network-detail/",
       "status": 200,
       "ok": true,
-      "ms": 236
+      "ms": 285
     },
     {
       "url": "https://vynix-in.github.io/blog/using-the-vynix-mcp-server-with-your-ai-agent/",
       "status": 200,
       "ok": true,
-      "ms": 232
-    },
-    {
-      "url": "https://vynix-in.github.io/blog/from-a-reported-bug-to-a-merged-fix/",
-      "status": 200,
-      "ok": true,
-      "ms": 228
+      "ms": 245
     },
     {
       "url": "https://vynix-in.github.io/blog/collecting-website-feedback-from-clients-and-teammates/",
       "status": 200,
       "ok": true,
-      "ms": 228
+      "ms": 246
     },
     {
       "url": "https://vynix-in.github.io/blog/how-vynix-works-from-a-click-to-a-fix/",
       "status": 200,
       "ok": true,
-      "ms": 226
-    },
-    {
-      "url": "https://vynix-in.github.io/blog/who-vynix-is-for-and-what-it-fixes/",
-      "status": 200,
-      "ok": true,
-      "ms": 226
+      "ms": 330
     },
     {
       "url": "https://vynix-in.github.io/blog/point-and-click-feedback-on-any-web-page/",
       "status": 200,
       "ok": true,
-      "ms": 230
-    },
-    {
-      "url": "https://vynix-in.github.io/blog/reading-the-vynix-ai-diagnosis-and-the-files-it-finds/",
-      "status": 200,
-      "ok": true,
-      "ms": 231
+      "ms": 238
     },
     {
       "url": "https://vynix-in.github.io/blog/review-rounds-turn-notes-into-a-short-fix-list/",
       "status": 200,
       "ok": true,
-      "ms": 232
+      "ms": 256
     },
     {
       "url": "https://vynix-in.github.io/blog/region-and-element-screenshots-in-vynix/",
       "status": 200,
       "ok": true,
-      "ms": 234
+      "ms": 370
     },
     {
       "url": "https://vynix-in.github.io/blog/projects-roles-and-sharing-in-vynix/",
       "status": 200,
       "ok": true,
-      "ms": 235
+      "ms": 247
     },
     {
       "url": "https://vynix-in.github.io/blog/how-to-install-vynix-on-any-website/",
       "status": 200,
       "ok": true,
-      "ms": 243
+      "ms": 262
     },
     {
       "url": "https://vynix-in.github.io/blog/how-to-connect-github-and-hand-work-to-copilot/",
       "status": 200,
       "ok": true,
-      "ms": 234
+      "ms": 259
     },
     {
       "url": "https://vynix-in.github.io/blog/vynix-plans-and-how-to-pick-the-right-one/",
       "status": 200,
       "ok": true,
-      "ms": 231
+      "ms": 254
     },
     {
       "url": "https://vynix-in.github.io/blog/what-we-are-building-next-at-vynix/",
       "status": 200,
       "ok": true,
-      "ms": 233
+      "ms": 251
     },
     {
-      "url": "https://vynix-in.github.io/compare/jam-vs-vynix/",
+      "url": "https://vynix-in.github.io/blog/how-to-write-bug-reports-an-ai-coding-agent-can-fix/",
       "status": 200,
       "ok": true,
-      "ms": 230
+      "ms": 269
     },
     {
-      "url": "https://vynix-in.github.io/compare/marker-io-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 230
-    },
-    {
-      "url": "https://vynix-in.github.io/compare/usersnap-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 230
-    },
-    {
-      "url": "https://vynix-in.github.io/compare/sentry-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 237
-    },
-    {
-      "url": "https://vynix-in.github.io/compare/bugsnag-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 234
-    },
-    {
-      "url": "https://vynix-in.github.io/compare/logrocket-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 235
-    },
-    {
-      "url": "https://vynix-in.github.io/compare/hotjar-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 224
-    },
-    {
-      "url": "https://vynix-in.github.io/compare/instabug-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 238
-    },
-    {
-      "url": "https://vynix-in.github.io/compare/linear-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 230
-    },
-    {
-      "url": "https://vynix-in.github.io/compare/jira-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 231
-    },
-    {
-      "url": "https://vynix-in.github.io/compare/bugherd-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 231
-    },
-    {
-      "url": "https://vynix-in.github.io/compare/userback-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 238
-    },
-    {
-      "url": "https://vynix-in.github.io/compare/fullstory-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 234
-    },
-    {
-      "url": "https://vynix-in.github.io/compare/smartlook-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 224
-    },
-    {
-      "url": "https://vynix-in.github.io/compare/mouseflow-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 235
-    },
-    {
-      "url": "https://vynix-in.github.io/compare/trello-vs-vynix/",
+      "url": "https://vynix-in.github.io/blog/the-context-an-ai-agent-needs-to-fix-a-front-end-bug/",
       "status": 200,
       "ok": true,
       "ms": 239
     },
     {
-      "url": "https://vynix-in.github.io/compare/asana-vs-vynix/",
+      "url": "https://vynix-in.github.io/blog/from-reported-bug-to-merged-fix/",
       "status": 200,
       "ok": true,
-      "ms": 234
+      "ms": 391
     },
     {
-      "url": "https://vynix-in.github.io/compare/clickup-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 231
-    },
-    {
-      "url": "https://vynix-in.github.io/compare/shortcut-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 232
-    },
-    {
-      "url": "https://vynix-in.github.io/compare/ruttl-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 232
-    },
-    {
-      "url": "https://vynix-in.github.io/compare/pastel-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 227
-    },
-    {
-      "url": "https://vynix-in.github.io/compare/markup-io-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 232
-    },
-    {
-      "url": "https://vynix-in.github.io/compare/bird-eats-bug-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 233
-    },
-    {
-      "url": "https://vynix-in.github.io/compare/replay-io-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 227
-    },
-    {
-      "url": "https://vynix-in.github.io/kb/how-to-install-the-vynix-widget-on-any-website/",
-      "status": 200,
-      "ok": true,
-      "ms": 253
-    },
-    {
-      "url": "https://vynix-in.github.io/kb/turning-a-vynix-note-into-a-github-issue/",
-      "status": 200,
-      "ok": true,
-      "ms": 228
-    },
-    {
-      "url": "https://vynix-in.github.io/kb/controlling-who-can-see-the-vynix-widget/",
-      "status": 200,
-      "ok": true,
-      "ms": 232
-    },
-    {
-      "url": "https://vynix-in.github.io/kb/using-review-rounds-to-group-feedback-into-fixes/",
-      "status": 200,
-      "ok": true,
-      "ms": 228
-    },
-    {
-      "url": "https://vynix-in.github.io/kb/what-context-vynix-captures-with-each-report/",
-      "status": 200,
-      "ok": true,
-      "ms": 234
-    },
-    {
-      "url": "https://vynix-in.github.io/kb/how-the-vynix-ai-diagnosis-works/",
-      "status": 200,
-      "ok": true,
-      "ms": 238
-    },
-    {
-      "url": "https://vynix-in.github.io/kb/fixing-a-widget-that-does-not-appear/",
-      "status": 200,
-      "ok": true,
-      "ms": 226
-    },
-    {
-      "url": "https://vynix-in.github.io/kb/fixing-a-report-with-no-screenshot/",
+      "url": "https://vynix-in.github.io/blog/who-vynix-is-for-and-the-problems-it-solves/",
       "status": 200,
       "ok": true,
       "ms": 237
     },
     {
-      "url": "https://vynix-in.github.io/best/best-bug-reporting-tools/",
+      "url": "https://vynix-in.github.io/blog/reading-the-vynix-ai-diagnosis-and-found-files/",
       "status": 200,
       "ok": true,
-      "ms": 236
+      "ms": 273
     },
     {
-      "url": "https://vynix-in.github.io/best/best-visual-feedback-tools/",
+      "url": "https://vynix-in.github.io/compare/jam-vs-vynix/",
       "status": 200,
       "ok": true,
-      "ms": 234
+      "ms": 421
     },
     {
-      "url": "https://vynix-in.github.io/best/best-tools-for-ai-coding-agents/",
+      "url": "https://vynix-in.github.io/compare/marker-io-vs-vynix/",
       "status": 200,
       "ok": true,
-      "ms": 230
+      "ms": 357
     },
     {
-      "url": "https://vynix-in.github.io/best/best-website-feedback-tools-for-agencies/",
+      "url": "https://vynix-in.github.io/compare/usersnap-vs-vynix/",
       "status": 200,
       "ok": true,
-      "ms": 243
+      "ms": 259
     },
     {
-      "url": "https://vynix-in.github.io/alternatives/jam-alternatives/",
-      "status": 200,
-      "ok": true,
-      "ms": 246
-    },
-    {
-      "url": "https://vynix-in.github.io/alternatives/marker-io-alternatives/",
-      "status": 200,
-      "ok": true,
-      "ms": 235
-    },
-    {
-      "url": "https://vynix-in.github.io/alternatives/bugherd-alternatives/",
-      "status": 200,
-      "ok": true,
-      "ms": 234
-    },
-    {
-      "url": "https://vynix-in.github.io/alternatives/usersnap-alternatives/",
-      "status": 200,
-      "ok": true,
-      "ms": 231
-    },
-    {
-      "url": "https://vynix-in.github.io/best/best-session-replay-tools/",
+      "url": "https://vynix-in.github.io/compare/sentry-vs-vynix/",
       "status": 200,
       "ok": true,
       "ms": 242
     },
     {
-      "url": "https://vynix-in.github.io/best/best-error-monitoring-tools/",
+      "url": "https://vynix-in.github.io/compare/bugsnag-vs-vynix/",
       "status": 200,
       "ok": true,
-      "ms": 225
+      "ms": 252
     },
     {
-      "url": "https://vynix-in.github.io/best/best-website-feedback-tools/",
+      "url": "https://vynix-in.github.io/compare/logrocket-vs-vynix/",
       "status": 200,
       "ok": true,
-      "ms": 238
+      "ms": 274
     },
     {
-      "url": "https://vynix-in.github.io/best/best-issue-tracking-tools-for-developers/",
+      "url": "https://vynix-in.github.io/compare/hotjar-vs-vynix/",
       "status": 200,
       "ok": true,
-      "ms": 226
+      "ms": 329
     },
     {
-      "url": "https://vynix-in.github.io/alternatives/hotjar-alternatives/",
+      "url": "https://vynix-in.github.io/compare/instabug-vs-vynix/",
       "status": 200,
       "ok": true,
-      "ms": 234
+      "ms": 307
     },
     {
-      "url": "https://vynix-in.github.io/alternatives/logrocket-alternatives/",
+      "url": "https://vynix-in.github.io/compare/linear-vs-vynix/",
       "status": 200,
       "ok": true,
-      "ms": 230
+      "ms": 340
     },
     {
-      "url": "https://vynix-in.github.io/for/agencies/",
+      "url": "https://vynix-in.github.io/compare/jira-vs-vynix/",
       "status": 200,
       "ok": true,
-      "ms": 229
+      "ms": 274
     },
     {
-      "url": "https://vynix-in.github.io/for/qa-teams/",
+      "url": "https://vynix-in.github.io/compare/bugherd-vs-vynix/",
       "status": 200,
       "ok": true,
-      "ms": 238
+      "ms": 245
     },
     {
-      "url": "https://vynix-in.github.io/for/startups/",
+      "url": "https://vynix-in.github.io/compare/userback-vs-vynix/",
       "status": 200,
       "ok": true,
-      "ms": 237
+      "ms": 251
     },
     {
-      "url": "https://vynix-in.github.io/for/designers/",
+      "url": "https://vynix-in.github.io/compare/fullstory-vs-vynix/",
       "status": 200,
       "ok": true,
-      "ms": 227
+      "ms": 254
     },
     {
-      "url": "https://vynix-in.github.io/for/ai-developers/",
+      "url": "https://vynix-in.github.io/compare/smartlook-vs-vynix/",
       "status": 200,
       "ok": true,
-      "ms": 226
+      "ms": 338
     },
     {
-      "url": "https://vynix-in.github.io/for/support-teams/",
-      "status": 200,
-      "ok": true,
-      "ms": 231
-    },
-    {
-      "url": "https://vynix-in.github.io/for/saas-teams/",
-      "status": 200,
-      "ok": true,
-      "ms": 233
-    },
-    {
-      "url": "https://vynix-in.github.io/for/ecommerce/",
-      "status": 200,
-      "ok": true,
-      "ms": 238
-    },
-    {
-      "url": "https://vynix-in.github.io/for/open-source/",
-      "status": 200,
-      "ok": true,
-      "ms": 235
-    },
-    {
-      "url": "https://vynix-in.github.io/for/remote-teams/",
+      "url": "https://vynix-in.github.io/compare/mouseflow-vs-vynix/",
       "status": 200,
       "ok": true,
       "ms": 234
     },
     {
-      "url": "https://vynix-in.github.io/glossary/bug-report/",
+      "url": "https://vynix-in.github.io/compare/trello-vs-vynix/",
       "status": 200,
       "ok": true,
-      "ms": 241
+      "ms": 253
     },
     {
-      "url": "https://vynix-in.github.io/glossary/visual-feedback/",
+      "url": "https://vynix-in.github.io/compare/asana-vs-vynix/",
       "status": 200,
       "ok": true,
-      "ms": 228
+      "ms": 318
     },
     {
-      "url": "https://vynix-in.github.io/glossary/session-replay/",
+      "url": "https://vynix-in.github.io/compare/clickup-vs-vynix/",
       "status": 200,
       "ok": true,
-      "ms": 236
+      "ms": 319
     },
     {
-      "url": "https://vynix-in.github.io/glossary/error-monitoring/",
+      "url": "https://vynix-in.github.io/compare/shortcut-vs-vynix/",
       "status": 200,
       "ok": true,
-      "ms": 230
+      "ms": 255
     },
     {
-      "url": "https://vynix-in.github.io/glossary/website-annotation/",
+      "url": "https://vynix-in.github.io/compare/ruttl-vs-vynix/",
       "status": 200,
       "ok": true,
-      "ms": 228
+      "ms": 249
     },
     {
-      "url": "https://vynix-in.github.io/glossary/developer-context/",
+      "url": "https://vynix-in.github.io/compare/pastel-vs-vynix/",
+      "status": 200,
+      "ok": true,
+      "ms": 247
+    },
+    {
+      "url": "https://vynix-in.github.io/compare/markup-io-vs-vynix/",
+      "status": 200,
+      "ok": true,
+      "ms": 359
+    },
+    {
+      "url": "https://vynix-in.github.io/compare/bird-eats-bug-vs-vynix/",
+      "status": 200,
+      "ok": true,
+      "ms": 244
+    },
+    {
+      "url": "https://vynix-in.github.io/compare/replay-io-vs-vynix/",
       "status": 200,
       "ok": true,
       "ms": 250
     },
     {
-      "url": "https://vynix-in.github.io/glossary/root-cause-analysis/",
+      "url": "https://vynix-in.github.io/kb/how-to-install-the-vynix-widget-on-any-website/",
       "status": 200,
       "ok": true,
-      "ms": 227
+      "ms": 254
     },
     {
-      "url": "https://vynix-in.github.io/glossary/feedback-loop/",
+      "url": "https://vynix-in.github.io/kb/turning-a-vynix-note-into-a-github-issue/",
+      "status": 200,
+      "ok": true,
+      "ms": 240
+    },
+    {
+      "url": "https://vynix-in.github.io/kb/controlling-who-can-see-the-vynix-widget/",
+      "status": 200,
+      "ok": true,
+      "ms": 252
+    },
+    {
+      "url": "https://vynix-in.github.io/kb/using-review-rounds-to-group-feedback-into-fixes/",
+      "status": 200,
+      "ok": true,
+      "ms": 252
+    },
+    {
+      "url": "https://vynix-in.github.io/kb/what-context-vynix-captures-with-each-report/",
+      "status": 200,
+      "ok": true,
+      "ms": 255
+    },
+    {
+      "url": "https://vynix-in.github.io/kb/how-the-vynix-ai-diagnosis-works/",
+      "status": 200,
+      "ok": true,
+      "ms": 257
+    },
+    {
+      "url": "https://vynix-in.github.io/kb/fixing-a-widget-that-does-not-appear/",
+      "status": 200,
+      "ok": true,
+      "ms": 238
+    },
+    {
+      "url": "https://vynix-in.github.io/kb/fixing-a-report-with-no-screenshot/",
+      "status": 200,
+      "ok": true,
+      "ms": 247
+    },
+    {
+      "url": "https://vynix-in.github.io/best/best-bug-reporting-tools/",
+      "status": 200,
+      "ok": true,
+      "ms": 345
+    },
+    {
+      "url": "https://vynix-in.github.io/best/best-visual-feedback-tools/",
+      "status": 200,
+      "ok": true,
+      "ms": 309
+    },
+    {
+      "url": "https://vynix-in.github.io/best/best-tools-for-ai-coding-agents/",
+      "status": 200,
+      "ok": true,
+      "ms": 270
+    },
+    {
+      "url": "https://vynix-in.github.io/best/best-website-feedback-tools-for-agencies/",
+      "status": 200,
+      "ok": true,
+      "ms": 248
+    },
+    {
+      "url": "https://vynix-in.github.io/alternatives/jam-alternatives/",
+      "status": 200,
+      "ok": true,
+      "ms": 260
+    },
+    {
+      "url": "https://vynix-in.github.io/alternatives/marker-io-alternatives/",
+      "status": 200,
+      "ok": true,
+      "ms": 263
+    },
+    {
+      "url": "https://vynix-in.github.io/alternatives/bugherd-alternatives/",
+      "status": 200,
+      "ok": true,
+      "ms": 248
+    },
+    {
+      "url": "https://vynix-in.github.io/alternatives/usersnap-alternatives/",
+      "status": 200,
+      "ok": true,
+      "ms": 257
+    },
+    {
+      "url": "https://vynix-in.github.io/best/best-session-replay-tools/",
+      "status": 200,
+      "ok": true,
+      "ms": 256
+    },
+    {
+      "url": "https://vynix-in.github.io/best/best-error-monitoring-tools/",
+      "status": 200,
+      "ok": true,
+      "ms": 248
+    },
+    {
+      "url": "https://vynix-in.github.io/best/best-website-feedback-tools/",
+      "status": 200,
+      "ok": true,
+      "ms": 253
+    },
+    {
+      "url": "https://vynix-in.github.io/best/best-issue-tracking-tools-for-developers/",
+      "status": 200,
+      "ok": true,
+      "ms": 245
+    },
+    {
+      "url": "https://vynix-in.github.io/alternatives/hotjar-alternatives/",
       "status": 200,
       "ok": true,
       "ms": 236
     },
     {
+      "url": "https://vynix-in.github.io/alternatives/logrocket-alternatives/",
+      "status": 200,
+      "ok": true,
+      "ms": 244
+    },
+    {
+      "url": "https://vynix-in.github.io/for/agencies/",
+      "status": 200,
+      "ok": true,
+      "ms": 255
+    },
+    {
+      "url": "https://vynix-in.github.io/for/qa-teams/",
+      "status": 200,
+      "ok": true,
+      "ms": 254
+    },
+    {
+      "url": "https://vynix-in.github.io/for/startups/",
+      "status": 200,
+      "ok": true,
+      "ms": 247
+    },
+    {
+      "url": "https://vynix-in.github.io/for/designers/",
+      "status": 200,
+      "ok": true,
+      "ms": 242
+    },
+    {
+      "url": "https://vynix-in.github.io/for/ai-developers/",
+      "status": 200,
+      "ok": true,
+      "ms": 243
+    },
+    {
+      "url": "https://vynix-in.github.io/for/support-teams/",
+      "status": 200,
+      "ok": true,
+      "ms": 241
+    },
+    {
+      "url": "https://vynix-in.github.io/for/saas-teams/",
+      "status": 200,
+      "ok": true,
+      "ms": 244
+    },
+    {
+      "url": "https://vynix-in.github.io/for/ecommerce/",
+      "status": 200,
+      "ok": true,
+      "ms": 251
+    },
+    {
+      "url": "https://vynix-in.github.io/for/open-source/",
+      "status": 200,
+      "ok": true,
+      "ms": 250
+    },
+    {
+      "url": "https://vynix-in.github.io/for/remote-teams/",
+      "status": 200,
+      "ok": true,
+      "ms": 255
+    },
+    {
+      "url": "https://vynix-in.github.io/glossary/bug-report/",
+      "status": 200,
+      "ok": true,
+      "ms": 252
+    },
+    {
+      "url": "https://vynix-in.github.io/glossary/visual-feedback/",
+      "status": 200,
+      "ok": true,
+      "ms": 244
+    },
+    {
+      "url": "https://vynix-in.github.io/glossary/session-replay/",
+      "status": 200,
+      "ok": true,
+      "ms": 262
+    },
+    {
+      "url": "https://vynix-in.github.io/glossary/error-monitoring/",
+      "status": 200,
+      "ok": true,
+      "ms": 254
+    },
+    {
+      "url": "https://vynix-in.github.io/glossary/website-annotation/",
+      "status": 200,
+      "ok": true,
+      "ms": 258
+    },
+    {
+      "url": "https://vynix-in.github.io/glossary/developer-context/",
+      "status": 200,
+      "ok": true,
+      "ms": 265
+    },
+    {
+      "url": "https://vynix-in.github.io/glossary/root-cause-analysis/",
+      "status": 200,
+      "ok": true,
+      "ms": 331
+    },
+    {
+      "url": "https://vynix-in.github.io/glossary/feedback-loop/",
+      "status": 200,
+      "ok": true,
+      "ms": 250
+    },
+    {
       "url": "https://vynix-in.github.io/glossary/issue-tracker/",
       "status": 200,
       "ok": true,
-      "ms": 224
+      "ms": 245
     },
     {
       "url": "https://vynix-in.github.io/glossary/ai-coding-agent/",
       "status": 200,
       "ok": true,
-      "ms": 226
+      "ms": 254
     },
     {
       "url": "https://vynix-in.github.io/glossary/model-context-protocol/",
       "status": 200,
       "ok": true,
-      "ms": 231
+      "ms": 238
     },
     {
       "url": "https://vynix-in.github.io/glossary/regression/",
       "status": 200,
       "ok": true,
-      "ms": 227
+      "ms": 245
     },
     {
       "url": "https://vynix-in.github.io/glossary/console-error/",
       "status": 200,
       "ok": true,
-      "ms": 230
+      "ms": 319
     },
     {
       "url": "https://vynix-in.github.io/glossary/network-request/",
       "status": 200,
       "ok": true,
-      "ms": 602
+      "ms": 249
     }
   ]
 }

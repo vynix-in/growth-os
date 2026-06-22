@@ -3,23 +3,27 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#008448" />
+<link rel="icon" href="https://www.vynix.in/favicon.ico" />
+<link rel="icon" type="image/svg+xml" href="https://www.vynix.in/favicon.svg" />
+<link rel="apple-touch-icon" href="https://www.vynix.in/apple-touch-icon.png" />
 <title>How the Vynix AI diagnosis works | Vynix Help</title>
-<meta name="description" content="Learn how Vynix captures page context and uses AI to suggest the likely root cause of website issues." />
-<link rel="canonical" href="https://vynix.in/resources/kb/how-the-vynix-ai-diagnosis-works/" />
+<meta name="description" content="Learn how Vynix captures page context, analyzes likely causes, and turns website bugs into developer-ready fixes." />
+<link rel="canonical" href="https://www.vynix.in/resources/kb/how-the-vynix-ai-diagnosis-works/" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="How the Vynix AI diagnosis works | Vynix Help" />
-<meta property="og:description" content="Learn how Vynix captures page context and uses AI to suggest the likely root cause of website issues." />
-<meta property="og:url" content="https://vynix.in/resources/kb/how-the-vynix-ai-diagnosis-works/" />
-<meta property="og:image" content="https://vynix.in/resources/assets/og/how-the-vynix-ai-diagnosis-works.png" />
+<meta property="og:description" content="Learn how Vynix captures page context, analyzes likely causes, and turns website bugs into developer-ready fixes." />
+<meta property="og:url" content="https://www.vynix.in/resources/kb/how-the-vynix-ai-diagnosis-works/" />
+<meta property="og:image" content="https://www.vynix.in/resources/assets/og/how-the-vynix-ai-diagnosis-works.png" />
 <meta property="og:site_name" content="Vynix" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@usevynix" />
 <meta name="twitter:title" content="How the Vynix AI diagnosis works | Vynix Help" />
-<meta name="twitter:description" content="Learn how Vynix captures page context and uses AI to suggest the likely root cause of website issues." />
-<meta name="twitter:image" content="https://vynix.in/resources/assets/og/how-the-vynix-ai-diagnosis-works.png" />
-<meta property="article:published_time" content="2026-06-21T19:44:40.012Z" />
-<meta property="article:modified_time" content="2026-06-21T19:44:40.012Z" />
+<meta name="twitter:description" content="Learn how Vynix captures page context, analyzes likely causes, and turns website bugs into developer-ready fixes." />
+<meta name="twitter:image" content="https://www.vynix.in/resources/assets/og/how-the-vynix-ai-diagnosis-works.png" />
+<meta property="article:published_time" content="2026-06-22T03:26:36.530Z" />
+<meta property="article:modified_time" content="2026-06-22T03:26:36.530Z" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -29,19 +33,62 @@
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://vynix.in"
+      "item": "https://www.vynix.in"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Help",
-      "item": "https://vynix.in/resources/kb/"
+      "item": "https://www.vynix.in/resources/kb/"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "How the Vynix AI diagnosis works",
-      "item": "https://vynix.in/resources/kb/how-the-vynix-ai-diagnosis-works/"
+      "item": "https://www.vynix.in/resources/kb/how-the-vynix-ai-diagnosis-works/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How the Vynix AI diagnosis works",
+  "description": "Learn how Vynix captures page context, analyzes likely causes, and turns website bugs into developer-ready fixes.",
+  "image": [
+    "https://www.vynix.in/resources/assets/og/how-the-vynix-ai-diagnosis-works.png"
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Add the lightweight Vynix widget to the site you want to rev",
+      "text": "Add the lightweight Vynix widget to the site you want to review."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Open the site, click the widget, then select the element or ",
+      "text": "Open the site, click the widget, then select the element or area that looks wrong."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Vynix captures the selected element, a screenshot, and relev",
+      "text": "Vynix captures the selected element, a screenshot, and relevant browser context such as console messages and network activity."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "The AI reviews the captured context and generates a diagnosi",
+      "text": "The AI reviews the captured context and generates a diagnosis of the likely root cause."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Copy the ready-to-build prompt, or open a GitHub issue and a",
+      "text": "Copy the ready-to-build prompt, or open a GitHub issue and assign it to a coding agent or developer."
     }
   ]
 }
@@ -53,18 +100,18 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Does Vynix change my website when it diagnoses an issue?",
+      "name": "What information does Vynix use for the AI diagnosis?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Vynix captures context from the page and generates a diagnosis. It does not automatically change your code or deploy a fix."
+        "text": "Vynix uses the element you select, a screenshot, and relevant browser context such as console and network information. The exact context available can depend on the page, browser, and widget setup."
       }
     },
     {
       "@type": "Question",
-      "name": "Why might the AI diagnosis be incomplete or wrong?",
+      "name": "Can I trust the AI diagnosis as the final answer?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The diagnosis depends on the context available in the browser. If the root cause is in backend code, build configuration, private services, or data Vynix cannot see, the AI may only provide a likely direction. Use the diagnosis with your code review and tests."
+        "text": "Treat it as a strong starting point, not a final verdict. The diagnosis can help identify likely causes and next steps, but a developer should verify the issue and test the fix."
       }
     }
   ]
@@ -75,8 +122,8 @@
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Vynix",
-  "url": "https://vynix.in",
-  "logo": "https://vynix.in/icon-512.png",
+  "url": "https://www.vynix.in",
+  "logo": "https://www.vynix.in/icon-512.png",
   "sameAs": [
     "https://github.com/vynix-in",
     "https://twitter.com/usevynix"
@@ -113,6 +160,8 @@ article h3{font-size:1.2rem;margin:1.4em 0 .4em}
 figure{margin:24px 0}
 figure img,figure video{border:1px solid var(--line);width:100%}
 figcaption{color:var(--muted);font-size:.85rem;margin-top:8px;text-align:center}
+.ill-hero{margin:18px 0 26px}
+.ill-hero svg{border:1px solid var(--line);border-radius:16px;box-shadow:0 8px 24px rgba(15,23,42,.06)}
 table{width:100%;border-collapse:collapse;margin:22px 0;font-size:.96rem}
 th,td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
 th{background:var(--soft);font-weight:600}
@@ -139,73 +188,38 @@ td.yes{color:var(--green);font-weight:600}
 </head>
 <body>
 <header class="site-header"><div class="container">
-  <a class="brand" href="https://vynix.in"><span class="mark"></span> Vynix</a>
+  <a class="brand" href="https://www.vynix.in"><svg class="vx-logo" viewBox="0 0 1024 1024" width="28" height="28" fill="none" aria-hidden="true"><g transform="translate(0,1024) scale(0.1,-0.1)" fill="#008448"><path d="M30 8675 c0 -2 600 -532 1333 -1177 732 -645 1878 -1653 2544 -2240 l1213 -1068 1087 958 c599 526 1744 1535 2546 2240 801 706 1457 1285 1457 1288 0 2 -17 -6 -37 -19 -21 -13 -1166 -713 -2546 -1555 l-2507 -1532 -2388 1458 c-1313 803 -2458 1502 -2544 1555 -87 53 -158 95 -158 92z M1745 8503 c17 -11 783 -489 1702 -1061 l1673 -1042 1702 1061 c937 584 1694 1059 1683 1057 -11 -3 -777 -249 -1703 -548 l-1682 -543 -1683 543 c-1829 590 -1735 561 -1692 533z M1087 6789 c3048 -4001 4027 -5284 4033 -5284 9 0 4169 5458 4165 5463 -2 2 -295 -252 -652 -565 -356 -313 -1288 -1130 -2071 -1816 -783 -687 -1429 -1250 -1436 -1253 -8 -3 -239 192 -547 463 -1857 1629 -3606 3160 -3618 3168 -8 4 49 -74 126 -176z"/></g></svg><span class="brand-name">Vynix</span></a>
   <nav class="main">
-    <a href="https://vynix.in">Product</a><a href="/resources/blog/">Blog</a><a href="/resources/compare/">Compare</a><a href="https://vynix.in/docs">Docs</a><a href="/resources/kb/">Help</a>
-    <a class="cta" href="https://vynix.in">Try free</a>
+    <a href="https://www.vynix.in">Product</a><a href="/resources/blog/">Blog</a><a href="/resources/compare/">Compare</a><a href="/resources/best/">Guides</a><a href="/resources/for/">Use cases</a><a href="/resources/kb/">Help</a>
+    <a class="cta" href="https://www.vynix.in">Try free</a>
   </nav>
 </div></header>
 <main class="container">
-<div class="breadcrumbs container"><a href="https://vynix.in">Home</a> / <a href="/resources/kb/">Help</a> / <span>How the Vynix AI diagnosis works</span></div>
+<div class="breadcrumbs container"><a href="https://www.vynix.in">Home</a> / <a href="/resources/kb/">Help</a> / <span>How the Vynix AI diagnosis works</span></div>
 <article>
   <span class="tag">article</span>
   <h1>How the Vynix AI diagnosis works</h1>
-  <div class="meta-row"><span>Updated 21 June 2026</span></div>
-  <p class="lead">Vynix AI diagnosis helps turn a clicked website problem into useful developer context. It combines the selected page element, visual evidence, browser activity, and nearby technical signals to suggest a likely root cause.</p>
-<figure class="ill-hero"><svg class="vx-ill" viewBox="0 0 640 360" role="img" aria-label="Handing a Vynix report to a coding agent" preserveAspectRatio="xMidYMid meet" style="width:100%;height:auto;aspect-ratio:16 / 9;display:block">
-  <defs>
-    <linearGradient id="vxho-bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#f6fdfa"/><stop offset="1" stop-color="#ecfdf5"/>
-    </linearGradient>
-    <linearGradient id="vxho-g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#008448"/><stop offset="1" stop-color="#15c47d"/>
-    </linearGradient>
-    <filter id="vxho-s" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.10"/>
-    </filter>
-  </defs>
-  <rect x="1" y="1" width="638" height="358" rx="22" fill="url(#vxho-bg)" stroke="#d1fae5"/>
-  <style>
-    .vxho-pulse{transform-box:fill-box;transform-origin:center;animation:vxho-pulse 2.6s ease-in-out infinite}
-    @keyframes vxho-pulse{0%,100%{opacity:.55;transform:scale(.92)}50%{opacity:1;transform:scale(1.06)}}
-    .vxho-dash{stroke-dasharray:8 10;animation:vxho-dash 1.4s linear infinite}
-    @keyframes vxho-dash{to{stroke-dashoffset:-36}}
-    .vxho-float{animation:vxho-float 4s ease-in-out infinite}
-    @keyframes vxho-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
-    .vxho-in{opacity:0;animation:vxho-in 6s ease-in-out infinite}
-    @keyframes vxho-in{0%,8%{opacity:0;transform:translateY(8px)}18%,72%{opacity:1;transform:translateY(0)}88%,100%{opacity:0}}
-  </style>
-  <rect x="60" y="120" width="180" height="120" rx="14" fill="#ffffff" stroke="#e2e8f0" filter="url(#vxho-s)"/>
-     <circle cx="90" cy="150" r="9" fill="#15c47d"/>
-     <rect x="108" y="145" width="100" height="9" rx="4" fill="#0f172a"/>
-     <rect x="80" y="178" width="140" height="8" rx="4" fill="#e2e8f0"/>
-     <rect x="80" y="198" width="120" height="8" rx="4" fill="#eef2f7"/>
-     <path d="M250 180 h120" stroke="url(#vxho-g)" stroke-width="3" class="vxho-dash" marker-end=""/>
-     <path d="M362 172 l16 8 -16 8 z" fill="#008448"/>
-     <rect x="400" y="120" width="180" height="120" rx="14" fill="#052e1b" filter="url(#vxho-s)"/>
-     <circle cx="430" cy="150" r="10" fill="none" stroke="#34d399" stroke-width="2.5" class="vxho-pulse"/>
-     <path d="M425 150 l4 4 7 -8" fill="none" stroke="#34d399" stroke-width="2.5" stroke-linecap="round"/>
-     <rect x="450" y="145" width="100" height="9" rx="4" fill="#34d399"/>
-     <rect x="420" y="178" width="140" height="8" rx="4" fill="#1e5b43"/>
-     <rect x="420" y="198" width="110" height="8" rx="4" fill="#1e5b43"/>
-     <text x="150" y="104" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#065f46">Report</text>
-     <text x="490" y="104" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#065f46">Coding agent</text>
-</svg></figure>
-  <ol><li>Add the Vynix widget to the site you want to inspect, following the setup steps in the Vynix docs.</li><li>Open the page with the issue, start Vynix, and click the broken or confusing part of the page.</li><li>Vynix captures the selected element, a screenshot, console messages, and relevant network activity.</li><li>The AI reviews that context and generates a diagnosis of the likely cause, such as a frontend bug, missing data, failed request, styling issue, or integration problem.</li><li>Review the diagnosis, then copy a ready-to-build prompt or create a GitHub issue and assign it to a coding agent.</li></ol>
-  <p>The diagnosis is based on the context Vynix can capture from the page at the time you click. That includes what you selected, what the page looked like, and browser signals that may explain the problem. This gives the AI more detail than a plain text bug report.</p><p>The AI output is meant to be a starting point for developers, not a guaranteed final answer. You should review the captured evidence, confirm the cause in your codebase, and test the fix before shipping changes.</p><p>For best results, reproduce the issue before clicking, choose the most specific broken element, and make sure the page is in the same state a user would see. If the issue depends on login state, feature flags, or data, include that context in the follow-up prompt or issue description.</p>
-  <figure><img src="/resources/assets/shots/shot-report.png" alt="Vynix AI diagnosis of a captured bug" loading="lazy" width="1536" height="702" /><figcaption>Vynix AI diagnosis of a captured bug</figcaption></figure>
-  <section class="faq"><h2>Related questions</h2><h3>Does Vynix change my website when it diagnoses an issue?</h3><p>No. Vynix captures context from the page and generates a diagnosis. It does not automatically change your code or deploy a fix.</p><h3>Why might the AI diagnosis be incomplete or wrong?</h3><p>The diagnosis depends on the context available in the browser. If the root cause is in backend code, build configuration, private services, or data Vynix cannot see, the AI may only provide a likely direction. Use the diagnosis with your code review and tests.</p></section>
-  <div class="callout"><strong>Still need help?</strong><p>Read the full <a href="https://vynix.in/docs">documentation</a> or email hello@vynix.in.</p></div>
-</article>
+  <div class="meta-row"><span>Updated 22 June 2026</span></div>
+  <p class="lead">Vynix AI diagnosis helps explain why something on a website may be broken. It combines what you click with browser context, then suggests a likely root cause for a developer or coding agent to investigate.</p>
+
+  <ol><li>Add the lightweight Vynix widget to the site you want to review.</li><li>Open the site, click the widget, then select the element or area that looks wrong.</li><li>Vynix captures the selected element, a screenshot, and relevant browser context such as console messages and network activity.</li><li>The AI reviews the captured context and generates a diagnosis of the likely root cause.</li><li>Copy the ready-to-build prompt, or open a GitHub issue and assign it to a coding agent or developer.</li></ol>
+  <p>The diagnosis starts with the exact place you click. Instead of describing a bug from memory, you point Vynix at the broken button, layout issue, missing content, or unexpected behavior. This gives the AI a focused starting point.</p><p>Vynix then gathers supporting context from the page. This may include the selected element, nearby structure, a screenshot, console errors, and network request details. The goal is to give the AI enough evidence to explain what is probably happening without requiring you to manually collect logs.</p><p>The AI diagnosis is not a guaranteed fix. It is a structured, evidence-based suggestion that helps developers move faster. A developer should still review the output, confirm the root cause, and test any changes before shipping.</p><p>After the diagnosis is created, Vynix helps turn it into action. You can copy a developer-ready prompt or create a GitHub issue with the captured context so the work can be picked up by a person or coding agent. For setup details and current feature behavior, see the Vynix docs.</p>
+  <figure><img src="/resources/assets/shots/shot-report.png" alt="A Vynix feedback report ready to hand to a coding agent" loading="lazy" width="1080" height="1350" /><figcaption>A Vynix feedback report ready to hand to a coding agent</figcaption></figure>
+  <section class="faq"><figure class="hero"><img src="/resources/assets/banners/how-the-vynix-ai-diagnosis-works.png" alt="How the Vynix AI diagnosis works" width="1200" height="630" /></figure><h2>Related questions</h2><h3>What information does Vynix use for the AI diagnosis?</h3><p>Vynix uses the element you select, a screenshot, and relevant browser context such as console and network information. The exact context available can depend on the page, browser, and widget setup.</p><h3>Can I trust the AI diagnosis as the final answer?</h3><p>Treat it as a strong starting point, not a final verdict. The diagnosis can help identify likely causes and next steps, but a developer should verify the issue and test the fix.</p></section>
+  <div class="callout"><strong>Still need help?</strong><p>Read the full <a href="https://www.vynix.in/docs">documentation</a> or email hello@vynix.in.</p></div>
+<section class="related"><h2>Help articles</h2><ul><li><a href="/resources/kb/using-review-rounds-to-group-feedback-into-fixes/">Using review rounds to group feedback into fixes</a></li><li><a href="/resources/kb/what-context-vynix-captures-with-each-report/">What context Vynix captures with each report</a></li><li><a href="/resources/kb/controlling-who-can-see-the-vynix-widget/">Controlling who can see the Vynix widget</a></li><li><a href="/resources/kb/fixing-a-report-with-no-screenshot/">Fixing a report with no screenshot</a></li></ul></section></article>
 </main>
 <footer class="site-footer"><div class="container">
-  <div>&copy; 2026 Vynix &middot; <a href="https://vynix.in">vynix.in</a></div>
+  <div>&copy; 2026 Vynix &middot; <a href="https://www.vynix.in">vynix.in</a></div>
   <div>
     <a href="/resources/blog/">Blog</a> &middot;
     <a href="/resources/compare/">Compare</a> &middot;
+    <a href="/resources/best/">Guides</a> &middot;
+    <a href="/resources/glossary/">Glossary</a> &middot;
     <a href="/resources/kb/">Help</a> &middot;
+    <a href="/resources/badge/">Badge</a> &middot;
     <a href="https://github.com/vynix-in">GitHub</a> &middot;
-    <a href="https://vynix.in/privacy">Privacy</a>
+    <a href="https://www.vynix.in/privacy">Privacy</a>
   </div>
 </div></footer>
 </body>

@@ -3,23 +3,27 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#008448" />
+<link rel="icon" href="https://vynix.in/favicon.ico" />
+<link rel="icon" type="image/svg+xml" href="https://vynix.in/favicon.svg" />
+<link rel="apple-touch-icon" href="https://vynix.in/apple-touch-icon.png" />
 <title>Fixing a report with no screenshot | Vynix Help</title>
-<meta name="description" content="Learn why a Vynix report may not include a screenshot and how to capture one successfully." />
+<meta name="description" content="Learn why a Vynix report may have no screenshot and how to troubleshoot browser, page, and widget capture issues." />
 <link rel="canonical" href="https://vynix.in/kb/fixing-a-report-with-no-screenshot/" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Fixing a report with no screenshot | Vynix Help" />
-<meta property="og:description" content="Learn why a Vynix report may not include a screenshot and how to capture one successfully." />
+<meta property="og:description" content="Learn why a Vynix report may have no screenshot and how to troubleshoot browser, page, and widget capture issues." />
 <meta property="og:url" content="https://vynix.in/kb/fixing-a-report-with-no-screenshot/" />
 <meta property="og:image" content="https://vynix.in/assets/og/fixing-a-report-with-no-screenshot.png" />
 <meta property="og:site_name" content="Vynix" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@usevynix" />
 <meta name="twitter:title" content="Fixing a report with no screenshot | Vynix Help" />
-<meta name="twitter:description" content="Learn why a Vynix report may not include a screenshot and how to capture one successfully." />
+<meta name="twitter:description" content="Learn why a Vynix report may have no screenshot and how to troubleshoot browser, page, and widget capture issues." />
 <meta name="twitter:image" content="https://vynix.in/assets/og/fixing-a-report-with-no-screenshot.png" />
-<meta property="article:published_time" content="2026-06-21T19:45:25.594Z" />
-<meta property="article:modified_time" content="2026-06-21T19:45:25.594Z" />
+<meta property="article:published_time" content="2026-06-22T03:27:22.499Z" />
+<meta property="article:modified_time" content="2026-06-22T03:27:22.499Z" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -49,22 +53,65 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Fixing a report with no screenshot",
+  "description": "Learn why a Vynix report may have no screenshot and how to troubleshoot browser, page, and widget capture issues.",
+  "image": [
+    "https://vynix.in/assets/og/fixing-a-report-with-no-screenshot.png"
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Refresh the page, wait until it has fully loaded, then creat",
+      "text": "Refresh the page, wait until it has fully loaded, then create the report again."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Check that the Vynix widget is loading correctly on the page",
+      "text": "Check that the Vynix widget is loading correctly on the page and is not blocked by a content security policy, ad blocker, or privacy extension."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Try the report in a supported browser with extensions disabl",
+      "text": "Try the report in a supported browser with extensions disabled, or in a private window with only Vynix allowed."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "If the issue is inside an iframe, embedded app, video, map, ",
+      "text": "If the issue is inside an iframe, embedded app, video, map, or third-party widget, try selecting the nearest parent area on the page instead."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Review the browser console and network logs for blocked requ",
+      "text": "Review the browser console and network logs for blocked requests, permission errors, or capture timeouts. See the Vynix docs for setup details."
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why is there no screenshot on my report?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The most common reason is that the browser or page blocked the capture. This is often caused by strict security settings, cross-origin embedded content, privacy extensions, or a capture timeout."
+      }
+    },
     {
       "@type": "Question",
       "name": "Can I still use a report without a screenshot?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. The report can still help because Vynix may include the clicked element, console logs, network context, and an AI diagnosis. Add a manual screenshot if the visual state is important."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why does the screenshot work on one page but not another?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Different pages can have different security rules, embedded content, or script restrictions. A page with protected content, strict policies, or cross-origin frames may block screenshot capture while other pages work normally."
+        "text": "Yes. The report may still include the selected element, console logs, network context, and AI diagnosis. Add a short note describing what you saw, then copy the prompt or create the issue as usual."
       }
     }
   ]
@@ -113,6 +160,8 @@ article h3{font-size:1.2rem;margin:1.4em 0 .4em}
 figure{margin:24px 0}
 figure img,figure video{border:1px solid var(--line);width:100%}
 figcaption{color:var(--muted);font-size:.85rem;margin-top:8px;text-align:center}
+.ill-hero{margin:18px 0 26px}
+.ill-hero svg{border:1px solid var(--line);border-radius:16px;box-shadow:0 8px 24px rgba(15,23,42,.06)}
 table{width:100%;border-collapse:collapse;margin:22px 0;font-size:.96rem}
 th,td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
 th{background:var(--soft);font-weight:600}
@@ -139,9 +188,9 @@ td.yes{color:var(--green);font-weight:600}
 </head>
 <body>
 <header class="site-header"><div class="container">
-  <a class="brand" href="https://vynix.in"><span class="mark"></span> Vynix</a>
+  <a class="brand" href="https://vynix.in"><svg class="vx-logo" viewBox="0 0 1024 1024" width="28" height="28" fill="none" aria-hidden="true"><g transform="translate(0,1024) scale(0.1,-0.1)" fill="#008448"><path d="M30 8675 c0 -2 600 -532 1333 -1177 732 -645 1878 -1653 2544 -2240 l1213 -1068 1087 958 c599 526 1744 1535 2546 2240 801 706 1457 1285 1457 1288 0 2 -17 -6 -37 -19 -21 -13 -1166 -713 -2546 -1555 l-2507 -1532 -2388 1458 c-1313 803 -2458 1502 -2544 1555 -87 53 -158 95 -158 92z M1745 8503 c17 -11 783 -489 1702 -1061 l1673 -1042 1702 1061 c937 584 1694 1059 1683 1057 -11 -3 -777 -249 -1703 -548 l-1682 -543 -1683 543 c-1829 590 -1735 561 -1692 533z M1087 6789 c3048 -4001 4027 -5284 4033 -5284 9 0 4169 5458 4165 5463 -2 2 -295 -252 -652 -565 -356 -313 -1288 -1130 -2071 -1816 -783 -687 -1429 -1250 -1436 -1253 -8 -3 -239 192 -547 463 -1857 1629 -3606 3160 -3618 3168 -8 4 49 -74 126 -176z"/></g></svg><span class="brand-name">Vynix</span></a>
   <nav class="main">
-    <a href="https://vynix.in">Product</a><a href="/blog/">Blog</a><a href="/compare/">Compare</a><a href="https://vynix.in/docs">Docs</a><a href="/kb/">Help</a>
+    <a href="https://vynix.in">Product</a><a href="/blog/">Blog</a><a href="/compare/">Compare</a><a href="/best/">Guides</a><a href="/for/">Use cases</a><a href="/kb/">Help</a>
     <a class="cta" href="https://vynix.in">Try free</a>
   </nav>
 </div></header>
@@ -150,60 +199,25 @@ td.yes{color:var(--green);font-weight:600}
 <article>
   <span class="tag">troubleshooting</span>
   <h1>Fixing a report with no screenshot</h1>
-  <div class="meta-row"><span>Updated 21 June 2026</span></div>
-  <p class="lead">A Vynix report can still include useful context even when the screenshot is missing. This usually happens when the page, browser, or site settings prevent Vynix from capturing the view.</p>
-<figure class="ill-hero"><svg class="vx-ill" viewBox="0 0 640 360" role="img" aria-label="Handing a Vynix report to a coding agent" preserveAspectRatio="xMidYMid meet" style="width:100%;height:auto;aspect-ratio:16 / 9;display:block">
-  <defs>
-    <linearGradient id="vxho-bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#f6fdfa"/><stop offset="1" stop-color="#ecfdf5"/>
-    </linearGradient>
-    <linearGradient id="vxho-g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#008448"/><stop offset="1" stop-color="#15c47d"/>
-    </linearGradient>
-    <filter id="vxho-s" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.10"/>
-    </filter>
-  </defs>
-  <rect x="1" y="1" width="638" height="358" rx="22" fill="url(#vxho-bg)" stroke="#d1fae5"/>
-  <style>
-    .vxho-pulse{transform-box:fill-box;transform-origin:center;animation:vxho-pulse 2.6s ease-in-out infinite}
-    @keyframes vxho-pulse{0%,100%{opacity:.55;transform:scale(.92)}50%{opacity:1;transform:scale(1.06)}}
-    .vxho-dash{stroke-dasharray:8 10;animation:vxho-dash 1.4s linear infinite}
-    @keyframes vxho-dash{to{stroke-dashoffset:-36}}
-    .vxho-float{animation:vxho-float 4s ease-in-out infinite}
-    @keyframes vxho-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
-    .vxho-in{opacity:0;animation:vxho-in 6s ease-in-out infinite}
-    @keyframes vxho-in{0%,8%{opacity:0;transform:translateY(8px)}18%,72%{opacity:1;transform:translateY(0)}88%,100%{opacity:0}}
-  </style>
-  <rect x="60" y="120" width="180" height="120" rx="14" fill="#ffffff" stroke="#e2e8f0" filter="url(#vxho-s)"/>
-     <circle cx="90" cy="150" r="9" fill="#15c47d"/>
-     <rect x="108" y="145" width="100" height="9" rx="4" fill="#0f172a"/>
-     <rect x="80" y="178" width="140" height="8" rx="4" fill="#e2e8f0"/>
-     <rect x="80" y="198" width="120" height="8" rx="4" fill="#eef2f7"/>
-     <path d="M250 180 h120" stroke="url(#vxho-g)" stroke-width="3" class="vxho-dash" marker-end=""/>
-     <path d="M362 172 l16 8 -16 8 z" fill="#008448"/>
-     <rect x="400" y="120" width="180" height="120" rx="14" fill="#052e1b" filter="url(#vxho-s)"/>
-     <circle cx="430" cy="150" r="10" fill="none" stroke="#34d399" stroke-width="2.5" class="vxho-pulse"/>
-     <path d="M425 150 l4 4 7 -8" fill="none" stroke="#34d399" stroke-width="2.5" stroke-linecap="round"/>
-     <rect x="450" y="145" width="100" height="9" rx="4" fill="#34d399"/>
-     <rect x="420" y="178" width="140" height="8" rx="4" fill="#1e5b43"/>
-     <rect x="420" y="198" width="110" height="8" rx="4" fill="#1e5b43"/>
-     <text x="150" y="104" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#065f46">Report</text>
-     <text x="490" y="104" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#065f46">Coding agent</text>
-</svg></figure>
-  <ol><li>Refresh the page, open Vynix again, and create a new report. A full page reload can fix temporary capture issues.</li><li>Check that the Vynix widget is fully loaded before you click the issue. If the widget is still loading, the screenshot may not be captured.</li><li>Disable browser extensions that block scripts, screenshots, or trackers, then try again. Ad blockers and privacy tools can stop capture features.</li><li>Try the same report in another supported browser or in a clean browser profile.</li><li>Check whether the page uses strict security settings, blocked cross-origin content, protected media, or embedded frames. These can limit what Vynix is allowed to capture.</li><li>If the screenshot is still missing, copy the report context and attach a manual screenshot when you share the issue.</li></ol>
-  <p>There is no screenshot on a report when Vynix cannot access or render the visible page area at the time the report is created. The report may still include the selected element, console context, network context, and an AI diagnosis, depending on what was available.</p><p>Common causes include the widget not finishing its load, browser privacy settings, extensions that block capture, page security policies, cross-origin iframes, or content that the browser does not allow tools to screenshot.</p><p>If this happens often on the same site, review your Vynix setup against the documentation at https://vynix.in/docs. In some cases, a site configuration change may be needed so the widget can run and capture context correctly.</p>
-  <figure><img src="/assets/shots/shot-annotate.png" alt="Pointing at an element on a live page with Vynix" loading="lazy" width="1152" height="890" /><figcaption>Pointing at an element on a live page with Vynix</figcaption></figure>
-  <section class="faq"><h2>Related questions</h2><h3>Can I still use a report without a screenshot?</h3><p>Yes. The report can still help because Vynix may include the clicked element, console logs, network context, and an AI diagnosis. Add a manual screenshot if the visual state is important.</p><h3>Why does the screenshot work on one page but not another?</h3><p>Different pages can have different security rules, embedded content, or script restrictions. A page with protected content, strict policies, or cross-origin frames may block screenshot capture while other pages work normally.</p></section>
+  <div class="meta-row"><span>Updated 22 June 2026</span></div>
+  <p class="lead">Vynix normally adds a screenshot to each report so developers can see the issue in context. If the screenshot is missing, the capture was blocked, interrupted, or could not read part of the page.</p>
+
+  <ol><li>Refresh the page, wait until it has fully loaded, then create the report again.</li><li>Check that the Vynix widget is loading correctly on the page and is not blocked by a content security policy, ad blocker, or privacy extension.</li><li>Try the report in a supported browser with extensions disabled, or in a private window with only Vynix allowed.</li><li>If the issue is inside an iframe, embedded app, video, map, or third-party widget, try selecting the nearest parent area on the page instead.</li><li>Review the browser console and network logs for blocked requests, permission errors, or capture timeouts. See the Vynix docs for setup details.</li></ol>
+  <p>A report can have no screenshot when the browser prevents Vynix from capturing the page. This can happen on pages with strict security rules, cross-origin iframes, protected media, or browser extensions that block scripts.</p><p>It can also happen if the page changes while the report is being created, the widget has not finished loading, the browser tab is in a restricted state, or the capture request times out. The rest of the report, such as selected element details, console context, network context, and AI diagnosis, may still be available.</p><p>If screenshots are missing on every report, review your widget installation and site security settings against the Vynix documentation at https://vynix.in/docs. If it only happens on one page or one element, the page content is likely protected or cross-origin.</p>
+  <figure><img src="/assets/shots/shot-annotate.png" alt="Pointing at an element on a live page and writing a Vynix note" loading="lazy" width="1080" height="1350" /><figcaption>Pointing at an element on a live page and writing a Vynix note</figcaption></figure>
+  <section class="faq"><figure class="hero"><img src="/assets/banners/fixing-a-report-with-no-screenshot.png" alt="Fixing a report with no screenshot" width="1200" height="630" /></figure><h2>Related questions</h2><h3>Why is there no screenshot on my report?</h3><p>The most common reason is that the browser or page blocked the capture. This is often caused by strict security settings, cross-origin embedded content, privacy extensions, or a capture timeout.</p><h3>Can I still use a report without a screenshot?</h3><p>Yes. The report may still include the selected element, console logs, network context, and AI diagnosis. Add a short note describing what you saw, then copy the prompt or create the issue as usual.</p></section>
   <div class="callout"><strong>Still need help?</strong><p>Read the full <a href="https://vynix.in/docs">documentation</a> or email hello@vynix.in.</p></div>
-</article>
+<section class="related"><h2>Help articles</h2><ul><li><a href="/kb/using-review-rounds-to-group-feedback-into-fixes/">Using review rounds to group feedback into fixes</a></li><li><a href="/kb/what-context-vynix-captures-with-each-report/">What context Vynix captures with each report</a></li><li><a href="/kb/controlling-who-can-see-the-vynix-widget/">Controlling who can see the Vynix widget</a></li><li><a href="/kb/fixing-a-widget-that-does-not-appear/">Fixing a widget that does not appear</a></li></ul></section></article>
 </main>
 <footer class="site-footer"><div class="container">
   <div>&copy; 2026 Vynix &middot; <a href="https://vynix.in">vynix.in</a></div>
   <div>
     <a href="/blog/">Blog</a> &middot;
     <a href="/compare/">Compare</a> &middot;
+    <a href="/best/">Guides</a> &middot;
+    <a href="/glossary/">Glossary</a> &middot;
     <a href="/kb/">Help</a> &middot;
+    <a href="/badge/">Badge</a> &middot;
     <a href="https://github.com/vynix-in">GitHub</a> &middot;
     <a href="https://vynix.in/privacy">Privacy</a>
   </div>

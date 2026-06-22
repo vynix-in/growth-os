@@ -1,596 +1,596 @@
 {
-  "generated": "2026-06-21T21:04:47.179Z",
-  "base": "https://vynix.in/resources",
+  "generated": "2026-06-22T17:00:08.056Z",
+  "base": "https://www.vynix.in/resources",
   "total": 98,
   "live": 98,
   "urls": [
     {
-      "url": "https://vynix.in/resources/",
+      "url": "https://www.vynix.in/resources/",
       "status": 200,
       "ok": true,
-      "ms": 231
+      "ms": 53
     },
     {
-      "url": "https://vynix.in/resources/blog/",
+      "url": "https://www.vynix.in/resources/blog/",
       "status": 200,
       "ok": true,
-      "ms": 368
+      "ms": 361
     },
     {
-      "url": "https://vynix.in/resources/compare/",
+      "url": "https://www.vynix.in/resources/compare/",
       "status": 200,
       "ok": true,
-      "ms": 290
+      "ms": 449
     },
     {
-      "url": "https://vynix.in/resources/kb/",
+      "url": "https://www.vynix.in/resources/kb/",
       "status": 200,
       "ok": true,
-      "ms": 273
+      "ms": 435
     },
     {
-      "url": "https://vynix.in/resources/best/",
+      "url": "https://www.vynix.in/resources/best/",
       "status": 200,
       "ok": true,
-      "ms": 281
+      "ms": 316
     },
     {
-      "url": "https://vynix.in/resources/for/",
+      "url": "https://www.vynix.in/resources/for/",
       "status": 200,
       "ok": true,
-      "ms": 287
+      "ms": 318
     },
     {
-      "url": "https://vynix.in/resources/glossary/",
+      "url": "https://www.vynix.in/resources/glossary/",
+      "status": 200,
+      "ok": true,
+      "ms": 258
+    },
+    {
+      "url": "https://www.vynix.in/resources/badge/",
+      "status": 200,
+      "ok": true,
+      "ms": 264
+    },
+    {
+      "url": "https://www.vynix.in/resources/blog/how-vynix-cuts-the-cost-of-running-ai-coding-agents/",
+      "status": 200,
+      "ok": true,
+      "ms": 255
+    },
+    {
+      "url": "https://www.vynix.in/resources/blog/what-a-feedback-layer-is-and-why-ai-teams-need-one/",
+      "status": 200,
+      "ok": true,
+      "ms": 435
+    },
+    {
+      "url": "https://www.vynix.in/resources/blog/turn-a-visual-note-into-a-github-issue-in-one-step/",
+      "status": 200,
+      "ok": true,
+      "ms": 261
+    },
+    {
+      "url": "https://www.vynix.in/resources/blog/how-vynix-captures-console-and-network-detail/",
+      "status": 200,
+      "ok": true,
+      "ms": 285
+    },
+    {
+      "url": "https://www.vynix.in/resources/blog/using-the-vynix-mcp-server-with-your-ai-agent/",
       "status": 200,
       "ok": true,
       "ms": 245
     },
     {
-      "url": "https://vynix.in/resources/badge/",
-      "status": 200,
-      "ok": true,
-      "ms": 233
-    },
-    {
-      "url": "https://vynix.in/resources/blog/how-to-write-bug-reports-ai-agents-can-fix/",
-      "status": 200,
-      "ok": true,
-      "ms": 244
-    },
-    {
-      "url": "https://vynix.in/resources/blog/how-vynix-cuts-the-cost-of-running-ai-coding-agents/",
-      "status": 200,
-      "ok": true,
-      "ms": 253
-    },
-    {
-      "url": "https://vynix.in/resources/blog/the-context-an-ai-agent-needs-to-fix-front-end-bugs/",
-      "status": 200,
-      "ok": true,
-      "ms": 229
-    },
-    {
-      "url": "https://vynix.in/resources/blog/what-a-feedback-layer-is-and-why-ai-teams-need-one/",
-      "status": 200,
-      "ok": true,
-      "ms": 227
-    },
-    {
-      "url": "https://vynix.in/resources/blog/turn-a-visual-note-into-a-github-issue-in-one-step/",
-      "status": 200,
-      "ok": true,
-      "ms": 231
-    },
-    {
-      "url": "https://vynix.in/resources/blog/how-vynix-captures-console-and-network-detail/",
-      "status": 200,
-      "ok": true,
-      "ms": 236
-    },
-    {
-      "url": "https://vynix.in/resources/blog/using-the-vynix-mcp-server-with-your-ai-agent/",
-      "status": 200,
-      "ok": true,
-      "ms": 232
-    },
-    {
-      "url": "https://vynix.in/resources/blog/from-a-reported-bug-to-a-merged-fix/",
-      "status": 200,
-      "ok": true,
-      "ms": 228
-    },
-    {
-      "url": "https://vynix.in/resources/blog/collecting-website-feedback-from-clients-and-teammates/",
-      "status": 200,
-      "ok": true,
-      "ms": 228
-    },
-    {
-      "url": "https://vynix.in/resources/blog/how-vynix-works-from-a-click-to-a-fix/",
-      "status": 200,
-      "ok": true,
-      "ms": 226
-    },
-    {
-      "url": "https://vynix.in/resources/blog/who-vynix-is-for-and-what-it-fixes/",
-      "status": 200,
-      "ok": true,
-      "ms": 226
-    },
-    {
-      "url": "https://vynix.in/resources/blog/point-and-click-feedback-on-any-web-page/",
-      "status": 200,
-      "ok": true,
-      "ms": 230
-    },
-    {
-      "url": "https://vynix.in/resources/blog/reading-the-vynix-ai-diagnosis-and-the-files-it-finds/",
-      "status": 200,
-      "ok": true,
-      "ms": 231
-    },
-    {
-      "url": "https://vynix.in/resources/blog/review-rounds-turn-notes-into-a-short-fix-list/",
-      "status": 200,
-      "ok": true,
-      "ms": 232
-    },
-    {
-      "url": "https://vynix.in/resources/blog/region-and-element-screenshots-in-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 234
-    },
-    {
-      "url": "https://vynix.in/resources/blog/projects-roles-and-sharing-in-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 235
-    },
-    {
-      "url": "https://vynix.in/resources/blog/how-to-install-vynix-on-any-website/",
-      "status": 200,
-      "ok": true,
-      "ms": 243
-    },
-    {
-      "url": "https://vynix.in/resources/blog/how-to-connect-github-and-hand-work-to-copilot/",
-      "status": 200,
-      "ok": true,
-      "ms": 234
-    },
-    {
-      "url": "https://vynix.in/resources/blog/vynix-plans-and-how-to-pick-the-right-one/",
-      "status": 200,
-      "ok": true,
-      "ms": 231
-    },
-    {
-      "url": "https://vynix.in/resources/blog/what-we-are-building-next-at-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 233
-    },
-    {
-      "url": "https://vynix.in/resources/compare/jam-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 230
-    },
-    {
-      "url": "https://vynix.in/resources/compare/marker-io-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 230
-    },
-    {
-      "url": "https://vynix.in/resources/compare/usersnap-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 230
-    },
-    {
-      "url": "https://vynix.in/resources/compare/sentry-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 237
-    },
-    {
-      "url": "https://vynix.in/resources/compare/bugsnag-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 234
-    },
-    {
-      "url": "https://vynix.in/resources/compare/logrocket-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 235
-    },
-    {
-      "url": "https://vynix.in/resources/compare/hotjar-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 224
-    },
-    {
-      "url": "https://vynix.in/resources/compare/instabug-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 238
-    },
-    {
-      "url": "https://vynix.in/resources/compare/linear-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 230
-    },
-    {
-      "url": "https://vynix.in/resources/compare/jira-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 231
-    },
-    {
-      "url": "https://vynix.in/resources/compare/bugherd-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 231
-    },
-    {
-      "url": "https://vynix.in/resources/compare/userback-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 238
-    },
-    {
-      "url": "https://vynix.in/resources/compare/fullstory-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 234
-    },
-    {
-      "url": "https://vynix.in/resources/compare/smartlook-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 224
-    },
-    {
-      "url": "https://vynix.in/resources/compare/mouseflow-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 235
-    },
-    {
-      "url": "https://vynix.in/resources/compare/trello-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 239
-    },
-    {
-      "url": "https://vynix.in/resources/compare/asana-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 234
-    },
-    {
-      "url": "https://vynix.in/resources/compare/clickup-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 231
-    },
-    {
-      "url": "https://vynix.in/resources/compare/shortcut-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 232
-    },
-    {
-      "url": "https://vynix.in/resources/compare/ruttl-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 232
-    },
-    {
-      "url": "https://vynix.in/resources/compare/pastel-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 227
-    },
-    {
-      "url": "https://vynix.in/resources/compare/markup-io-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 232
-    },
-    {
-      "url": "https://vynix.in/resources/compare/bird-eats-bug-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 233
-    },
-    {
-      "url": "https://vynix.in/resources/compare/replay-io-vs-vynix/",
-      "status": 200,
-      "ok": true,
-      "ms": 227
-    },
-    {
-      "url": "https://vynix.in/resources/kb/how-to-install-the-vynix-widget-on-any-website/",
-      "status": 200,
-      "ok": true,
-      "ms": 253
-    },
-    {
-      "url": "https://vynix.in/resources/kb/turning-a-vynix-note-into-a-github-issue/",
-      "status": 200,
-      "ok": true,
-      "ms": 228
-    },
-    {
-      "url": "https://vynix.in/resources/kb/controlling-who-can-see-the-vynix-widget/",
-      "status": 200,
-      "ok": true,
-      "ms": 232
-    },
-    {
-      "url": "https://vynix.in/resources/kb/using-review-rounds-to-group-feedback-into-fixes/",
-      "status": 200,
-      "ok": true,
-      "ms": 228
-    },
-    {
-      "url": "https://vynix.in/resources/kb/what-context-vynix-captures-with-each-report/",
-      "status": 200,
-      "ok": true,
-      "ms": 234
-    },
-    {
-      "url": "https://vynix.in/resources/kb/how-the-vynix-ai-diagnosis-works/",
-      "status": 200,
-      "ok": true,
-      "ms": 238
-    },
-    {
-      "url": "https://vynix.in/resources/kb/fixing-a-widget-that-does-not-appear/",
-      "status": 200,
-      "ok": true,
-      "ms": 226
-    },
-    {
-      "url": "https://vynix.in/resources/kb/fixing-a-report-with-no-screenshot/",
-      "status": 200,
-      "ok": true,
-      "ms": 237
-    },
-    {
-      "url": "https://vynix.in/resources/best/best-bug-reporting-tools/",
-      "status": 200,
-      "ok": true,
-      "ms": 236
-    },
-    {
-      "url": "https://vynix.in/resources/best/best-visual-feedback-tools/",
-      "status": 200,
-      "ok": true,
-      "ms": 234
-    },
-    {
-      "url": "https://vynix.in/resources/best/best-tools-for-ai-coding-agents/",
-      "status": 200,
-      "ok": true,
-      "ms": 230
-    },
-    {
-      "url": "https://vynix.in/resources/best/best-website-feedback-tools-for-agencies/",
-      "status": 200,
-      "ok": true,
-      "ms": 243
-    },
-    {
-      "url": "https://vynix.in/resources/alternatives/jam-alternatives/",
+      "url": "https://www.vynix.in/resources/blog/collecting-website-feedback-from-clients-and-teammates/",
       "status": 200,
       "ok": true,
       "ms": 246
     },
     {
-      "url": "https://vynix.in/resources/alternatives/marker-io-alternatives/",
+      "url": "https://www.vynix.in/resources/blog/how-vynix-works-from-a-click-to-a-fix/",
       "status": 200,
       "ok": true,
-      "ms": 235
+      "ms": 330
     },
     {
-      "url": "https://vynix.in/resources/alternatives/bugherd-alternatives/",
-      "status": 200,
-      "ok": true,
-      "ms": 234
-    },
-    {
-      "url": "https://vynix.in/resources/alternatives/usersnap-alternatives/",
-      "status": 200,
-      "ok": true,
-      "ms": 231
-    },
-    {
-      "url": "https://vynix.in/resources/best/best-session-replay-tools/",
-      "status": 200,
-      "ok": true,
-      "ms": 242
-    },
-    {
-      "url": "https://vynix.in/resources/best/best-error-monitoring-tools/",
-      "status": 200,
-      "ok": true,
-      "ms": 225
-    },
-    {
-      "url": "https://vynix.in/resources/best/best-website-feedback-tools/",
+      "url": "https://www.vynix.in/resources/blog/point-and-click-feedback-on-any-web-page/",
       "status": 200,
       "ok": true,
       "ms": 238
     },
     {
-      "url": "https://vynix.in/resources/best/best-issue-tracking-tools-for-developers/",
+      "url": "https://www.vynix.in/resources/blog/review-rounds-turn-notes-into-a-short-fix-list/",
       "status": 200,
       "ok": true,
-      "ms": 226
+      "ms": 256
     },
     {
-      "url": "https://vynix.in/resources/alternatives/hotjar-alternatives/",
+      "url": "https://www.vynix.in/resources/blog/region-and-element-screenshots-in-vynix/",
       "status": 200,
       "ok": true,
-      "ms": 234
+      "ms": 370
     },
     {
-      "url": "https://vynix.in/resources/alternatives/logrocket-alternatives/",
+      "url": "https://www.vynix.in/resources/blog/projects-roles-and-sharing-in-vynix/",
       "status": 200,
       "ok": true,
-      "ms": 230
+      "ms": 247
     },
     {
-      "url": "https://vynix.in/resources/for/agencies/",
+      "url": "https://www.vynix.in/resources/blog/how-to-install-vynix-on-any-website/",
       "status": 200,
       "ok": true,
-      "ms": 229
+      "ms": 262
     },
     {
-      "url": "https://vynix.in/resources/for/qa-teams/",
+      "url": "https://www.vynix.in/resources/blog/how-to-connect-github-and-hand-work-to-copilot/",
       "status": 200,
       "ok": true,
-      "ms": 238
+      "ms": 259
     },
     {
-      "url": "https://vynix.in/resources/for/startups/",
+      "url": "https://www.vynix.in/resources/blog/vynix-plans-and-how-to-pick-the-right-one/",
+      "status": 200,
+      "ok": true,
+      "ms": 254
+    },
+    {
+      "url": "https://www.vynix.in/resources/blog/what-we-are-building-next-at-vynix/",
+      "status": 200,
+      "ok": true,
+      "ms": 251
+    },
+    {
+      "url": "https://www.vynix.in/resources/blog/how-to-write-bug-reports-an-ai-coding-agent-can-fix/",
+      "status": 200,
+      "ok": true,
+      "ms": 269
+    },
+    {
+      "url": "https://www.vynix.in/resources/blog/the-context-an-ai-agent-needs-to-fix-a-front-end-bug/",
+      "status": 200,
+      "ok": true,
+      "ms": 239
+    },
+    {
+      "url": "https://www.vynix.in/resources/blog/from-reported-bug-to-merged-fix/",
+      "status": 200,
+      "ok": true,
+      "ms": 391
+    },
+    {
+      "url": "https://www.vynix.in/resources/blog/who-vynix-is-for-and-the-problems-it-solves/",
       "status": 200,
       "ok": true,
       "ms": 237
     },
     {
-      "url": "https://vynix.in/resources/for/designers/",
+      "url": "https://www.vynix.in/resources/blog/reading-the-vynix-ai-diagnosis-and-found-files/",
       "status": 200,
       "ok": true,
-      "ms": 227
+      "ms": 273
     },
     {
-      "url": "https://vynix.in/resources/for/ai-developers/",
+      "url": "https://www.vynix.in/resources/compare/jam-vs-vynix/",
       "status": 200,
       "ok": true,
-      "ms": 226
+      "ms": 421
     },
     {
-      "url": "https://vynix.in/resources/for/support-teams/",
+      "url": "https://www.vynix.in/resources/compare/marker-io-vs-vynix/",
       "status": 200,
       "ok": true,
-      "ms": 231
+      "ms": 357
     },
     {
-      "url": "https://vynix.in/resources/for/saas-teams/",
+      "url": "https://www.vynix.in/resources/compare/usersnap-vs-vynix/",
       "status": 200,
       "ok": true,
-      "ms": 233
+      "ms": 259
     },
     {
-      "url": "https://vynix.in/resources/for/ecommerce/",
+      "url": "https://www.vynix.in/resources/compare/sentry-vs-vynix/",
       "status": 200,
       "ok": true,
-      "ms": 238
+      "ms": 242
     },
     {
-      "url": "https://vynix.in/resources/for/open-source/",
+      "url": "https://www.vynix.in/resources/compare/bugsnag-vs-vynix/",
       "status": 200,
       "ok": true,
-      "ms": 235
+      "ms": 252
     },
     {
-      "url": "https://vynix.in/resources/for/remote-teams/",
+      "url": "https://www.vynix.in/resources/compare/logrocket-vs-vynix/",
+      "status": 200,
+      "ok": true,
+      "ms": 274
+    },
+    {
+      "url": "https://www.vynix.in/resources/compare/hotjar-vs-vynix/",
+      "status": 200,
+      "ok": true,
+      "ms": 329
+    },
+    {
+      "url": "https://www.vynix.in/resources/compare/instabug-vs-vynix/",
+      "status": 200,
+      "ok": true,
+      "ms": 307
+    },
+    {
+      "url": "https://www.vynix.in/resources/compare/linear-vs-vynix/",
+      "status": 200,
+      "ok": true,
+      "ms": 340
+    },
+    {
+      "url": "https://www.vynix.in/resources/compare/jira-vs-vynix/",
+      "status": 200,
+      "ok": true,
+      "ms": 274
+    },
+    {
+      "url": "https://www.vynix.in/resources/compare/bugherd-vs-vynix/",
+      "status": 200,
+      "ok": true,
+      "ms": 245
+    },
+    {
+      "url": "https://www.vynix.in/resources/compare/userback-vs-vynix/",
+      "status": 200,
+      "ok": true,
+      "ms": 251
+    },
+    {
+      "url": "https://www.vynix.in/resources/compare/fullstory-vs-vynix/",
+      "status": 200,
+      "ok": true,
+      "ms": 254
+    },
+    {
+      "url": "https://www.vynix.in/resources/compare/smartlook-vs-vynix/",
+      "status": 200,
+      "ok": true,
+      "ms": 338
+    },
+    {
+      "url": "https://www.vynix.in/resources/compare/mouseflow-vs-vynix/",
       "status": 200,
       "ok": true,
       "ms": 234
     },
     {
-      "url": "https://vynix.in/resources/glossary/bug-report/",
+      "url": "https://www.vynix.in/resources/compare/trello-vs-vynix/",
       "status": 200,
       "ok": true,
-      "ms": 241
+      "ms": 253
     },
     {
-      "url": "https://vynix.in/resources/glossary/visual-feedback/",
+      "url": "https://www.vynix.in/resources/compare/asana-vs-vynix/",
       "status": 200,
       "ok": true,
-      "ms": 228
+      "ms": 318
     },
     {
-      "url": "https://vynix.in/resources/glossary/session-replay/",
+      "url": "https://www.vynix.in/resources/compare/clickup-vs-vynix/",
       "status": 200,
       "ok": true,
-      "ms": 236
+      "ms": 319
     },
     {
-      "url": "https://vynix.in/resources/glossary/error-monitoring/",
+      "url": "https://www.vynix.in/resources/compare/shortcut-vs-vynix/",
       "status": 200,
       "ok": true,
-      "ms": 230
+      "ms": 255
     },
     {
-      "url": "https://vynix.in/resources/glossary/website-annotation/",
+      "url": "https://www.vynix.in/resources/compare/ruttl-vs-vynix/",
       "status": 200,
       "ok": true,
-      "ms": 228
+      "ms": 249
     },
     {
-      "url": "https://vynix.in/resources/glossary/developer-context/",
+      "url": "https://www.vynix.in/resources/compare/pastel-vs-vynix/",
+      "status": 200,
+      "ok": true,
+      "ms": 247
+    },
+    {
+      "url": "https://www.vynix.in/resources/compare/markup-io-vs-vynix/",
+      "status": 200,
+      "ok": true,
+      "ms": 359
+    },
+    {
+      "url": "https://www.vynix.in/resources/compare/bird-eats-bug-vs-vynix/",
+      "status": 200,
+      "ok": true,
+      "ms": 244
+    },
+    {
+      "url": "https://www.vynix.in/resources/compare/replay-io-vs-vynix/",
       "status": 200,
       "ok": true,
       "ms": 250
     },
     {
-      "url": "https://vynix.in/resources/glossary/root-cause-analysis/",
+      "url": "https://www.vynix.in/resources/kb/how-to-install-the-vynix-widget-on-any-website/",
       "status": 200,
       "ok": true,
-      "ms": 227
+      "ms": 254
     },
     {
-      "url": "https://vynix.in/resources/glossary/feedback-loop/",
+      "url": "https://www.vynix.in/resources/kb/turning-a-vynix-note-into-a-github-issue/",
+      "status": 200,
+      "ok": true,
+      "ms": 240
+    },
+    {
+      "url": "https://www.vynix.in/resources/kb/controlling-who-can-see-the-vynix-widget/",
+      "status": 200,
+      "ok": true,
+      "ms": 252
+    },
+    {
+      "url": "https://www.vynix.in/resources/kb/using-review-rounds-to-group-feedback-into-fixes/",
+      "status": 200,
+      "ok": true,
+      "ms": 252
+    },
+    {
+      "url": "https://www.vynix.in/resources/kb/what-context-vynix-captures-with-each-report/",
+      "status": 200,
+      "ok": true,
+      "ms": 255
+    },
+    {
+      "url": "https://www.vynix.in/resources/kb/how-the-vynix-ai-diagnosis-works/",
+      "status": 200,
+      "ok": true,
+      "ms": 257
+    },
+    {
+      "url": "https://www.vynix.in/resources/kb/fixing-a-widget-that-does-not-appear/",
+      "status": 200,
+      "ok": true,
+      "ms": 238
+    },
+    {
+      "url": "https://www.vynix.in/resources/kb/fixing-a-report-with-no-screenshot/",
+      "status": 200,
+      "ok": true,
+      "ms": 247
+    },
+    {
+      "url": "https://www.vynix.in/resources/best/best-bug-reporting-tools/",
+      "status": 200,
+      "ok": true,
+      "ms": 345
+    },
+    {
+      "url": "https://www.vynix.in/resources/best/best-visual-feedback-tools/",
+      "status": 200,
+      "ok": true,
+      "ms": 309
+    },
+    {
+      "url": "https://www.vynix.in/resources/best/best-tools-for-ai-coding-agents/",
+      "status": 200,
+      "ok": true,
+      "ms": 270
+    },
+    {
+      "url": "https://www.vynix.in/resources/best/best-website-feedback-tools-for-agencies/",
+      "status": 200,
+      "ok": true,
+      "ms": 248
+    },
+    {
+      "url": "https://www.vynix.in/resources/alternatives/jam-alternatives/",
+      "status": 200,
+      "ok": true,
+      "ms": 260
+    },
+    {
+      "url": "https://www.vynix.in/resources/alternatives/marker-io-alternatives/",
+      "status": 200,
+      "ok": true,
+      "ms": 263
+    },
+    {
+      "url": "https://www.vynix.in/resources/alternatives/bugherd-alternatives/",
+      "status": 200,
+      "ok": true,
+      "ms": 248
+    },
+    {
+      "url": "https://www.vynix.in/resources/alternatives/usersnap-alternatives/",
+      "status": 200,
+      "ok": true,
+      "ms": 257
+    },
+    {
+      "url": "https://www.vynix.in/resources/best/best-session-replay-tools/",
+      "status": 200,
+      "ok": true,
+      "ms": 256
+    },
+    {
+      "url": "https://www.vynix.in/resources/best/best-error-monitoring-tools/",
+      "status": 200,
+      "ok": true,
+      "ms": 248
+    },
+    {
+      "url": "https://www.vynix.in/resources/best/best-website-feedback-tools/",
+      "status": 200,
+      "ok": true,
+      "ms": 253
+    },
+    {
+      "url": "https://www.vynix.in/resources/best/best-issue-tracking-tools-for-developers/",
+      "status": 200,
+      "ok": true,
+      "ms": 245
+    },
+    {
+      "url": "https://www.vynix.in/resources/alternatives/hotjar-alternatives/",
       "status": 200,
       "ok": true,
       "ms": 236
     },
     {
-      "url": "https://vynix.in/resources/glossary/issue-tracker/",
+      "url": "https://www.vynix.in/resources/alternatives/logrocket-alternatives/",
       "status": 200,
       "ok": true,
-      "ms": 224
+      "ms": 244
     },
     {
-      "url": "https://vynix.in/resources/glossary/ai-coding-agent/",
+      "url": "https://www.vynix.in/resources/for/agencies/",
       "status": 200,
       "ok": true,
-      "ms": 226
+      "ms": 255
     },
     {
-      "url": "https://vynix.in/resources/glossary/model-context-protocol/",
+      "url": "https://www.vynix.in/resources/for/qa-teams/",
       "status": 200,
       "ok": true,
-      "ms": 231
+      "ms": 254
     },
     {
-      "url": "https://vynix.in/resources/glossary/regression/",
+      "url": "https://www.vynix.in/resources/for/startups/",
       "status": 200,
       "ok": true,
-      "ms": 227
+      "ms": 247
     },
     {
-      "url": "https://vynix.in/resources/glossary/console-error/",
+      "url": "https://www.vynix.in/resources/for/designers/",
       "status": 200,
       "ok": true,
-      "ms": 230
+      "ms": 242
     },
     {
-      "url": "https://vynix.in/resources/glossary/network-request/",
+      "url": "https://www.vynix.in/resources/for/ai-developers/",
       "status": 200,
       "ok": true,
-      "ms": 602
+      "ms": 243
+    },
+    {
+      "url": "https://www.vynix.in/resources/for/support-teams/",
+      "status": 200,
+      "ok": true,
+      "ms": 241
+    },
+    {
+      "url": "https://www.vynix.in/resources/for/saas-teams/",
+      "status": 200,
+      "ok": true,
+      "ms": 244
+    },
+    {
+      "url": "https://www.vynix.in/resources/for/ecommerce/",
+      "status": 200,
+      "ok": true,
+      "ms": 251
+    },
+    {
+      "url": "https://www.vynix.in/resources/for/open-source/",
+      "status": 200,
+      "ok": true,
+      "ms": 250
+    },
+    {
+      "url": "https://www.vynix.in/resources/for/remote-teams/",
+      "status": 200,
+      "ok": true,
+      "ms": 255
+    },
+    {
+      "url": "https://www.vynix.in/resources/glossary/bug-report/",
+      "status": 200,
+      "ok": true,
+      "ms": 252
+    },
+    {
+      "url": "https://www.vynix.in/resources/glossary/visual-feedback/",
+      "status": 200,
+      "ok": true,
+      "ms": 244
+    },
+    {
+      "url": "https://www.vynix.in/resources/glossary/session-replay/",
+      "status": 200,
+      "ok": true,
+      "ms": 262
+    },
+    {
+      "url": "https://www.vynix.in/resources/glossary/error-monitoring/",
+      "status": 200,
+      "ok": true,
+      "ms": 254
+    },
+    {
+      "url": "https://www.vynix.in/resources/glossary/website-annotation/",
+      "status": 200,
+      "ok": true,
+      "ms": 258
+    },
+    {
+      "url": "https://www.vynix.in/resources/glossary/developer-context/",
+      "status": 200,
+      "ok": true,
+      "ms": 265
+    },
+    {
+      "url": "https://www.vynix.in/resources/glossary/root-cause-analysis/",
+      "status": 200,
+      "ok": true,
+      "ms": 331
+    },
+    {
+      "url": "https://www.vynix.in/resources/glossary/feedback-loop/",
+      "status": 200,
+      "ok": true,
+      "ms": 250
+    },
+    {
+      "url": "https://www.vynix.in/resources/glossary/issue-tracker/",
+      "status": 200,
+      "ok": true,
+      "ms": 245
+    },
+    {
+      "url": "https://www.vynix.in/resources/glossary/ai-coding-agent/",
+      "status": 200,
+      "ok": true,
+      "ms": 254
+    },
+    {
+      "url": "https://www.vynix.in/resources/glossary/model-context-protocol/",
+      "status": 200,
+      "ok": true,
+      "ms": 238
+    },
+    {
+      "url": "https://www.vynix.in/resources/glossary/regression/",
+      "status": 200,
+      "ok": true,
+      "ms": 245
+    },
+    {
+      "url": "https://www.vynix.in/resources/glossary/console-error/",
+      "status": 200,
+      "ok": true,
+      "ms": 319
+    },
+    {
+      "url": "https://www.vynix.in/resources/glossary/network-request/",
+      "status": 200,
+      "ok": true,
+      "ms": 249
     }
   ]
 }

@@ -24,6 +24,7 @@ import { publishRepo, approveAllRepos, publishAllRepos } from '../github/publish
 import { deployPages } from '../github/deploy-pages.js';
 import { buildVynixResources } from '../tools/build-vynix-resources.mjs';
 import { applyRealShots } from '../tools/real-shots.mjs';
+import { applyRevampVisuals } from '../tools/revamp-visuals.mjs';
 import { applyPolicy } from '../lib/policy.js';
 import { record as recordActivity } from '../lib/activity.js';
 
@@ -127,6 +128,8 @@ async function main() {
       await runAgent('site-builder');
       // Swap in real product screenshots and thread distinct shots through articles.
       applyRealShots();
+      // Unique per-page banners, real logo, related interlinking.
+      applyRevampVisuals();
       const review = await runAgent('reviewer');
       const policy = applyPolicy();
       // Refresh the /resources copy served from vynix.in so it stays in sync.
@@ -186,6 +189,11 @@ async function main() {
     }
     case 'real-shots': {
       const res = applyRealShots();
+      console.log(JSON.stringify(res, null, 2));
+      break;
+    }
+    case 'revamp-visuals': {
+      const res = applyRevampVisuals();
       console.log(JSON.stringify(res, null, 2));
       break;
     }

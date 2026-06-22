@@ -3,35 +3,39 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#008448" />
+<link rel="icon" href="https://vynix.in/favicon.ico" />
+<link rel="icon" type="image/svg+xml" href="https://vynix.in/favicon.svg" />
+<link rel="apple-touch-icon" href="https://vynix.in/apple-touch-icon.png" />
 <title>Projects, roles and sharing in Vynix | Vynix</title>
-<meta name="description" content="Learn how to organize Vynix projects, share annotated issues, and give developers the context they need to fix site bugs faster." />
+<meta name="description" content="Learn how to organize Vynix projects, define team roles, and share website issues with the context developers need." />
 <meta name="keywords" content="review, workflow, vynix, bug reporting, ai coding agents" />
 <link rel="canonical" href="https://vynix.in/blog/projects-roles-and-sharing-in-vynix/" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Projects, roles and sharing in Vynix | Vynix" />
-<meta property="og:description" content="Learn how to organize Vynix projects, share annotated issues, and give developers the context they need to fix site bugs faster." />
+<meta property="og:description" content="Learn how to organize Vynix projects, define team roles, and share website issues with the context developers need." />
 <meta property="og:url" content="https://vynix.in/blog/projects-roles-and-sharing-in-vynix/" />
 <meta property="og:image" content="https://vynix.in/assets/og/projects-roles-and-sharing-in-vynix.png" />
 <meta property="og:site_name" content="Vynix" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@usevynix" />
 <meta name="twitter:title" content="Projects, roles and sharing in Vynix | Vynix" />
-<meta name="twitter:description" content="Learn how to organize Vynix projects, share annotated issues, and give developers the context they need to fix site bugs faster." />
+<meta name="twitter:description" content="Learn how to organize Vynix projects, define team roles, and share website issues with the context developers need." />
 <meta name="twitter:image" content="https://vynix.in/assets/og/projects-roles-and-sharing-in-vynix.png" />
-<meta property="article:published_time" content="2026-06-21T19:36:32.371Z" />
-<meta property="article:modified_time" content="2026-06-21T19:36:32.371Z" />
+<meta property="article:published_time" content="2026-06-22T03:23:04.887Z" />
+<meta property="article:modified_time" content="2026-06-22T03:23:04.887Z" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Projects, roles and sharing in Vynix",
-  "description": "Learn how to organize Vynix projects, share annotated issues, and give developers the context they need to fix site bugs faster.",
+  "description": "Learn how to organize Vynix projects, define team roles, and share website issues with the context developers need.",
   "image": [
     "https://vynix.in/assets/og/projects-roles-and-sharing-in-vynix.png"
   ],
-  "datePublished": "2026-06-21T19:36:32.371Z",
-  "dateModified": "2026-06-21T19:36:32.371Z",
+  "datePublished": "2026-06-22T03:23:04.887Z",
+  "dateModified": "2026-06-22T03:23:04.887Z",
   "author": {
     "@type": "Organization",
     "name": "The Vynix Team",
@@ -84,18 +88,18 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What does Vynix capture when someone annotates a website issue?",
+      "name": "Can non-developers use Vynix to report issues?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Vynix captures the selected element, a screenshot, console and network context, and an AI diagnosis of the likely root cause. That gives developers more than a visual report, because the technical clues travel with the annotation."
+        "text": "Yes. A non-developer can use the widget to click the part of the site that is wrong and add a short note. Vynix captures the technical context around that moment, so developers do not have to ask the reporter for console logs or network details."
       }
     },
     {
       "@type": "Question",
-      "name": "When should a Vynix annotation become a GitHub issue?",
+      "name": "Should every Vynix capture become a GitHub issue?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Create a GitHub issue when the finding is confirmed, actionable, and needs engineering work. If the expected behavior is unclear, triage it first so the issue does not become a vague ticket."
+        "text": "No. Some captures may be duplicates, design questions, content edits, or reports that need more information. Use triage to decide which captures should become tracked engineering work in GitHub."
       }
     },
     {
@@ -103,7 +107,7 @@
       "name": "How should teams think about roles in Vynix?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Think in terms of responsibility: who reports issues, who triages them, who fixes them, and who assigns work to a developer or coding agent. Keeping those responsibilities clear prevents annotations from turning into another unowned feedback inbox."
+        "text": "Think in terms of responsibilities: reporters capture problems, reviewers confirm and prioritize them, and implementers fix them or assign them to a coding agent. On a small team, one person may cover several roles."
       }
     }
   ]
@@ -152,6 +156,8 @@ article h3{font-size:1.2rem;margin:1.4em 0 .4em}
 figure{margin:24px 0}
 figure img,figure video{border:1px solid var(--line);width:100%}
 figcaption{color:var(--muted);font-size:.85rem;margin-top:8px;text-align:center}
+.ill-hero{margin:18px 0 26px}
+.ill-hero svg{border:1px solid var(--line);border-radius:16px;box-shadow:0 8px 24px rgba(15,23,42,.06)}
 table{width:100%;border-collapse:collapse;margin:22px 0;font-size:.96rem}
 th,td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
 th{background:var(--soft);font-weight:600}
@@ -178,9 +184,9 @@ td.yes{color:var(--green);font-weight:600}
 </head>
 <body>
 <header class="site-header"><div class="container">
-  <a class="brand" href="https://vynix.in"><span class="mark"></span> Vynix</a>
+  <a class="brand" href="https://vynix.in"><svg class="vx-logo" viewBox="0 0 1024 1024" width="28" height="28" fill="none" aria-hidden="true"><g transform="translate(0,1024) scale(0.1,-0.1)" fill="#008448"><path d="M30 8675 c0 -2 600 -532 1333 -1177 732 -645 1878 -1653 2544 -2240 l1213 -1068 1087 958 c599 526 1744 1535 2546 2240 801 706 1457 1285 1457 1288 0 2 -17 -6 -37 -19 -21 -13 -1166 -713 -2546 -1555 l-2507 -1532 -2388 1458 c-1313 803 -2458 1502 -2544 1555 -87 53 -158 95 -158 92z M1745 8503 c17 -11 783 -489 1702 -1061 l1673 -1042 1702 1061 c937 584 1694 1059 1683 1057 -11 -3 -777 -249 -1703 -548 l-1682 -543 -1683 543 c-1829 590 -1735 561 -1692 533z M1087 6789 c3048 -4001 4027 -5284 4033 -5284 9 0 4169 5458 4165 5463 -2 2 -295 -252 -652 -565 -356 -313 -1288 -1130 -2071 -1816 -783 -687 -1429 -1250 -1436 -1253 -8 -3 -239 192 -547 463 -1857 1629 -3606 3160 -3618 3168 -8 4 49 -74 126 -176z"/></g></svg><span class="brand-name">Vynix</span></a>
   <nav class="main">
-    <a href="https://vynix.in">Product</a><a href="/blog/">Blog</a><a href="/compare/">Compare</a><a href="https://vynix.in/docs">Docs</a><a href="/kb/">Help</a>
+    <a href="https://vynix.in">Product</a><a href="/blog/">Blog</a><a href="/compare/">Compare</a><a href="/best/">Guides</a><a href="/for/">Use cases</a><a href="/kb/">Help</a>
     <a class="cta" href="https://vynix.in">Try free</a>
   </nav>
 </div></header>
@@ -191,70 +197,28 @@ td.yes{color:var(--green);font-weight:600}
   <div class="meta-row">
     <span>By the Vynix Team</span>
     <span>&middot;</span>
-    <time datetime="2026-06-21T19:36:32.371Z">21 June 2026</time>
+    <time datetime="2026-06-22T03:23:04.887Z">22 June 2026</time>
     <span>&middot;</span>
-    <span>6 min read</span>
+    <span>7 min read</span>
   </div>
-  <p class="lead">Website feedback gets messy when it lives in screenshots, chat threads, and vague tickets. Vynix helps teams turn a click on a broken page into developer-ready context, with the element, screenshot, console and network data, and an AI diagnosis captured together.</p>
-  <figure class="ill-hero"><svg class="vx-ill" viewBox="0 0 640 360" role="img" aria-label="Clicking an element and leaving a note with Vynix" preserveAspectRatio="xMidYMid meet" style="width:100%;height:auto;aspect-ratio:16 / 9;display:block">
-  <defs>
-    <linearGradient id="vxcap-bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#f6fdfa"/><stop offset="1" stop-color="#ecfdf5"/>
-    </linearGradient>
-    <linearGradient id="vxcap-g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#008448"/><stop offset="1" stop-color="#15c47d"/>
-    </linearGradient>
-    <filter id="vxcap-s" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.10"/>
-    </filter>
-  </defs>
-  <rect x="1" y="1" width="638" height="358" rx="22" fill="url(#vxcap-bg)" stroke="#d1fae5"/>
-  <style>
-    .vxcap-pulse{transform-box:fill-box;transform-origin:center;animation:vxcap-pulse 2.6s ease-in-out infinite}
-    @keyframes vxcap-pulse{0%,100%{opacity:.55;transform:scale(.92)}50%{opacity:1;transform:scale(1.06)}}
-    .vxcap-dash{stroke-dasharray:8 10;animation:vxcap-dash 1.4s linear infinite}
-    @keyframes vxcap-dash{to{stroke-dashoffset:-36}}
-    .vxcap-float{animation:vxcap-float 4s ease-in-out infinite}
-    @keyframes vxcap-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
-    .vxcap-in{opacity:0;animation:vxcap-in 6s ease-in-out infinite}
-    @keyframes vxcap-in{0%,8%{opacity:0;transform:translateY(8px)}18%,72%{opacity:1;transform:translateY(0)}88%,100%{opacity:0}}
-  </style>
-  <rect x="48" y="56" width="544" height="248" rx="14" fill="#ffffff" stroke="#e2e8f0" filter="url(#vxcap-s)"/>
-     <rect x="48" y="56" width="544" height="34" rx="14" fill="#f1f5f9"/>
-     <circle cx="70" cy="73" r="5" fill="#f87171"/><circle cx="88" cy="73" r="5" fill="#fbbf24"/><circle cx="106" cy="73" r="5" fill="#34d399"/>
-     <rect x="78" y="120" width="220" height="14" rx="7" fill="#e2e8f0"/>
-     <rect x="78" y="148" width="320" height="14" rx="7" fill="#eef2f7"/>
-     <rect x="78" y="200" width="150" height="40" rx="10" fill="url(#vxcap-g)"/>
-     <text x="153" y="225" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#fff">Buy now</text>
-     <rect x="76" y="198" width="154" height="44" rx="12" fill="none" stroke="#008448" stroke-width="2.5" class="vxcap-pulse"/>
-     <g class="vxcap-in">
-       <rect x="300" y="190" width="252" height="86" rx="12" fill="#052e1b" filter="url(#vxcap-s)"/>
-       <circle cx="320" cy="210" r="7" fill="#15c47d"/>
-       <rect x="336" y="204" width="120" height="9" rx="4" fill="#34d399"/>
-       <rect x="312" y="228" width="220" height="8" rx="4" fill="#1e5b43"/>
-       <rect x="312" y="246" width="180" height="8" rx="4" fill="#1e5b43"/>
-     </g>
-     <g>
-       <path d="M150 210 q -2 -34 22 -40" fill="none" stroke="#008448" stroke-width="2" stroke-dasharray="4 6"/>
-       <path class="vxcap-float" d="M470 120 l 14 26 -10 -2 -2 12 z" fill="#0f172a"/>
-     </g>
-</svg></figure><figure class="hero"><img src="/assets/shots/shot-mcp.png" alt="Closing the feedback-to-fix loop with Vynix" width="1168" height="574" /><figcaption>Closing the feedback-to-fix loop with Vynix</figcaption></figure>
-  <div class="toc"><strong>On this page</strong><ol><li><a href="#s1-why-projects-matter-when-feedb">Why projects matter when feedback becomes work</a></li><li><a href="#s2-what-to-put-in-a-vynix-project">What to put in a Vynix project</a></li><li><a href="#s3-roles-should-match-real-respon">Roles should match real responsibilities</a></li><li><a href="#s4-sharing-works-best-when-the-ev">Sharing works best when the evidence travels with the comment</a></li><li><a href="#s5-turning-shared-context-into-gi">Turning shared context into GitHub work</a></li><li><a href="#s6-habits-that-keep-projects-and-">Habits that keep projects and sharing clean</a></li></ol></div>
-  <section id="s1-why-projects-matter-when-feedb"><h2>Why projects matter when feedback becomes work</h2><p>A website issue is rarely just a picture of something wrong. A broken checkout button might depend on the page, the current user state, a failed API call, a JavaScript error, or a CSS rule that only applies at one viewport width. When those details are spread across a Slack message, a browser screenshot, and a developer asking follow-up questions, the team loses time before anyone starts fixing the real problem.</p><p>Projects in Vynix give that work a place to live. Instead of treating every annotation as an isolated complaint, you can group findings around the site, product area, client, or engineering stream they belong to. That makes it easier to separate a public marketing site issue from an app dashboard issue, or a production bug from feedback on a staging preview.</p><p>The practical goal is simple: when someone clicks on what is wrong, the resulting context should land where the right people can understand it. A clean project setup helps designers, QA testers, product managers, and developers look at the same captured evidence without rebuilding the story from memory.</p></section>
-<section id="s2-what-to-put-in-a-vynix-project"><h2>What to put in a Vynix project</h2><p>A useful Vynix project should match the way your team already ships software. If one team owns the main website and another owns the logged-in product, those should usually be separate spaces. If a client site has its own repository, release cycle, and review process, it should not be mixed into a general backlog for unrelated work.</p><p>The widget captures the concrete page context when someone reports a problem, so the project should provide the organizational context around it. Think of the project as the container for the people, site, and workflow that will handle the annotation after it is created.</p><ul><li>Use one project for a site or product area when the same people review and fix most issues.</li><li>Split projects when different teams, repositories, clients, or environments need separate attention.</li><li>Keep staging and production feedback distinct if your team handles them differently.</li><li>Avoid creating tiny projects for every one-off page unless ownership is truly different.</li><li>Name projects in plain language, such as "Marketing site", "Customer dashboard", or "Client A storefront".</li></ul><figure><img src="/assets/shots/shot-annotate.png" alt="Closing the feedback-to-fix loop with Vynix" loading="lazy" width="1152" height="890" /><figcaption>Point at any element on your live site and write the note. Vynix names the element for you.</figcaption></figure></section><figure class="vx-shot"><img src="/assets/shots/shot-install.png" alt="Add one script tag and the launcher goes live on your site." loading="lazy" width="1344" height="496" /><figcaption>Add one script tag and the launcher goes live on your site.</figcaption></figure>
-<section id="s3-roles-should-match-real-respon"><h2>Roles should match real responsibilities</h2><p>Roles are most useful when they describe what a person is expected to do with a finding. Some people only need to point at broken UI and explain what they expected. Others need to inspect the captured console and network details, decide whether an issue is valid, and turn it into engineering work. A few people may be responsible for assigning fixes to a developer or a coding agent.</p><p>You do not need a complicated permission model to make roles useful in day-to-day work. You need shared expectations. When everyone knows who reports, who triages, and who fixes, annotations move instead of sitting as unexplained screenshots.</p><ul><li>Reporters click on the broken part of the page, add clear notes, and share the captured context.</li><li>Triage owners review the annotation, confirm the issue, remove duplicates, and decide the next step.</li><li>Developers inspect the element, screenshot, console output, network context, and AI diagnosis to find the likely cause.</li><li>Maintainers or leads decide whether the issue should become a GitHub issue, a prompt for a coding agent, or a manual fix.</li><li>Design and product reviewers add expected behavior, copy changes, or priority when the issue is not purely technical.</li></ul></section>
-<section id="s4-sharing-works-best-when-the-ev"><h2>Sharing works best when the evidence travels with the comment</h2><p>Most website bug reports fail because the shared comment is thinner than the actual problem. "Button does not work" is not enough. The developer needs to know which button, on which page, in which state, and what the browser saw at the time. Vynix is built around capturing that evidence at the moment the reporter clicks the page.</p><p>Good sharing means the receiver does not have to ask for the first layer of facts. The screenshot shows the visible problem. The captured element points to the part of the DOM that was selected. Console and network context show errors, failed requests, and other clues that may not be visible in the UI. The AI diagnosis gives a starting hypothesis, not a final verdict, so the developer can begin with a likely root cause instead of a blank page.</p><ul><li>Share the annotation instead of a cropped screenshot whenever the developer needs technical context.</li><li>Add what you expected to happen, not only what looked wrong.</li><li>Mention the action that caused the issue, such as "clicked Save after changing email".</li><li>Keep the original captured context attached when moving work into GitHub.</li><li>Do not rewrite the issue from memory if Vynix already captured the useful browser evidence.</li></ul></section><figure class="vx-shot"><img src="/assets/shots/shot-demo.png" alt="The Vynix toolbar captures an element or a dragged region without leaving the page." loading="lazy" width="1120" height="866" /><figcaption>The Vynix toolbar captures an element or a dragged region without leaving the page.</figcaption></figure>
-<section id="s5-turning-shared-context-into-gi"><h2>Turning shared context into GitHub work</h2><p>Once an issue is confirmed, the next question is where the fix should happen. Vynix supports the handoff by letting you copy a ready-to-build prompt or open a GitHub issue and assign it to a coding agent. That is the point where annotation stops being general feedback and becomes implementation work.</p><p>This handoff is especially useful for bugs where the visible symptom is simple but the cause is hidden. A user might report that a price does not update after selecting a plan. The captured network context could show a failed pricing endpoint. The console could show a parsing error. The selected element might reveal that the displayed price is rendered by a component that did not receive fresh data. A better GitHub issue can include all of that without forcing the reporter to know how the front end is built.</p><p>A ready-to-build prompt is most helpful when it is specific. The prompt should include the captured problem, the likely root cause, and the expected behavior. If a coding agent is assigned, it needs the same kind of evidence a human developer would need: where the bug appears, how it was triggered, and what technical signals were present when it happened.</p></section>
-<section id="s6-habits-that-keep-projects-and-"><h2>Habits that keep projects and sharing clean</h2><p>The tool can capture a lot of useful context, but the team still needs lightweight habits around it. The best Vynix workflows are not heavy process documents. They are small rules that prevent duplicate work and make annotations easy to act on.</p><p>One helpful habit is to treat every shared annotation as either a question, a confirmed bug, or ready engineering work. If the expected behavior is unclear, ask for product or design input before assigning it. If the issue is reproducible and has enough evidence, move it forward. If it is a duplicate, link it back to the existing work rather than sending another developer down the same path.</p><ul><li>Write the expected behavior in one sentence before handing work to engineering.</li><li>Check for an existing annotation or GitHub issue before creating a new one.</li><li>Keep project boundaries simple so people know where to report problems.</li><li>Use the AI diagnosis as a starting point, then verify it against the captured console, network, and code.</li><li>Share findings with the people who can act on them, not every channel that might be interested.</li><li>Close the loop when a fix ships so future reviewers know the issue was handled.</li></ul></section>
+  <p class="lead">Vynix is most useful when website feedback does not stop at a vague note like the button is broken. Projects, roles, and sharing help turn a click on a broken page into a clear handoff with the element, screenshot, console output, network context, and an AI diagnosis attached.</p>
+  <figure class="hero"><img src="/assets/banners/projects-roles-and-sharing-in-vynix.png" alt="Projects, roles and sharing in Vynix" width="1200" height="630" /></figure>
+  <div class="toc"><strong>On this page</strong><ol><li><a href="#s1-why-project-structure-matters">Why project structure matters</a></li><li><a href="#s2-what-belongs-inside-a-vynix-pr">What belongs inside a Vynix project</a></li><li><a href="#s3-roles-in-a-practical-vynix-wor">Roles in a practical Vynix workflow</a></li><li><a href="#s4-sharing-without-losing-develop">Sharing without losing developer context</a></li><li><a href="#s5-using-github-issues-and-coding">Using GitHub issues and coding agents from Vynix</a></li><li><a href="#s6-a-simple-setup-for-teams">A simple setup for teams</a></li></ol></div>
+  <section id="s1-why-project-structure-matters"><h2>Why project structure matters</h2><p>A website issue usually looks simple from the outside. A user clicks a checkout button, nothing happens, and someone writes a short message in chat. By the time a developer sees it, the page state is gone, the console has moved on, and nobody remembers which browser tab showed the problem. Vynix is designed to prevent that loss of context by capturing the affected element and the technical evidence around it at the moment the issue is reported.</p><p>Projects give that work a home. Instead of treating annotations as loose comments across many pages, a project can represent the site, app, client, product area, or environment where the work belongs. For example, a team might keep the public marketing site separate from the logged-in dashboard. A product agency might separate client sites so that feedback, screenshots, and GitHub issues do not mix together. The point is not bureaucracy. The point is that every captured problem should land in a place where the right people know what it relates to.</p><ul><li>Use one project for a single product surface when the same team owns most of the fixes.</li><li>Split projects when ownership, release timing, or client access is different.</li><li>Name projects in the same language your team already uses, such as Website, Admin app, Docs, or Client portal.</li><li>Avoid making a separate project for every tiny page unless those pages are owned and reviewed separately.</li></ul></section>
+<section id="s2-what-belongs-inside-a-vynix-pr"><h2>What belongs inside a Vynix project</h2><p>A Vynix project should contain the context needed to move from report to fix. The widget lets someone click on what is wrong, then captures the selected element, a screenshot, console and network context, and an AI diagnosis of the likely root cause. That combination is important because visual feedback alone rarely tells the whole story. A missing label could be a CSS issue, a failed API response, a rendering bug, or stale data from a cache.</p><p>The project becomes the shared workspace around those captures. A designer can point at the misaligned card on a pricing page. A QA tester can report that a form fails after choosing a certain option. A support teammate can capture the exact screen where a customer saw an error. Developers then start with evidence instead of trying to recreate a vague complaint from scratch.</p><ul><li>Element context shows what was clicked or selected, not just which page was open.</li><li>Screenshots preserve the visual state, including layout, text, and visible errors.</li><li>Console context can reveal JavaScript errors that were present when the issue happened.</li><li>Network context can point to failing requests, slow responses, or unexpected status codes.</li><li>The AI diagnosis gives developers a likely starting point, but it should still be checked against the code.</li></ul><figure><img src="/assets/shots/shot-mcp.png" alt="An AI agent reading Vynix feedback and fixing the code over MCP" loading="lazy" width="1080" height="1350" /><figcaption>An AI agent reading Vynix feedback and fixing the code over MCP</figcaption></figure></section>
+<section id="s3-roles-in-a-practical-vynix-wor"><h2>Roles in a practical Vynix workflow</h2><p>Roles are easiest to understand as responsibilities in the issue flow. The same person can hold more than one role, especially on a small team. On a larger team, separating these responsibilities keeps feedback from turning into a long thread where nobody is sure who should act next.</p><p>The first role is the reporter. This might be a QA tester, product manager, designer, support teammate, or developer. Their job is to capture the issue while it is visible. With Vynix, they do not need to explain every technical detail manually. They should still add a short human note when it helps, such as after selecting the annual plan, the total stays at zero, or this happens only after logging out and back in.</p><p>The second role is the reviewer or triager. This person decides whether the report is a real bug, a duplicate, a content request, a design decision, or something that needs more information. Since Vynix includes screenshot, element, console, and network context, triage can be based on the state of the page when the problem happened, not on guesswork.</p><p>The third role is the implementer. This might be a developer or a coding agent that receives the ready-to-build prompt or a GitHub issue opened from Vynix. The implementer should be able to read the issue and understand what broke, where it broke, and what evidence supports the diagnosis.</p></section>
+<section id="s4-sharing-without-losing-develop"><h2>Sharing without losing developer context</h2><p>Sharing a website issue is not the same as sharing a screenshot. A screenshot says what the reporter saw. Vynix also keeps the technical context that helps explain why they saw it. That matters most when a bug is intermittent, environment-specific, or tied to a user action that is hard to describe.</p><p>A common example is a button that appears enabled but does nothing. If someone shares only an image, the developer has to ask follow-up questions. Which button? Which route? Any console errors? Did the request fire? Did the server return an error? With Vynix, the selected element and captured console and network context travel with the report, so the developer can start by checking the likely cause instead of rebuilding the scene from memory.</p><p>When sharing with non-developers, keep the language simple. The report can say what the user expected, what actually happened, and why it matters. When sharing with developers or agents, include the technical capture and the AI diagnosis. The same Vynix report can support both conversations because it contains visual and technical evidence.</p><ul><li>For product and design, summarize the user impact in one or two sentences.</li><li>For engineering, include the captured element, screenshot, console context, and network context.</li><li>For a coding agent, copy the ready-to-build prompt so the task starts with the relevant evidence.</li><li>For GitHub, open an issue from Vynix when the work should be tracked with the rest of the codebase.</li></ul></section>
+<section id="s5-using-github-issues-and-coding"><h2>Using GitHub issues and coding agents from Vynix</h2><p>Once an issue is captured, the next step is usually either human implementation or agent-assisted implementation. Vynix supports both by letting you copy a ready-to-build prompt or open a GitHub issue and assign it to a coding agent. This is where a clean project and clear roles pay off. The report should already contain the page evidence, the likely root cause, and a short description of the expected behavior.</p><p>A ready-to-build prompt is useful when the next action happens in an AI coding tool. The prompt should not be a pile of guesses. It should describe the broken behavior, point to the captured element, mention relevant console or network findings, and state what a correct result looks like. For example, if a profile save button returns a 400 response when the display name includes an apostrophe, the prompt should say that. It should not only say profile save is broken.</p><p>A GitHub issue is useful when the work needs normal engineering tracking. The issue can be reviewed, assigned, linked to a branch or pull request, and discussed with the rest of the team. Vynix helps by carrying over the context that would otherwise be scattered across screenshots, browser logs, and chat messages. The developer still needs to inspect the code, write the fix, and test it. Vynix shortens the path to that work.</p></section>
+<section id="s6-a-simple-setup-for-teams"><h2>A simple setup for teams</h2><p>You do not need a complex process to get value from Vynix. Start with a small number of projects, agree on who reviews incoming reports, and decide when a report becomes a GitHub issue or an agent task. The best setup is the one your team will actually use during normal work.</p><p>For a small startup, one project for the main app and one for the marketing site may be enough. The product manager or lead developer can triage reports, then send clear engineering tasks to GitHub. For an agency, each client site might have its own project so client feedback stays separate. For a QA-heavy release, testers can capture issues directly from the staging site, and the reviewer can turn confirmed bugs into ready-to-build prompts or GitHub issues.</p><p>The important habit is to capture the problem at the source. If something looks wrong on the site, click it with the Vynix widget while the page is still in the bad state. Add the short human explanation that only the reporter knows. Then share it through the path your team uses to build, review, and ship code.</p><ul><li>Keep project names obvious and boring.</li><li>Make one person responsible for triage, even if that role rotates.</li><li>Ask reporters to include expected behavior, not only the broken behavior.</li><li>Use GitHub issues for tracked engineering work.</li><li>Use ready-to-build prompts when a coding agent or AI coding workflow is the next step.</li></ul></section>
   
-  <div class="callout"><strong>Key takeaways</strong><ul><li>Projects should reflect real ownership, such as a site, product area, client, or engineering workflow.</li><li>Sharing is most useful when the selected element, screenshot, console data, network context, and AI diagnosis stay attached to the report.</li><li>A clean handoff turns a page annotation into a clear GitHub issue or ready-to-build prompt without forcing developers to reconstruct the bug.</li></ul></div>
-  <section class="faq"><h2>Frequently asked questions</h2><h3>What does Vynix capture when someone annotates a website issue?</h3><p>Vynix captures the selected element, a screenshot, console and network context, and an AI diagnosis of the likely root cause. That gives developers more than a visual report, because the technical clues travel with the annotation.</p><h3>When should a Vynix annotation become a GitHub issue?</h3><p>Create a GitHub issue when the finding is confirmed, actionable, and needs engineering work. If the expected behavior is unclear, triage it first so the issue does not become a vague ticket.</p><h3>How should teams think about roles in Vynix?</h3><p>Think in terms of responsibility: who reports issues, who triages them, who fixes them, and who assigns work to a developer or coding agent. Keeping those responsibilities clear prevents annotations from turning into another unowned feedback inbox.</p></section>
+  <div class="callout"><strong>Key takeaways</strong><ul><li>Use projects to keep website annotations and technical context organized by product, site, client, or owner.</li><li>Clear roles make the path from report to fix easier: capture, review, then implement or assign.</li><li>Vynix sharing is strongest when the report includes both human context and captured developer evidence.</li></ul></div>
+  <section class="faq"><h2>Frequently asked questions</h2><h3>Can non-developers use Vynix to report issues?</h3><p>Yes. A non-developer can use the widget to click the part of the site that is wrong and add a short note. Vynix captures the technical context around that moment, so developers do not have to ask the reporter for console logs or network details.</p><h3>Should every Vynix capture become a GitHub issue?</h3><p>No. Some captures may be duplicates, design questions, content edits, or reports that need more information. Use triage to decide which captures should become tracked engineering work in GitHub.</p><h3>How should teams think about roles in Vynix?</h3><p>Think in terms of responsibilities: reporters capture problems, reviewers confirm and prioritize them, and implementers fix them or assign them to a coding agent. On a small team, one person may cover several roles.</p></section>
   <div class="callout">
     <strong>Try Vynix on your own site</strong>
     <p>Install the widget with one script tag, point at a bug, and hand the fix to your coding agent.</p>
     <a class="cta" href="https://vynix.in">Get started free</a>
   </div>
-  <h2>Keep reading</h2><ul><li><a href="/blog/how-to-write-bug-reports-ai-agents-can-fix/">How to Write Bug Reports AI Agents Can Fix</a></li><li><a href="/compare/jam-vs-vynix/">Jam vs Vynix</a></li><li><a href="/compare/marker-io-vs-vynix/">Marker.io vs Vynix</a></li></ul>
+  <h2>Keep reading</h2><ul><li><a href="/blog/how-vynix-cuts-the-cost-of-running-ai-coding-agents/">How Vynix cuts the cost of running AI coding agents</a></li><li><a href="/compare/jam-vs-vynix/">Jam vs Vynix</a></li><li><a href="/compare/marker-io-vs-vynix/">Marker.io vs Vynix</a></li></ul>
 </article>
 </main>
 <footer class="site-footer"><div class="container">
@@ -262,7 +226,10 @@ td.yes{color:var(--green);font-weight:600}
   <div>
     <a href="/blog/">Blog</a> &middot;
     <a href="/compare/">Compare</a> &middot;
+    <a href="/best/">Guides</a> &middot;
+    <a href="/glossary/">Glossary</a> &middot;
     <a href="/kb/">Help</a> &middot;
+    <a href="/badge/">Badge</a> &middot;
     <a href="https://github.com/vynix-in">GitHub</a> &middot;
     <a href="https://vynix.in/privacy">Privacy</a>
   </div>
