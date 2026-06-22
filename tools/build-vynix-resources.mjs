@@ -30,8 +30,8 @@ function rewrite(content, isSitemapOrText) {
   // maps directly onto the live resources path: github.io/<path> -> vynix.in/resources/<path>.
   out = out.split('https://vynix-in.github.io').join(`https://vynix.in${PREFIX}`);
   // Root-relative internal links and asset references -> add the prefix.
-  out = out.replace(new RegExp(`(href|src)="/(${SECTIONS})(/|")`, 'g'), `$1="${PREFIX}/$2$3`);
-  out = out.replace(new RegExp(`(href|src)="/(${FILES})"`, 'g'), `$1="${PREFIX}/$2"`);
+  out = out.replace(new RegExp(`(href|src|srcset)="/(${SECTIONS})(/|")`, 'g'), `$1="${PREFIX}/$2$3`);
+  out = out.replace(new RegExp(`(href|src|srcset)="/(${FILES})"`, 'g'), `$1="${PREFIX}/$2"`);
   // The resources home itself.
   out = out.replace(/(href|src)="\/"/g, `$1="${PREFIX}/"`);
   // Absolute self-URLs on the vynix.in host -> add the prefix.
@@ -43,6 +43,11 @@ function rewrite(content, isSitemapOrText) {
     out = out.replace(new RegExp(`https://vynix\\.in/(${SECTIONS}|${FILES})`, 'g'), `https://vynix.in${PREFIX}/$1`);
     out = out.replace(/https:\/\/vynix\.in\/(\s|$|<)/g, `https://vynix.in${PREFIX}/$1`);
   }
+  // Canonical host is https://www.vynix.in (apex 301-redirects to www). Normalise
+  // every vynix.in URL (canonical, og:url, sitemap loc, product links, JSON-LD)
+  // to the www host so canonicals never point at a redirect. Safe: the literal
+  // "https://vynix.in" never occurs inside "https://www.vynix.in".
+  out = out.split('https://vynix.in').join('https://www.vynix.in');
   return out;
 }
 
@@ -82,6 +87,6 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const sample = fs.existsSync(samplePath) ? fs.readFileSync(samplePath, 'utf8') : '';
   console.log('built content/vynix-resources:', res.pages, 'pages');
   console.log('sample canonical:', (sample.match(/rel="canonical" href="([^"]+)"/) || [])[1]);
-  console.log('product link preserved:', sample.includes('href="https://vynix.in"'));
+  console.log('product link preserved:', sample.includes('href="https://www.vynix.in"'));
   console.log('internal link sample:', (sample.match(/href="(\/resources\/[^"]+)"/) || [])[1] || 'none');
 }
