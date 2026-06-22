@@ -54,16 +54,30 @@ function packet(directory) {
   return {
     directory: directory.name,
     submit_url: directory.submit_url,
+    tier: directory.tier,
+    tier_note: directory.notes,
     product: product.name,
     website: product.website,
     tagline: product.tagline,
+    secondary_tagline:
+      'One script tag turns any site into a feedback layer: click a bug and Vynix captures the element, console and network context automatically.',
+    usp:
+      'Every report already holds what an engineer needs to fix the bug: the exact element, a screenshot, console and network errors, and an AI root-cause diagnosis, ready to open as a GitHub issue and hand to a coding agent.',
+    tldr: [
+      'Click any bug on a live site and Vynix auto-captures the element, screenshot, console and network context.',
+      'Get an AI root-cause diagnosis and turn it into a GitHub issue for Copilot or your agent in one click.',
+    ],
+    alternative_to: ['Marker.io', 'BugHerd', 'Jam'],
+    integrations: ['GitHub', 'GitHub Copilot', 'Cursor', 'Claude (MCP)'],
+    best_for: ['Front-end engineers', 'QA & support teams', 'Agencies'],
     short_description: SHORT,
     long_description: longDescription(),
     tags: tagsFor(directory.category),
     categories: ['Developer Tools', 'Bug Tracking', 'Productivity', 'AI'],
     keywords: ['bug reporting', 'visual feedback', 'website annotation', 'ai diagnosis', 'github issues', 'coding agents'],
     feature_summary: features.map((f) => `${f.title}: ${f.blurb}`),
-    pricing: 'Free plan available. Paid plans listed at ' + product.pricingUrl + '.',
+    pricing:
+      'Free plan. Pro $7/mo (500 AI credits). Business $15/mo (2,500 AI credits). Details at ' + product.pricingUrl + '.',
     contact_email: 'hello@vynix.in',
     social: { twitter: 'https://twitter.com/usevynix', github: product.githubOrg },
     screenshots_checklist: [
@@ -87,6 +101,8 @@ function markdown(pkt) {
 
 Submit at: ${pkt.submit_url}
 
+> ${pkt.tier_note}
+
 ## Product
 - Name: ${pkt.product}
 - Website: ${pkt.website}
@@ -95,6 +111,24 @@ Submit at: ${pkt.submit_url}
 
 ## Short description
 ${pkt.short_description}
+
+## Secondary tagline (max ~140 chars)
+${pkt.secondary_tagline}
+
+## Unique selling proposition (max ~255 chars)
+${pkt.usp}
+
+## TL;DR
+${pkt.tldr.map((b) => `- ${b}`).join('\n')}
+
+## Alternative to
+${pkt.alternative_to.join(', ')}
+
+## Integrations
+${pkt.integrations.join(', ')}
+
+## Best for
+${pkt.best_for.join(', ')}
 
 ## Long description
 ${pkt.long_description}
@@ -162,15 +196,39 @@ function buildFor(directory) {
 }
 
 export async function run(payload = {}) {
-  const list = payload.only
-    ? directories.find({ key: payload.only })
-    : directories.all();
+  const QUEUEABLE = new Set(['open', 'pr']);
+  const all = payload.only ? directories.find({ key: payload.only }) : directories.all();
+  const list = all.filter((d) => QUEUEABLE.has(d.tier));
   const built = [];
   for (const directory of list) {
     built.push(buildFor(directory));
   }
-  log.info(`prepared ${built.length} submission packets`);
-  return { built: built.length };
+
+  // Prune anything that is not a free/open or PR directory: drop its queued task,
+  // submission record, and stale packet so the approval list stays clean and real.
+  let pruned = 0;
+  for (const directory of directories.all()) {
+    if (QUEUEABLE.has(directory.tier)) continue;
+    const removedTasks = queue.removeWhere((t) => t.type === 'directory-submit' && t.payload?.directory === directory.name);
+    submissions.remove({ key: directory.key });
+    const dir = path.join(paths.directories, 'submissions', directory.key);
+    if (fs.existsSync(dir)) fs.rmSync(dir, { recursive: true, force: true });
+    if (removedTasks || fs.existsSync(dir) === false) pruned += 1;
+  }
+
+  // Dedupe: keep exactly one directory-submit task per directory (re-runs of the
+  // agent would otherwise pile up duplicates of the same submission).
+  const seen = new Set();
+  const deduped = queue.removeWhere((t) => {
+    if (t.type !== 'directory-submit') return false;
+    const name = t.payload?.directory;
+    if (seen.has(name)) return true;
+    seen.add(name);
+    return false;
+  });
+
+  log.info(`prepared ${built.length} submission packets`, { pruned, deduped });
+  return { built: built.length, pruned, deduped };
 }
 
 export default { meta, run };

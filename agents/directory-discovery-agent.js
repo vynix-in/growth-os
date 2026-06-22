@@ -66,12 +66,52 @@ const SEED = [
   { name: 'Land-book', url: 'https://land-book.com', submit: 'https://land-book.com/submit', category: 'design', authority: 62 },
 ];
 
+// Verified tiers (checked 2026-06-22). Only 'open' and 'pr' are queued for
+// submission; the rest are kept for reference with an honest reason so we do not
+// waste time on paid, login-walled, or wrong-fit listings.
+//   open   - free and open; create a free account, paste the packet, submit.
+//   pr     - free GitHub pull request (one list entry); great fit for the MCP server.
+//   review - business software-review site; free to claim but vendor-verified and
+//            slow, only worth it once there are real customer reviews.
+//   store  - app/extension store; you publish the actual extension, not a listing.
+//   forum  - community; must be posted by a real account, never automated.
+//   ai     - AI tool directory; many now charge to list and send little traffic.
+//   skip   - paid or off-fit; not worth it right now.
+const TIERS = {
+  'product-hunt': 'open', betalist: 'open', 'indie-hackers': 'open', saashub: 'open',
+  alternativeto: 'open', 'dev-hunt': 'open', uneed: 'open', microlaunch: 'open',
+  fazier: 'open', peerlist: 'open', openalternative: 'open', 'launching-next': 'open',
+  'startup-buffer': 'open', betapage: 'open', stackshare: 'open', 'land-book': 'open',
+  'awesome-lists-github': 'pr', 'awesome-mcp-servers': 'pr', 'glama-mcp-directory': 'pr',
+  'mcp-servers-directory': 'pr',
+  g2: 'review', capterra: 'review', getapp: 'review', 'software-advice': 'review',
+  trustradius: 'review', crozdesk: 'review', saasworthy: 'review', slant: 'review',
+  'chrome-web-store': 'store', 'microsoft-edge-add-ons': 'store', 'firefox-add-ons': 'store',
+  sourceforge: 'store',
+  'hacker-news-show-hn': 'forum', 'reddit-r-sideproject': 'forum',
+  'there-s-an-ai-for-that': 'ai', futurepedia: 'ai', 'future-tools': 'ai', 'ai-tool-hunt': 'ai',
+  toolify: 'ai', 'ai-scout': 'ai', 'dang-ai': 'ai', 'topai-tools': 'ai', 'aitools-fyi': 'ai',
+  'insidr-ai-tools': 'ai',
+  appsumo: 'skip', 'startup-stash': 'skip', sideprojectors: 'skip',
+};
+const TIER_NOTE = {
+  open: 'Free and open. Create a free account, paste the packet, and submit.',
+  pr: 'Free GitHub pull request: add one entry to the list and open a PR. Good fit for the Vynix MCP server.',
+  review: 'Business software-review site. Free to claim but vendor-verified and slow; do this once you have customer reviews.',
+  store: 'App/extension store. Publish the actual Vynix extension here, not a directory listing.',
+  forum: 'Community forum. Post from a real, established account; never automate.',
+  ai: 'AI tool directory. Many now charge to list or for fast review and send little traffic; optional, low priority.',
+  skip: 'Paid or off-fit listing; skip for now.',
+};
+
+
 export async function run() {
   let added = 0;
   let updated = 0;
   for (const d of SEED) {
     const key = slug(d.name);
     const existing = store.findOne({ key });
+    const tier = TIERS[key] || 'open';
     const record = store.upsert(
       {
         key,
@@ -80,9 +120,10 @@ export async function run() {
         submit_url: d.submit,
         category: d.category,
         authority: d.authority,
+        tier,
         status: existing?.status || 'discovered', // discovered -> prepared -> submitted -> approved/rejected
         requirements: existing?.requirements || 'Account required. Provide name, descriptions, logo, screenshots, and a link.',
-        notes: existing?.notes || '',
+        notes: TIER_NOTE[tier] || '',
       },
       'key',
     );

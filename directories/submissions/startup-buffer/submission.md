@@ -2,6 +2,8 @@
 
 Submit at: https://startupbuffer.com/site/submit
 
+> Free and open. Create a free account, paste the packet, and submit.
+
 ## Product
 - Name: Vynix
 - Website: https://vynix.in
@@ -10,6 +12,25 @@ Submit at: https://startupbuffer.com/site/submit
 
 ## Short description
 Vynix is the feedback layer for teams building with AI coding agents. Point at any bug on a live site and Vynix captures the context, diagnoses the likely cause, and hands it to your coding agent.
+
+## Secondary tagline (max ~140 chars)
+One script tag turns any site into a feedback layer: click a bug and Vynix captures the element, console and network context automatically.
+
+## Unique selling proposition (max ~255 chars)
+Every report already holds what an engineer needs to fix the bug: the exact element, a screenshot, console and network errors, and an AI root-cause diagnosis, ready to open as a GitHub issue and hand to a coding agent.
+
+## TL;DR
+- Click any bug on a live site and Vynix auto-captures the element, screenshot, console and network context.
+- Get an AI root-cause diagnosis and turn it into a GitHub issue for Copilot or your agent in one click.
+
+## Alternative to
+Marker.io, BugHerd, Jam
+
+## Integrations
+GitHub, GitHub Copilot, Cursor, Claude (MCP)
+
+## Best for
+Front-end engineers, QA & support teams, Agencies
 
 ## Long description
 Vynix is a website annotation and developer-context tool. Drop a lightweight widget on any site, click on what is wrong, and Vynix captures the element, a screenshot, the console and network context, and an AI diagnosis of the likely root cause. From there you can copy a ready-to-build prompt or open a GitHub issue and assign it to a coding agent.
@@ -55,7 +76,7 @@ bug reporting, visual feedback, website annotation, ai diagnosis, github issues,
 - Projects, roles and sharing: Organise feedback by project, invite teammates, and share read-only links.
 
 ## Pricing
-Free plan available. Paid plans listed at https://vynix.in/pricing.
+Free plan. Pro $7/mo (500 AI credits). Business $15/mo (2,500 AI credits). Details at https://vynix.in/pricing.
 
 ## Screenshots checklist
 - [ ] Widget open on a live page with a pinned annotation
