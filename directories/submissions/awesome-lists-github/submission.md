@@ -91,6 +91,16 @@ Free plan. Pro $7/mo (500 AI credits). Business $15/mo (2,500 AI credits). Detai
 - [ ] Favicon or app icon, 64x64 and 256x256
 - [ ] Brand colour reference: Vynix green #008448
 
+## Assets (ready to upload)
+- Square logo (512x512): https://vynix.in/icon-512.png
+- Favicon (SVG): https://vynix.in/favicon.svg
+- Screenshots:
+  - https://vynix.in/resources/assets/shots/shot-annotate.png
+  - https://vynix.in/resources/assets/shots/shot-context.png
+  - https://vynix.in/resources/assets/shots/shot-github.png
+  - https://vynix.in/resources/assets/shots/shot-mcp.png
+  - https://vynix.in/resources/assets/shots/shot-install.png
+
 ## Social
 - Twitter: https://twitter.com/usevynix
 - GitHub: https://github.com/vynix-in

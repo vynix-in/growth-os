@@ -80,6 +80,17 @@ function packet(directory) {
       'Free plan. Pro $7/mo (500 AI credits). Business $15/mo (2,500 AI credits). Details at ' + product.pricingUrl + '.',
     contact_email: 'hello@vynix.in',
     social: { twitter: 'https://twitter.com/usevynix', github: product.githubOrg },
+    assets: {
+      logo_512: product.website + '/icon-512.png',
+      favicon: product.website + '/favicon.svg',
+      screenshots: [
+        product.website + '/resources/assets/shots/shot-annotate.png',
+        product.website + '/resources/assets/shots/shot-context.png',
+        product.website + '/resources/assets/shots/shot-github.png',
+        product.website + '/resources/assets/shots/shot-mcp.png',
+        product.website + '/resources/assets/shots/shot-install.png',
+      ],
+    },
     screenshots_checklist: [
       'Widget open on a live page with a pinned annotation',
       'AI diagnosis panel showing a root-cause summary',
@@ -153,6 +164,12 @@ ${pkt.screenshots_checklist.map((s) => `- [ ] ${s}`).join('\n')}
 
 ## Logo checklist
 ${pkt.logo_checklist.map((s) => `- [ ] ${s}`).join('\n')}
+
+## Assets (ready to upload)
+- Square logo (512x512): ${pkt.assets.logo_512}
+- Favicon (SVG): ${pkt.assets.favicon}
+- Screenshots:
+${pkt.assets.screenshots.map((s) => `  - ${s}`).join('\n')}
 
 ## Social
 - Twitter: ${pkt.social.twitter}

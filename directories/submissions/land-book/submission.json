@@ -65,6 +65,17 @@
     "twitter": "https://twitter.com/usevynix",
     "github": "https://github.com/vynix-in"
   },
+  "assets": {
+    "logo_512": "https://vynix.in/icon-512.png",
+    "favicon": "https://vynix.in/favicon.svg",
+    "screenshots": [
+      "https://vynix.in/resources/assets/shots/shot-annotate.png",
+      "https://vynix.in/resources/assets/shots/shot-context.png",
+      "https://vynix.in/resources/assets/shots/shot-github.png",
+      "https://vynix.in/resources/assets/shots/shot-mcp.png",
+      "https://vynix.in/resources/assets/shots/shot-install.png"
+    ]
+  },
   "screenshots_checklist": [
     "Widget open on a live page with a pinned annotation",
     "AI diagnosis panel showing a root-cause summary",
